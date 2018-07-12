@@ -1,0 +1,26 @@
+.biru {/*
+	background-color: rgb(69,103,141);*/
+	background-color :#161D21;
+	opacity: 0.4;
+	display: block;
+	position: absolute;
+	content: "";
+}
+.bg1 {
+	background-size: cover;
+	background-position: -28px; 
+}
+.stylefooter{
+	color: white;
+	margin-left: 60px; 
+	padding-top: 60px;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0; 
+}
+   
