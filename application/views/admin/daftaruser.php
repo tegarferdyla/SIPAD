@@ -78,7 +78,7 @@
 
                                     <td>
                                         <a href="<?php echo base_url()."admin/edituser/".$u->id_user;?>"><i class="list-icon feather feather-edit" title="Edit"></i></a> &nbsp;
-                                        <a onclick="return confirm('Apa anda yakin ingin menghapus data ini?')" href="<?php echo base_url()."admin/hapusppk/".$u->id_user; ?>"><i class="list-icon text-danger feather feather-trash-2" title="Delete"></i></a>
+                                        <a onclick="return confirm('Apa anda yakin ingin menghapus data ini?')" href="<?php echo base_url()."admin/hapususer/".$u->id_user; ?>"><i class="list-icon text-danger feather feather-trash-2" title="Delete"></i></a>
                                     </td>
                                 </tr>
                                 <?php 

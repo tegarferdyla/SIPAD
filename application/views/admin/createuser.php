@@ -66,7 +66,7 @@
                                             <select class="form-control" id="l13" name="divisi">
                                                 <option value="">-- Pilih Divisi --</option>
                                                 <?php foreach ($get_ppk as $u) { ?>
-                                                <option value="<?php echo $u['nama']; ?>"><?php echo $u['nama']; ?></option>
+                                                <option value="<?php echo $u['id_ppk']; ?>"><?php echo $u['nama']; ?></option>
                                                 <?php 
                                                     }
                                                 ?>
