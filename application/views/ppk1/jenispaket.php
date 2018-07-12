@@ -56,7 +56,7 @@
                                                 </a>
                                             </figure>
                                             <header>
-                                                <h4 class="h3 fw-300 m-1 blog-post-title"><a href="ui-cards.html#">Pilih Swakelola</a></h4>
+                                                <h4 class="h3 fw-300 m-1 blog-post-title"><a href="ui-cards.html#">Pilih Suakelola</a></h4>
                                             </header>
                                             <footer class="mr-t-30"><a href="<?php echo site_url('ppk1/pilihpaket/'.$get_tahun[0]['id_tahun'].'/suakelola') ?>" class="btn btn-outline-primary btn-rounded">Klik!</a>
                                             </footer>

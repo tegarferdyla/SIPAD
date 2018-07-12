@@ -2,7 +2,7 @@
     <!-- Page Title Area -->
     <div class="row page-title clearfix">
         <div class="page-title-left">
-            <h6 class="page-title-heading mr-0 mr-r-5">Dafta Pilih Paket</h6>
+            <h6 class="page-title-heading mr-0 mr-r-5">Daftar Paket <?php #echo ucwords($jenis[0]['jenis']) ?></h6>
         </div>
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">
@@ -28,58 +28,33 @@
                             </div>
                         </div>
                         <div class="row">
-                                    <div class="col-md-12">
-                                        <?php if ($this->session->flashdata('updateberhasil')): ?>
-                                        <div class="alert alert-icon alert-success border-success alert-dismissible fade show" role="alert">
-                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                                            </button> <i class="material-icons list-icon">check_circle</i>  <strong>Well done!</strong> PPK berhasil di update.
-                                        </div>
-                                        <?php elseif ($this->session->flashdata('deleteberhasil')): ?>
-                                        <div class="alert alert-icon alert-success border-success alert-dismissible fade show" role="alert">
-                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                                            </button> <i class="material-icons list-icon">check_circle</i>  <strong>Well done!</strong> PPK berhasil di Delete.
-                                        </div>
-                                        <?php elseif ($this->session->flashdata('updategagal')): ?>
-                                         <div class="alert alert-icon alert-danger border-danger alert-dismissible fade show" role="alert">
-                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                                            </button> <i class="material-icons list-icon">not_interested</i>  <strong>Oh snap!</strong> PPK gagal di update.
-                                        </div>
-                                        <?php endif?>
+                                  
+                        </div>
+                        <div class="accordion" id="accordion-3" role="tablist" aria-multiselectable="true">
+                            <?php foreach ($jenis as $u) {?>
+                            <div class="card card-outline-success">
+                                <div class="card-header" role="tab" id="heading4">
+                                    <h6 class="card-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-3" href="#<?php echo $u['id_paket'] ?>" aria-expanded="false" aria-controls="<?php echo $u['id_paket'] ?>"><?php echo $u['nama_paket'] ?></a></h6>
+                                </div>
+                                <div id="<?php echo $u['id_paket'] ?>" class="card-collapse collapse" role="tabpanel" aria-labelledby="heading4">
+                                    <div class="card-body">
+                                        <ul class="list-group">
+                                            <a href=""><li class="list-group-item">Dokumen Utama</li></a>
+                                            <a href=""><li class="list-group-item">Dokumen Pendukung</li></a>
+                                        </ul>
                                     </div>
                                 </div>
-                        <table class="table table-striped" id="datatable">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama Paket</th>
-                                    <th>Keterangan Paket</th>
-                                    <th>Upload</th>
-                                    <th>Dokumen</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                    <?php foreach ($jenis as $u) {?>
-                                <tr>
-                                    <td><?php echo $u['id_paket'] ?></td>
-                                    <td><?php echo $u['nama_paket'] ?></td>
-                                    <td><?php echo $u['jenis'] ?></td>
-                                    <td><?php echo $u['input_by'] ?></td>
-                                    <td>
-                                        <a href="<?php echo base_url() ?>"><i class="list-icon feather feather-edit" title="Edit"> Utama</i></a> &nbsp;
-                                        <a onclick="return confirm('Apa anda yakin ingin menghapus data ini?')" href="<?php echo base_url() ?>"><i class="list-icon text-danger feather feather-trash-2" title="Delete">Pendukung</i></a>
-                                    </td>
-                                </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- /.widget-body -->
+                            </div>
+                            <?php } ?>
+                        </div>
+                                <!-- /.panel-group -->
                 </div>
-                <!-- /.widget-bg -->
             </div>
-            <!-- /.widget-holder -->
+                    <!-- /.widget-body -->
         </div>
-        <!-- /.row -->
+                <!-- /.widget-bg -->
     </div>
+            <!-- /.widget-holder -->
+</div>
     <!-- /.widget-list -->
 </main>
