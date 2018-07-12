@@ -106,7 +106,6 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 			$this->form_validation->set_rules('divisi', 'Divisi' , 'required');
 			$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 			$this->form_validation->set_rules('username','Username', 'required');
-			$this->form_validation->set_rules('password','Password' ,'trim|required|min_length[8]|alpha_numeric');
 
 			if ($this->form_validation->run() == FALSE) {
 				$this->load->view('admin/header');
@@ -121,7 +120,9 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 				$email 		= $this->input->post('email');
 				$alamat 	= $this->input->post('alamat');
 				$username   = $this->input->post('username');
-				$password 	= $this->input->post('password');
+				$this->load->library('generate_token');
+				$password 	= $this->generate_token->get_token(8);
+				// $password 	= $this->input->post('password');
 				$data = array
 				(
 					'id_user'		=> $this->Penomoran_model->IDDaftar(),
@@ -132,6 +133,7 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 					'alamat'		=> $alamat,
 					'username'		=> $username,
 					'password'		=> md5($password),
+					// 'password'		=> $password,
 					'foto'			=> "user1.jpg",
 					'id_ppk'		=> $divisi
 				);
@@ -143,8 +145,37 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 				else {
 					$input = $this->Datauser_model->Tambahuser($data,'user');
 					if ($input > 0) {
+						$this->load->library('email');
+					    $config = array();
+					    $config['charset'] = 'utf-8';
+					    $config['useragent'] = 'Codeigniter';
+					    $config['protocol']= "smtp";
+					    $config['mailtype']= "html";
+					    $config['smtp_host']= "ssl://smtp.mail.yahoo.com";//pengaturan smtp
+					    $config['smtp_port']= "465";
+					    $config['smtp_timeout']= "400";
+					    $config['smtp_user']= "hans.inside@yahoo.com"; // isi dengan email kamu
+					    $config['smtp_pass']= "tangerang030298"; // isi dengan password kamu
+					    $config['crlf']="\r\n"; 
+					    $config['newline']="\r\n"; 
+					    $config['wordwrap'] = TRUE;
+					    //memanggil library email dan set konfigurasi untuk pengiriman email
+					   
+					    $this->email->initialize($config);
+					    //konfigurasi pengiriman
+					    $this->email->from($config['smtp_user']);
+					    $this->email->to($email);
+					    $this->email->subject("Notifikasi");
+					    $this->email->message(
+					     "Selamat , ".$nama." akun anda berhasil dibuat harap  login dengan password ".$password
+					    );
+				  
+				    if($this->email->send())
+				    {
 						$this->session->set_flashdata('berhasil','true');
 						redirect(base_url('admin/createuser'));	
+						// echo "berhasil";
+					}
 						}
 					else{
 						$this->session->set_flashdata('gagal','true');
@@ -300,11 +331,11 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 		    $config['useragent'] = 'Codeigniter';
 		    $config['protocol']= "smtp";
 		    $config['mailtype']= "html";
-		    $config['smtp_host']= "ssl://smtp.gmail.com";//pengaturan smtp
+		    $config['smtp_host']= "ssl://smtp.mail.yahoo.com";//pengaturan smtp
 		    $config['smtp_port']= "465";
 		    $config['smtp_timeout']= "400";
-		    $config['smtp_user']= "antokarjeun@gmail.com"; // isi dengan email kamu
-		    $config['smtp_pass']= "01234limo"; // isi dengan password kamu
+		    $config['smtp_user']= "hans.inside@yahoo.com"; // isi dengan email kamu
+		    $config['smtp_pass']= "tangerang030298"; // isi dengan password kamu
 		    $config['crlf']="\r\n"; 
 		    $config['newline']="\r\n"; 
 		    $config['wordwrap'] = TRUE;
@@ -313,7 +344,7 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 		    $this->email->initialize($config);
 		    //konfigurasi pengiriman
 		    $this->email->from($config['smtp_user']);
-		    $this->email->to('dalas98@gmail.com');
+		    $this->email->to('tegarferdyla@gmail.com');
 		    $this->email->subject("Notifikasi");
 		    $this->email->message(
 		     "terkirim"
@@ -321,8 +352,12 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 	  
 	    if($this->email->send())
 	    {
-			echo "berhasil";
+			echo "terkirim";
 		}
+	}
+	public function test2()
+	{
+		md5('');
 	}
 	}
 ?>
