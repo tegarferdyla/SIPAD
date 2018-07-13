@@ -95,6 +95,7 @@ class PPK1 extends CI_Controller {
 		if ($data) {
 			# code...
 		}
+
 		echo "<pre>";
 		print_r($data);
 		echo "</pre>";
@@ -123,6 +124,29 @@ class PPK1 extends CI_Controller {
 		// print_r($data);
 		// echo "</pre>";
 	}
+// =======
+// 		public function pilihpaket($tahun,$jenis) 
+// 		{
+// 			$id_ppk = $this->session->userdata('id_ppk');
+// 			$data['jenis'] = $this->Datapaket_model->cekjenis($jenis,$tahun,$id_ppk);
+// 			// if ($data ) {
+// 			// 	echo "data tidak ada";
+// 			// 	// $this->load->view('ppk1/header');
+// 			// 	// $this->load->view('ppk1/sidebar');
+// 			// 	// $this->load->view('ppk1/pilihpaket');
+// 			// 	// $this->load->view('ppk1/footer');
+// 			// }else{
+// 			// 	echo "data ada";
+// 			$this->load->view('ppk1/header');
+// 			$this->load->view('ppk1/sidebar');
+// 			$this->load->view('ppk1/pilihpaket',$data);
+// 			$this->load->view('ppk1/footer');
+// 			// }
+// 			// echo "<pre>";
+// 			// print_r($data);
+// 			// echo "</pre>";
+// 		}
+// 
 
 }
 ?>
