@@ -31,7 +31,7 @@
             <div class="widget-bg">
                     <form id="interviewForm">
                     <div class="widget-body clearfix">
-                        <h4 class="box-title mr-b-0">Kelompok 1</h4>
+                        <h4 class="box-title mr-b-0">1</h4>
                         <hr>
                         <div class="row">
                             <div class="form-group col-md-6">
