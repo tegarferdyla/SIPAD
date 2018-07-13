@@ -66,7 +66,7 @@
                                             <select class="form-control" id="l13" name="divisi">
                                                 <option value="">-- Pilih Divisi --</option>
                                                 <?php foreach ($get_ppk as $u) { ?>
-                                                <option value="<?php echo $u['nama']; ?>"><?php echo $u['nama']; ?></option>
+                                                <option value="<?php echo $u['id_ppk']; ?>"><?php echo $u['nama']; ?></option>
                                                 <?php 
                                                     }
                                                 ?>
@@ -93,13 +93,13 @@
                                             <input class="form-control" id="" placeholder="Username" type="text" name="username">
                                         </div>
                                     </div>
-                                     <div class="form-group row">
+                                     <!-- <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="l0">Password</label>
                                         <div class="col-md-9">
                                             <span class="text-danger"><?=form_error('password') ?></span>
                                             <input class="form-control" id="" placeholder="Password" type="password" name="password">
                                         </div>
-                                    </div>
+                                                                         </div> -->
                                     <div class="form-actions">
                                         <div class="form-group row">
                                             <div class="col-md-9 ml-md-auto btn-list">

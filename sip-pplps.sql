@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 11, 2018 at 05:55 PM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 7.1.10
+-- Generation Time: Jul 12, 2018 at 03:01 PM
+-- Server version: 10.1.29-MariaDB
+-- PHP Version: 7.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `sip-pplps`
 --
-CREATE DATABASE IF NOT EXISTS `sip-pplps` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `sip-pplps`;
 
 -- --------------------------------------------------------
 
@@ -62,7 +60,7 @@ CREATE TABLE `ppk` (
 
 INSERT INTO `ppk` (`id_ppk`, `nama`, `keterangan`) VALUES
 ('PPK0001', 'PPK Ir. Hani Mayanas', 'Satker Ir. Hani Mayanas'),
-('PPK0002', 'PPK Nuris Wahyudi, SST', 'Satker Nuris Wahyudi, SST');
+('PPK0002', 'PPK Nuris Wahyudi, SST', 'Satker Nuris Wahyudi, SSTI');
 
 -- --------------------------------------------------------
 
@@ -98,18 +96,19 @@ CREATE TABLE `tbl_paket` (
   `jenis` enum('kontraktual','suakelola') NOT NULL,
   `deskripsi` text NOT NULL,
   `input_by` varchar(50) NOT NULL,
-  `id_tahun` varchar(7) NOT NULL
+  `id_tahun` varchar(7) NOT NULL,
+  `id_ppk` varchar(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_paket`
 --
 
-INSERT INTO `tbl_paket` (`id_paket`, `nama_paket`, `jenis`, `deskripsi`, `input_by`, `id_tahun`) VALUES
-('PKT0001', 'Konsultan Supervisi Pembangunan Sanitasi Terpadu Kawasan Strategis 3 Kabupaten Bima', 'kontraktual', '', 'Tegar Ferdyla', 'THN0001'),
-('PKT0002', 'Konsultan Supervisi Pembangunan Sanitasi Terpadu Kawasan Strategis 3 Kabupaten Bima', 'suakelola', '', 'Tegar Ferdyla', 'THN0001'),
-('PKT0003', 'Konsultan Supervisi Pembangunan Sanitasi Terpadu Kawasan Strategis 3 Kabupaten Bima', 'suakelola', '', 'Tegar Ferdyla', 'THN0002'),
-('PKT0004', 'Konsultan Supervisi Pembangunan Sanitasi Terpadu Kawasan Strategis 3 Kabupaten Bima', 'kontraktual', '', 'Tegar Ferdyla', 'THN0002');
+INSERT INTO `tbl_paket` (`id_paket`, `nama_paket`, `jenis`, `deskripsi`, `input_by`, `id_tahun`, `id_ppk`) VALUES
+('PKT0001', 'Konsultan Supervisi Pembangunan Sanitasi Terpadu Kawasan Strategis 3 Kabupaten Bima', 'kontraktual', '', 'Tegar Ferdyla', 'THN0001', 'PPK0001'),
+('PKT0002', 'Coba', 'suakelola', '', 'Tegar Ferdyla', 'THN0003', 'PPK0002'),
+('PKT0004', 'Suakelola1', 'suakelola', '', 'Teteh', 'THN0002', 'PPK0001'),
+('PKT0005', 'suakelola', 'suakelola', '', 'Tegar', 'THN0001', 'PPK0001');
 
 -- --------------------------------------------------------
 
@@ -131,7 +130,9 @@ CREATE TABLE `tbl_tahun` (
 
 INSERT INTO `tbl_tahun` (`id_tahun`, `nama_tahun`, `deskripsi`, `input_by`, `id_ppk`) VALUES
 ('THN0001', '2014', 'Tahun 2014', 'Tegar Ferdyla M', 'PPK0001'),
-('THN0002', '2015', 'Tahun 2015', 'Tegar Ferdyla M', 'PPK0001');
+('THN0002', '2015', 'Tahun 2015', 'Tegar Ferdyla M', 'PPK0001'),
+('THN0003', '2014', 'Tahun 2014', 'Hendra', 'PPK0002'),
+('THN0004', '2016', 'Tahun 2016', 'Tegar Ferdyla M', 'PPK0001');
 
 -- --------------------------------------------------------
 
@@ -145,20 +146,23 @@ CREATE TABLE `user` (
   `password` varchar(50) NOT NULL,
   `NIP` varchar(20) NOT NULL,
   `nama` varchar(30) NOT NULL,
-  `divisi` varchar(50) NOT NULL,
+  `bagian` varchar(15) NOT NULL,
   `email` varchar(100) NOT NULL,
   `alamat` text NOT NULL,
-  `foto` varchar(100) NOT NULL
+  `foto` varchar(100) NOT NULL,
+  `id_ppk` varchar(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `username`, `password`, `NIP`, `nama`, `divisi`, `email`, `alamat`, `foto`) VALUES
-('USR0001', 'tegarferdyla', 'df70d98996977a7b6f8dcf37c3265a38', '123456789011', 'Tegar Ferdyla M', 'PPK Ir. Hani Mayanas', 'tegar@gmail.com', 'Jl.Joglo', 'user1.jpg'),
-('USR0002', 'hendra', 'df70d98996977a7b6f8dcf37c3265a38', '123456789012', 'Hendra', 'PPK PLP JABODETABEK', 'hendra@gmail.com', 'Jl.Meruya', 'user1.jpg'),
-('USR0003', 'asal', 'df70d98996977a7b6f8dcf37c3265a38', '123456789013', 'Asal', 'PPK Jakarta', 'asal@gmail.com', 'Jl.Asal', 'user1.jpg');
+INSERT INTO `user` (`id_user`, `username`, `password`, `NIP`, `nama`, `bagian`, `email`, `alamat`, `foto`, `id_ppk`) VALUES
+('USR0001', 'tegarferdyla', 'df70d98996977a7b6f8dcf37c3265a38', '123456789011', 'Tegar Ferdyla M', 'PPK', 'tegar@gmail.com', 'Jl.Joglo', 'user1.jpg', 'PPK0001'),
+('USR0002', 'hendra', 'df70d98996977a7b6f8dcf37c3265a38', '123456789012', 'Hendra', 'PPK', 'hendra@gmail.com', 'Jl.Meruya', 'user1.jpg', 'PPK0002'),
+('USR0003', 'asal', 'df70d98996977a7b6f8dcf37c3265a38', '123456789013', 'Asal', 'PPK', 'asal@gmail.com', 'Jl.Asal', 'user1.jpg', 'PPK0002'),
+('USR0004', 'dalas98', 'c5ebe0460ee34d946551ebb6c4999199', '123456789069', 'Yusuf Farhan', 'PPK', 'dalas98@gmail.com', 'Perum', 'user1.jpg', 'PPK0001'),
+('USR0005', 'tegarfm', '3ddeeab4529e3557fd663e618c7d090b', '12456789044', 'Tegar Ferdyla', 'PPK', 'tegarferdyla@gmail.com', 'Komplek DKI', 'user1.jpg', 'PPK0002');
 
 --
 -- Indexes for dumped tables

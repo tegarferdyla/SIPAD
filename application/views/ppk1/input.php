@@ -29,7 +29,7 @@
     <div class="widget-list">
         <div class="col-md-12 widget-holder">
             <div class="widget-bg">
-                    <form>
+                    <form id="interviewForm">
                     <div class="widget-body clearfix">
                         <h4 class="box-title mr-b-0">Kelompok 1</h4>
                         <hr>
@@ -170,7 +170,14 @@
                         </div>
                     </div>
                     <hr>
-                    <h4 class="box-title mr-b-0">Addendum II</h4><br>
+                    <div class="check">
+                        <h4 class="box-title mr-b-0">Addendum II
+                        <input type="checkbox" name="topic[]" value="addendumii" />
+                        </h4>
+                    </div>
+                    <br>
+                <div style="display: none;" data-topic="addendumii">
+                  <fieldset>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Bill of Quantity</label>
@@ -219,8 +226,16 @@
                             <input class="form-control" type="file" value="" name="file28">
                         </div>
                     </div>
+                  </fieldset>
+                </div>
                     <hr>
-                    <h4 class="box-title mr-b-0">Addendum III</h4><br>
+                    <div class="check">
+                        <h4 class="box-title mr-b-0">Addendum III
+                        <input type="checkbox" name="topic[]" value="addendumiii" />
+                        </h4>
+                    </div><br>
+                <div style="display: none;" data-topic="addendumiii">
+                  <fieldset>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Bill of Quantity</label>
@@ -269,8 +284,16 @@
                             <input class="form-control" type="file" value="" name="file36">
                         </div>
                     </div>
+                  </fieldset>
+                </div>
                     <hr>
-                    <h4 class="box-title mr-b-0">Addendum IV</h4><br>
+                    <div class="check">
+                        <h4 class="box-title mr-b-0">Addendum IV
+                        <input type="checkbox" name="topic[]" value="addendumiv" />
+                        </h4>
+                    </div>
+                <div style="display: none;" data-topic="addendumiv">
+                  <fieldset>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Bill of Quantity</label>
@@ -319,6 +342,8 @@
                             <input class="form-control" type="file" value="" name="file44">
                         </div>
                     </div>
+                  </fieldset>
+                </div>
                     <hr>
                     <h4 class="box-title mr-b-0">Kelompok 3</h4><br>
                     <div class="row">
@@ -465,4 +490,43 @@
 </div>
 </div>
 <!-- /.widget-list -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#interviewForm')
+            .find('input[type="checkbox"][name="topic[]"]')
+                .on('change', function() {
+                    var topic      = $(this).val(),
+                        $container = $('[data-topic="' + topic + '"]');
+                    $container.toggle();
+
+                    // var display = $container.css('display');
+                    // switch (true) {
+                    //     case ('css' == topic && 'block' == display):
+                    //         $('#interviewForm').bootstrapValidator('addField', 'css_frameworks[]', {
+                    //             validators: {
+                    //                 notEmpty: {
+                    //                     message: 'Please choose at least 1 framework'
+                    //                 }
+                    //             }
+                    //         });
+                    //         break;
+                    //     case ('css' == topic && 'none' == display):
+                    //         $('#interviewForm').bootstrapValidator('removeField', 'css_frameworks[]');
+                    //         break;
+                    //     case ('javascript' == topic && 'block' == display):
+                    //         $('#interviewForm').bootstrapValidator('addField', 'js_frameworks[]', {
+                    //             validators: {
+                    //                 notEmpty: {
+                    //                     message: 'The name of framework is required'
+                    //                 }
+                    //             }
+                    //         });
+                    //         break;
+                    //     case ('javascript' == topic && 'none' == display):
+                    //         $('#interviewForm').bootstrapValidator('removeField', 'js_frameworks[]');
+                    //         break;
+                    // }
+                });
+    });
+</script>
 </main>

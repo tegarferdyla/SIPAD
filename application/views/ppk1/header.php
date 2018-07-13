@@ -20,13 +20,19 @@
     <link href="<?php echo base_url('assets/css/style.css') ?>" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url('assets/vendors/material-icons/material-icons.css') ?>" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url('assets/vendors/mono-social-icons/monosocialiconsfont.css') ?>" rel="stylesheet" type="text/css">
-    <link href="<?php echo base_url('assets/vendors/feather-icons/feather.css') ?>" rel="stylesheet" type="text/css"> 
+    <link href="<?php echo base_url('assets/vendors/feather-icons/feather.css') ?>" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.css') ?>"/>
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrapValidator.css') ?>"/>
+
+    <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-1.10.2.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('assets/js/bootstrapValidator.js') ?>"></script>
     <!-- Head Libs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script data-pace-options='{ "ajax": false, "selectors": [ "img" ]}' src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
     <!-- CSS -->
    <!--  <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600%7CRoboto:400" rel="stylesheet" type="text/css">
-    
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.7.0/css/perfect-scrollbar.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" type="text/css">
@@ -34,9 +40,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/switchery/0.8.2/switchery.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.25/daterangepicker.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" type="text/css">
-    
-    
-    
+
+
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css" rel="stylesheet" type="text/css">
      <link href="<?php echo base_url('assets/css/style.css') ?>" rel="stylesheet" type="text/css">
     <!-- Head Libs -->
@@ -65,7 +71,7 @@
             </ul>
             <!-- /.navbar-left -->
             <!-- Search Form -->
-            <form class="navbar-search d-none d-sm-block" role="search"><i class="feather feather-search list-icon"></i> 
+            <form class="navbar-search d-none d-sm-block" role="search"><i class="feather feather-search list-icon"></i>
                 <input type="search" class="search-query" placeholder="Pencarian Dokumen ..."> <a href="javascript:void(0);" class="remove-focus"><i class="feather feather-x"></i></a>
             </form>
             <!-- /.navbar-search -->
@@ -86,7 +92,7 @@
                         <li><a href="#"><span><span class="align-middle">Pengaturan Akun</span></span></a>
                         </li>
                         <li><a href="#"><span><span class="align-middle">Ubah Password</span></span></a></li>
-                        <li><a href="<?php echo base_url('login?logout=signout');?>"><span><span class="align-middle">Keluar</span></span></a></li>
+                        <li><a href="<?php echo base_url('login?logout=signout'); ?>"><span><span class="align-middle">Keluar</span></span></a></li>
                 </li>
             </ul>
                     <!-- /.card-body -->

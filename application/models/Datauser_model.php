@@ -14,10 +14,9 @@
     // Tampil data user
     public function datauser()
     {
-      $this->db->select('*');
-      $this->db->from('user');
-      $query = $this->db->get();
+      $query = $this->db->query("select a.NIP, a.nama, b.nama as divisi, a.email, a.username, a.id_user from user a , ppk b WHERE a.id_ppk = b.id_ppk");
       return $query->result();
+      
     }
     //Model hitung jumlah user
     public function JumlahUser ()
@@ -54,6 +53,11 @@
       {
           $this->db->where('id_user',$id_user);
           return $this->db->update('user',$data_update);
+      }
+      public function hapususer($where, $table)
+      {
+          $this->db->where($where);
+          $this->db->delete($table);
       }
 
   }

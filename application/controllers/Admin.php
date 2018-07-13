@@ -106,7 +106,6 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 			$this->form_validation->set_rules('divisi', 'Divisi' , 'required');
 			$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 			$this->form_validation->set_rules('username','Username', 'required');
-			$this->form_validation->set_rules('password','Password' ,'trim|required|min_length[8]|alpha_numeric');
 
 			if ($this->form_validation->run() == FALSE) {
 				$this->load->view('admin/header');
@@ -121,18 +120,22 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 				$email 		= $this->input->post('email');
 				$alamat 	= $this->input->post('alamat');
 				$username   = $this->input->post('username');
-				$password 	= $this->input->post('password');
+				$this->load->library('generate_token');
+				$password 	= $this->generate_token->get_token(8);
+				// $password 	= $this->input->post('password');
 				$data = array
 				(
 					'id_user'		=> $this->Penomoran_model->IDDaftar(),
 					'nip'			=> $nip,
 					'nama'			=> $nama,
-					'divisi'		=> $divisi,
+					'bagian'		=> 'PPK',
 					'email'			=> $email,
 					'alamat'		=> $alamat,
 					'username'		=> $username,
 					'password'		=> md5($password),
-					'foto'			=> "user1.jpg"
+					// 'password'		=> $password,
+					'foto'			=> "user1.jpg",
+					'id_ppk'		=> $divisi
 				);
 				$resultchecknip = $this->Datauser_model->ceknipuser($nip);
 				if ($resultchecknip > 0) {
@@ -142,9 +145,38 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 				else {
 					$input = $this->Datauser_model->Tambahuser($data,'user');
 					if ($input > 0) {
+						$this->load->library('email');
+					    $config = array();
+					    $config['charset'] = 'utf-8';
+					    $config['useragent'] = 'Codeigniter';
+					    $config['protocol']= "smtp";
+					    $config['mailtype']= "html";
+					    $config['smtp_host']= "ssl://smtp.mail.yahoo.com";//pengaturan smtp
+					    $config['smtp_port']= "465";
+					    $config['smtp_timeout']= "400";
+					    $config['smtp_user']= "hans.inside@yahoo.com"; // isi dengan email kamu
+					    $config['smtp_pass']= "tangerang030298"; // isi dengan password kamu
+					    $config['crlf']="\r\n"; 
+					    $config['newline']="\r\n"; 
+					    $config['wordwrap'] = TRUE;
+					    //memanggil library email dan set konfigurasi untuk pengiriman email
+					   
+					    $this->email->initialize($config);
+					    //konfigurasi pengiriman
+					    $this->email->from($config['smtp_user']);
+					    $this->email->to($email);
+					    $this->email->subject("Notifikasi");
+					    $this->email->message(
+					     "Selamat , ".$nama." akun anda berhasil dibuat harap  login dengan password ".$password
+					    );
+				  
+				    if($this->email->send())
+				    {
 						$this->session->set_flashdata('berhasil','true');
-						redirect(base_url('admin/createuser'));
+						redirect(base_url('admin/createuser'));	
+						// echo "berhasil";
 					}
+						}
 					else{
 						$this->session->set_flashdata('gagal','true');
 						redirect(base_url('admin/createuser'));
@@ -283,6 +315,49 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 				redirect('admin/daftaruser');
 			}
 		}
-
+		public function hapususer ($id_user)
+		{
+			$where = array ('id_user' =>$id_user);
+			$result = $this->Datauser_model->hapususer($where, 'user');
+			$this->session->set_flashdata('deleteberhasil','true');
+			redirect(base_url('admin/daftaruser'));
+			
+		}
+		public function test()
+		{
+			$this->load->library('email');
+		    $config = array();
+		    $config['charset'] = 'utf-8';
+		    $config['useragent'] = 'Codeigniter';
+		    $config['protocol']= "smtp";
+		    $config['mailtype']= "html";
+		    $config['smtp_host']= "ssl://smtp.mail.yahoo.com";//pengaturan smtp
+		    $config['smtp_port']= "465";
+		    $config['smtp_timeout']= "400";
+		    $config['smtp_user']= "hans.inside@yahoo.com"; // isi dengan email kamu
+		    $config['smtp_pass']= "tangerang030298"; // isi dengan password kamu
+		    $config['crlf']="\r\n"; 
+		    $config['newline']="\r\n"; 
+		    $config['wordwrap'] = TRUE;
+		    //memanggil library email dan set konfigurasi untuk pengiriman email
+		   
+		    $this->email->initialize($config);
+		    //konfigurasi pengiriman
+		    $this->email->from($config['smtp_user']);
+		    $this->email->to('tegarferdyla@gmail.com');
+		    $this->email->subject("Notifikasi");
+		    $this->email->message(
+		     "terkirim"
+		    );
+	  
+	    if($this->email->send())
+	    {
+			echo "terkirim";
+		}
+	}
+	public function test2()
+	{
+		md5('');
+	}
 	}
 ?>
