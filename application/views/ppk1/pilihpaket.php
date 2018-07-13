@@ -2,7 +2,7 @@
     <!-- Page Title Area -->
     <div class="row page-title clearfix">
         <div class="page-title-left">
-            <h6 class="page-title-heading mr-0 mr-r-5">Daftar Paket <?php #echo ucwords($jenis[0]['jenis']) ?></h6>
+            <h6 class="page-title-heading mr-0 mr-r-5">Daftar Paket <?php echo ucwords($jenis[0]['jenis']) ?></h6>
         </div>
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">

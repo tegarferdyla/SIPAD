@@ -24,7 +24,7 @@ class Datatahun_model extends CI_Model {
 		$this->db->from('tbl_paket');
 		$this->db->where('id_tahun', $tahun);
 		$query = $this->db->get();
-		return $query->result();
+		return $query->row();
 	}
 
 }
