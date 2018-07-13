@@ -20,6 +20,16 @@
     <!-- =================================== -->
     <div class="widget-list row">
         <!-- /.widget-holder -->
+        <?php if ($this->session->flashdata('kosong')):?>
+            <div class="col-md-12">
+                <div class="alert-group">
+                    <div class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        Data yang anda pilih kosong harap isi terlebih dahulu
+                    </div>
+                </div>
+            </div>
+        <?php endif ?>
         <?php foreach ($get_tahun  as $u) { ?>
         <div class="widget-holder widget-sm col-md-3 widget-full-height">
             <a href="<?php echo site_url('ppk1/jenispaket/'.$u['id_tahun'])?>">
