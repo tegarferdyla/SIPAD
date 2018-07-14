@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 12, 2018 at 03:01 PM
--- Server version: 10.1.29-MariaDB
--- PHP Version: 7.2.0
+-- Host: localhost
+-- Generation Time: Jul 14, 2018 at 01:38 PM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 7.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -65,24 +65,122 @@ INSERT INTO `ppk` (`id_ppk`, `nama`, `keterangan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_dokumen`
+-- Table structure for table `tbl_addendumii`
 --
 
-CREATE TABLE `tbl_dokumen` (
-  `id_paket` varchar(7) NOT NULL,
-  `id_tahun` varchar(7) NOT NULL,
-  `nama_dokumen` varchar(50) NOT NULL,
-  `file` varchar(100) NOT NULL,
-  `jenis` enum('utama','pendukung') NOT NULL
+CREATE TABLE `tbl_addendumii` (
+  `id_addii` int(11) NOT NULL,
+  `id_paket` int(11) NOT NULL,
+  `addii_bal` int(11) NOT NULL,
+  `addii_boq` int(11) NOT NULL,
+  `addii_jdst` int(11) NOT NULL,
+  `addii_slp` int(11) NOT NULL,
+  `addii_kurva` int(11) NOT NULL,
+  `addii_shop` int(11) NOT NULL,
+  `addii_bakln` int(11) NOT NULL,
+  `addii_naii` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `tbl_dokumen`
+-- Table structure for table `tbl_addendumiii`
 --
 
-INSERT INTO `tbl_dokumen` (`id_paket`, `id_tahun`, `nama_dokumen`, `file`, `jenis`) VALUES
-('PKT0001', 'THN0001', 'Surat Sakti', 'surat.pdf', 'utama'),
-('PKT0001', 'THN0001', 'surat2', 'surat2.pdf', 'utama');
+CREATE TABLE `tbl_addendumiii` (
+  `id_addiii` varchar(7) NOT NULL,
+  `id_paket` varchar(7) NOT NULL,
+  `addiii_bal` varchar(100) NOT NULL,
+  `addiii_boq` varchar(100) NOT NULL,
+  `addiii_jdst` varchar(100) NOT NULL,
+  `addiii_slp` varchar(100) NOT NULL,
+  `addiii_kurva` varchar(100) NOT NULL,
+  `addiii_shop` varchar(100) NOT NULL,
+  `addiii_bakln` varchar(100) NOT NULL,
+  `addii_naiii` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_addendumiv`
+--
+
+CREATE TABLE `tbl_addendumiv` (
+  `id_addiv` varchar(7) NOT NULL,
+  `id_paket` varchar(7) NOT NULL,
+  `addiv_bal` varchar(100) NOT NULL,
+  `addiv_boq` varchar(100) NOT NULL,
+  `addiv_jdst` varchar(100) NOT NULL,
+  `addiv_slp` varchar(100) NOT NULL,
+  `addiv_kurva` varchar(100) NOT NULL,
+  `addiv_shop` varchar(100) NOT NULL,
+  `addiv_bakn` varchar(100) NOT NULL,
+  `addiv_naiv` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_doc1`
+--
+
+CREATE TABLE `tbl_doc1` (
+  `id_doc` varchar(7) NOT NULL,
+  `id_paket` varchar(7) NOT NULL,
+  `surat_md` varchar(100) NOT NULL,
+  `surat_mh` varchar(100) NOT NULL,
+  `surat_kl` varchar(100) NOT NULL,
+  `kesepakatan_bersama` varchar(100) NOT NULL,
+  `perjanjian_kerjasama` varchar(100) NOT NULL,
+  `sppbj` varchar(100) NOT NULL,
+  `spmk` varchar(100) NOT NULL,
+  `naskah_kontrak` varchar(100) NOT NULL,
+  `rencana_mk` varchar(100) NOT NULL,
+  `mc0_dd` varchar(100) NOT NULL,
+  `mc0_bal` varchar(100) NOT NULL,
+  `mc0_jdst` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_doc2`
+--
+
+CREATE TABLE `tbl_doc2` (
+  `id_doc2` varchar(7) NOT NULL,
+  `id_paket` varchar(7) NOT NULL,
+  `laporan_harian1` varchar(100) NOT NULL,
+  `laporan_mingguan1` varchar(100) NOT NULL,
+  `bulanan_kontraktor` varchar(100) NOT NULL,
+  `sertifikat_pembayaran` varchar(100) NOT NULL,
+  `laporan_harian2` varchar(100) NOT NULL,
+  `laporan_mingguan2` varchar(100) NOT NULL,
+  `bulanan_konsultan` varchar(100) NOT NULL,
+  `berita_apm` varchar(100) NOT NULL,
+  `berita_ascm` varchar(100) NOT NULL,
+  `provisional_sp` varchar(100) NOT NULL,
+  `provisional_bafv` varchar(100) NOT NULL,
+  `provisional_basv` varchar(100) NOT NULL,
+  `provisional_bastp` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_doc3`
+--
+
+CREATE TABLE `tbl_doc3` (
+  `id_doc3` varchar(7) NOT NULL,
+  `id_paket` varchar(7) NOT NULL,
+  `final_sp` varchar(100) NOT NULL,
+  `final_bafv` varchar(100) NOT NULL,
+  `final_basv` varchar(100) NOT NULL,
+  `final_bastp` varchar(100) NOT NULL,
+  `final_dokumentasi` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -113,6 +211,24 @@ INSERT INTO `tbl_paket` (`id_paket`, `nama_paket`, `jenis`, `deskripsi`, `input_
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_pascamc0`
+--
+
+CREATE TABLE `tbl_pascamc0` (
+  `id_pasca` varchar(7) NOT NULL,
+  `id_paket` varchar(7) NOT NULL,
+  `pasca_boq` varchar(100) NOT NULL,
+  `pasca_jdst` varchar(100) NOT NULL,
+  `pasca_slp` varchar(100) NOT NULL,
+  `pasca_kurva` varchar(100) NOT NULL,
+  `pasca_shop` varchar(100) NOT NULL,
+  `pasca_bakn` varchar(100) NOT NULL,
+  `pasca_nai` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_tahun`
 --
 
@@ -132,7 +248,7 @@ INSERT INTO `tbl_tahun` (`id_tahun`, `nama_tahun`, `deskripsi`, `input_by`, `id_
 ('THN0001', '2014', 'Tahun 2014', 'Tegar Ferdyla M', 'PPK0001'),
 ('THN0002', '2015', 'Tahun 2015', 'Tegar Ferdyla M', 'PPK0001'),
 ('THN0003', '2014', 'Tahun 2014', 'Hendra', 'PPK0002'),
-('THN0004', '2016', 'Tahun 2016', 'Tegar Ferdyla M', 'PPK0001');
+('THN0004', '2090', 'ini', 'Tegar Ferdyla M', 'PPK0001');
 
 -- --------------------------------------------------------
 
@@ -181,11 +297,40 @@ ALTER TABLE `ppk`
   ADD PRIMARY KEY (`id_ppk`);
 
 --
--- Indexes for table `tbl_dokumen`
+-- Indexes for table `tbl_addendumii`
 --
-ALTER TABLE `tbl_dokumen`
-  ADD KEY `id_paket` (`id_paket`),
-  ADD KEY `id_tahun` (`id_tahun`);
+ALTER TABLE `tbl_addendumii`
+  ADD PRIMARY KEY (`id_addii`);
+
+--
+-- Indexes for table `tbl_addendumiii`
+--
+ALTER TABLE `tbl_addendumiii`
+  ADD PRIMARY KEY (`id_addiii`);
+
+--
+-- Indexes for table `tbl_addendumiv`
+--
+ALTER TABLE `tbl_addendumiv`
+  ADD PRIMARY KEY (`id_addiv`);
+
+--
+-- Indexes for table `tbl_doc1`
+--
+ALTER TABLE `tbl_doc1`
+  ADD PRIMARY KEY (`id_doc`);
+
+--
+-- Indexes for table `tbl_doc2`
+--
+ALTER TABLE `tbl_doc2`
+  ADD PRIMARY KEY (`id_doc2`);
+
+--
+-- Indexes for table `tbl_doc3`
+--
+ALTER TABLE `tbl_doc3`
+  ADD PRIMARY KEY (`id_doc3`);
 
 --
 -- Indexes for table `tbl_paket`
@@ -193,6 +338,12 @@ ALTER TABLE `tbl_dokumen`
 ALTER TABLE `tbl_paket`
   ADD PRIMARY KEY (`id_paket`),
   ADD KEY `id_tahun` (`id_tahun`);
+
+--
+-- Indexes for table `tbl_pascamc0`
+--
+ALTER TABLE `tbl_pascamc0`
+  ADD PRIMARY KEY (`id_pasca`);
 
 --
 -- Indexes for table `tbl_tahun`
