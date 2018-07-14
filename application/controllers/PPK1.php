@@ -35,7 +35,7 @@ class PPK1 extends CI_Controller {
 		$ppk = array("nama" => $ppk[0]['nama']);
 		$this->load->view('ppk1/sidebar',$ppk);
 		
-		$this->load->view('ppk1/input');
+		
 		$this->load->view('ppk1/footer');
 	}
 	public function inputtahun() {
@@ -182,8 +182,8 @@ class PPK1 extends CI_Controller {
 			}
 		}
 	}
-
-	public function jenispaket($tahun) {
+	public function jenispaket($tahun) 
+	{
 		$data = $this->Datatahun_model->cektahun($tahun);
 		
 		// echo $data->id_tahun;
@@ -205,7 +205,8 @@ class PPK1 extends CI_Controller {
 		}
 
 	}
-	public function pilihpaket($tahun, $jenis) {
+	public function pilihpaket($tahun, $jenis) 
+	{
 		$id_ppk = $this->session->userdata('id_ppk');
 		$data['jenis'] = $this->Datapaket_model->cekjenis($jenis, $tahun, $id_ppk);
 		if ($data['jenis']==NULL) {
@@ -224,29 +225,20 @@ class PPK1 extends CI_Controller {
 		}
 
 	}
-// =======
-// 		public function pilihpaket($tahun,$jenis) 
-// 		{
-// 			$id_ppk = $this->session->userdata('id_ppk');
-// 			$data['jenis'] = $this->Datapaket_model->cekjenis($jenis,$tahun,$id_ppk);
-// 			// if ($data ) {
-// 			// 	echo "data tidak ada";
-// 			// 	// $this->load->view('ppk1/header');
-// 			// 	// $this->load->view('ppk1/sidebar');
-// 			// 	// $this->load->view('ppk1/pilihpaket');
-// 			// 	// $this->load->view('ppk1/footer');
-// 			// }else{
-// 			// 	echo "data ada";
-// 			$this->load->view('ppk1/header');
-// 			$this->load->view('ppk1/sidebar');
-// 			$this->load->view('ppk1/pilihpaket',$data);
-// 			$this->load->view('ppk1/footer');
-// 			// }
-// 			// echo "<pre>";
-// 			// print_r($data);
-// 			// echo "</pre>";
-// 		}
-// 
+
+	public function inputdokutama()
+	{
+		$this->load->view('ppk1/header');
+
+		$id_ppk = $this->session->userdata('id_ppk');
+		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+		$ppk = array("nama" => $ppk[0]['nama']);
+		$this->load->view('ppk1/sidebar',$ppk);
+
+		$this->load->view('ppk1/input');
+		$this->load->view('ppk1/footer');
+	}
+
 
 }
 ?>
