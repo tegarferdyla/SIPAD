@@ -39,6 +39,14 @@ class Datatahun_model extends CI_Model {
 		$query = $this->db->get();
 		return $query->row();
 	}
+	public function validasitahun($tahun)
+	{
+		$this->db->select('*');
+        $this->db->from('tbl_tahun');
+        $this->db->where('nama_tahun',$tahun);
+        $query = $this->db->get();
+        return $query->num_rows();
+	}
 	public function hapustahun($where, $table)
 	{
 		$this->db->where($where);

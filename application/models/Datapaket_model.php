@@ -11,6 +11,12 @@
 		{
 			parent::__construct();
 		}
+
+		public function Tambahpaket($data, $table) 
+		{
+		return $this->db->insert($table, $data);
+		}
+
 		public function cekjenis($jenis,$tahun,$id_ppk)
 		{
 			$this->db->select('*');

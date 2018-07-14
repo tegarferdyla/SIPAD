@@ -56,7 +56,7 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Kode Tahun</th>
-                                            <th>Nama PPK</th>
+                                            <th>Nama Tahun</th>
                                             <th>Keterangan</th>
                                             <th>Input By</th>
                                             <th>Action</th>
