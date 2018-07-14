@@ -279,6 +279,10 @@ class PPK1 extends CI_Controller {
 			redirect(base_url('ppk1/inputpaket'));
 		}
 	}
+	public function FunctionName($value='')
+	{
+		# code...
+	}
 
 
 }
