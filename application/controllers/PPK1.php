@@ -18,27 +18,45 @@ class PPK1 extends CI_Controller {
 	public function index() {
 		$id_ppk = $this->session->userdata('id_ppk');
 		$this->load->view('ppk1/header');
-		$this->load->view('ppk1/sidebar');
+
+		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+		$ppk = array("nama" => $ppk[0]['nama']);
+		$this->load->view('ppk1/sidebar',$ppk);
+
 		$data['get_tahun'] = $this->Datatahun_model->datatahun($id_ppk);
 		$this->load->view('ppk1/dashboard', $data);
 		$this->load->view('ppk1/footer');
 	}
 	public function input() {
+		$id_ppk = $this->session->userdata('id_ppk');
 		$this->load->view('ppk1/header');
-		$this->load->view('ppk1/sidebar');
+
+		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+		$ppk = array("nama" => $ppk[0]['nama']);
+		$this->load->view('ppk1/sidebar',$ppk);
+		
 		$this->load->view('ppk1/input');
 		$this->load->view('ppk1/footer');
 	}
 	public function inputtahun() {
+		$id_ppk = $this->session->userdata('id_ppk');
 		$this->load->view('ppk1/header');
-		$this->load->view('ppk1/sidebar');
+
+		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+		$ppk = array("nama" => $ppk[0]['nama']);
+		$this->load->view('ppk1/sidebar',$ppk);
+		
 		$this->load->view('ppk1/inputtahun');
 		$this->load->view('ppk1/footer');
 	}
 	public function daftartahun() {
 		$id_ppk = $this->session->userdata('id_ppk');
 		$this->load->view('ppk1/header');
-		$this->load->view('ppk1/sidebar');
+
+		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+		$ppk = array("nama" => $ppk[0]['nama']);
+		$this->load->view('ppk1/sidebar',$ppk);
+		
 		$data['get_tahun'] = $this->Datatahun_model->datatahun($id_ppk);
 		$this->load->view('ppk1/daftartahun', $data);
 		$this->load->view('ppk1/footer');
@@ -59,7 +77,12 @@ class PPK1 extends CI_Controller {
 	{
 		$id_ppk = $this->session->userdata('id_ppk');
 		$this->load->view('ppk1/header');
-		$this->load->view('ppk1/sidebar');
+
+		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+		$ppk = array("nama" => $ppk[0]['nama']);
+		$this->load->view('ppk1/sidebar',$ppk);
+		
+
 		$data = array ('get_ppk' => $this->Datatahun_model->datatahun($id_ppk));
 		$tahun = $this->Datatahun_model->GetWhereTahun("where id_tahun ='$id_tahun'");
 		$data = array (
@@ -98,24 +121,39 @@ class PPK1 extends CI_Controller {
 			}
 	}
 	public function profile() {
+		$id_ppk = $this->session->userdata('id_ppk');
+
 		$this->load->view('ppk1/header');
-		$this->load->view('ppk1/sidebar');
+
+		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+		$ppk = array("nama" => $ppk[0]['nama']);
+		$this->load->view('ppk1/sidebar',$ppk);
+
 		$this->load->view('ppk1/profile');
 		$this->load->view('ppk1/footer');
 	}
 	public function changepassword() {
+		$id_ppk = $this->session->userdata('id_ppk');
 		$this->load->view('ppk1/header');
-		$this->load->view('ppk1/sidebar');
+		//Untuk Side Bar
+		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+		$ppk = array("nama" => $ppk[0]['nama']);
+		$this->load->view('ppk1/sidebar',$ppk);
+		
 		$this->load->view('ppk1/changepassword');
 		$this->load->view('ppk1/footer');
 	}
-
 	public function tambahtahun() {
 		$this->form_validation->set_rules('tahun', 'Nama Tahun', 'trim|required');
 		$id_ppk = $this->session->userdata('id_ppk');
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('ppk1/header');
-			$this->load->view('ppk1/sidebar');
+
+			$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+			$ppk = array("nama" => $ppk[0]['nama']);
+			$this->load->view('ppk1/sidebar',$ppk);
+		
+			
 			$this->load->view('ppk1/inputtahun');
 			$this->load->view('ppk1/footer');
 		} else {
@@ -156,7 +194,12 @@ class PPK1 extends CI_Controller {
 		}else{
 		// echo "isi";
 			$this->load->view('ppk1/header');
-			$this->load->view('ppk1/sidebar');
+
+			$id_ppk = $this->session->userdata('id_ppk');
+			$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+			$ppk = array("nama" => $ppk[0]['nama']);
+			$this->load->view('ppk1/sidebar',$ppk);
+		
 			$this->load->view('ppk1/jenispaket',$data);
 			$this->load->view('ppk1/footer');
 		}
@@ -170,7 +213,11 @@ class PPK1 extends CI_Controller {
 			redirect('ppk1/jenispaket/'.$tahun);
 		}else{
 			$this->load->view('ppk1/header');
-			$this->load->view('ppk1/sidebar');
+
+			$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+			$ppk = array("nama" => $ppk[0]['nama']);
+			$this->load->view('ppk1/sidebar',$ppk);
+
 			$this->load->view('ppk1/pilihpaket', $data);
 			$this->load->view('ppk1/footer');
 			// echo "isi";

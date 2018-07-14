@@ -14,6 +14,8 @@
     <script src="<?php echo base_url('node_modules/jquery-tabledit/jquery.tabledit.min.js') ?>"></script>
     <script src="<?php echo base_url('assets/js/theme.js') ?>"></script>
     <script src="<?php echo base_url('assets/js/custom.js') ?>"></script>
+
+     <script type="text/javascript" src="<?php echo base_url('assets/js/bootstrapValidator.js') ?>"></script>
   
 </body>
 
