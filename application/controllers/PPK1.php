@@ -36,11 +36,66 @@ class PPK1 extends CI_Controller {
 		$this->load->view('ppk1/footer');
 	}
 	public function daftartahun() {
+		$id_ppk = $this->session->userdata('id_ppk');
 		$this->load->view('ppk1/header');
 		$this->load->view('ppk1/sidebar');
-		$data['get_tahun'] = $this->Datatahun_model->datatahun();
+		$data['get_tahun'] = $this->Datatahun_model->datatahun($id_ppk);
 		$this->load->view('ppk1/daftartahun', $data);
 		$this->load->view('ppk1/footer');
+	}
+	public function hapustahun($id_tahun)
+	{
+		$id_ppk =  $this->session->userdata('id_ppk');
+		$data['get_tahun'] = $this->Datatahun_model->datatahun($id_ppk);
+		$where = array(
+					'id_tahun' => $id_tahun,
+					'id_ppk' => $id_ppk
+				);
+		$result = $this->Datatahun_model->hapustahun($where, 'tbl_tahun');
+		$this->session->set_flashdata('deleteberhasil','true');
+		redirect(base_url('ppk1/daftartahun'));
+	}
+	public function edittahun($id_tahun)
+	{
+		$id_ppk = $this->session->userdata('id_ppk');
+		$this->load->view('ppk1/header');
+		$this->load->view('ppk1/sidebar');
+		$data = array ('get_ppk' => $this->Datatahun_model->datatahun($id_ppk));
+		$tahun = $this->Datatahun_model->GetWhereTahun("where id_tahun ='$id_tahun'");
+		$data = array (
+				"id_tahun" => $tahun[0]['id_tahun'],
+				"nama_tahun" => $tahun[0]['nama_tahun'],
+				"deskripsi" => $tahun[0]['deskripsi'],
+			);
+		$this->load->view('ppk1/edittahun', $data);
+		$this->load->view('ppk1/footer');
+	}
+	public function updatetahun()
+	{
+		
+		$id_tahun = $this->input->post('id_tahun');
+		$nama_tahun = $this->input->post('nama_tahun');
+		$deskripsi = $this->input->post('deskripsi');
+		$input_by = $this->session->userdata('nama');
+		$id_ppk = $this->session->userdata('id_ppk');
+
+		$data_update = array (
+						'id_tahun' => $id_tahun,
+						'nama_tahun' => $nama_tahun,
+						'deskripsi' => $deskripsi,
+						'input_by' => $input_by,
+						'id_ppk' =>$id_ppk
+						);
+		$where = array ('id_tahun' => $id_tahun);
+		$result = $this->Datatahun_model->UpdateDataTahun('tbl_tahun', $data_update, $where);
+		if ($result > 0) {
+				$this->session->set_flashdata('updateberhasil','true');
+				redirect('ppk1/daftartahun');
+			}
+			else {
+				$this->session->set_flashdata('updategagal','true');
+				redirect('ppk1/daftartahun');
+			}
 	}
 	public function profile() {
 		$this->load->view('ppk1/header');

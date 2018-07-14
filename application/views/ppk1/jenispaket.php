@@ -17,22 +17,25 @@
     <!-- =================================== -->
     <!-- Different data widgets ============ -->
     <!-- =================================== -->
+
     <div class="row">
         <div class="col-sm-3 col-md-4">
         </div>
         <div class="col-sm-3 col-md-4">
             <center><p class="page-title-description mr-0 d-none d-md-inline-block" style="font-size: 40px">PILIH JENIS PAKET</p></center>
-            <?php if ($this->session->flashdata('kosong')):?>
+        </div>
+    </div>
+    <div class="row">
+         <?php if ($this->session->flashdata('kosong')):?>
             <div class="col-md-12">
                 <div class="alert-group">
-                    <div class="alert alert-danger alert-dismissable">
+                    <div class="alert alert-warning alert-dismissable">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                        Data yang anda pilih kosong harap isi terlebih dahulu
+                        Data paket yang anda pilih tidak tersedia harap daftarkan paket anda terlebih dahulu
                     </div>
                 </div>
             </div>
         <?php endif ?>
-        </div>
     </div>
 <!-- Blog Posts -->
     <div class="col-md-12 widget-holder">

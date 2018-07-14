@@ -36,17 +36,17 @@
                                         <?php if ($this->session->flashdata('updateberhasil')): ?>
                                         <div class="alert alert-icon alert-success border-success alert-dismissible fade show" role="alert">
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                                            </button> <i class="material-icons list-icon">check_circle</i>  <strong>Well done!</strong> Tahun berhasil di update.
+                                            </button> <i class="material-icons list-icon">check_circle</i>  <strong>Well done!</strong>Data Tahun berhasil di update.
                                         </div>
                                         <?php elseif ($this->session->flashdata('deleteberhasil')): ?>
                                         <div class="alert alert-icon alert-success border-success alert-dismissible fade show" role="alert">
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                                            </button> <i class="material-icons list-icon">check_circle</i>  <strong>Well done!</strong> Tahun berhasil di Delete.
+                                            </button> <i class="material-icons list-icon">check_circle</i>  <strong>Well done!</strong>Data Tahun berhasil di Delete.
                                         </div>
                                         <?php elseif ($this->session->flashdata('updategagal')): ?>
                                          <div class="alert alert-icon alert-danger border-danger alert-dismissible fade show" role="alert">
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                                            </button> <i class="material-icons list-icon">not_interested</i>  <strong>Oh snap!</strong> Tahun gagal di update.
+                                            </button> <i class="material-icons list-icon">not_interested</i>  <strong>Oh snap!</strong>Data Tahun gagal di update.
                                         </div>
                                         <?php endif ?>
                                     </div>
@@ -74,8 +74,8 @@
                                             <td><?php echo $u['deskripsi']; ?></td>
                                             <td><?php echo $u['input_by']; ?></td>
                                             <td>
-                                                <a href="<?php echo base_url()."admin/editppk/".$u['id_tahun'];?>"><i class="list-icon feather feather-edit" title="Edit"></i></a> &nbsp;
-                                                <a onclick="return confirm('Apa anda yakin ingin menghapus data ini?')" href="<?php echo base_url()."admin/hapusppk/".$u['id_tahun']; ?>"><i class="list-icon text-danger feather feather-trash-2" title="Delete"></i></a>
+                                                <a href="<?php echo base_url()."ppk1/edittahun/".$u['id_tahun'];?>"><i class="list-icon feather feather-edit" title="Edit"></i></a> &nbsp;
+                                                <a onclick="return confirm('Apa anda yakin ingin menghapus data ini?')" href="<?php echo base_url()."ppk1/hapustahun/".$u['id_tahun']; ?>"><i class="list-icon text-danger feather feather-trash-2" title="Delete"></i></a>
                                             </td>
                                         </tr>
                                         <?php 

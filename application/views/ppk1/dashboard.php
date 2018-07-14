@@ -23,9 +23,9 @@
         <?php if ($this->session->flashdata('kosong')):?>
             <div class="col-md-12">
                 <div class="alert-group">
-                    <div class="alert alert-danger alert-dismissable">
+                    <div class="alert alert-warning alert-dismissable">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                        Data yang anda pilih kosong harap isi terlebih dahulu
+                        Data paket yang anda pilih tidak tersedia harap daftarkan paket anda terlebih dahulu
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                 <div class="widget-body">
                     <div class="counter-w-info media">
                         <div class="media-body">
-                            <p class="text-muted mr-b-5"><?php echo $u['deskripsi']; ?></p><span class="counter-title color-info"><span class="counter">10</span></span>
+                            <p class="text-muted mr-b-5"><?php echo $u['deskripsi']; ?></p><span class="counter-title color-info"><span class="counter"><?php echo $u['nama_tahun']; ?></span></span>
                             <!-- /.counter-title -->
                             <div class="progress" style="width: 70%; position: relative; top: 25px">
                                 <div class="progress-bar bg-info" style="width: 66%" role="progressbar"><span class="sr-only">20% Complete</span>

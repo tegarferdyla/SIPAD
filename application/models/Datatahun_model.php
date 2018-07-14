@@ -7,17 +7,30 @@ class Datatahun_model extends CI_Model {
 		parent::__construct();
 	}
 	//Fungsi insert tahun
-	public function Tambahtahun($data, $table) {
+	public function Tambahtahun($data, $table) 
+	{
 		return $this->db->insert($table, $data);
 	}
 	// Tampil data PPK di LOV
-	public function datatahun($id_ppk) {
+	public function datatahun($id_ppk) 
+	{
 		$this->db->select('*');
 		$this->db->from('tbl_tahun');
 		$this->db->where('id_ppk', $id_ppk);
 		$query = $this->db->get();
 		return $query->result_array();
 	}
+	public function GetWhereTahun($where="")
+	{
+     	$res=$this->db->query("SELECT * FROM tbl_tahun ".$where);
+        return $res->result_array();
+     }
+     public function UpdateDataTahun($tableName,$data_update,$where)
+     {
+     	$res=$this->db->update($tableName,$data_update,$where);
+        return $res;
+     }
+
 	//Cek Tahun
 	public function cektahun($tahun) {
 		$this->db->select('*');
@@ -25,6 +38,11 @@ class Datatahun_model extends CI_Model {
 		$this->db->where('id_tahun', $tahun);
 		$query = $this->db->get();
 		return $query->row();
+	}
+	public function hapustahun($where, $table)
+	{
+		$this->db->where($where);
+		$this->db->delete($table);
 	}
 
 }
