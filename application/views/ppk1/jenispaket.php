@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="row">
-         <?php if ($this->session->flashdata('kosong')):?>
+         <?php if ($this->session->flashdata('kosong')): ?>
             <div class="col-md-12">
                 <div class="alert-group">
                     <div class="alert alert-warning alert-dismissable">
@@ -35,7 +35,7 @@
                     </div>
                 </div>
             </div>
-        <?php endif ?>
+        <?php endif?>
     </div>
 <!-- Blog Posts -->
     <div class="col-md-12 widget-holder">
@@ -48,13 +48,13 @@
                                         <div class="blog-post blog-post-card text-center">
                                             <figure>
                                                 <a href="">
-                                                    <!-- <img src="<?php echo base_url("assets/demo/cards/jembatan1.jpg") ?>" alt="Blog Post 1"> -->
+                                                    <img src="<?php echo base_url("assets/demo/cards/jembatan1.jpg") ?>" alt="Blog Post 1">
                                                 </a>
                                             </figure>
                                             <header>
                                                 <h4 class="h3 fw-300 m-1 blog-post-title"><a href="">Pilih Kontraktual</a></h4>
                                             </header>
-                                            <footer class="mr-t-30"><a href="<?php echo site_url('ppk1/pilihpaket/'.$id_tahun.'/kontraktual') ?>" class="btn btn-outline-primary btn-rounded">Klik!</a>
+                                            <footer class="mr-t-30"><a href="<?php echo site_url('ppk1/pilihpaket/' . $id_tahun . '/kontraktual') ?>" class="btn btn-outline-primary btn-rounded">Klik!</a>
                                             </footer>
                                         </div>
                                         <!-- /.blog-post -->
@@ -71,7 +71,7 @@
                                             <header>
                                                 <h4 class="h3 fw-300 m-1 blog-post-title"><a href="ui-cards.html#">Pilih Suakelola</a></h4>
                                             </header>
-                                            <footer class="mr-t-30"><a href="<?php echo site_url('ppk1/pilihpaket/'.$id_tahun.'/suakelola') ?>" class="btn btn-outline-primary btn-rounded">Klik!</a>
+                                            <footer class="mr-t-30"><a href="<?php echo site_url('ppk1/pilihpaket/' . $id_tahun . '/suakelola') ?>" class="btn btn-outline-primary btn-rounded">Klik!</a>
                                             </footer>
                                         </div>
                                         <!-- /.blog-post -->
