@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Jul 2018 pada 08.30
+-- Waktu pembuatan: 15 Jul 2018 pada 21.03
 -- Versi server: 10.1.28-MariaDB
 -- Versi PHP: 7.1.10
 
@@ -145,13 +145,6 @@ CREATE TABLE `tbl_doc1` (
   `mc0_jdst` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data untuk tabel `tbl_doc1`
---
-
-INSERT INTO `tbl_doc1` (`id_doc`, `id_paket`, `surat_md`, `surat_mh`, `surat_kl`, `kesepakatan_bersama`, `perjanjian_kerjasama`, `sppbj`, `spmk`, `naskah_kontrak`, `rencana_mk`, `bcp`, `mc0_dd`, `mc0_bal`, `mc0_jdst`) VALUES
-('DOC0001', 'PKT0001', '263-561-1-SM.pdf', '1307.3061.pdf', '1601-3760-1-PB.pdf', 'Ekivalensi-Matakuliah.pdf', 'E-Learning 1.PDF', 'E-Learning 2.PDF', 'E-Learning 3.PDF', 'E-Learning 4.PDF', 'E-Learning 5.PDF', 'Jurnal Rapid (1).pdf', 'Jurnal Rapid (2).pdf', 'Jurnal Rapid 13.15.pdf', 'Jurnal-RAPID.pdf');
-
 -- --------------------------------------------------------
 
 --
@@ -213,7 +206,7 @@ CREATE TABLE `tbl_paket` (
 --
 
 INSERT INTO `tbl_paket` (`id_paket`, `nama_paket`, `jenis`, `deskripsi`, `input_by`, `id_tahun`, `id_ppk`) VALUES
-('PKT0001', 'Konsultan Supervisi Pembangunan Sanitasi Terpadu Kawasan Strategis 3 Kabupaten Bima', 'kontraktual', '', 'Tegar Ferdyla', 'THN0001', 'PPK0001'),
+('PKT0001', 'Konsultan Supervisi Pembangunan Sanitasi Terpadu Kawasan Strategis 3 Kabupaten Bima', 'kontraktual', '', 'Tegar Ferdyla M', 'THN0001', 'PPK0001'),
 ('PKT0002', 'Coba', 'suakelola', '', 'Tegar Ferdyla', 'THN0003', 'PPK0002'),
 ('PKT0004', 'Suakelola1', 'suakelola', '', 'Teteh', 'THN0002', 'PPK0001'),
 ('PKT0005', 'suakelola', 'suakelola', '', 'Tegar', 'THN0001', 'PPK0001'),
