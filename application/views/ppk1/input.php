@@ -31,7 +31,7 @@
             <div class="widget-bg">
                     <form id="interviewForm">
                     <div class="widget-body clearfix">
-                        <h4 class="box-title mr-b-0">1</h4>
+                        <button type="button" class="btn btn-info">I</button><br>
                         <hr>
                         <div class="row">
                             <div class="form-group col-md-6">
@@ -67,7 +67,7 @@
                 </div>
                 <div class="widget-body clearfix">
                     <hr>
-                    <h4 class="box-title mr-b-0">Kelompok 2</h4><br>
+                    <button type="button" class="btn btn-info">II</button><br><br>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">SPBJ</label>
@@ -102,7 +102,7 @@
                 </div>
                 <div class="widget-body clearfix">
                     <hr>
-                    <h4 class="box-title mr-b-0">MC0</h4><br>
+                    <button type="button" class="btn btn-info">MC0</button><br><br>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Design Drawing</label>
@@ -125,7 +125,7 @@
                 </div>
                 <div class="widget-body clearfix">
                     <hr>
-                    <h4 class="box-title mr-b-0">Hasil Klarifikasi Pasca MC0</h4><br>
+                    <button type="button" class="btn btn-info">Hasil Klarifikasi PASCA MC0</button><br><br>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Bill of Quantity</label>
@@ -171,9 +171,9 @@
                     </div>
                     <hr>
                     <div class="check">
-                        <h4 class="box-title mr-b-0">Addendum II
-                        <input type="checkbox" name="topic[]" value="addendumii" />
-                        </h4>
+                        <button type="button" class="btn btn-info">Addendum II</button>
+                        <input type="checkbox" name="topic[]" value="addendumii"/>
+                        <br>
                     </div>
                     <br>
                 <div style="display: none;" data-topic="addendumii">
@@ -230,9 +230,9 @@
                 </div>
                     <hr>
                     <div class="check">
-                        <h4 class="box-title mr-b-0">Addendum III
+                        <button type="button" class="btn btn-info">Addendum III</button>
                         <input type="checkbox" name="topic[]" value="addendumiii" />
-                        </h4>
+                       <br>
                     </div><br>
                 <div style="display: none;" data-topic="addendumiii">
                   <fieldset>
@@ -288,9 +288,9 @@
                 </div>
                     <hr>
                     <div class="check">
-                        <h4 class="box-title mr-b-0">Addendum IV
+                        <button type="button" class="btn btn-info">Addendum IV</button>
                         <input type="checkbox" name="topic[]" value="addendumiv" />
-                        </h4>
+                        <br>
                     </div>
                 <div style="display: none;" data-topic="addendumiv">
                   <fieldset>
@@ -345,7 +345,7 @@
                   </fieldset>
                 </div>
                     <hr>
-                    <h4 class="box-title mr-b-0">Kelompok 3</h4><br>
+                    <button type="button" class="btn btn-info">III</button><br><br>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Laporan Harian</label>
@@ -371,7 +371,7 @@
                         </div>
                     </div>
                     <hr>
-                    <h4 class="box-title mr-b-0">Kelompok 4</h4><br>
+                    <button type="button" class="btn btn-info">IV</button><br><br>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Laporan Harian</label>
@@ -392,7 +392,7 @@
                         </div>
                     </div>
                     <hr>
-                    <h4 class="box-title mr-b-0">Kelompok 5</h4><br>
+                    <button type="button" class="btn btn-info">V</button><br><br>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Berita Acara Pengujian Material</label>
@@ -401,7 +401,7 @@
                         </div>
                     </div>
                     <hr>
-                    <h4 class="box-title mr-b-0">Kelompok 6</h4><br>
+                    <button type="button" class="btn btn-info">VI</button><br><br>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Berita Acara Show Cause Meeting (SCM)</label>
@@ -410,7 +410,7 @@
                         </div>
                     </div>
                     <hr>
-                    <h4 class="box-title mr-b-0">Provisional Hand Over (PHO)</h4><br>
+                    <button type="button" class="btn btn-info">Provisonal Hand Over (PHO)</button><br><br>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Surat Pemohonan PHO</label>
@@ -436,7 +436,7 @@
                         </div>
                     </div>
                     <hr>
-                    <h4 class="box-title mr-b-0">Final Hand Over (PHO)</h4><br>
+                    <button type="button" class="btn btn-info">Final Hand OVER (FHO)</button><br><br>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Surat Pemohonan FHO</label>
@@ -462,7 +462,7 @@
                         </div>
                     </div>
                     <hr>
-                    <h4 class="box-title mr-b-0">Kelompok 7</h4><br>
+                    <button type="button" class="btn btn-info">VII</button><br><br>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Dokumentasi</label>
