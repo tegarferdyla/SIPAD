@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="widget-body clearfix">
                                     <hr>
-                                    <h4 class="box-title mr-b-0">Kelompok 2</h4><br>
+                                    <h4 class="btn btn-info">Kelompok 2</h4><br>
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">SPBJ</label>
