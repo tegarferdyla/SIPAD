@@ -17,6 +17,7 @@ class Datatahun_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('tbl_tahun');
 		$this->db->where('id_ppk', $id_ppk);
+		$this->db->order_by('nama_tahun', 'ASC');
 		$query = $this->db->get();
 		return $query->result_array();
 	}
@@ -34,7 +35,7 @@ class Datatahun_model extends CI_Model {
 	//Cek Tahun
 	public function cektahun($tahun) {
 		$this->db->select('*');
-		$this->db->from('tbl_paket');
+		$this->db->from('tbl_tahun');
 		$this->db->where('id_tahun', $tahun);
 		$query = $this->db->get();
 		return $query->row();
