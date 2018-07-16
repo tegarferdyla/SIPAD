@@ -65,6 +65,7 @@ class Login extends CI_Controller
 				'status' => "login",
 				'bagian' => $result['bagian'],
 				'divisi' => $result['divisi'],
+				'id_user' => $result['id_user'],
 				'id_ppk' => $result['id_ppk']
 			);
 			$this->session->set_userdata($data_session);
