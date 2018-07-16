@@ -28,7 +28,7 @@
                             </div>
                         </div>
                         <div class="row">
-                                  
+
                         </div>
                         <div class="accordion" id="accordion-3" role="tablist" aria-multiselectable="true">
                             <?php foreach ($jenis as $u) {?>
@@ -39,13 +39,13 @@
                                 <div id="<?php echo $u['id_paket'] ?>" class="card-collapse collapse" role="tabpanel" aria-labelledby="heading4">
                                     <div class="card-body">
                                         <ul class="list-group">
-                                            <a href="<?php echo site_url('ppk1/inputdokutama/'.$u['id_paket']) ?>"><li class="list-group-item">Dokumen Utama</li></a>
-                                            <a href=""><li class="list-group-item">Dokumen Pendukung</li></a>
+                                            <a href="<?php echo site_url('ppk1/inputdokutama.'.$u['id_paket']) ?>"><li class="list-group-item">Dokumen Utama</li></a>
+                                            <a href="<?php echo site_url('ppk1/inputdokpendukung') ?>"><li class="list-group-item">Dokumen Pendukung</li></a>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <?php } ?>
+                            <?php }?>
                         </div>
                                 <!-- /.panel-group -->
                 </div>
