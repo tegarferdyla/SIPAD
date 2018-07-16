@@ -362,6 +362,20 @@ class PPK1 extends CI_Controller {
 			redirect(base_url('ppk1/inputpaket'));
 		}
 	}
+	public function viewdocutama ($id_paket)
+	{
+		$id_ppk = $this->session->userdata('id_ppk');
+		$this->load->view('ppk1/header');
+
+		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+		$ppk = array("nama" => $ppk[0]['nama']);
+		$this->load->view('ppk1/sidebar', $ppk);
+
+		$data['show'] = $this->Datapaket_model->showidpkt('tbl_paket',$id_paket);
+		$this->load->view('ppk1/viewdocutama',$data);
+		$this->load->view('ppk1/footer');
+	}
+
 	public function test()
 	{
 		$this->load->view('ppk1/test');
