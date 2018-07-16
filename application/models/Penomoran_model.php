@@ -84,5 +84,39 @@
         $kodejadi = "PKT".$kodemax;
         return $kodejadi; 
     }
+    public function IDdoc ()
+    {
+        $this->db->select("RIGHT(id_doc,4) AS kode");
+        $this->db->order_by('id_doc' , 'DESC');
+        $this->db->limit(1);
+        $query = $this->db->get('tbl_doc1');
+        if ($query->num_rows()>0) {
+            $data = $query->row();
+            $kode = intval($data->kode)+1;
+        }
+        else {
+            $kode = 1;
+        }
+        $kodemax  = str_pad($kode,4 ,"0", STR_PAD_LEFT);
+        $kodejadi = "DOC".$kodemax;
+        return $kodejadi; 
+    }
+    public function IDPsc()
+    {
+        $this->db->select("RIGHT(id_pasca,4) AS kode");
+        $this->db->order_by('id_pasca' , 'DESC');
+        $this->db->limit(1);
+        $query = $this->db->get('tbl_pascamc0');
+        if ($query->num_rows()>0) {
+            $data = $query->row();
+            $kode = intval($data->kode)+1;
+        }
+        else {
+            $kode = 1;
+        }
+        $kodemax  = str_pad($kode,4 ,"0", STR_PAD_LEFT);
+        $kodejadi = "PSC".$kodemax;
+        return $kodejadi; 
+    }
  }
  ?>

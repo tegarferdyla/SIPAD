@@ -27,5 +27,19 @@
 			$query = $this->db->get();
 			return $query->result_array();
 		}
+		public function showidpkt($table,$id_paket)
+		{
+			$this->db->where('id_paket', $id_paket);
+			$id = $this->db->get($table);
+			return $id->result_array();
+		}
+		public function insertdoc1($table,$data)
+		{
+			return $this->db->insert($table, $data);
+		}
+		public function insertdoc2($table,$data)
+		{
+			return $this->db->insert($table, $data);
+		}
 	}
  ?>
