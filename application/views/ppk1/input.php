@@ -19,13 +19,36 @@
     <!-- =================================== -->
     <!-- Different data widgets ============ -->
     <!-- =================================== -->
+        <div class="row">
+            <div class="col-md-12">
+                <?php if ($this->session->flashdata('updateberhasil')): ?>
+                    <div class="alert alert-icon alert-success border-success alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                        </button> <i class="material-icons list-icon">check_circle</i>  <strong>Well done!</strong> Fileberhasil di upload.
+                    </div>
+                 <?php endif ?>
+            </div>
+        </div> 
                 <div class="widget-list">
                     <div class="col-md-12 widget-holder">
                         <div class="widget-bg">
                             <form id="interviewForm" method="post" action="<?php echo site_url('PPK1/simpandoc') ?>" enctype="multipart/form-data">
                                 <div class="widget-body clearfix">
-                                    <h4 class="box-title mr-b-0">1</h4>
-                                    <hr>
+                                   <div class="row">
+                                        <div class="col-md-11">
+                                        <h4 class="box-title mr-b-0" >Kelompok 1</h4>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <div class="dropdown">
+                                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Aksi
+                                                    <span class="caret"></span></button>
+                                                    <ul class="dropdown-menu list-unstyled card-body">
+                                                        <li><a href="<?php echo site_url('ppk1/viewdocutama/'.$show[0]['id_paket']) ?>">View Dokumen</a></li>
+                                                        <li><a href="#">Edit Dokuken</a></li>
+                                                    </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="row">
                                         <input type="hidden" value="<?php echo $show[0]['id_paket'] ?>" name="id_paket">
                                         <div class="form-group col-md-6">

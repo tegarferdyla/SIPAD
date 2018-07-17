@@ -36,12 +36,29 @@ class PPK1 extends CI_Controller {
 		$config['upload_path'] = './assets/img/' ;
 		$config['allowed_types'] = 'jpg|png|gif';
         $config['max_size']      = 100000;
+        $config['overwrite'] 	= TRUE;
 
         $this->load->library('upload', $config);
         if (!$this->upload->do_upload('myfiles')) {
-            $error = $this->upload->display_errors();
-            // menampilkan pesan error
-            print_r($error);
+        	// $this->upload->do_upload('myfiles');
+            $result = $this->upload->data();
+        	$data_update = array (
+        			// 'foto'  => $result['file_name'],
+        			'nama'  => $this->input->post('nama_user'),
+        			'email' => $this->input->post('email'),
+        			'alamat' => $this->input->post('alamat')
+        			);
+        	
+        	$result = $this->Datauser_model->UpdateDataUser($data_update,$id_user);
+
+        	if ($result > 0 ) {
+        		$this->session->set_flashdata('updateberhasil','true');
+        		redirect('ppk1/editprofile');
+        	}
+        	else {
+				$this->session->set_flashdata('updategagal','true');
+				redirect('ppk1/editprofile');
+			}    	
         }
         else {
         	$result = $this->upload->data();
@@ -507,6 +524,7 @@ class PPK1 extends CI_Controller {
 		$tambahdoc7 = $this->Datapaket_model->insertdoc6('tbl_doc3',$doc4);
 		$result = ($tambahdoc1&&$tambahdoc2&&$tambahdoc6&&$tambahdoc7);
 		if ($result >0) {
+			$this->session->set_flashdata('updateberhasil' , true);
 			redirect('ppk1/inputdokutama/'.$id_paket);
 		}
 

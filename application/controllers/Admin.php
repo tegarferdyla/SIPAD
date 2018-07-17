@@ -134,7 +134,7 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 					'username'		=> $username,
 					'password'		=> md5($password),
 					// 'password'		=> $password,
-					'foto'			=> "user1.jpg",
+					'foto'			=> "default-avatar.jpg",
 					'id_ppk'		=> $divisi
 				);
 				$resultchecknip = $this->Datauser_model->ceknipuser($nip);

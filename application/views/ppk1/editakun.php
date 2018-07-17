@@ -53,7 +53,7 @@
                                     <div class="form-group row">
                                         <label for="" class="col-md-3 col-form-label"> Ganti Foto</label>
                                         <div class="col-md-9">
-                                            <input type="file" class="form-control" name="myfiles">
+                                            <input type="file" class="form-control" name="myfiles" accept="image/*">
                                         </div>
                                     </div>
                                     <div class="form-group row">
