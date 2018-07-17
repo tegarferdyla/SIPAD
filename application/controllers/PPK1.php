@@ -321,6 +321,7 @@ class PPK1 extends CI_Controller {
 		$tahun = $carithn->nama_tahun;
 
 		$id_doc = $this->Penomoran_model->IDdoc();
+
 		$file1 = $_FILES['file1']['name'];
 		$file2 = $_FILES['file2']['name'];
 		$file3 = $_FILES['file3']['name'];
@@ -341,6 +342,48 @@ class PPK1 extends CI_Controller {
 		$file18 = $_FILES['file18']['name'];
 		$file19 = $_FILES['file19']['name'];
 		$file20 = $_FILES['file20']['name'];
+		$file21 = $_FILES['file21']['name'];
+		$file22 = $_FILES['file22']['name'];
+		$file23 = $_FILES['file23']['name'];
+		$file24 = $_FILES['file24']['name'];
+		$file25 = $_FILES['file25']['name'];
+		$file26 = $_FILES['file26']['name'];
+		$file27 = $_FILES['file27']['name'];
+		$file28 = $_FILES['file28']['name'];
+		$file29 = $_FILES['file29']['name'];
+		$file30 = $_FILES['file30']['name'];
+		$file31 = $_FILES['file31']['name'];
+		$file32 = $_FILES['file32']['name'];
+		$file33 = $_FILES['file33']['name'];
+		$file34 = $_FILES['file34']['name'];
+		$file35 = $_FILES['file35']['name'];
+		$file36 = $_FILES['file36']['name'];
+		$file37 = $_FILES['file37']['name'];
+		$file38 = $_FILES['file38']['name'];
+		$file39 = $_FILES['file39']['name'];
+		$file40 = $_FILES['file40']['name'];
+		$file41 = $_FILES['file41']['name'];
+		$file42 = $_FILES['file42']['name'];
+		$file43 = $_FILES['file43']['name'];
+		$file44 = $_FILES['file44']['name'];
+		$file45 = $_FILES['file45']['name'];
+		$file46 = $_FILES['file46']['name'];
+		$file47 = $_FILES['file47']['name'];
+		$file48 = $_FILES['file48']['name'];
+		$file49 = $_FILES['file49']['name'];
+		$file50 = $_FILES['file50']['name'];
+		$file51 = $_FILES['file51']['name'];
+		$file52 = $_FILES['file52']['name'];
+		$file53 = $_FILES['file53']['name'];
+		$file54 = $_FILES['file54']['name'];
+		$file55 = $_FILES['file55']['name'];
+		$file56 = $_FILES['file56']['name'];
+		$file57 = $_FILES['file57']['name'];
+		$file58 = $_FILES['file58']['name'];
+		$file59 = $_FILES['file59']['name'];
+		$file60 = $_FILES['file60']['name'];
+		$file61 = $_FILES['file61']['name'];
+		$file62 = $_FILES['file62']['name'];
 
 		$addendumii = $this->input->post('topic1');
 		$addendumiii = $this->input->post('topic2');
@@ -353,7 +396,7 @@ class PPK1 extends CI_Controller {
 		];
 
 		$this->load->library('upload',$file);
-		for ($i=1; $i <=20 ; $i++) { 
+		for ($i=1; $i <=62 ; $i++) { 
 			$this->upload->do_upload('file'.$i);
 		}
 	    	$doc1 = array(
@@ -387,7 +430,81 @@ class PPK1 extends CI_Controller {
 					'pasca_nai'			=> $file20
 					);
 		$tambahdoc2 = $this->Datapaket_model->insertdoc2('tbl_pascamc0',$doc2);
-		if (($tambahdoc1&&$tambahdoc2)>0) {
+		if ($addendumii == "on") {
+			$datadendumii = array(
+							'id_addii' => $this->Penomoran_model->IDadd2(), 
+							'id_paket' => $id_paket,
+							'addii_bal' => $file21,
+							'addii_boq' => $file22,
+							'addii_jdst' => $file23,
+							'addii_slp' => $file24,
+							'addii_kurva' => $file25,
+							'addii_shop' => $file26,
+							'addii_bakln' => $file27,
+							'addii_naii' => $file28
+							);
+			$tambahdoc3 = $this->Datapaket_model->insertdoc3('tbl_addendumii',$datadendumii);
+		}
+		if ($addendumiii == "on") {
+			$datadendumiii = array(
+						'id_addiii' => $this->Penomoran_model->IDadd3(), 
+						'id_paket' => $id_paket,
+						'addiii_bal' => $file29,
+						'addiii_boq' => $file30,
+						'addiii_jdst' => $file31,
+						'addiii_slp' => $file32,
+						'addiii_kurva' => $file33,
+						'addiii_shop' => $file34,
+						'addiii_bakln' => $file35,
+						'addii_naiii' => $file36
+						);
+		$tambahdoc4 = $this->Datapaket_model->insertdoc4('tbl_addendumiii',$datadendumiii);
+		}
+		if ($addendumiv == "on") {
+			$datadendumiv = array(
+						'id_addiv' => $this->Penomoran_model->IDadd4(), 
+						'id_paket' => $id_paket,
+						'addiv_bal' => $file37,
+						'addiv_boq' => $file38,
+						'addiv_jdst' => $file39,
+						'addiv_slp' => $file40,
+						'addiv_kurva' => $file41,
+						'addiv_shop' => $file42,
+						'addiv_bakn' => $file43,
+						'addiv_naiv' => $file44
+						);
+		$tambahdoc5 = $this->Datapaket_model->insertdoc4('tbl_addendumiv',$datadendumiv);
+		}
+		$doc3 = array(
+					'id_doc2' 			=> $this->Penomoran_model->IDdoc2(), 
+					'id_paket'			=> $id_paket,
+					'laporan_harian1'		=> $file45,
+					'laporan_mingguan1'		=> $file46,
+					'bulanan_kontraktor'	=> $file47,
+					'sertifikat_pembayaran'	=> $file48,
+					'laporan_harian2'		=> $file49,
+					'laporan_mingguan2'		=> $file50,
+					'bulanan_konsultan'		=> $file51,
+					'berita_apm'			=> $file52,
+					'berita_ascm'			=> $file53,
+					'provisional_sp'		=> $file54,
+					'provisional_bafv'		=> $file55,
+					'provisional_basv'		=> $file56,
+					'provisional_bastp'		=> $file57
+					);
+		$tambahdoc6 = $this->Datapaket_model->insertdoc5('tbl_doc2',$doc3);
+		$doc4 = array(
+					'id_doc3' 		=> $this->Penomoran_model->IDdoc3(),
+					'id_paket'		=> $id_paket,
+					'final_sp'		=> $file58,
+					'final_bafv'		=> $file59,
+					'final_basv'		=> $file60,
+					'final_bastp'		=> $file61,
+					'final_dokumentasi'	=> $file62
+					);
+		$tambahdoc7 = $this->Datapaket_model->insertdoc6('tbl_doc3',$doc4);
+		$result = ($tambahdoc1&&$tambahdoc2&&$tambahdoc6&&$tambahdoc7);
+		if ($result >0) {
 			redirect('ppk1/inputdokutama/'.$id_paket);
 		}
 
@@ -462,11 +579,16 @@ class PPK1 extends CI_Controller {
 	}
 	public function testkirim()
 	{
-		$check1 = $this->input->post('checked1');
-		$check2 = $this->input->post('checked2');
-		$check3 = $this->input->post('checked3');
+		for ($i=1; $i <=3 ; $i++) { 
+			// $this->upload->do_upload('file'.$i);
+		$check[$i] = $this->input->post('checked'.$i);
+		}
+		$check1=  $check[1];
+		echo $check1;
+		/*$check2 = $this->input->post('checked2');
+		$check3 = $this->input->post('checked3');*/
 
-		if ($check1 == "on") {
+		/*if ($check1 == "on") {
 			echo "check1";
 		}
 		if($check2 == "on"){
@@ -474,7 +596,8 @@ class PPK1 extends CI_Controller {
 		}
 		if($check3 == "on"){
 			echo "check3";
-		}
+		}*/
+		// print_r ($check);
 	}
 
 }

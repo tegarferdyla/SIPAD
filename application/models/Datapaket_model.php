@@ -41,5 +41,21 @@
 		{
 			return $this->db->insert($table, $data);
 		}
+		public function insertdoc3($table,$data)
+		{
+			return $this->db->insert($table, $data);
+		}
+		public function insertdoc4($table,$data)
+		{
+			return $this->db->insert($table, $data);
+		}
+		public function insertdoc5($table,$data)
+		{
+			return $this->db->insert($table, $data);
+		}
+		public function insertdoc6($table,$data)
+		{
+			return $this->db->insert($table, $data);
+		}
 	}
  ?>
