@@ -143,7 +143,7 @@
                                             <input class="form-control" type="file" name="file20" accept="application/pdf">
                                         </div>
                                     </div>
-                                    <!-- <hr>
+                                    <hr>
                                     <div class="check">
                                         <h4 class="box-title mr-b-0">Addendum II
                                             <input type="checkbox" name="topic1" />
@@ -401,7 +401,7 @@
                                             <label class="form-control-label text-blue" for="">Dokumentasi</label> 
                                             <input class="form-control" type="file" value="" name="file62" accept="application/pdf">
                                         </div>
-                                    </div>-->
+                                    </div>
                                     <div class="from-group row">
                                         <div class="col-md-9 ">
                                         </div>

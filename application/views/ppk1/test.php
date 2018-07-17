@@ -8,9 +8,14 @@
 </head>
 <body>
 	<form action="<?php echo site_url('PPK1/testkirim') ?>" method="post">
-		<input type="checkbox" name="checked1">
+		<!-- <input type="checkbox" name="checked1">
 		<input type="checkbox" name="checked2">
-		<input type="checkbox" name="checked3">
+		<input type="checkbox" name="checked3"> -->
+		<?php 
+		for ($i=1; $i <=10 ; $i++) { 
+			echo "<input type='checkbox' name='checked$i'>";
+		}
+		 ?>
 		<input type="submit">
 	</form>
 </body>

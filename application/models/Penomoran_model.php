@@ -118,5 +118,90 @@
         $kodejadi = "PSC".$kodemax;
         return $kodejadi; 
     }
+    public function IDadd2()
+    {
+        $this->db->select("RIGHT(id_addii,4) AS kode");
+        $this->db->order_by('id_addii' , 'DESC');
+        $this->db->limit(1);
+        $query = $this->db->get('tbl_addendumii');
+        if ($query->num_rows()>0) {
+            $data = $query->row();
+            $kode = intval($data->kode)+1;
+        }
+        else {
+            $kode = 1;
+        }
+        $kodemax  = str_pad($kode,4 ,"0", STR_PAD_LEFT);
+        $kodejadi = "AD2".$kodemax;
+        return $kodejadi; 
+    }
+    public function IDadd3()
+    {
+        $this->db->select("RIGHT(id_addiii,4) AS kode");
+        $this->db->order_by('id_addiii' , 'DESC');
+        $this->db->limit(1);
+        $query = $this->db->get('tbl_addendumiii');
+        if ($query->num_rows()>0) {
+            $data = $query->row();
+            $kode = intval($data->kode)+1;
+        }
+        else {
+            $kode = 1;
+        }
+        $kodemax  = str_pad($kode,4 ,"0", STR_PAD_LEFT);
+        $kodejadi = "AD3".$kodemax;
+        return $kodejadi; 
+    }
+    public function IDadd4()
+    {
+        $this->db->select("RIGHT(id_addiv,4) AS kode");
+        $this->db->order_by('id_addiv' , 'DESC');
+        $this->db->limit(1);
+        $query = $this->db->get('tbl_addendumiv');
+        if ($query->num_rows()>0) {
+            $data = $query->row();
+            $kode = intval($data->kode)+1;
+        }
+        else {
+            $kode = 1;
+        }
+        $kodemax  = str_pad($kode,4 ,"0", STR_PAD_LEFT);
+        $kodejadi = "AD4".$kodemax;
+        return $kodejadi; 
+    }
+    public function IDdoc2()
+    {
+        $this->db->select("RIGHT(id_doc2,4) AS kode");
+        $this->db->order_by('id_doc2' , 'DESC');
+        $this->db->limit(1);
+        $query = $this->db->get('tbl_doc2');
+        if ($query->num_rows()>0) {
+            $data = $query->row();
+            $kode = intval($data->kode)+1;
+        }
+        else {
+            $kode = 1;
+        }
+        $kodemax  = str_pad($kode,4 ,"0", STR_PAD_LEFT);
+        $kodejadi = "DC2".$kodemax;
+        return $kodejadi; 
+    }
+    public function IDdoc3()
+    {
+        $this->db->select("RIGHT(id_doc3,4) AS kode");
+        $this->db->order_by('id_doc3' , 'DESC');
+        $this->db->limit(1);
+        $query = $this->db->get('tbl_doc3');
+        if ($query->num_rows()>0) {
+            $data = $query->row();
+            $kode = intval($data->kode)+1;
+        }
+        else {
+            $kode = 1;
+        }
+        $kodemax  = str_pad($kode,4 ,"0", STR_PAD_LEFT);
+        $kodejadi = "DC3".$kodemax;
+        return $kodejadi; 
+    }
  }
  ?>
