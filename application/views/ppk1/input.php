@@ -430,7 +430,8 @@
                                         </div>
                                         <div class="col-md-3 ml-md-auto btn-list">
                                             <button class="btn btn-primary btn-rounded" type="submit">Submit</button>
-                                            <button class="btn btn-outline-default btn-rounded" type="reset">Cancel</button>
+                                            <a href="<?php echo site_url('ppk1/viewdocutama/'.$show[0]['id_paket'] ) ?>" class="btn btn-outline-default btn-rounded">Cancel</a>
+                                            <!-- <button class="btn btn-outline-default btn-rounded" type="reset">Cancel</button> -->
                                         </div>
                                     </div>
                                 </div>

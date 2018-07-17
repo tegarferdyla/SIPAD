@@ -587,15 +587,34 @@ class PPK1 extends CI_Controller {
 		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
 		$ppk = array("nama" => $ppk[0]['nama']);
 		$this->load->view('ppk1/sidebar', $ppk);
+		$data['doc1'] = $this->Datapaket_model->showdata1('tbl_doc1',$id_paket);
+		$data['doc2'] = $this->Datapaket_model->showdata2('tbl_doc2',$id_paket);
+		$data['doc3'] = $this->Datapaket_model->showdata3('tbl_doc3',$id_paket); 
+		$data['doc4'] = $this->Datapaket_model->showdata4('tbl_pascamc0',$id_paket); 
+		$data['doc5'] = $this->Datapaket_model->showdata5('tbl_addendumii',$id_paket); 
+		$data['doc6'] = $this->Datapaket_model->showdata6('tbl_addendumiii',$id_paket); 
+		$data['doc7'] = $this->Datapaket_model->showdata7('tbl_addendumiv',$id_paket);  
+
 
 		$data['show'] = $this->Datapaket_model->showidpkt('tbl_paket',$id_paket);
 		$this->load->view('ppk1/viewdocutama',$data);
 		$this->load->view('ppk1/footer');
 	}
 
-	public function test()
+	public function test($id_paket)
 	{
-		$this->load->view('ppk1/test');
+		$data['doc1'] = $this->Datapaket_model->showdata1('tbl_doc1',$id_paket);
+		$data['doc2'] = $this->Datapaket_model->showdata2('tbl_doc2',$id_paket);
+		$data['doc3'] = $this->Datapaket_model->showdata3('tbl_doc3',$id_paket); 
+		$data['doc4'] = $this->Datapaket_model->showdata4('tbl_pascamc0',$id_paket); 
+		$data['doc5'] = $this->Datapaket_model->showdata5('tbl_addendumii',$id_paket); 
+		$data['doc6'] = $this->Datapaket_model->showdata6('tbl_addendumiii',$id_paket); 
+		$data['doc7'] = $this->Datapaket_model->showdata7('tbl_addendumiv',$id_paket);  
+
+		echo "<pre>";
+		print_r ($data);
+		echo "</pre>";
+
 	}
 	public function testkirim()
 	{

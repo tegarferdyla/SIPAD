@@ -43,26 +43,31 @@
                                         <!-- <input type="hidden" value="<?php echo $show[0]['id_paket'] ?>" name="id_paket"> -->
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Surat Minat Daerah</label>
+                                            <p><?php echo $doc1->surat_md ?></p>
                                             <!-- <input type="file" name="file1" accept="application/pdf" class="form-control"> -->
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Surat Menerima Hibah</label>
+                                            <p><?php echo $doc1->surat_mh ?></p>
                                             <!-- <input class="form-control" type="file" name="file2" accept="application/pdf"> -->
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Surat Kesiapan Lahan</label>
+                                            <p><?php echo $doc1->surat_kl ?></p>
                                             <!-- <input class="form-control" type="file" name="file3" accept="application/pdf"> -->
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Kesepakatan Bersama (KSB)</label>
+                                            <p><?php echo $doc1->kesepakatan_bersama ?></p>
                                           <!--   <input class="form-control" type="file" name="file4" accept="application/pdf"> -->
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Perjanjian Kerja Sama</label>
+                                            <p><?php echo $doc1->perjanjian_kerjasama ?></p>
                                            <!--  <input class="form-control" type="file" name="file5" accept="application/pdf"> -->
                                         </div>
                                     </div>
@@ -79,26 +84,31 @@
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">SPBJ</label>
+                                            <p><?php echo $doc1->sppbj ?></p>
                                             <!-- <input class="form-control" type="file" name="file6" accept="application/pdf"> -->
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">SPMK</label>
+                                            <p><?php echo $doc1->spmk ?></p>
                                            <!--  <input class="form-control" type="file" name="file7" accept="application/pdf"> -->
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Naskah Kontrak</label>
+                                            <p><?php echo $doc1->naskah_kontrak ?></p>
                                             <!-- <input class="form-control" type="file" name="file8" accept="application/pdf"> -->
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue">Rencana Mutu Kontrak</label>
+                                            <p><?php echo $doc1->rencana_mk ?></p>
                                            <!--  <input class="form-control" type="file" name="file9" accept="application/pdf"> -->
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Berita acara Pre-Construction</label>
+                                            <p><?php echo $doc1->bcp ?></p>
                                             <!-- <input class="form-control" type="file" name="file10" accept="application/pdf"> -->
                                         </div>
                                     </div>
@@ -115,16 +125,19 @@
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Design Drawing</label>
+                                            <p><?php echo $doc1->mc0_dd ?></p>
                                             <!-- <input class="form-control" type="file" name="file11" accept="application/pdf"> -->
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Berita Acara Lapangan</label>
+                                            <p><?php echo $doc1->mc0_bal ?></p>
                                            <!--  <input class="form-control" type="file" name="file12" accept="application/pdf"> -->
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Justifikasi dan Spesifikasi Teknis</label>
+                                            <p><?php echo $doc1->mc0_jdst ?></p>
                                             <!-- <input class="form-control" type="file" name="file13" accept="application/pdf"> -->
                                         </div>
                                     </div>
@@ -141,36 +154,43 @@
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Bill of Quantity</label>
+                                            <p><?php echo $doc4->pasca_boq ?></p>
                                             <!-- <input class="form-control" type="file" value="" name="file14" accept="application/pdf"> -->
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Justifikasi dan Spesifikasi Teknis</label>
+                                            <p><?php echo $doc4->pasca_jdst ?></p>
                                             <!-- <input class="form-control" type="file" name="file15" accept="application/pdf"> -->
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Surat Lampiran Pendukung</label>
+                                            <p><?php echo $doc4->pasca_slp ?></p>
                                            <!--  <input class="form-control" type="file" name="file16" accept="application/pdf"> -->
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Kurva R Revisi</label>
+                                            <p><?php echo $doc4->pasca_kurva ?></p>
                                            <!--  <input class="form-control" type="file" name="file17" accept="application/pdf"> -->
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Shop Drawing</label>
+                                            <p><?php echo $doc4->pasca_shop ?></p>
                                             <!-- <input class="form-control" type="file" name="file18" accept="application/pdf"> -->
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Berita Acara Klarifikasi Negosiasi</label>
+                                            <p><?php echo $doc4->pasca_bakn ?></p>
                                             <!-- <input class="form-control" type="file" name="file19" accept="application/pdf"> -->
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Naskah Adendum I</label>
+                                            <p><?php echo $doc4->pasca_nai ?></p>
                                             <!-- <input class="form-control" type="file" name="file20" accept="application/pdf"> -->
                                         </div>
                                     </div>
@@ -194,40 +214,48 @@
                                         <div class="row">
                                             <div class="form-group col-md-6">
                                                 <label class="form-control-label text-blue" for="">Bill of Quantity</label>
+                                                <p><?php echo $doc5->addii_bal ?></p>
                                                 <!-- <input class="form-control" type="file" name="file21" accept="application/pdf"> -->
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label class="form-control-label text-blue" for="">Justifikasi dan Spesifikasi Teknis</label>
+                                                <p><?php echo $doc5->addii_boq ?></p>
                                                 <!-- <input class="form-control" type="file" name="file22" accept="application/pdf"> -->
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-md-6">
                                                 <label class="form-control-label text-blue" for="">Surat Lampiran Pendukung</label>
+                                                <p><?php echo $doc5->addii_jdst ?></p>
                                                 <!-- <input class="form-control" type="file" value="" name="file23" accept="application/pdf"> -->
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label class="form-control-label text-blue" for="">Kurva R Revisi</label>
+                                                <p><?php echo $doc5->addii_slp ?></p>
                                                 <!-- <input class="form-control" type="file" value="" name="file24" accept="application/pdf"> -->
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-md-6">
                                                 <label class="form-control-label text-blue" for="">Shop Drawing</label> 
+                                                <p><?php echo $doc5->addii_kurva ?></p>
                                                 <!-- <input class="form-control" type="file" value="" name="file25" accept="application/pdf"> -->
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label class="form-control-label text-blue" for="">Berita Acara Klarifikasi Negosiasi</label> 
+                                                <p><?php echo $doc5->addii_shop ?></p>
                                                 <!-- <input class="form-control" type="file" value="" name="file26" accept="application/pdf"> -->
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-md-6">
                                                 <label class="form-control-label text-blue" for="">Berita Acara Lapangan</label> 
+                                                <p><?php echo $doc5->addii_bakln ?></p>
                                                 <!-- <input class="form-control" type="file" value="" name="file27" accept="application/pdf"> -->
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label class="form-control-label text-blue" for="">Naskah Adendum II</label> 
+                                                <p><?php echo $doc5->addii_naii ?></p>
                                                 <!-- <input class="form-control" type="file" value="" name="file28" accept="application/pdf"> -->
                                             </div>
                                         </div>
@@ -252,40 +280,48 @@
                                             <div class="row">
                                                 <div class="form-group col-md-6">
                                                     <label class="form-control-label text-blue" for="">Bill of Quantity</label> 
+                                                    <p><?php echo $doc6->addiii_bal ?></p>
                                                     <!-- <input class="form-control" type="file" value="" name="file29" accept="application/pdf"> -->
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-control-label text-blue" for="">Justifikasi dan Spesifikasi Teknis</label> 
+                                                    <p><?php echo $doc6->addiii_boq ?></p>
                                                     <!-- <input class="form-control" type="file" value="" name="file30" accept="application/pdf"> -->
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="form-group col-md-6">
                                                     <label class="form-control-label text-blue" for="">Surat Lampiran Pendukung</label> 
+                                                    <p><?php echo $doc6->addiii_jdst ?></p>
                                                     <!-- <input class="form-control" type="file" value="" name="file31" accept="application/pdf"> -->
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-control-label text-blue" for="">Kurva R Revisi</label> 
+                                                    <p><?php echo $doc6->addiii_slp ?></p>
                                                     <!-- <input class="form-control" type="file" value="" name="file32" accept="application/pdf"> -->
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="form-group col-md-6">
                                                     <label class="form-control-label text-blue" for="">Shop Drawing</label> 
+                                                    <p><?php echo $doc6->addiii_kurva ?></p>
                                                     <!-- <input class="form-control" type="file" value="" name="file33" accept="application/pdf"> -->
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-control-label text-blue" for="">Berita Acara Klarifikasi Negosiasi</label> 
+                                                    <p><?php echo $doc6->addiii_shop ?></p>
                                                     <!-- <input class="form-control" type="file" value="" name="file34" accept="application/pdf"> -->
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="form-group col-md-6">
-                                                    <label class="form-control-label text-blue" for="">Berita Acara Lapangan</label> 
+                                                    <label class="form-control-label text-blue" for="">Berita Acara Lapangan</label>
+                                                    <p><?php echo $doc6->addiii_bakln ?></p> 
                                                     <!-- <input class="form-control" type="file" value="" name="file35" accept="application/pdf"> -->
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-control-label text-blue" for="">Naskah Adendum III</label> 
+                                                    <p><?php echo $doc6->addii_naiii ?></p> 
                                                     <!-- <input class="form-control" type="file" value="" name="file36" accept="application/pdf"> -->
                                                 </div>
                                             </div>
@@ -312,40 +348,48 @@
                                             <div class="row">
                                                 <div class="form-group col-md-6">
                                                     <label class="form-control-label text-blue" for="">Bill of Quantity</label> 
+                                                    <p><?php echo $doc7->addiv_bal ?></p> 
                                                     <!-- <input class="form-control" type="file" value="" name="file37" accept="application/pdf"> -->
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-control-label text-blue" for="">Justifikasi dan Spesifikasi Teknis</label> 
+                                                    <p><?php echo $doc7->addiv_boq ?></p> 
                                                     <!-- <input class="form-control" type="file" value="" name="file38" accept="application/pdf"> -->
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="form-group col-md-6">
-                                                    <label class="form-control-label text-blue" for="">Surat Lampiran Pendukung</label> 
+                                                    <label class="form-control-label text-blue" for="">Surat Lampiran Pendukung</label>
+                                                    <p><?php echo $doc7->addiv_jdst ?></p>  
                                                     <!-- <input class="form-control" type="file" value="" name="file39" accept="application/pdf"> -->
                                                 </div>
                                                 <div class="form-group col-md-6">
-                                                    <label class="form-control-label text-blue" for="">Kurva R Revisi</label> 
+                                                    <label class="form-control-label text-blue" for="">Kurva R Revisi</label>
+                                                    <p><?php echo $doc7->addiv_slp ?></p>   
                                                     <!-- <input class="form-control" type="file" value="" name="file40" accept="application/pdf"> -->
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="form-group col-md-6">
                                                     <label class="form-control-label text-blue" for="">Shop Drawing</label> 
+                                                    <p><?php echo $doc7->addiv_kurva ?></p>   
                                                     <!-- <input class="form-control" type="file" value="" name="file41" accept="application/pdf"> -->
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-control-label text-blue" for="">Berita Acara Klarifikasi Negosiasi</label> 
+                                                    <p><?php echo $doc7->addiv_shop ?></p>   
                                                     <!-- <input class="form-control" type="file" value="" name="file42" accept="application/pdf"> -->
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="form-group col-md-6">
                                                     <label class="form-control-label text-blue" for="">Berita Acara Lapangan</label> 
+                                                    <p><?php echo $doc7->addiv_bakn ?></p>   
                                                     <!-- <input class="form-control" type="file" value="" name="file43" accept="application/pdf"> -->
                                                 </div>
                                                 <div class="form-group col-md-6">
-                                                    <label class="form-control-label text-blue" for="">Naskah Adendum IV</label> 
+                                                    <label class="form-control-label text-blue" for="">Naskah Adendum IV</label>
+                                                    <p><?php echo $doc7->addiv_naiv ?></p>    
                                                     <!-- <input class="form-control" type="file" value="" name="file44" accept="application/pdf"> -->
                                                 </div>
                                             </div>
@@ -364,20 +408,24 @@
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Laporan Harian</label> 
+                                            <p><?php echo $doc2->laporan_harian1 ?></p>    
                                             <!-- <input class="form-control" type="file" value="" name="file45" accept="application/pdf"> -->
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Mingguan</label> 
+                                            <p><?php echo $doc2->laporan_mingguan1 ?></p>    
                                             <!-- <input class="form-control" type="file" value="" name="file46" accept="application/pdf"> -->
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Bulanan Kontraktor</label> 
+                                            <p><?php echo $doc2->bulanan_kontraktor ?></p>    
                                             <!-- <input class="form-control" type="file" value="" name="file47" accept="application/pdf"> -->
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue">Sertifikat Pembayaran</label> 
+                                            <p><?php echo $doc2->sertifikat_pembayaran ?></p>    
                                             <!-- <input class="form-control" type="file" value="" name="file48" accept="application/pdf"> -->
                                         </div>
                                     </div>
@@ -395,16 +443,19 @@
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Laporan Harian</label> 
+                                            <p><?php echo $doc2->laporan_harian2 ?></p>    
                                             <!-- <input class="form-control" type="file" value="" name="file49" accept="application/pdf"> -->
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Mingguan</label> 
+                                            <p><?php echo $doc2->laporan_mingguan2 ?></p>    
                                             <!-- <input class="form-control" type="file" value="" name="file50" accept="application/pdf"> -->
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-6">
-                                            <label class="form-control-label text-blue" for="">Bulanan Konsultan Supervisi</label> 
+                                            <label class="form-control-label text-blue" for="">Bulanan Konsultan Supervisi</label>
+                                            <p><?php echo $doc2->bulanan_konsultan ?></p>     
                                             <!-- <input class="form-control" type="file" value="" name="file51" accept="application/pdf"> -->
                                         </div>
                                     </div>
@@ -421,6 +472,7 @@
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Berita Acara Pengujian Material</label> 
+                                            <p><?php echo $doc2->berita_apm ?></p>     
                                             <!-- <input class="form-control" type="file" value="" name="file52" accept="application/pdf"> -->
                                         </div>
                                     </div>
@@ -437,6 +489,7 @@
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Berita Acara Show Cause Meeting (SCM)</label> 
+                                            <p><?php echo $doc2->berita_ascm ?></p>     
                                             <!-- <input class="form-control" type="file" value="" name="file53" accept="application/pdf"> -->
                                         </div>
                                     </div>
@@ -453,20 +506,24 @@
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Surat Pemohonan PHO</label> 
+                                            <p><?php echo $doc2->provisional_sp ?></p>     
                                             <!-- <input class="form-control" type="file" value="" name="file54" accept="application/pdf"> -->
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Berita Acara First Visit</label> 
+                                            <p><?php echo $doc2->provisional_bafv ?></p>     
                                             <!-- <input class="form-control" type="file" value="" name="file55" accept="application/pdf"> -->
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Berita Acara Second Visit</label> 
+                                            <p><?php echo $doc2->provisional_basv ?></p>     
                                             <!-- <input class="form-control" type="file" value="" name="file56" accept="application/pdf"> -->
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label class="form-control-label text-blue">Berita Acara Serah Terima Pekerjaan</label> 
+                                            <label class="form-control-label text-blue">Berita Acara Serah Terima Pekerjaan</label>
+                                            <p><?php echo $doc2->provisional_bastp ?></p>      
                                             <!-- <input class="form-control" type="file" value="" name="file57" accept="application/pdf"> -->
                                         </div>
                                     </div>
@@ -483,20 +540,24 @@
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Surat Pemohonan FHO</label> 
+                                            <p><?php echo $doc3->final_sp ?></p>      
                                             <!-- <input class="form-control" type="file" value="" name="file58" accept="application/pdf"> -->
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label class="form-control-label text-blue" for="">Berita Acara First Visit</label> 
+                                            <label class="form-control-label text-blue" for="">Berita Acara First Visit</label>
+                                            <p><?php echo $doc3->final_bafv ?></p>       
                                             <!-- <input class="form-control" type="file" value="" name="file59" accept="application/pdf"> -->
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Berita Acara Second Visit</label> 
+                                            <p><?php echo $doc3->final_basv ?></p>      
                                             <!-- <input class="form-control" type="file" value="" name="file60" accept="application/pdf"> -->
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue">Berita Acara Serah Terima</label> 
+                                            <p><?php echo $doc3->final_bastp ?></p>      
                                             <!-- <input class="form-control" type="file" value="" name="file61" accept="application/pdf"> -->
                                         </div>
                                     </div>
@@ -513,6 +574,7 @@
                                     <div class="row">
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Dokumentasi</label> 
+                                            <p><?php echo $doc3->final_dokumentasi ?></p>      
                                             <!-- <input class="form-control" type="file" value="" name="file62" accept="application/pdf"> -->
                                         </div>
                                     </div>

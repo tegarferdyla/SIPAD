@@ -57,5 +57,47 @@
 		{
 			return $this->db->insert($table, $data);
 		}
+		public function showdata1($table,$id_paket)
+		{
+			$this->db->where('id_paket', $id_paket);
+			$id = $this->db->get($table);
+			return $id->row();
+		}
+		public function showdata2($table,$id_paket)
+		{
+			$this->db->where('id_paket', $id_paket);
+			$id = $this->db->get($table);
+			return $id->row();
+		}
+		public function showdata3($table,$id_paket)
+		{
+			$this->db->where('id_paket', $id_paket);
+			$id = $this->db->get($table);
+			return $id->row();
+		}
+		public function showdata4($table,$id_paket)
+		{
+			$this->db->where('id_paket', $id_paket);
+			$id = $this->db->get($table);
+			return $id->row();
+		}
+		public function showdata5($table,$id_paket)
+		{
+			$this->db->where('id_paket', $id_paket);
+			$id = $this->db->get($table);
+			return $id->row();
+		}
+		public function showdata6($table,$id_paket)
+		{
+			$this->db->where('id_paket', $id_paket);
+			$id = $this->db->get($table);
+			return $id->row();
+		}
+		public function showdata7($table,$id_paket)
+		{
+			$this->db->where('id_paket', $id_paket);
+			$id = $this->db->get($table);
+			return $id->row();
+		}
 	}
  ?>
