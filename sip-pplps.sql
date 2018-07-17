@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 15 Jul 2018 pada 21.03
--- Versi server: 10.1.28-MariaDB
--- Versi PHP: 7.1.10
+-- Host: localhost
+-- Generation Time: Jul 17, 2018 at 09:33 AM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 7.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,13 +21,11 @@ SET time_zone = "+00:00";
 --
 -- Database: `sip-pplps`
 --
-CREATE DATABASE IF NOT EXISTS `sip-pplps` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `sip-pplps`;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -38,7 +36,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `username`, `password`, `nama`) VALUES
@@ -47,7 +45,7 @@ INSERT INTO `admin` (`id_admin`, `username`, `password`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `ppk`
+-- Table structure for table `ppk`
 --
 
 CREATE TABLE `ppk` (
@@ -57,7 +55,7 @@ CREATE TABLE `ppk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `ppk`
+-- Dumping data for table `ppk`
 --
 
 INSERT INTO `ppk` (`id_ppk`, `nama`, `keterangan`) VALUES
@@ -67,7 +65,7 @@ INSERT INTO `ppk` (`id_ppk`, `nama`, `keterangan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_addendumii`
+-- Table structure for table `tbl_addendumii`
 --
 
 CREATE TABLE `tbl_addendumii` (
@@ -86,7 +84,7 @@ CREATE TABLE `tbl_addendumii` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_addendumiii`
+-- Table structure for table `tbl_addendumiii`
 --
 
 CREATE TABLE `tbl_addendumiii` (
@@ -105,7 +103,7 @@ CREATE TABLE `tbl_addendumiii` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_addendumiv`
+-- Table structure for table `tbl_addendumiv`
 --
 
 CREATE TABLE `tbl_addendumiv` (
@@ -124,7 +122,7 @@ CREATE TABLE `tbl_addendumiv` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_doc1`
+-- Table structure for table `tbl_doc1`
 --
 
 CREATE TABLE `tbl_doc1` (
@@ -139,7 +137,6 @@ CREATE TABLE `tbl_doc1` (
   `spmk` varchar(100) NOT NULL,
   `naskah_kontrak` varchar(100) NOT NULL,
   `rencana_mk` varchar(100) NOT NULL,
-  `bcp` varchar(100) NOT NULL,
   `mc0_dd` varchar(100) NOT NULL,
   `mc0_bal` varchar(100) NOT NULL,
   `mc0_jdst` varchar(100) NOT NULL
@@ -148,7 +145,7 @@ CREATE TABLE `tbl_doc1` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_doc2`
+-- Table structure for table `tbl_doc2`
 --
 
 CREATE TABLE `tbl_doc2` (
@@ -172,7 +169,7 @@ CREATE TABLE `tbl_doc2` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_doc3`
+-- Table structure for table `tbl_doc3`
 --
 
 CREATE TABLE `tbl_doc3` (
@@ -188,7 +185,7 @@ CREATE TABLE `tbl_doc3` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_paket`
+-- Table structure for table `tbl_paket`
 --
 
 CREATE TABLE `tbl_paket` (
@@ -202,20 +199,19 @@ CREATE TABLE `tbl_paket` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_paket`
+-- Dumping data for table `tbl_paket`
 --
 
 INSERT INTO `tbl_paket` (`id_paket`, `nama_paket`, `jenis`, `deskripsi`, `input_by`, `id_tahun`, `id_ppk`) VALUES
-('PKT0001', 'Konsultan Supervisi Pembangunan Sanitasi Terpadu Kawasan Strategis 3 Kabupaten Bima', 'kontraktual', '', 'Tegar Ferdyla M', 'THN0001', 'PPK0001'),
+('PKT0001', 'Konsultan Supervisi Pembangunan Sanitasi Terpadu Kawasan Strategis 3 Kabupaten Bima', 'kontraktual', '', 'Tegar Ferdyla', 'THN0001', 'PPK0001'),
 ('PKT0002', 'Coba', 'suakelola', '', 'Tegar Ferdyla', 'THN0003', 'PPK0002'),
 ('PKT0004', 'Suakelola1', 'suakelola', '', 'Teteh', 'THN0002', 'PPK0001'),
-('PKT0005', 'suakelola', 'suakelola', '', 'Tegar', 'THN0001', 'PPK0001'),
-('PKT0006', 'tahun 2014', 'kontraktual', 'Ini paket tahun 2014', 'Tegar Ferdyla M', 'THN0001', 'PPK0001');
+('PKT0005', 'suakelola', 'suakelola', '', 'Tegar', 'THN0001', 'PPK0001');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_pascamc0`
+-- Table structure for table `tbl_pascamc0`
 --
 
 CREATE TABLE `tbl_pascamc0` (
@@ -233,7 +229,33 @@ CREATE TABLE `tbl_pascamc0` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_tahun`
+-- Table structure for table `tbl_pendukung`
+--
+
+CREATE TABLE `tbl_pendukung` (
+  `id_pendukung` varchar(7) NOT NULL,
+  `id_paket` varchar(7) NOT NULL,
+  `bmn_surat_alih` varchar(100) NOT NULL,
+  `bmn_rekomendasi` varchar(100) NOT NULL,
+  `bmn_surat_hibah` varchar(100) NOT NULL,
+  `keuangan_permohonan` varchar(100) NOT NULL,
+  `keuangan_kuitansi` varchar(100) NOT NULL,
+  `keuangan_kartu` varchar(100) NOT NULL,
+  `keuangan_faktur` varchar(100) NOT NULL,
+  `keuangan_pph` varchar(100) NOT NULL,
+  `keuangan_spp` varchar(100) NOT NULL,
+  `keuangan_spm` varchar(100) NOT NULL,
+  `keuangan_sp2d` varchar(100) NOT NULL,
+  `bendahara_lpj` varchar(100) NOT NULL,
+  `bendahara_bapkdr` varchar(100) NOT NULL,
+  `bendahara_rekening` varchar(100) NOT NULL,
+  `bendahara_bapk` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_tahun`
 --
 
 CREATE TABLE `tbl_tahun` (
@@ -245,20 +267,19 @@ CREATE TABLE `tbl_tahun` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_tahun`
+-- Dumping data for table `tbl_tahun`
 --
 
 INSERT INTO `tbl_tahun` (`id_tahun`, `nama_tahun`, `deskripsi`, `input_by`, `id_ppk`) VALUES
 ('THN0001', '2014', 'Tahun 2014', 'Tegar Ferdyla M', 'PPK0001'),
 ('THN0002', '2015', 'Tahun 2015', 'Tegar Ferdyla M', 'PPK0001'),
 ('THN0003', '2014', 'Tahun 2014', 'Hendra', 'PPK0002'),
-('THN0004', '2090', 'ini', 'Tegar Ferdyla M', 'PPK0001'),
-('THN0005', '2016', 'Tahun 2016', 'Tegar Ferdyla M', 'PPK0001');
+('THN0004', '2090', 'ini', 'Tegar Ferdyla M', 'PPK0001');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -275,7 +296,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `NIP`, `nama`, `bagian`, `email`, `alamat`, `foto`, `id_ppk`) VALUES
@@ -290,75 +311,81 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `NIP`, `nama`, `bagian`, 
 --
 
 --
--- Indeks untuk tabel `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indeks untuk tabel `ppk`
+-- Indexes for table `ppk`
 --
 ALTER TABLE `ppk`
   ADD PRIMARY KEY (`id_ppk`);
 
 --
--- Indeks untuk tabel `tbl_addendumii`
+-- Indexes for table `tbl_addendumii`
 --
 ALTER TABLE `tbl_addendumii`
   ADD PRIMARY KEY (`id_addii`);
 
 --
--- Indeks untuk tabel `tbl_addendumiii`
+-- Indexes for table `tbl_addendumiii`
 --
 ALTER TABLE `tbl_addendumiii`
   ADD PRIMARY KEY (`id_addiii`);
 
 --
--- Indeks untuk tabel `tbl_addendumiv`
+-- Indexes for table `tbl_addendumiv`
 --
 ALTER TABLE `tbl_addendumiv`
   ADD PRIMARY KEY (`id_addiv`);
 
 --
--- Indeks untuk tabel `tbl_doc1`
+-- Indexes for table `tbl_doc1`
 --
 ALTER TABLE `tbl_doc1`
   ADD PRIMARY KEY (`id_doc`);
 
 --
--- Indeks untuk tabel `tbl_doc2`
+-- Indexes for table `tbl_doc2`
 --
 ALTER TABLE `tbl_doc2`
   ADD PRIMARY KEY (`id_doc2`);
 
 --
--- Indeks untuk tabel `tbl_doc3`
+-- Indexes for table `tbl_doc3`
 --
 ALTER TABLE `tbl_doc3`
   ADD PRIMARY KEY (`id_doc3`);
 
 --
--- Indeks untuk tabel `tbl_paket`
+-- Indexes for table `tbl_paket`
 --
 ALTER TABLE `tbl_paket`
   ADD PRIMARY KEY (`id_paket`),
   ADD KEY `id_tahun` (`id_tahun`);
 
 --
--- Indeks untuk tabel `tbl_pascamc0`
+-- Indexes for table `tbl_pascamc0`
 --
 ALTER TABLE `tbl_pascamc0`
   ADD PRIMARY KEY (`id_pasca`);
 
 --
--- Indeks untuk tabel `tbl_tahun`
+-- Indexes for table `tbl_pendukung`
+--
+ALTER TABLE `tbl_pendukung`
+  ADD PRIMARY KEY (`id_pendukung`);
+
+--
+-- Indexes for table `tbl_tahun`
 --
 ALTER TABLE `tbl_tahun`
   ADD PRIMARY KEY (`id_tahun`),
   ADD KEY `id_ppk` (`id_ppk`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
