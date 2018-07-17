@@ -17,15 +17,16 @@ class PPK1 extends CI_Controller {
 	}
 	public function editprofile ()
 	{
+		$id_user = $this->session->userdata('id_user');
+		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
 		$id_ppk = $this->session->userdata('id_ppk');
-		$this->load->view('ppk1/header');
+		$this->load->view('ppk1/header',$data);
 
 		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
 		$ppk = array("nama" => $ppk[0]['nama']);
 		$this->load->view('ppk1/sidebar', $ppk);
 
-		$id_user = $this->session->userdata('id_user');
-		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
+	
 		$this->load->view('ppk1/editakun',$data);
 		$this->load->view('ppk1/footer');
 	}
@@ -243,10 +244,11 @@ class PPK1 extends CI_Controller {
 			redirect('ppk1');
 		} else {
 			// echo "isi";
-			// $id_user = $this->session->userdata('id_user');
-			// $data['user'] = $this->Datauser_model->GetWhereUser($id_user);
-			// $this->load->view('ppk1/header',$data);
-			$this->load->view('ppk1/header1');
+			 $id_user = $this->session->userdata('id_user');
+			 $ini['user'] = $this->Datauser_model->GetWhereUser($id_user);
+			 $this->load->view('ppk1/header',$ini);
+
+			// $this->load->view('ppk1/header1');
 
 			$id_ppk = $this->session->userdata('id_ppk');
 			$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
