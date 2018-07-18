@@ -601,19 +601,20 @@ class PPK1 extends CI_Controller {
 		$this->load->view('ppk1/footer');
 	}
 
-	public function test($id_paket)
+	public function test()
 	{
-		$data['doc1'] = $this->Datapaket_model->showdata1('tbl_doc1',$id_paket);
-		$data['doc2'] = $this->Datapaket_model->showdata2('tbl_doc2',$id_paket);
-		$data['doc3'] = $this->Datapaket_model->showdata3('tbl_doc3',$id_paket); 
-		$data['doc4'] = $this->Datapaket_model->showdata4('tbl_pascamc0',$id_paket); 
-		$data['doc5'] = $this->Datapaket_model->showdata5('tbl_addendumii',$id_paket); 
-		$data['doc6'] = $this->Datapaket_model->showdata6('tbl_addendumiii',$id_paket); 
-		$data['doc7'] = $this->Datapaket_model->showdata7('tbl_addendumiv',$id_paket);  
+		$id_user = $this->session->userdata('id_user');
+		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
+		$this->load->view('ppk1/header',$data);
 
-		echo "<pre>";
-		print_r ($data);
-		echo "</pre>";
+		$id_ppk = $this->session->userdata('id_ppk');
+		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+		$ppk = array("nama" => $ppk[0]['nama']);
+		$this->load->view('ppk1/sidebar', $ppk);
+
+		$data['get_tahun'] = $this->Datatahun_model->datatahun($id_ppk);
+		$this->load->view('ppk1/test', $data );
+		$this->load->view('ppk1/footer');
 
 	}
 	public function testkirim()
