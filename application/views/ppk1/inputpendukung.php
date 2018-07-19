@@ -44,20 +44,17 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label class="form-control-label text-blue" for="">Surat Alih Status</label>
-                                <input class="form-control" type="hidden" value="Surat Alih Status" name="surat63">
-                                <input class="form-control" type="file" value="" name="file63">
+                                <input class="form-control" type="file" name="file1" accept="application/pdf">
                             </div>
                             <div class="form-group col-md-6">
                                 <label class="form-control-label text-blue" for="">Rekomendasi Teknis</label>
-                                <input class="form-control" type="hidden" value="Rekomendasi Teknis" name="surat64">
-                                <input class="form-control" type="file" value="" name="file64">
+                                <input class="form-control" type="file" name="file2" accept="application/pdf">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label class="form-control-label text-blue" for="">Surat Hibah ke Kementrian Keuangan</label>
-                                <input class="form-control" type="hidden" value="Surat Hibah ke Kementrian Keuangan" name="surat65">
-                                <input class="form-control" type="file" value="" name="file65">
+                                <input class="form-control" type="file" name="file3" accept="application/pdf">
                             </div>
                         </div>
                     </div>
@@ -67,49 +64,41 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Permohonan Pembayaran</label>
-                            <input class="form-control" type="hidden" value="Permohonan Pembayaran" name="surat66">
-                            <input class="form-control" type="file" value="" name="file66">
+                            <input class="form-control" type="file" name="file4" accept="application/pdf">
                         </div>
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Kuitansi</label>
-                            <input class="form-control" type="hidden" value="Kuitansi" name="surat67">
-                            <input class="form-control" type="file" value="" name="file67">
+                            <<input class="form-control" type="file" name="file5" accept="application/pdf">
                             </div>
                         </div>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Kartu Pengawasan (Karwas)</label>
-                            <input class="form-control" type="hidden" value="Kartu Pengawasan (Karwas)" name="surat68">
-                            <input class="form-control" type="file" value="" name="file68">
+                            <input class="form-control" type="file" name="file6" accept="application/pdf">
                         </div>
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue">Faktur Pajak</label>
-                            <input class="form-control" type="hidden" value="Faktur Pajak" name="surat69">
-                            <input class="form-control" type="file" value="" name="file69">
+                            <input class="form-control" type="file" name="file7" accept="application/pdf">
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">PPh dan PPN</label>
-                            <input class="form-control" type="hidden" value="PPh dan PPN" name="surat70">
-                            <input class="form-control" type="file" value="" name="file70">
+                            <input class="form-control" type="file" name="file8" accept="application/pdf">
                         </div>
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">SPP</label>
-                            <input class="form-control" type="hidden" value="SPP" name="surat71">
-                            <input class="form-control" type="file" value="" name="file71">
+                            <input class="form-control" type="file" name="file9" accept="application/pdf">
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">SPM</label>
-                            <input class="form-control" type="hidden" value="SPM" name="surat72">
-                            <input class="form-control" type="file" value="" name="file72">
+                            <input class="form-control" type="file" name="file10" accept="application/pdf">
                         </div>
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">SP2D</label>
-                            <input class="form-control" type="hidden" value="SP2D" name="surat73">
-                            <input class="form-control" type="file" value="" name="file73">
+                            <input class="form-control" type="file" name="file11" accept="application/pdf">
                         </div>
                     </div>
                 </div>
@@ -119,25 +108,21 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">LPJ</label>
-                            <input class="form-control" type="hidden" value="LPJ" name="surat74">
-                            <input class="form-control" type="file" value="" name="file74">
+                            <input class="form-control" type="file" name="file12" accept="application/pdf">
                         </div>
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Berita Acara Pemeriksaan Kas dan Rekonsiliasi</label>
-                            <input class="form-control" type="hidden" value="Berita Acara Pemeriksaan Kas dan Rekonsiliasi" name="surat75">
-                            <input class="form-control" type="file" value="" name="file75">
+                            <input class="form-control" type="file" name="file13" accept="application/pdf">
                             </div>
                         </div>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Rekening koran</label>
-                            <input class="form-control" type="hidden" value="Rekening koran" name="surat76">
-                            <input class="form-control" type="file" value="" name="file76">
+                            <input class="form-control" type="file" name="file14" accept="application/pdf">
                         </div>
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Berita Acara Pemeriksaan Kas</label>
-                            <input class="form-control" type="hidden" value="Berita Acara Pemeriksaan Kas" name="surat77">
-                            <input class="form-control" type="file" value="" name="file77">
+                            <input class="form-control" type="file" name="file15" accept="application/pdf">
                         </div>
                     </div>
                 </div>
