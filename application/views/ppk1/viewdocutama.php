@@ -731,10 +731,10 @@
                           <div class="modal-content">
                             <div class="modal-header">
                               <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h4 class="modal-title">Dokumen Data</h4>
+                              <h4 class="modal-title"><?=$doc1->surat_md ?></h4>
                             </div>
                             <div class="modal-body">
-                              <p>Lihat PDF</p>
+                              <embed src="<?php echo base_url('assets/data/2014/kontraktual/Test 2014/'.$doc1->surat_md) ?>" width="100%" height="500px">
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
