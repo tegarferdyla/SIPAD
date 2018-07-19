@@ -40,7 +40,7 @@
                                     <div class="card-body">
                                         <ul class="list-group">
                                             <a href="<?php echo site_url('ppk1/viewdocutama/' . $u['id_paket']) ?>"><li class="list-group-item">Dokumen Utama</li></a>
-                                            <a href="<?php echo site_url('ppk1/viewdocpendukung') ?>"><li class="list-group-item">Dokumen Pendukung</li></a>
+                                            <a href="<?php echo site_url('ppk1/viewdocpendukung/'.$u['id_paket']) ?>"><li class="list-group-item">Dokumen Pendukung</li></a>
                                         </ul>
                                     </div>
                                 </div>

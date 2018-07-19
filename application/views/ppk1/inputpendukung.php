@@ -35,7 +35,7 @@
                                                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Aksi
                                                     <span class="caret"></span></button>
                                                     <ul class="dropdown-menu list-unstyled card-body">
-                                                        <li><a href="<?php echo site_url('PPK1/viewdocpendukung') ?>">View Dokumen</a></li>
+                                                        <li><a href="<?php echo site_url('PPK1/viewdocpendukung/'.$show[0]['id_paket']) ?>">View Dokumen</a></li>
                                                         <li><a href="#">Edit Dokuken</a></li>
                                                     </ul>
                                             </div>
@@ -68,7 +68,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Kuitansi</label>
-                            <<input class="form-control" type="file" name="file5" accept="application/pdf">
+                            <input class="form-control" type="file" name="file5" accept="application/pdf">
                             </div>
                         </div>
                     <div class="row">

@@ -308,7 +308,7 @@ class PPK1 extends CI_Controller {
 		$this->load->view('ppk1/footer');
 	}
 
-	public function inputdokpendukung() {
+	public function inputdokpendukung($id_paket) {
 		$id_user = $this->session->userdata('id_user');
 		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
 		$this->load->view('ppk1/header', $data);
@@ -318,7 +318,8 @@ class PPK1 extends CI_Controller {
 		$ppk = array("nama" => $ppk[0]['nama']);
 		$this->load->view('ppk1/sidebar', $ppk);
 
-		$this->load->view('ppk1/inputpendukung');
+		$data['show'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
+		$this->load->view('ppk1/inputpendukung',$data);
 		$this->load->view('ppk1/footer');
 	}
 
@@ -589,7 +590,7 @@ class PPK1 extends CI_Controller {
 		$this->load->view('ppk1/footer');
 	}
 
-	public function viewdocpendukung() {
+	public function viewdocpendukung($id_paket) {
 		$id_ppk = $this->session->userdata('id_ppk');
 		$id_user = $this->session->userdata('id_user');
 		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
@@ -598,6 +599,8 @@ class PPK1 extends CI_Controller {
 		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
 		$ppk = array("nama" => $ppk[0]['nama']);
 		$this->load->view('ppk1/sidebar', $ppk);
+
+		$data['show'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
 		$this->load->view('ppk1/viewdocpendukung', $data);
 		$this->load->view('ppk1/footer');
 	}
@@ -616,7 +619,7 @@ class PPK1 extends CI_Controller {
 		$this->load->view('ppk1/test', $data);
 		$this->load->view('ppk1/footer');
 
-	}
+	} 
 	public function testkirim() {
 		for ($i = 1; $i <= 3; $i++) {
 			// $this->upload->do_upload('file'.$i);

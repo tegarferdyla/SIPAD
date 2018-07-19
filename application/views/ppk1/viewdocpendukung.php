@@ -34,7 +34,7 @@
                                                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Aksi
                                                     <span class="caret"></span></button>
                                                     <ul class="dropdown-menu list-unstyled card-body">
-                                                        <li><a href="<?php echo site_url('PPK1/inputdokpendukung') ?>">Input Dokumen</a></li>
+                                                        <li><a href="<?php echo site_url('PPK1/inputdokpendukung/'. $show[0]['id_paket']) ?>">Input Dokumen</a></li>
                                                         <li><a href="#">Edit Dokumen</a></li>
                                                     </ul>
                                             </div>
