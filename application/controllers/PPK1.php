@@ -603,7 +603,10 @@ class PPK1 extends CI_Controller {
 		$data['doc6'] = $this->Datapaket_model->showdata6('tbl_addendumiii',$id_paket); 
 		$data['doc7'] = $this->Datapaket_model->showdata7('tbl_addendumiv',$id_paket);  
 
-
+		$data['show'] = $this->Datapaket_model->showidpkt('tbl_paket' ,$id_paket);
+		$this->load->view('ppk1/viewdocutama',$data);
+		$this->load->view('ppk1/footer');
+	}
 	public function viewdocpendukung($id_paket) {
 		$id_ppk = $this->session->userdata('id_ppk');
 		$id_user = $this->session->userdata('id_user');
