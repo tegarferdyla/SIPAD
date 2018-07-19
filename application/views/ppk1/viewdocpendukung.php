@@ -10,7 +10,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="<?php echo base_url('admin') ?>">Dashboard</a>
                 </li>
-                <li class="breadcrumb-item active">Input Dokumen</li>
+                <li class="breadcrumb-item active">View Dokumen</li>
             </ol>
         </div>
         <!-- /.page-title-right -->
@@ -24,7 +24,6 @@
     <div class="widget-list">
         <div class="col-md-12 widget-holder">
             <div class="widget-bg">
-                    <form id="interviewForm">
                     <div class="widget-body clearfix">
                         <div class="row">
                         <div class="col-md-11">
@@ -35,8 +34,8 @@
                                                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Aksi
                                                     <span class="caret"></span></button>
                                                     <ul class="dropdown-menu list-unstyled card-body">
-                                                        <li><a href="<?php echo site_url('PPK1/viewdocpendukung') ?>">View Dokumen</a></li>
-                                                        <li><a href="#">Edit Dokuken</a></li>
+                                                        <li><a href="<?php echo site_url('PPK1/inputdokpendukung') ?>">Input Dokumen</a></li>
+                                                        <li><a href="#">Edit Dokumen</a></li>
                                                     </ul>
                                             </div>
                                         </div>
@@ -44,20 +43,23 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label class="form-control-label text-blue" for="">Surat Alih Status</label>
-                                <input class="form-control" type="hidden" value="Surat Alih Status" name="surat63">
-                                <input class="form-control" type="file" value="" name="file63">
+                                    <p>
+                                        <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal"></i>
+                                    </p>
                             </div>
                             <div class="form-group col-md-6">
                                 <label class="form-control-label text-blue" for="">Rekomendasi Teknis</label>
-                                <input class="form-control" type="hidden" value="Rekomendasi Teknis" name="surat64">
-                                <input class="form-control" type="file" value="" name="file64">
+                                    <p>
+                                        <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal"></i>
+                                    </p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label class="form-control-label text-blue" for="">Surat Hibah ke Kementrian Keuangan</label>
-                                <input class="form-control" type="hidden" value="Surat Hibah ke Kementrian Keuangan" name="surat65">
-                                <input class="form-control" type="file" value="" name="file65">
+                                    <p>
+                                        <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal"></i>
+                                    </p>
                             </div>
                         </div>
                     </div>
@@ -67,49 +69,57 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Permohonan Pembayaran</label>
-                            <input class="form-control" type="hidden" value="Permohonan Pembayaran" name="surat66">
-                            <input class="form-control" type="file" value="" name="file66">
+                                    <p>
+                                        <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal"></i>
+                                    </p>
                         </div>
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Kuitansi</label>
-                            <input class="form-control" type="hidden" value="Kuitansi" name="surat67">
-                            <input class="form-control" type="file" value="" name="file67">
+                                    <p>
+                                        <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal"></i>
+                                    </p>
                             </div>
                         </div>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Kartu Pengawasan (Karwas)</label>
-                            <input class="form-control" type="hidden" value="Kartu Pengawasan (Karwas)" name="surat68">
-                            <input class="form-control" type="file" value="" name="file68">
+                                    <p>
+                                        <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal"></i>
+                                    </p>
                         </div>
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue">Faktur Pajak</label>
-                            <input class="form-control" type="hidden" value="Faktur Pajak" name="surat69">
-                            <input class="form-control" type="file" value="" name="file69">
+                                    <p>
+                                        <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal"></i>
+                                    </p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">PPh dan PPN</label>
-                            <input class="form-control" type="hidden" value="PPh dan PPN" name="surat70">
-                            <input class="form-control" type="file" value="" name="file70">
+                                    <p>
+                                        <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal"></i>
+                                    </p>
                         </div>
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">SPP</label>
-                            <input class="form-control" type="hidden" value="SPP" name="surat71">
-                            <input class="form-control" type="file" value="" name="file71">
+                                    <p>
+                                        <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal"></i>
+                                    </p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">SPM</label>
-                            <input class="form-control" type="hidden" value="SPM" name="surat72">
-                            <input class="form-control" type="file" value="" name="file72">
+                                    <p>
+                                        <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal"></i>
+                                    </p>
                         </div>
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">SP2D</label>
-                            <input class="form-control" type="hidden" value="SP2D" name="surat73">
-                            <input class="form-control" type="file" value="" name="file73">
+                                    <p>
+                                        <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal"></i>
+                                    </p>
                         </div>
                     </div>
                 </div>
@@ -119,41 +129,55 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">LPJ</label>
-                            <input class="form-control" type="hidden" value="LPJ" name="surat74">
-                            <input class="form-control" type="file" value="" name="file74">
+                                    <p>
+                                        <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal"></i>
+                                    </p>
                         </div>
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Berita Acara Pemeriksaan Kas dan Rekonsiliasi</label>
-                            <input class="form-control" type="hidden" value="Berita Acara Pemeriksaan Kas dan Rekonsiliasi" name="surat75">
-                            <input class="form-control" type="file" value="" name="file75">
+                                     <p>
+                                        <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal"></i>
+                                    </p>
                             </div>
                         </div>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Rekening koran</label>
-                            <input class="form-control" type="hidden" value="Rekening koran" name="surat76">
-                            <input class="form-control" type="file" value="" name="file76">
+                                    <p>
+                                        <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal"></i>
+                                    </p>
                         </div>
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Berita Acara Pemeriksaan Kas</label>
-                            <input class="form-control" type="hidden" value="Berita Acara Pemeriksaan Kas" name="surat77">
-                            <input class="form-control" type="file" value="" name="file77">
+                                    <p>
+                                        <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal"></i>
+                                    </p>
                         </div>
                     </div>
                 </div>
-                    <div class="from-group row">
-                        <div class="col-md-9 ">
-                        </div>
-                        <div class="col-md-3 ml-md-auto btn-list">
-                            <button class="btn btn-primary btn-rounded" type="submit">Submit</button>
-                            <button class="btn btn-outline-default btn-rounded" type="reset">Cancel</button>
-                        </div>
-                    </div>
-                </form>
+
         </div>
     </div>
 </div>
 </div>
+                    <!-- Modal -->
+                      <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">Dokumen Data</h4>
+                            </div>
+                            <div class="modal-body">
+                              <p>Lihat PDF</p>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <!-- Modal -->
 <div class="tab-pane" id="profile-tab-bordered-1">
 
 </div>
