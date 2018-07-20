@@ -340,7 +340,7 @@ class PPK1 extends CI_Controller {
 		$file = [
 			'upload_path' => './assets/data/' . $tahun . '/' . $jenis . '/' . $nama_paket . '/',
 			'allowed_types' => 'pdf',
-			'overwrite' => TRUE
+			'overwrite' => TRUE,
 			// 'encrypt_name' => TRUE
 		];
 		$namabaru = $tahun . "-" . $nama_paket . "-";
@@ -393,7 +393,7 @@ class PPK1 extends CI_Controller {
 			'pasca_nai' => $namaajah[20] . $namafile[20],
 		);
 		$tambahdoc2 = $this->Datapaket_model->insertdoc2('tbl_pascamc0', $doc2);
-		if ($addendumii == "on") {
+		// if ($addendumii == "on") {
 			$datadendumii = array(
 				'id_addii' => $this->Penomoran_model->IDadd2(),
 				'id_paket' => $id_paket,
@@ -407,8 +407,8 @@ class PPK1 extends CI_Controller {
 				'addii_naii' => $namaajah[28] . $namafile[28],
 			);
 			$tambahdoc3 = $this->Datapaket_model->insertdoc3('tbl_addendumii', $datadendumii);
-		}
-		if ($addendumiii == "on") {
+		// }
+		// if ($addendumiii == "on") {
 			$datadendumiii = array(
 				'id_addiii' => $this->Penomoran_model->IDadd3(),
 				'id_paket' => $id_paket,
@@ -422,8 +422,8 @@ class PPK1 extends CI_Controller {
 				'addii_naiii' => $namaajah[36] . $namafile[36],
 			);
 			$tambahdoc4 = $this->Datapaket_model->insertdoc4('tbl_addendumiii', $datadendumiii);
-		}
-		if ($addendumiv == "on") {
+		// }
+		// if ($addendumiv == "on") {
 			$datadendumiv = array(
 				'id_addiv' => $this->Penomoran_model->IDadd4(),
 				'id_paket' => $id_paket,
@@ -437,7 +437,7 @@ class PPK1 extends CI_Controller {
 				'addiv_naiv' => $namaajah[44] . $namafile[44],
 			);
 			$tambahdoc5 = $this->Datapaket_model->insertdoc4('tbl_addendumiv', $datadendumiv);
-		}
+		// }
 		$doc3 = array(
 			'id_doc2' => $this->Penomoran_model->IDdoc2(),
 			'id_paket' => $id_paket,
