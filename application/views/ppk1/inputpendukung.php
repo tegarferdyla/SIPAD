@@ -21,10 +21,22 @@
     <!-- =================================== -->
     <div class="tab-content">
     <div class="tab-pane active" id="input">
+
+        <div class="row">
+            <div class="col-md-12">
+                <?php if ($this->session->flashdata('updateberhasil')): ?>
+                    <div class="alert alert-icon alert-success border-success alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                        </button> <i class="material-icons list-icon">check_circle</i>  <strong>Well done!</strong> Fileberhasil di upload.
+                    </div>
+                 <?php endif?>
+            </div>
+        </div>
+
     <div class="widget-list">
         <div class="col-md-12 widget-holder">
             <div class="widget-bg">
-                    <form id="interviewForm">
+                    <form id="interviewForm" method="post" action="<?php echo site_url('PPK1/simpandocpendukung') ?>" enctype="multipart/form-data">
                     <div class="widget-body clearfix">
                         <div class="row">
                         <div class="col-md-11">
@@ -35,7 +47,7 @@
                                                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Aksi
                                                     <span class="caret"></span></button>
                                                     <ul class="dropdown-menu list-unstyled card-body">
-                                                        <li><a href="<?php echo site_url('PPK1/viewdocpendukung/'.$show[0]['id_paket']) ?>">View Dokumen</a></li>
+                                                        <li><a href="<?php echo site_url('PPK1/viewdocpendukung') ?>">View Dokumen</a></li>
                                                         <li><a href="#">Edit Dokuken</a></li>
                                                     </ul>
                                             </div>
@@ -44,6 +56,7 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label class="form-control-label text-blue" for="">Surat Alih Status</label>
+                                <input type="hidden" name="id_paket" value="<?php echo $show[0]['id_paket'] ?>">
                                 <input class="form-control" type="file" name="file1" accept="application/pdf">
                             </div>
                             <div class="form-group col-md-6">
@@ -68,7 +81,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Kuitansi</label>
-                            <input class="form-control" type="file" name="file5" accept="application/pdf">
+                            <<input class="form-control" type="file" name="file5" accept="application/pdf">
                             </div>
                         </div>
                     <div class="row">

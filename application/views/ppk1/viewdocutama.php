@@ -43,7 +43,7 @@
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Surat Minat Daerah</label>
                                             <p> <?php echo $doc1->surat_md ?>
-                                                <i class="feather col-md-6 feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal"></i>
+                                                <i class="feather col-md-6 feather-eye text-dark" data-toggle="modal" data-target="#myModal1"></i>
                                             </p>
 
                                             <!-- <input type="file" name="file1" accept="application/pdf" class="form-control"> -->
@@ -51,7 +51,7 @@
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Surat Menerima Hibah</label>
                                             <p> <?php echo $doc1->surat_mh ?>
-                                                <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal"></i>
+                                                <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal2"></i>
                                             </p>
                                             <!-- <input class="form-control" type="file" name="file2" accept="application/pdf"> -->
                                         </div>
@@ -726,15 +726,37 @@
                     <br>
 
                     <!-- Modal -->
-                      <div class="modal fade" id="myModal" role="dialog">
+                      <div class="modal fade" id="myModal1" role="dialog">
                         <div class="modal-dialog modal-lg">
                           <div class="modal-content">
                             <div class="modal-header">
                               <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h4 class="modal-title"><?=$doc1->surat_md ?></h4>
+                              <h4 class="modal-title"><?=$doc1->surat_md?></h4>
                             </div>
                             <div class="modal-body">
-                              <embed src="<?php echo base_url('assets/data/2014/kontraktual/Test 2014/'.$doc1->surat_md) ?>" width="100%" height="500px">
+                              <embed src="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" width="100%" height="500px">
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <!-- Modal -->
+                    <!-- Modal -->
+                      <div class="modal fade" id="myModal2" role="dialog">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title"><?=$doc1->surat_mh?></h4>
+                            </div>
+                            <div class="modal-body">
+                                <?php if ($doc1->surat_mh != NULL) {?>
+                              <embed src="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_mh) ?>" width="100%" height="500px">
+                                <?php } else {?>
+                                <p>Tidak Ada File</p>
+                            <?php }?>
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
