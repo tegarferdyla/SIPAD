@@ -816,31 +816,31 @@
                         }elseif ($i==44){
                             $hasil = $doc7->addiv_naiv;
                         }elseif ($i==45){
-                            $hasil = doc2->laporan_harian1;
+                            $hasil = $doc2->laporan_harian1;
                         }elseif ($i==46){
-                            $hasil = doc2->laporan_mingguan1;
+                            $hasil = $doc2->laporan_mingguan1;
                         }elseif ($i==47){
-                            $hasil = doc2->bulanan_kontraktor;
+                            $hasil = $doc2->bulanan_kontraktor;
                         }elseif ($i==48){
-                            $hasil = doc2->sertifikat_pembayaran;
+                            $hasil = $doc2->sertifikat_pembayaran;
                         }elseif ($i==49){
-                            $hasil = doc2->laporan_harian2;
+                            $hasil = $doc2->laporan_harian2;
                         }elseif ($i==50){
-                            $hasil = doc2->laporan_mingguan2;
+                            $hasil = $doc2->laporan_mingguan2;
                         }elseif ($i==51){
-                            $hasil = doc2->bulanan_konsultan;
+                            $hasil = $doc2->bulanan_konsultan;
                         }elseif ($i==52){
-                            $hasil = doc2->berita_apm;
+                            $hasil = $doc2->berita_apm;
                         }elseif ($i==53){
-                            $hasil = doc2->berita_ascm;
+                            $hasil = $doc2->berita_ascm;
                         }elseif ($i==54){
-                            $hasil = doc2->provisional_sp;
+                            $hasil = $doc2->provisional_sp;
                         }elseif ($i==55){
-                            $hasil = doc2->provisional_bafv;
+                            $hasil = $doc2->provisional_bafv;
                         }elseif ($i==56){
-                            $hasil = doc2->provisional_basv
+                            $hasil = $doc2->provisional_basv;
                         }elseif ($i==57){
-                            $hasil = doc2->provisional_bastp;
+                            $hasil = $doc2->provisional_bastp;
                         }elseif ($i==58){
                             $hasil = $doc3->final_sp;
                         }elseif ($i==59){
