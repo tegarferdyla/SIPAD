@@ -743,7 +743,11 @@
                               <h4 class="modal-title"><?=$hasil?></h4>
                             </div>
                             <div class="modal-body">
+                                <?php if ($hasil!=NULL) {?>
                               <embed src="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $hasil) ?>" width="100%" height="500px">
+                              <?php }else{ ?>
+                                <p>Data Kosong</p>
+                            <?php } ?>
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
