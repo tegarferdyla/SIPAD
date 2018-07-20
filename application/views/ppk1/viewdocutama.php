@@ -60,7 +60,7 @@
                                         <div class="form-group col-md-6">
                                             <label class="form-control-label text-blue" for="">Surat Kesiapan Lahan</label>
                                             <p><?php echo $doc1->surat_kl ?>
-                                                <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal"></i>
+                                                <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal3"></i>
                                             </p>
                                             <!-- <input class="form-control" type="file" name="file3" accept="application/pdf"> -->
                                         </div>
@@ -726,15 +726,24 @@
                     <br>
 
                     <!-- Modal -->
-                      <div class="modal fade" id="myModal1" role="dialog">
+                    <?php for($i=1;$i<=62;$i++){ 
+                        if ($i==1) {
+                            $hasil = $doc1->surat_md;
+                        }elseif ($i==2) {
+                            $hasil = $doc1->surat_mh;
+                        }elseif ($i==3){
+                            $hasil = $doc1->surat_kl;
+                        }
+                    ?>
+                      <div class="modal fade" id="myModal<?php echo $i ?>" role="dialog">
                         <div class="modal-dialog modal-lg">
                           <div class="modal-content">
                             <div class="modal-header">
                               <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h4 class="modal-title"><?=$doc1->surat_md?></h4>
+                              <h4 class="modal-title"><?=$hasil?></h4>
                             </div>
                             <div class="modal-body">
-                              <embed src="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" width="100%" height="500px">
+                              <embed src="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $hasil) ?>" width="100%" height="500px">
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -742,28 +751,7 @@
                           </div>
                         </div>
                       </div>
-                    <!-- Modal -->
-                    <!-- Modal -->
-                      <div class="modal fade" id="myModal2" role="dialog">
-                        <div class="modal-dialog modal-lg">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h4 class="modal-title"><?=$doc1->surat_mh?></h4>
-                            </div>
-                            <div class="modal-body">
-                                <?php if ($doc1->surat_mh != NULL) {?>
-                              <embed src="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_mh) ?>" width="100%" height="500px">
-                                <?php } else {?>
-                                <p>Tidak Ada File</p>
-                            <?php }?>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                  <?php } ?>
                     <!-- Modal -->
 
 
@@ -778,34 +766,6 @@
             .on('change', function() {
                 $container = $('[data-topic="addendumii"]');
                 $container.toggle();
-
-                    // var display = $container.css('display');
-                    // switch (true) {
-                    //     case ('css' == topic && 'block' == display):
-                    //         $('#interviewForm').bootstrapValidator('addField', 'css_frameworks[]', {
-                    //             validators: {
-                    //                 notEmpty: {
-                    //                     message: 'Please choose at least 1 framework'
-                    //                 }
-                    //             }
-                    //         });
-                    //         break;
-                    //     case ('css' == topic && 'none' == display):
-                    //         $('#interviewForm').bootstrapValidator('removeField', 'css_frameworks[]');
-                    //         break;
-                    //     case ('javascript' == topic && 'block' == display):
-                    //         $('#interviewForm').bootstrapValidator('addField', 'js_frameworks[]', {
-                    //             validators: {
-                    //                 notEmpty: {
-                    //                     message: 'The name of framework is required'
-                    //                 }
-                    //             }
-                    //         });
-                    //         break;
-                    //     case ('javascript' == topic && 'none' == display):
-                    //         $('#interviewForm').bootstrapValidator('removeField', 'js_frameworks[]');
-                    //         break;
-                    // }
                 });
         });
         $(document).ready(function() {
