@@ -418,92 +418,92 @@
 
 
 
-                    <div class="widget-list">
-                        <div class="col-md-12 widget-holder">
-                            <div class="widget-bg">
-                                <div class="widget-body clearfix">
-                                    <div class="accordion" id="accordion-3" role="tablist" aria-multiselectable="true">
-                                        <div class="card card-outline-success">
-                                            <div class="card-header" role="tab" id="heading4">
-                                                <h6 class="card-title"><a role="button" data-toggle="collapse" data-parent="#accordion-3" href="#collapse23" aria-expanded="false" aria-controls="collapse23">ADDENDUM IV</a></h6>
-                                            </div>
-                                            <!-- /.card-header -->
-                                            <div id="collapse23" class="card-collapse collapse" role="tabpanel" aria-labelledby="heading4">
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="form-group col-md-6">
-                                                    <label class="form-control-label text-blue" for="">Bill of Quantity</label>
-                                                    <p><?php echo $doc7->addiv_bal ?>
-                                                    <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal37"></i>
-                                                </p>
-                                                    <!-- <input class="form-control" type="file" value="" name="file37" accept="application/pdf"> -->
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <label class="form-control-label text-blue" for="">Justifikasi dan Spesifikasi Teknis</label>
-                                                    <p><?php echo $doc7->addiv_boq ?>
-                                                    <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal38"></i>
-                                                </p>
-                                                    <!-- <input class="form-control" type="file" value="" name="file38" accept="application/pdf"> -->
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="form-group col-md-6">
-                                                    <label class="form-control-label text-blue" for="">Surat Lampiran Pendukung</label>
-                                                    <p><?php echo $doc7->addiv_jdst ?>
-                                                    <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal39></i>
-                                                </p>
-                                                    <!-- <input class="form-control" type="file" value="" name="file39" accept="application/pdf"> -->
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <label class="form-control-label text-blue" for="">Kurva R Revisi</label>
-                                                    <p><?php echo $doc7->addiv_slp ?>
-                                                    <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal40"></i>
-                                                </p>
-                                                    <!-- <input class="form-control" type="file" value="" name="file40" accept="application/pdf"> -->
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="form-group col-md-6">
-                                                    <label class="form-control-label text-blue" for="">Shop Drawing</label>
-                                                    <p><?php echo $doc7->addiv_kurva ?>
-                                                    <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal41"></i>
-                                                </p>
-                                                    <!-- <input class="form-control" type="file" value="" name="file41" accept="application/pdf"> -->
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <label class="form-control-label text-blue" for="">Berita Acara Klarifikasi Negosiasi</label>
-                                                    <p><?php echo $doc7->addiv_shop ?>
-                                                    <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal42"></i>
-                                                </p>
-                                                    <!-- <input class="form-control" type="file" value="" name="file42" accept="application/pdf"> -->
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="form-group col-md-6">
-                                                    <label class="form-control-label text-blue" for="">Berita Acara Lapangan</label>
-                                                    <p><?php echo $doc7->addiv_bakn ?>
-                                                    <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal43"></i>
-                                                </p>
-                                                    <!-- <input class="form-control" type="file" value="" name="file43" accept="application/pdf"> -->
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <label class="form-control-label text-blue" for="">Naskah Adendum IV</label>
-                                                    <p><?php echo $doc7->addiv_naiv ?>
-                                                    <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal44"></i>
-                                                </p>
-                                                    <!-- <input class="form-control" type="file" value="" name="file44" accept="application/pdf"> -->
-                                                </div>
-                                            </div>
-                                        </div><!-- /.card-body -->
-                                    </div><!-- /.card-collapse -->
-                                </div>
-                                <!-- /.panel -->
-                            </div>
-                            <br>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                   <!--  <div class="widget-list">
+                       <div class="col-md-12 widget-holder">
+                           <div class="widget-bg">
+                               <div class="widget-body clearfix">
+                                   <div class="accordion" id="accordion-3" role="tablist" aria-multiselectable="true">
+                                       <div class="card card-outline-success">
+                                           <div class="card-header" role="tab" id="heading4">
+                                               <h6 class="card-title"><a role="button" data-toggle="collapse" data-parent="#accordion-3" href="#collapse23" aria-expanded="false" aria-controls="collapse23">ADDENDUM IV</a></h6>
+                                           </div>
+                                           /.card-header
+                                           <div id="collapse23" class="card-collapse collapse" role="tabpanel" aria-labelledby="heading4">
+                                       <div class="card-body">
+                                           <div class="row">
+                                               <div class="form-group col-md-6">
+                                                   <label class="form-control-label text-blue" for="">Bill of Quantity</label>
+                                                   <p><?php echo $doc7->addiv_bal ?>
+                                                   <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal37"></i>
+                                               </p>
+                                                   <input class="form-control" type="file" value="" name="file37" accept="application/pdf">
+                                               </div>
+                                               <div class="form-group col-md-6">
+                                                   <label class="form-control-label text-blue" for="">Justifikasi dan Spesifikasi Teknis</label>
+                                                   <p><?php echo $doc7->addiv_boq ?>
+                                                   <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal38"></i>
+                                               </p>
+                                                   <input class="form-control" type="file" value="" name="file38" accept="application/pdf">
+                                               </div>
+                                           </div>
+                                           <div class="row">
+                                               <div class="form-group col-md-6">
+                                                   <label class="form-control-label text-blue" for="">Surat Lampiran Pendukung</label>
+                                                   <p><?php echo $doc7->addiv_jdst ?>
+                                                   <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal39></i>
+                                               </p>
+                                                   <input class="form-control" type="file" value="" name="file39" accept="application/pdf">
+                                               </div>
+                                               <div class="form-group col-md-6">
+                                                   <label class="form-control-label text-blue" for="">Kurva R Revisi</label>
+                                                   <p><?php echo $doc7->addiv_slp ?>
+                                                   <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal40"></i>
+                                               </p>
+                                                   <input class="form-control" type="file" value="" name="file40" accept="application/pdf">
+                                               </div>
+                                           </div>
+                                           <div class="row">
+                                               <div class="form-group col-md-6">
+                                                   <label class="form-control-label text-blue" for="">Shop Drawing</label>
+                                                   <p><?php echo $doc7->addiv_kurva ?>
+                                                   <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal41"></i>
+                                               </p>
+                                                   <input class="form-control" type="file" value="" name="file41" accept="application/pdf">
+                                               </div>
+                                               <div class="form-group col-md-6">
+                                                   <label class="form-control-label text-blue" for="">Berita Acara Klarifikasi Negosiasi</label>
+                                                   <p><?php echo $doc7->addiv_shop ?>
+                                                   <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal42"></i>
+                                               </p>
+                                                   <input class="form-control" type="file" value="" name="file42" accept="application/pdf">
+                                               </div>
+                                           </div>
+                                           <div class="row">
+                                               <div class="form-group col-md-6">
+                                                   <label class="form-control-label text-blue" for="">Berita Acara Lapangan</label>
+                                                   <p><?php echo $doc7->addiv_bakn ?>
+                                                   <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal43"></i>
+                                               </p>
+                                                   <input class="form-control" type="file" value="" name="file43" accept="application/pdf">
+                                               </div>
+                                               <div class="form-group col-md-6">
+                                                   <label class="form-control-label text-blue" for="">Naskah Adendum IV</label>
+                                                   <p><?php echo $doc7->addiv_naiv ?>
+                                                   <i class="feather feather-eye"data-toggle="modal" style="color: black;" data-target="#myModal44"></i>
+                                               </p>
+                                                   <input class="form-control" type="file" value="" name="file44" accept="application/pdf">
+                                               </div>
+                                           </div>
+                                       </div>/.card-body
+                                   </div>/.card-collapse
+                               </div>
+                               /.panel
+                           </div>
+                           <br>
+                       </div>
+                   </div>
+                                   </div>
+                               </div> -->
 
                     <div class="widget-list">
                         <div class="col-md-12 widget-holder">
@@ -798,7 +798,7 @@
                         }elseif ($i==35){
                             $hasil = $doc6->addiii_bakln;
                         }elseif ($i==36){
-                            $hasil = $doc6->addiii_naiii;
+                            $hasil = $doc6->addii_naiii;
                         }elseif ($i==37){
                             $hasil = $doc7->addiv_bal;
                         }elseif ($i==38){
@@ -816,31 +816,31 @@
                         }elseif ($i==44){
                             $hasil = $doc7->addiv_naiv;
                         }elseif ($i==45){
-                            $hasil = doc2->laporan_harian1;
+                            $hasil = $doc2->laporan_harian1;
                         }elseif ($i==46){
-                            $hasil = doc2->laporan_mingguan1;
+                            $hasil = $doc2->laporan_mingguan1;
                         }elseif ($i==47){
-                            $hasil = doc2->bulanan_kontraktor;
+                            $hasil = $doc2->bulanan_kontraktor;
                         }elseif ($i==48){
-                            $hasil = doc2->sertifikat_pembayaran;
+                            $hasil = $doc2->sertifikat_pembayaran;
                         }elseif ($i==49){
-                            $hasil = doc2->laporan_harian2;
+                            $hasil = $doc2->laporan_harian2;
                         }elseif ($i==50){
-                            $hasil = doc2->laporan_mingguan2;
+                            $hasil = $doc2->laporan_mingguan2;
                         }elseif ($i==51){
-                            $hasil = doc2->bulanan_konsultan;
+                            $hasil = $doc2->bulanan_konsultan;
                         }elseif ($i==52){
-                            $hasil = doc2->berita_apm;
+                            $hasil = $doc2->berita_apm;
                         }elseif ($i==53){
-                            $hasil = doc2->berita_ascm;
+                            $hasil = $doc2->berita_ascm;
                         }elseif ($i==54){
-                            $hasil = doc2->provisional_sp;
+                            $hasil = $doc2->provisional_sp;
                         }elseif ($i==55){
-                            $hasil = doc2->provisional_bafv;
+                            $hasil = $doc2->provisional_bafv;
                         }elseif ($i==56){
-                            $hasil = doc2->provisional_basv
+                            $hasil = $doc2->provisional_basv;
                         }elseif ($i==57){
-                            $hasil = doc2->provisional_bastp;
+                            $hasil = $doc2->provisional_bastp;
                         }elseif ($i==58){
                             $hasil = $doc3->final_sp;
                         }elseif ($i==59){
