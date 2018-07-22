@@ -4,9 +4,15 @@
 	<title>test</title>
 </head>
 <body>
-	<?php
-echo $tahun->nama_tahun;
-echo $paket[0]['nama_paket'];
-?>
+	<?php 
+		if ($show!=NULL) {
+			foreach ($show as $u) {
+				$surat_alih = $u['bmn_surat_alih'];
+			}
+		}else{
+			$surat_alih = "";
+		}
+		echo "test";
+	?>
 </body>
 </html>

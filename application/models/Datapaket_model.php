@@ -84,5 +84,11 @@ class Datapaket_model extends CI_Model {
 	public function insertpend($table, $data) {
 		return $this->db->insert($table, $data);
 	}
+	public function showpendukung($table,$id_paket)
+	{
+		$this->db->where('id_paket', $id_paket);
+		$id = $this->db->get($table);
+		return $id->row();
+	}
 }
 ?>
