@@ -633,12 +633,41 @@ class PPK1 extends CI_Controller {
 			$this->load->view('ppk1/footer');
 		}
 	}
-
-	public function test($id_paket) {
-		// $cari['show'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
+	public function editdocutama($id_paket)
+	{
 		$data['paket'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
 		$idtahun = $data['paket'][0]['id_tahun'];
 		$data['tahun'] = $this->Datatahun_model->cektahun($idtahun);
+		$data['doc1'] = $this->Datapaket_model->showdata1('tbl_doc1', $id_paket);
+		$data['doc2'] = $this->Datapaket_model->showdata2('tbl_doc2', $id_paket);
+		$data['doc3'] = $this->Datapaket_model->showdata3('tbl_doc3', $id_paket);
+		$data['doc4'] = $this->Datapaket_model->showdata4('tbl_pascamc0', $id_paket);
+		$data['doc5'] = $this->Datapaket_model->showdata5('tbl_addendumii', $id_paket);
+		$data['doc6'] = $this->Datapaket_model->showdata6('tbl_addendumiii', $id_paket);
+		$data['doc7'] = $this->Datapaket_model->showdata7('tbl_addendumiv', $id_paket);
+		
+		$id_ppk = $this->session->userdata('id_ppk');
+		$id_user = $this->session->userdata('id_user');
+		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
+		$this->load->view('ppk1/header', $data);
+
+
+		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+			$ppk = array("nama" => $ppk[0]['nama']);
+			$this->load->view('ppk1/sidebar', $ppk);
+
+			$data['show'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
+			$this->load->view('ppk1/editdocutama', $data);
+			$this->load->view('ppk1/footer');
+	}
+	public function updatedocutama()
+	{
+		echo "kirim";
+	}
+
+	public function test($id_paket) {
+		// $cari['show'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
+		$data['show'] = $this->Datapaket_model->showidpkt('tbl_pendukung', $id_paket);
 		$this->load->view('ppk1/test', $data);
 
 	}
