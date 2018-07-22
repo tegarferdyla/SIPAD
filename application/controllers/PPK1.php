@@ -660,6 +660,10 @@ class PPK1 extends CI_Controller {
 			$this->load->view('ppk1/editdocutama', $data);
 			$this->load->view('ppk1/footer');
 	}
+	public function updatedocutama()
+	{
+		echo "kirim";
+	}
 
 	public function test($id_paket) {
 		// $cari['show'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
