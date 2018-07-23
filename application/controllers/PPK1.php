@@ -483,23 +483,6 @@ class PPK1 extends CI_Controller {
 		$tahun = $carithn->nama_tahun;
 
 		$id_pendukung = $this->Penomoran_model->IDPend();
-
-		$file1 = $_FILES['file1']['name'];
-		$file2 = $_FILES['file2']['name'];
-		$file3 = $_FILES['file3']['name'];
-		$file4 = $_FILES['file4']['name'];
-		$file5 = $_FILES['file5']['name'];
-		$file6 = $_FILES['file6']['name'];
-		$file7 = $_FILES['file7']['name'];
-		$file8 = $_FILES['file8']['name'];
-		$file9 = $_FILES['file9']['name'];
-		$file10 = $_FILES['file10']['name'];
-		$file11 = $_FILES['file11']['name'];
-		$file12 = $_FILES['file12']['name'];
-		$file13 = $_FILES['file13']['name'];
-		$file14 = $_FILES['file14']['name'];
-		$file15 = $_FILES['file15']['name'];
-
 		// $addendumii = $this->input->post('topic1');
 		// $addendumiii = $this->input->post('topic2');
 		// $addendumiv = $this->input->post('topic3');
@@ -510,33 +493,48 @@ class PPK1 extends CI_Controller {
 			'overwrite' => TRUE,
 		];
 
+		$namabaru = $tahun . "-" . $nama_paket . "-Pendukung-";
 		$this->load->library('upload', $file);
-		for ($i = 1; $i <= 62; $i++) {
-			$this->upload->do_upload('file' . $i);
+		for ($i = 1; $i <= 15; $i++) {
+			$files[$i] = $_FILES['file'.$i]['name'];
+			if (!$this->upload->do_upload('file' . $i)) {
+				$this->upload->display_errors();
+			} else {
+				// $this->upload->do_upload('file'.$i);
+				$a[$i] = $this->upload->data();
+				rename($a[$i]['full_path'], $a[$i]['file_path'] . $namabaru . $a[$i]['file_name']);
+			}
+			if (!empty($files[$i])) {
+				$namaajah[$i] = $tahun . "-" . $nama_paket . "-Pendukung-";
+				$namafile[$i] = $a[$i]['file_name'];
+			} else {
+				$namaajah[$i] = "";
+				$namafile[$i] = "";
+			}
 		}
 		$pendukung = array(
 			'id_pendukung' => $id_pendukung,
 			'id_paket' => $id_paket,
-			'bmn_surat_alih' => $file1,
-			'bmn_rekomendasi' => $file2,
-			'bmn_surat_hibah' => $file3,
-			'keuangan_permohonan' => $file4,
-			'keuangan_kuitansi' => $file5,
-			'keuangan_kartu' => $file6,
-			'keuangan_faktur' => $file7,
-			'keuangan_pph' => $file8,
-			'keuangan_spp' => $file9,
-			'keuangan_spm' => $file10,
-			'keuangan_sp2d' => $file11,
-			'bendahara_lpj' => $file12,
-			'bendahara_bapkdr' => $file13,
-			'bendahara_rekening' => $file14,
-			'bendahara_bapk' => $file15,
+			'bmn_surat_alih' =>$namaajah[1] . $namafile[1],
+			'bmn_rekomendasi' => $namaajah[2] . $namafile[2],
+			'bmn_surat_hibah' => $namaajah[3] . $namafile[3],
+			'keuangan_permohonan' => $namaajah[4] . $namafile[4],
+			'keuangan_kuitansi' => $namaajah[5] . $namafile[5],
+			'keuangan_kartu' => $namaajah[6] . $namafile[6],
+			'keuangan_faktur' => $namaajah[7] . $namafile[7],
+			'keuangan_pph' => $namaajah[8] . $namafile[8],
+			'keuangan_spp' => $namaajah[9] . $namafile[9],
+			'keuangan_spm' => $namaajah[10] . $namafile[10],
+			'keuangan_sp2d' => $namaajah[11] . $namafile[11],
+			'bendahara_lpj' => $namaajah[12] . $namafile[12],
+			'bendahara_bapkdr' => $namaajah[13] . $namafile[13],
+			'bendahara_rekening' => $namaajah[14] . $namafile[14],
+			'bendahara_bapk' => $namaajah[15] . $namafile[15],
 		);
 		$tambahpendukung = $this->Datapaket_model->insertpend('tbl_pendukung', $pendukung);
 		if ($tambahpendukung > 0) {
 			$this->session->set_flashdata('updateberhasil', true);
-			redirect('ppk1/inputdokpendukung/' . $id_paket);
+			redirect('ppk1/viewdocpendukung/' . $id_paket);
 		}
 
 	}
@@ -614,22 +612,26 @@ class PPK1 extends CI_Controller {
 			$this->load->view('ppk1/footer');
 		}
 	}
-	public function viewdocpendukung($id_paket) {
-		$id_ppk = $this->session->userdata('id_ppk');
-		$id_user = $this->session->userdata('id_user');
-		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
-		$data['doc1'] = $this->Datapaket_model->showdata1('tbl_doc1', $id_paket);
+	public function viewdocpendukung($id_paket) {	
+		$data['paket'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
+		$idtahun = $data['paket'][0]['id_tahun'];
+		$data['tahun'] = $this->Datatahun_model->cektahun($idtahun);
+		$data['pendukung'] = $this->Datapaket_model->showpendukung('tbl_pendukung', $id_paket);
 		$this->load->view('ppk1/header', $data);
-		if ($data['doc1'] == NULL) {
+		if ($data['pendukung'] == NULL) {
 			redirect('PPK1/inputdokpendukung/' . $id_paket);
 		} else {
+			$id_ppk = $this->session->userdata('id_ppk');
+			$id_user = $this->session->userdata('id_user');
+			$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
+			$this->load->view('ppk1/header', $data);
+
 			$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
 			$ppk = array("nama" => $ppk[0]['nama']);
 			$this->load->view('ppk1/sidebar', $ppk);
 
 			$data['show'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
 			$this->load->view('ppk1/viewdocpendukung', $data);
-
 			$this->load->view('ppk1/footer');
 		}
 	}

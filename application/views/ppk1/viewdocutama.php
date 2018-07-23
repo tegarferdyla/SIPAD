@@ -19,6 +19,16 @@
     <!-- =================================== -->
     <!-- Different data widgets ============ -->
     <!-- =================================== -->
+    <div class="row">
+        <div class="col-md-12">
+            <?php if ($this->session->flashdata('updateberhasil')): ?>
+                <div class="alert alert-icon alert-success border-success alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                    </button> <i class="material-icons list-icon">check_circle</i>  <strong>Well done!</strong> File berhasil di upload.
+                </div>
+            <?php endif?>
+        </div>
+    </div>
     <div class="widget-list">
         <div class="col-md-12 widget-holder">
             <div class="widget-bg">
@@ -930,5 +940,5 @@
         $("#modalCustom .modal-header .modal-title").html(value2)
         // alert(a)
         }
-    })
+    });
 </script>
