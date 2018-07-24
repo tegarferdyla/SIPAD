@@ -95,5 +95,10 @@ class Datapaket_model extends CI_Model {
 		$res=$this->db->update($tableName,$data_update,$where);
 		return $res;
 	}
+	public function Updatedocutama2($tableName,$data_update,$where)
+	{
+		$res=$this->db->update($tableName,$data_update,$where);
+		return $res;
+	}
 }
 ?>

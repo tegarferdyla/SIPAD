@@ -15,8 +15,22 @@
     public function datauser()
     {
       $query = $this->db->query("select a.NIP, a.nama, b.nama as divisi, a.email, a.username, a.id_user from user a , ppk b WHERE a.id_ppk = b.id_ppk");
-      return $query->result();
-      
+      return $query->result();    
+    }
+    public function databmn()
+    {
+      $query = $this->db->query("select id_user, NIP , nama , bagian as divisi , email , username from user where bagian = 'BMN' ");
+      return $query->result();  
+    }
+    public function datakeuangan()
+    {
+      $query = $this->db->query("select id_user, NIP , nama , bagian as divisi , email , username from user where bagian = 'Keuangan' ");
+      return $query->result();  
+    }
+    public function databendahara()
+    {
+      $query = $this->db->query("select id_user, NIP , nama , bagian as divisi , email , username from user where bagian = 'Bendahara' ");
+      return $query->result();  
     }
     //Model hitung jumlah user
     public function JumlahUser ()

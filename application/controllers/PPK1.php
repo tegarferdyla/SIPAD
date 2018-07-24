@@ -679,7 +679,7 @@ class PPK1 extends CI_Controller {
 		];
 		$namabaru = $tahun . "-" . $nama_paket . "-";
 		$this->load->library('upload', $file);
-		for ($i = 1; $i <= 4; $i++) {
+		for ($i = 1; $i <= 5; $i++) {
 			$delfile[$i] = $this->input->post('delf'.$i);
 			$files[$i] = $_FILES['file'.$i]['name'];
 			if (!$this->upload->do_upload('file' . $i)) {
@@ -698,14 +698,15 @@ class PPK1 extends CI_Controller {
 				$namafile[$i] = $delfile[$i];
 			}
 		}
-		$data_update = array(
+		$where = array ('id_paket' => $id_paket);
+		$data_update1 = array(
 						'surat_md' => $namaajah[1] . $namafile[1],
 						'surat_mh' => $namaajah[2].$namafile[2],
 						'surat_kl' => $namaajah[3].$namafile[3],
-						'kesepakatan_bersama' => $namaajah[4].$namafile[4]
+						'kesepakatan_bersama' => $namaajah[4].$namafile[4],
+						'perjanjian_kerjasama' => $namaajah[5].$namafile[5]
 						);
-		$where = array ('id_paket' => $id_paket);
-		$result = $this->Datappk_model->UpdateDataPPK('tbl_doc1', $data_update, $where);
+		$result = $this->Datappk_model->UpdateDataPPK('tbl_doc1', $data_update1, $where);
 		if ($result>0) {
 			redirect('ppk1/editdocutama/'.$id_paket);
 		}

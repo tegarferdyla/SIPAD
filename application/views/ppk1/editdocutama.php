@@ -38,59 +38,168 @@
 							<div class="form-group col-md-6">
 								<label for="surat_md" class="form-control-label text-blue">Surat Minat Daerah</label>
                                         <input type="hidden" value="<?php echo $show[0]['id_paket'] ?>" name="id_paket">
-                                        <input type="hidden" value="<?php echo $doc1->surat_md ?>" name="delf1">
-								<p><?php echo $doc1->surat_md ?>
+								<p>
 									<button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" type="button" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>">
 										<i class="feather feather-eye text-dark"></i>
-										<input type="hidden" value="<?= $doc1->surat_md ?>">
+										<input type="hidden" value="<?= $doc1->surat_md ?>" name="delf1">
 									</button>
+									<?php echo $doc1->surat_md ?>
 								</p>
-								<input type="file" name="file1" class="form-control" accept="application/pdf">
+								<div class="btn btn-primary" style="position: relative;overflow: hidden;">
+									Perbaharui
+									<input type="file" name="file1" style="position: absolute;font-size: 50px;opacity: 0;right: 0;top: 0;" accept="application/pdf">
+								</div>
 							</div>
 							<div class="form-group col-md-6">
 								<label for="surat_mh" class="form-control-label text-blue">Surat Menerima Hibah</label>
-                                        <input type="hidden" value="<?php echo $doc1->surat_mh ?>" name="delf2">
 								<p><?php echo $doc1->surat_mh ?>
 									<button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" type="button" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_mh) ?>">
 										<i class="feather feather-eye text-dark"></i>
-										<input type="hidden" value="<?= $doc1->surat_mh ?>">
+										<input type="hidden" value="<?= $doc1->surat_mh ?>" name="delf2">
 									</button>
 								</p>
-								<input type="file" name="file2" class="form-control" accept="application/pdf">
+								<div class="btn btn-primary" style="position: relative;overflow: hidden;">
+									Perbaharui
+									<input type="file" name="file2" style="position: absolute;font-size: 50px;opacity: 0;right: 0;top: 0;" accept="application/pdf">
+								</div>
 							</div>
 						</div>
 
 						<div class="row">
 							<div class="form-group col-md-6">
 								<label for="surat_kl" class="form-control-label text-blue">Surat Kesiapan Lahan</label>
-                                        <input type="hidden" value="<?php echo $doc1->surat_kl ?>" name="delf3">
 								<p><?php echo $doc1->surat_kl ?>
 									<button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" type="button" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_kl) ?>">
 										<i class="feather feather-eye text-dark"></i>
-										<input type="hidden" value="<?= $doc1->surat_kl ?>">
+										<input type="hidden" value="<?= $doc1->surat_kl ?>" name="delf3">
 									</button>
 								</p>
-								<input type="file" name="file3" class="form-control" accept="application/pdf">
+								<div class="btn btn-primary" style="position: relative;overflow: hidden;">
+									Perbaharui
+									<input type="file" name="file3" style="position: absolute;font-size: 50px;opacity: 0;right: 0;top: 0;" accept="application/pdf">
+								</div>
 							</div>
 							<div class="form-group col-md-6">
 								<label for="kesepakatan_bersama" class="form-control-label text-blue">Kesepakatan Bersama (KSB)</label>
-                                        <input type="hidden" value="<?php echo $doc1->kesepakatan_bersama ?>" name="delf4">
 								<p><?php echo $doc1->kesepakatan_bersama ?>
 									<button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" type="button" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->kesepakatan_bersama) ?>">
 										<i class="feather feather-eye text-dark"></i>
-										<input type="hidden" value="<?= $doc1->kesepakatan_bersama ?>">
+										<input type="hidden" value="<?= $doc1->kesepakatan_bersama ?>" name="delf4">
 									</button>
 								</p>
-								<input type="file" name="file4" class="form-control" accept="application/pdf">
+								<div class="btn btn-primary" style="position: relative;overflow: hidden;">
+									Perbaharui
+									<input type="file" name="file4" style="position: absolute;font-size: 50px;opacity: 0;right: 0;top: 0;" accept="application/pdf">
+								</div>
+							</div>
+							<div class="form-group col-md-6">
+								<label for="perjanjian_kerjasama" class="form-control-label text-blue">Perjanjian Kerja Sama</label>
+                                        <input type="hidden" value="<?php echo $doc1->perjanjian_kerjasama ?>" name="delf5">
+								<p><?php echo $doc1->perjanjian_kerjasama ?>
+									<button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" type="button" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->perjanjian_kerjasama) ?>">
+										<i class="feather feather-eye text-dark"></i>
+										<input type="hidden" value="<?= $doc1->perjanjian_kerjasama ?>">
+									</button>
+								</p>
+								<div class="btn btn-primary" style="position: relative;overflow: hidden;">
+									Perbaharui
+									<input type="file" name="file5" style="position: absolute;font-size: 50px;opacity: 0;right: 0;top: 0;" accept="application/pdf">
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<button class="btn btn-primary btn-rounded" type="submit">Ubah</button>
+		<div class="widget-list">
+			<div class="col-md-12 widget-holder">
+				<div class="widget-bg">
+					<div class="widget-body clearfix">
+						<h4 class="box-title mr-b-0">Kelompok 2</h4><br>
+						<div class="row">
+							<div class="form-group col-md-6">
+								<label for="sppbj" class="form-control-label text-blue">SPBJ</label>
+								<p><?php echo $doc1->sppbj ?>
+									<button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" type="button" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->sppbj) ?>">
+										<i class="feather feather-eye text-dark"></i>
+										<input type="hidden" value="<?= $doc1->sppbj ?>" name="delf6">
+									</button>
+								</p>
+								<div class="btn btn-primary" style="position: relative;overflow: hidden;">
+									Perbaharui
+									<input type="file" name="file6" style="position: absolute;font-size: 50px;opacity: 0;right: 0;top: 0;" accept="application/pdf">
+								</div>
+							</div>
+							<div class="form-group col-md-6">
+	                            <label class="form-control-label text-blue" for="spmk">SPMK</label>
+	                            <p><?php echo $doc1->spmk ?>
+		                            <button class="btn btn-show"  data-toggle="modal" data-target="#modalCustom" type="button" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->spmk) ?>">
+		                                <i class="feather feather-eye text-dark"></i>
+		                                <input type="hidden" value="<?= $doc1->spmk ?>" name="delf7">
+		                            </button>
+	                        	</p>
+	                        	<div class="btn btn-primary" style="position: relative;overflow: hidden;">
+									Perbaharui
+									<input type="file" name="file7" style="position: absolute;font-size: 50px;opacity: 0;right: 0;top: 0;" accept="application/pdf">
+								</div>
+	                        </div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-md-6">
+								<label for="naskah_kontrak" class="form-control-label text-blue">Naskah Kontrak</label>
+								<p><?php echo $doc1->naskah_kontrak ?>
+									<button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" type="button" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->naskah_kontrak) ?>">
+										<i class="feather feather-eye text-dark"></i>
+										<input type="hidden" value="<?= $doc1->naskah_kontrak ?>" name="delf8">
+									</button>
+								</p>
+								<div class="btn btn-primary" style="position: relative;overflow: hidden;">
+									Perbaharui
+									<input type="file" name="file8" style="position: absolute;font-size: 50px;opacity: 0;right: 0;top: 0;" accept="application/pdf">
+								</div>
+							</div>
+							<div class="form-group col-md-6">
+	                            <label class="form-control-label text-blue" for="rencana_mk">Rencana Mutu Kontrak</label>
+	                            <p><?php echo $doc1->rencana_mk ?>
+		                            <button class="btn btn-show"  data-toggle="modal" data-target="#modalCustom" type="button" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->rencana_mk) ?>">
+		                                <i class="feather feather-eye text-dark"></i>
+		                                <input type="hidden" value="<?= $doc1->rencana_mk ?>" name="delf8">
+		                            </button>
+	                        	</p>
+	                        	<div class="btn btn-primary" style="position: relative;overflow: hidden;">
+									Perbaharui
+									<input type="file" name="file8" style="position: absolute;font-size: 50px;opacity: 0;right: 0;top: 0;" accept="application/pdf">
+								</div>
+	                        </div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-6">
+								<label for="bcp" class="form-control-label text-blue">Berita acara Pre-Construction</label>
+								<p><?php echo $doc1->bcp ?>
+									<button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" type="button" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->bcp) ?>">
+										<i class="feather feather-eye text-dark"></i>
+										<input type="hidden" value="<?= $doc1->bcp ?>" name="delf9">
+									</button>
+								</p>
+								<div class="btn btn-primary" style="position: relative;overflow: hidden;">
+									Perbaharui
+									<input type="file" name="file9" style="position: absolute;font-size: 50px;opacity: 0;right: 0;top: 0;" accept="application/pdf">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+        <div class="row">
+			<div class="col-md-12">
+			<button class="btn btn-success btn-block" type="submit">Save Update</button>
+			</div>
+		</div>
+
 	</form>
-    	<!-- Modal -->
+    <!-- Modal -->
 	<div class="modal fade" id="modalCustom" role="dialog">
     		<div class="modal-dialog modal-lg">
     			<div class="modal-content">
