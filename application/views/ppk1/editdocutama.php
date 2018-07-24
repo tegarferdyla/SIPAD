@@ -37,13 +37,51 @@
 						<div class="row">
 							<div class="form-group col-md-6">
 								<label for="surat_md" class="form-control-label text-blue">Surat Minat Daerah</label>
+                                        <input type="hidden" value="<?php echo $show[0]['id_paket'] ?>" name="id_paket">
+                                        <input type="hidden" value="<?php echo $doc1->surat_md ?>" name="delf1">
 								<p><?php echo $doc1->surat_md ?>
 									<button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" type="button" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>">
 										<i class="feather feather-eye text-dark"></i>
 										<input type="hidden" value="<?= $doc1->surat_md ?>">
 									</button>
 								</p>
-								<input type="file" name="file1" accept="application/pdf" class="form-control">
+								<input type="file" name="file1" class="form-control" accept="application/pdf">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="surat_mh" class="form-control-label text-blue">Surat Menerima Hibah</label>
+                                        <input type="hidden" value="<?php echo $doc1->surat_mh ?>" name="delf2">
+								<p><?php echo $doc1->surat_mh ?>
+									<button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" type="button" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_mh) ?>">
+										<i class="feather feather-eye text-dark"></i>
+										<input type="hidden" value="<?= $doc1->surat_mh ?>">
+									</button>
+								</p>
+								<input type="file" name="file2" class="form-control" accept="application/pdf">
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-md-6">
+								<label for="surat_kl" class="form-control-label text-blue">Surat Kesiapan Lahan</label>
+                                        <input type="hidden" value="<?php echo $doc1->surat_kl ?>" name="delf3">
+								<p><?php echo $doc1->surat_kl ?>
+									<button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" type="button" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_kl) ?>">
+										<i class="feather feather-eye text-dark"></i>
+										<input type="hidden" value="<?= $doc1->surat_kl ?>">
+									</button>
+								</p>
+								<input type="file" name="file3" class="form-control" accept="application/pdf">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="kesepakatan_bersama" class="form-control-label text-blue">Kesepakatan Bersama (KSB)</label>
+                                        <input type="hidden" value="<?php echo $doc1->kesepakatan_bersama ?>" name="delf4">
+								<p><?php echo $doc1->kesepakatan_bersama ?>
+									<button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" type="button" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->kesepakatan_bersama) ?>">
+										<i class="feather feather-eye text-dark"></i>
+										<input type="hidden" value="<?= $doc1->kesepakatan_bersama ?>">
+									</button>
+								</p>
+								<input type="file" name="file4" class="form-control" accept="application/pdf">
 							</div>
 						</div>
 					</div>

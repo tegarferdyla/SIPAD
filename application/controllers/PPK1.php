@@ -617,7 +617,7 @@ class PPK1 extends CI_Controller {
 		$idtahun = $data['paket'][0]['id_tahun'];
 		$data['tahun'] = $this->Datatahun_model->cektahun($idtahun);
 		$data['pendukung'] = $this->Datapaket_model->showpendukung('tbl_pendukung', $id_paket);
-		$this->load->view('ppk1/header', $data);
+		// $this->load->view('ppk1/header', $data);
 		if ($data['pendukung'] == NULL) {
 			redirect('PPK1/inputdokpendukung/' . $id_paket);
 		} else {
@@ -664,7 +664,51 @@ class PPK1 extends CI_Controller {
 	}
 	public function updatedocutama()
 	{
-		echo "kirim";
+		$id_paket = $this->input->post('id_paket');
+		$cari = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
+		$jenis = $cari[0]["jenis"];
+		$nama_paket = $cari[0]["nama_paket"];
+		$idtahun = $cari[0]["id_tahun"];
+		$carithn = $this->Datatahun_model->cektahun($idtahun);
+		$tahun = $carithn->nama_tahun;
+		$file = [
+			'upload_path' => './assets/data/' . $tahun . '/' . $jenis . '/' . $nama_paket . '/',
+			'allowed_types' => 'pdf',
+			'overwrite' => TRUE,
+			// 'encrypt_name' => TRUE
+		];
+		$namabaru = $tahun . "-" . $nama_paket . "-";
+		$this->load->library('upload', $file);
+		for ($i = 1; $i <= 4; $i++) {
+			$delfile[$i] = $this->input->post('delf'.$i);
+			$files[$i] = $_FILES['file'.$i]['name'];
+			if (!$this->upload->do_upload('file' . $i)) {
+				$this->upload->display_errors();
+			} else {
+				$this->upload->do_upload('file'.$i);
+				$a[$i] = $this->upload->data();
+				rename($a[$i]['full_path'], $a[$i]['file_path'] . $namabaru . $a[$i]['file_name']);
+			}
+			if (!empty($files[$i])) {
+				$namaajah[$i] = $tahun . "-" . $nama_paket . "-";
+				$namafile[$i] = $a[$i]['file_name'];
+				unlink($a[$i]['file_path'].$delfile[$i]);
+			} else {
+				$namaajah[$i] = "";
+				$namafile[$i] = $delfile[$i];
+			}
+		}
+		$data_update = array(
+						'surat_md' => $namaajah[1] . $namafile[1],
+						'surat_mh' => $namaajah[2].$namafile[2],
+						'surat_kl' => $namaajah[3].$namafile[3],
+						'kesepakatan_bersama' => $namaajah[4].$namafile[4]
+						);
+		$where = array ('id_paket' => $id_paket);
+		$result = $this->Datappk_model->UpdateDataPPK('tbl_doc1', $data_update, $where);
+		if ($result>0) {
+			redirect('ppk1/editdocutama/'.$id_paket);
+		}
 	}
 
 	public function test($id_paket) {

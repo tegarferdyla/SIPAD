@@ -43,8 +43,8 @@
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu list-unstyled card-body">
-                                    <li><a href="<?php echo site_url('ppk1/inputdokutama/' . $show[0]['id_paket']) ?>">Input Dokumen</a></li>
-                                    <li><a href="#">Edit Dokuken</a></li>
+                                    <!-- <li><a href="<?php echo site_url('ppk1/inputdokutama/' . $show[0]['id_paket']) ?>">Input Dokumen</a></li> -->
+                                    <li><a href="<?php echo site_url('ppk1/editdocutama/' . $show[0]['id_paket']) ?>">Edit Dokuken</a></li>
                                 </ul>
                             </div>
                         </div>
