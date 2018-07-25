@@ -655,12 +655,12 @@ class PPK1 extends CI_Controller {
 
 
 		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
-			$ppk = array("nama" => $ppk[0]['nama']);
-			$this->load->view('ppk1/sidebar', $ppk);
+		$ppk = array("nama" => $ppk[0]['nama']);
+		$this->load->view('ppk1/sidebar', $ppk);
 
-			$data['show'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
-			$this->load->view('ppk1/editdocutama', $data);
-			$this->load->view('ppk1/footer');
+		$data['show'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
+		$this->load->view('ppk1/editdocutama', $data);
+		$this->load->view('ppk1/footer');
 	}
 	public function updatedocutama()
 	{
@@ -679,7 +679,7 @@ class PPK1 extends CI_Controller {
 		];
 		$namabaru = $tahun . "-" . $nama_paket . "-";
 		$this->load->library('upload', $file);
-		for ($i = 1; $i <= 20; $i++) {
+		for ($i = 1; $i <= 62; $i++) {
 			$delfile[$i] = $this->input->post('delf'.$i);
 			$files[$i] = $_FILES['file'.$i]['name'];
 			if (!$this->upload->do_upload('file' . $i)) {
@@ -725,11 +725,148 @@ class PPK1 extends CI_Controller {
 						'pasca_nai' => $namaajah[20].$namafile[20]
 						);
 		$result2 = $this->Datapaket_model->Updatedocutama2('tbl_pascamc0', $data_update2, $where);
-		if ($result>0) {
-			redirect('ppk1/editdocutama/'.$id_paket);
-		}
+		$data_update3 = array(
+						'addii_bal' => $namaajah[21] . $namafile[21],
+						'addii_boq' => $namaajah[22] . $namafile[22],
+						'addii_jdst' => $namaajah[23] . $namafile[23],
+						'addii_slp' => $namaajah[24] . $namafile[24],
+						'addii_kurva' => $namaajah[25] . $namafile[25],
+						'addii_shop' => $namaajah[26] . $namafile[26],
+						'addii_bakln' => $namaajah[27] . $namafile[27],
+						'addii_naii' => $namaajah[28] . $namafile[28]
+			);
+		$result3 = $this->Datapaket_model->Updatedocutama3('tbl_addendumii', $data_update3, $where);
+		$data_update4 = array(
+						'addiii_bal' => $namaajah[29] . $namafile[29],
+						'addiii_boq' => $namaajah[30] . $namafile[30],
+						'addiii_jdst' => $namaajah[31] . $namafile[31],
+						'addiii_slp' => $namaajah[32] . $namafile[32],
+						'addiii_kurva' => $namaajah[33] . $namafile[33],
+						'addiii_shop' => $namaajah[34] . $namafile[34],
+						'addiii_bakln' => $namaajah[35] . $namafile[35],
+						'addii_naiii' => $namaajah[36] . $namafile[36]
+		);
+		$result4 = $this->Datapaket_model->Updatedocutama4('tbl_addendumiii', $data_update4, $where);
+
+		$data_update5 = array(
+						'addiv_bal' => $namaajah[37] . $namafile[37],
+						'addiv_boq' => $namaajah[38] . $namafile[38],
+						'addiv_jdst' => $namaajah[39] . $namafile[39],
+						'addiv_slp' => $namaajah[40] . $namafile[40],
+						'addiv_kurva' => $namaajah[41] . $namafile[41],
+						'addiv_shop' => $namaajah[42] . $namafile[42],
+						'addiv_bakn' => $namaajah[43] . $namafile[43],
+						'addiv_naiv' => $namaajah[44] . $namafile[44]
+		);
+		$result5 = $this->Datapaket_model->Updatedocutama5('tbl_addendumiv', $data_update5, $where);
+
+		$data_update6 = array(
+				'laporan_harian1' => $namaajah[45] . $namafile[45],
+				'laporan_mingguan1' => $namaajah[46] . $namafile[46],
+				'bulanan_kontraktor' => $namaajah[47] . $namafile[47],
+				'sertifikat_pembayaran' => $namaajah[48] . $namafile[48],
+				'laporan_harian2' => $namaajah[49] . $namafile[49],
+				'laporan_mingguan2' => $namaajah[50] . $namafile[50],
+				'bulanan_konsultan' => $namaajah[51] . $namafile[51],
+				'berita_apm' => $namaajah[52] . $namafile[52],
+				'berita_ascm' => $namaajah[53] . $namafile[53],
+				'provisional_sp' => $namaajah[54] . $namafile[54],
+				'provisional_bafv' => $namaajah[55] . $namafile[55],
+				'provisional_basv' => $namaajah[56] . $namafile[56],
+				'provisional_bastp' => $namaajah[57] . $namafile[57]
+		);
+		$result6 = $this->Datapaket_model->Updatedocutama6('tbl_doc2', $data_update6, $where);
+		$data_update7 = array(
+			'final_sp' => $namaajah[58] . $namafile[58],
+			'final_bafv' => $namaajah[59] . $namafile[59],
+			'final_basv' => $namaajah[60] . $namafile[60],
+			'final_bastp' => $namaajah[61] . $namafile[61],
+			'final_dokumentasi' => $namaajah[62] . $namafile[62]
+		);
+		$result7 = $this->Datapaket_model->Updatedocutama7('tbl_doc3', $data_update7, $where);
+
+		redirect('ppk1/editdocutama/'.$id_paket);
 	}
 
+	public function editdocpend($id_paket)
+	{
+		$data['paket'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
+		$idtahun = $data['paket'][0]['id_tahun'];
+		$data['tahun'] = $this->Datatahun_model->cektahun($idtahun);
+		$data['pendukung'] = $this->Datapaket_model->showpendukung('tbl_pendukung', $id_paket);
+		$id_ppk = $this->session->userdata('id_ppk');
+		$id_user = $this->session->userdata('id_user');
+		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
+		$this->load->view('ppk1/header', $data);
+
+		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+		$ppk = array("nama" => $ppk[0]['nama']);
+		$this->load->view('ppk1/sidebar', $ppk);
+
+		$data['show'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
+		$this->load->view('ppk1/editdocpend', $data);
+		$this->load->view('ppk1/footer');
+	}
+	public function updatedocpend()
+	{
+		$id_paket = $this->input->post('id_paket');
+		$cari = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
+		$jenis = $cari[0]["jenis"];
+		$nama_paket = $cari[0]["nama_paket"];
+		$idtahun = $cari[0]["id_tahun"];
+		$carithn = $this->Datatahun_model->cektahun($idtahun);
+		$tahun = $carithn->nama_tahun;
+		$file = [
+			'upload_path' => './assets/data/' . $tahun . '/' . $jenis . '/' . $nama_paket . '/',
+			'allowed_types' => 'pdf',
+			'overwrite' => TRUE,
+			// 'encrypt_name' => TRUE
+		];
+		$namabaru = $tahun . "-" . $nama_paket . "-Pendukung-";
+		$this->load->library('upload', $file);
+		for ($i = 1; $i <= 15; $i++) {
+			$delfile[$i] = $this->input->post('delf'.$i);
+			$files[$i] = $_FILES['file'.$i]['name'];
+			if (!$this->upload->do_upload('file' . $i)) {
+				$this->upload->display_errors();
+			} else {
+				$this->upload->do_upload('file'.$i);
+				$a[$i] = $this->upload->data();
+				rename($a[$i]['full_path'], $a[$i]['file_path'] . $namabaru . $a[$i]['file_name']);
+			}
+			if (!empty($files[$i])) {
+				$namaajah[$i] = $tahun . "-" . $nama_paket . "-";
+				$namafile[$i] = $a[$i]['file_name'];
+				unlink($a[$i]['file_path'].$delfile[$i]);
+			} else {
+				$namaajah[$i] = "";
+				$namafile[$i] = $delfile[$i];
+			}
+		}
+		$where = array ('id_paket' => $id_paket);
+		$pendukung = array(
+			'bmn_surat_alih' =>$namaajah[1] . $namafile[1],
+			'bmn_rekomendasi' => $namaajah[2] . $namafile[2],
+			'bmn_surat_hibah' => $namaajah[3] . $namafile[3],
+			'keuangan_permohonan' => $namaajah[4] . $namafile[4],
+			'keuangan_kuitansi' => $namaajah[5] . $namafile[5],
+			'keuangan_kartu' => $namaajah[6] . $namafile[6],
+			'keuangan_faktur' => $namaajah[7] . $namafile[7],
+			'keuangan_pph' => $namaajah[8] . $namafile[8],
+			'keuangan_spp' => $namaajah[9] . $namafile[9],
+			'keuangan_spm' => $namaajah[10] . $namafile[10],
+			'keuangan_sp2d' => $namaajah[11] . $namafile[11],
+			'bendahara_lpj' => $namaajah[12] . $namafile[12],
+			'bendahara_bapkdr' => $namaajah[13] . $namafile[13],
+			'bendahara_rekening' => $namaajah[14] . $namafile[14],
+			'bendahara_bapk' => $namaajah[15] . $namafile[15],
+		);
+		$tambahpendukung = $this->Datapaket_model->updatedocpend('tbl_pendukung', $pendukung, $where);
+		if ($tambahpendukung > 0) {
+			$this->session->set_flashdata('updateberhasil', true);
+			redirect('ppk1/editdocpend/' . $id_paket);
+		}
+	}
 	public function test($id_paket) {
 		// $cari['show'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
 		$data['show'] = $this->Datapaket_model->showidpkt('tbl_pendukung', $id_paket);
