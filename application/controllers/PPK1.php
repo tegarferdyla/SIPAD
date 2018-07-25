@@ -679,7 +679,7 @@ class PPK1 extends CI_Controller {
 		];
 		$namabaru = $tahun . "-" . $nama_paket . "-";
 		$this->load->library('upload', $file);
-		for ($i = 1; $i <= 5; $i++) {
+		for ($i = 1; $i <= 20; $i++) {
 			$delfile[$i] = $this->input->post('delf'.$i);
 			$files[$i] = $_FILES['file'.$i]['name'];
 			if (!$this->upload->do_upload('file' . $i)) {
@@ -704,9 +704,27 @@ class PPK1 extends CI_Controller {
 						'surat_mh' => $namaajah[2].$namafile[2],
 						'surat_kl' => $namaajah[3].$namafile[3],
 						'kesepakatan_bersama' => $namaajah[4].$namafile[4],
-						'perjanjian_kerjasama' => $namaajah[5].$namafile[5]
+						'perjanjian_kerjasama' => $namaajah[5].$namafile[5],
+						'sppbj' => $namaajah[6].$namafile[6],
+						'spmk' => $namaajah[7].$namafile[7],
+						'naskah_kontrak' => $namaajah[8].$namafile[8],
+						'rencana_mk' => $namaajah[9].$namafile[9],
+						'bcp' => $namaajah[10].$namafile[10],
+						'mc0_dd' => $namaajah[11].$namafile[11],
+						'mc0_bal' => $namaajah[12].$namafile[12],
+						'mc0_jdst'=> $namaajah[13].$namafile[13]
 						);
-		$result = $this->Datappk_model->UpdateDataPPK('tbl_doc1', $data_update1, $where);
+		$result1 = $this->Datapaket_model->Updatedocutama('tbl_doc1', $data_update1, $where);
+		$data_update2 = array(
+						'pasca_boq' => $namaajah[14].$namafile[14],
+						'pasca_jdst' => $namaajah[15].$namafile[15],
+						'pasca_slp' => $namaajah[16].$namafile[16],
+						'pasca_kurva' => $namaajah[17].$namafile[17],
+						'pasca_shop' => $namaajah[18].$namafile[18],
+						'pasca_bakn' => $namaajah[19].$namafile[19],
+						'pasca_nai' => $namaajah[20].$namafile[20]
+						);
+		$result2 = $this->Datapaket_model->Updatedocutama2('tbl_pascamc0', $data_update2, $where);
 		if ($result>0) {
 			redirect('ppk1/editdocutama/'.$id_paket);
 		}
