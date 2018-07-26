@@ -411,6 +411,174 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 				}
 			}
 		}
+		public function Tambahakunkeuangan ()
+		{
+			$this->form_validation->set_rules('nip', 'NIP' ,'trim|required|numeric|max_length[12]');
+			$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
+			$this->form_validation->set_rules('divisi', 'Divisi' , 'required');
+			$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+			$this->form_validation->set_rules('username','Username', 'required');
+
+			if ($this->form_validation->run() == FALSE) {
+				$this->load->view('admin/header');
+				$this->load->view('admin/sidebar');
+				$this->load->view('admin/createuser');
+				$this->load->view('admin/footer1');
+			}
+			else {
+				$nip 		= $this->input->post('nip');
+				$nama 		= $this->input->post('nama');
+				$divisi 	= $this->input->post('divisi');
+				$email 		= $this->input->post('email');
+				$alamat 	= $this->input->post('alamat');
+				$username   = $this->input->post('username');
+				$this->load->library('generate_token');
+				$password 	= $this->generate_token->get_token(8);
+
+				$data = array
+				(
+					'id_user'		=> $this->Penomoran_model->IDDaftar(),
+					'nip'			=> $nip,
+					'nama'			=> $nama,
+					'bagian'		=> $divisi,
+					'email'			=> $email,
+					'alamat'		=> $alamat,
+					'username'		=> $username,
+					'password'		=> md5($password),
+					// 'password'		=> $password,
+					'foto'			=> "default-avatar.jpg",
+					'id_ppk'		=> ""
+				);
+				$resultchecknip = $this->Datauser_model->ceknipuser($nip);
+				if ($resultchecknip > 0) {
+					$this->session->set_flashdata('nipsalah','true');
+					redirect('admin/createuser');
+				}
+				else {
+					$input = $this->Datauser_model->Tambahuser($data,'user');
+					if ($input > 0) {
+						$this->load->library('email');
+					    $config = array();
+					    $config['charset'] = 'utf-8';
+					    $config['useragent'] = 'Codeigniter';
+					    $config['protocol']= "smtp";
+					    $config['mailtype']= "html";
+					    $config['smtp_host']= "ssl://smtp.mail.yahoo.com";//pengaturan smtp
+					    $config['smtp_port']= "465";
+					    $config['smtp_timeout']= "400";
+					    $config['smtp_user']= "hans.inside@yahoo.com"; // isi dengan email kamu
+					    $config['smtp_pass']= "tangerang030298"; // isi dengan password kamu
+					    $config['crlf']="\r\n"; 
+					    $config['newline']="\r\n"; 
+					    $config['wordwrap'] = TRUE;
+					    //memanggil library email dan set konfigurasi untuk pengiriman email
+					   
+					    $this->email->initialize($config);
+					    //konfigurasi pengiriman
+					    $this->email->from($config['smtp_user']);
+					    $this->email->to($email);
+					    $this->email->subject("Notifikasi");
+					    $this->email->message(
+					     "Selamat , ".$nama." akun anda berhasil dibuat harap  login dengan password ".$password
+					    );
+				  
+				    if($input > 0)
+				    {
+						$this->session->set_flashdata('keuangan-berhasil','true');
+						redirect(base_url('admin/createuser'));	
+					}
+						}
+					else{
+						$this->session->set_flashdata('gagal','true');
+						redirect(base_url('admin/createuser'));
+					}			
+				}
+			}
+		}
+		public function Tambahakunbendahara ()
+		{
+			$this->form_validation->set_rules('nip', 'NIP' ,'trim|required|numeric|max_length[12]');
+			$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
+			$this->form_validation->set_rules('divisi', 'Divisi' , 'required');
+			$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+			$this->form_validation->set_rules('username','Username', 'required');
+
+			if ($this->form_validation->run() == FALSE) {
+				$this->load->view('admin/header');
+				$this->load->view('admin/sidebar');
+				$this->load->view('admin/createuser');
+				$this->load->view('admin/footer1');
+			}
+			else {
+				$nip 		= $this->input->post('nip');
+				$nama 		= $this->input->post('nama');
+				$divisi 	= $this->input->post('divisi');
+				$email 		= $this->input->post('email');
+				$alamat 	= $this->input->post('alamat');
+				$username   = $this->input->post('username');
+				$this->load->library('generate_token');
+				$password 	= $this->generate_token->get_token(8);
+
+				$data = array
+				(
+					'id_user'		=> $this->Penomoran_model->IDDaftar(),
+					'nip'			=> $nip,
+					'nama'			=> $nama,
+					'bagian'		=> $divisi,
+					'email'			=> $email,
+					'alamat'		=> $alamat,
+					'username'		=> $username,
+					'password'		=> md5($password),
+					// 'password'		=> $password,
+					'foto'			=> "default-avatar.jpg",
+					'id_ppk'		=> ""
+				);
+				$resultchecknip = $this->Datauser_model->ceknipuser($nip);
+				if ($resultchecknip > 0) {
+					$this->session->set_flashdata('nipsalah','true');
+					redirect('admin/createuser');
+				}
+				else {
+					$input = $this->Datauser_model->Tambahuser($data,'user');
+					if ($input > 0) {
+						$this->load->library('email');
+					    $config = array();
+					    $config['charset'] = 'utf-8';
+					    $config['useragent'] = 'Codeigniter';
+					    $config['protocol']= "smtp";
+					    $config['mailtype']= "html";
+					    $config['smtp_host']= "ssl://smtp.mail.yahoo.com";//pengaturan smtp
+					    $config['smtp_port']= "465";
+					    $config['smtp_timeout']= "400";
+					    $config['smtp_user']= "hans.inside@yahoo.com"; // isi dengan email kamu
+					    $config['smtp_pass']= "tangerang030298"; // isi dengan password kamu
+					    $config['crlf']="\r\n"; 
+					    $config['newline']="\r\n"; 
+					    $config['wordwrap'] = TRUE;
+					    //memanggil library email dan set konfigurasi untuk pengiriman email
+					   
+					    $this->email->initialize($config);
+					    //konfigurasi pengiriman
+					    $this->email->from($config['smtp_user']);
+					    $this->email->to($email);
+					    $this->email->subject("Notifikasi");
+					    $this->email->message(
+					     "Selamat , ".$nama." akun anda berhasil dibuat harap  login dengan password ".$password
+					    );
+				  
+				    if($input > 0)
+				    {
+						$this->session->set_flashdata('bendahara-berhasil','true');
+						redirect(base_url('admin/createuser'));	
+					}
+						}
+					else{
+						$this->session->set_flashdata('gagal','true');
+						redirect(base_url('admin/createuser'));
+					}			
+				}
+			}
+		}
 		public function test()
 		{
 			$this->load->library('email');

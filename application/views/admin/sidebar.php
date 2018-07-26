@@ -33,14 +33,6 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="menu-item-has-children"><a href="javascript:void(0);"><i class="list-icon feather feather-settings"></i> <span class="hide-menu">PROFILE</span></a>
-                        <ul class="list-unstyled sub-menu">
-                            <li><a href="<?php echo site_url('admin/profile') ?>">Profil</a>
-                            </li>
-                            <li><a href="<?php echo site_url('admin/changepassword') ?>">Ubah Password</a>
-                            </li>
-                        </ul>
-                    </li>
                 </ul>
                 <!-- /.side-menu -->
             </nav>

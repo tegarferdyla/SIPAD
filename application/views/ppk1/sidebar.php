@@ -18,15 +18,6 @@
                     </li>
                      <li class="current-page "><a href="<?php echo site_url('ppk1/inputpaket') ?>"><i class="list-icon feather feather-plus"></i><span class="hide-menu">Unggah Paket</span></a>
                     </li>
-
-                    <li class="menu-item-has-children"><a href="javascript:void(0);"><i class="list-icon feather feather-settings"></i> <span class="hide-menu">Ubah Profil</span></a>
-                        <ul class="list-unstyled sub-menu">
-                            <li><a href="<?php echo site_url('ppk1/profile') ?>">Profil</a>
-                            </li>
-                            <li><a href="<?php echo site_url('ppk1/changepassword') ?>">Ubah Password</a>
-                            </li>
-                        </ul>
-                    </li>
                 </ul>
                 <!-- /.side-menu -->
             </nav>

@@ -26,6 +26,16 @@
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                             </button> <i class="material-icons list-icon">check_circle</i>  <strong>Well done!</strong> Akun BMN baru berhasil di daftarkan.
                         </div>
+                        <?php elseif ($this->session->flashdata('keuangan-berhasil')): ?>
+                        <div class="alert alert-icon alert-success border-success alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                            </button> <i class="material-icons list-icon">check_circle</i>  <strong>Well done!</strong> Akun Keuangan baru berhasil di daftarkan.
+                        </div>
+                        <?php elseif ($this->session->flashdata('bendahara-berhasil')): ?>
+                        <div class="alert alert-icon alert-success border-success alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                            </button> <i class="material-icons list-icon">check_circle</i>  <strong>Well done!</strong> Akun Bendahara baru berhasil di daftarkan.
+                        </div>
                         <?php elseif ($this->session->flashdata('nipsalah')): ?>
                             <div class="alert alert-icon alert-danger border-danger alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
@@ -181,27 +191,7 @@
                                                 </form> 
                                         </div>
                                         <div class="tab-pane" id="keuangan-tab-bordered-1">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <?php if ($this->session->flashdata('keuangan-berhasil')): ?>
-                                                        <div class="alert alert-icon alert-success border-success alert-dismissible fade show" role="alert">
-                                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                                                            </button> <i class="material-icons list-icon">check_circle</i>  <strong>Well done!</strong> Akun Keuangan baru berhasil di daftarkan.
-                                                        </div>
-                                                        <?php elseif ($this->session->flashdata('nipsalah')): ?>
-                                                            <div class="alert alert-icon alert-danger border-danger alert-dismissible fade show" role="alert">
-                                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                                                                </button> <i class="material-icons list-icon">not_interested</i>  <strong>Oh snap!</strong> NIP yang dimasukkan sudah terdaftar
-                                                            </div>
-                                                            <?php elseif ($this->session->flashdata('keuangan-gagal')): ?>
-                                                               <div class="alert alert-icon alert-danger border-danger alert-dismissible fade show" role="alert">
-                                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                                                                </button> <i class="material-icons list-icon">not_interested</i>  <strong>Oh snap!</strong> Akun Keuangan baru gagal didaftarkan
-                                                            </div>
-                                                        <?php endif ?>
-                                                    </div>
-                                                </div>
-                                                <form action="#" method ="post">
+                                                <form action="<?php echo base_url ('admin/Tambahakunkeuangan') ?>" method ="post">
                                                     <div class="form-group row">
                                                         <label class="col-md-3 col-form-label" for="l0">NIP</label>
                                                         <div class="col-md-9">
@@ -254,27 +244,7 @@
                                                 </form>
                                         </div>
                                         <div class="tab-pane" id="bendahara-tab-bordered-1">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <?php if ($this->session->flashdata('keuangan-berhasil')): ?>
-                                                        <div class="alert alert-icon alert-success border-success alert-dismissible fade show" role="alert">
-                                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                                                            </button> <i class="material-icons list-icon">check_circle</i>  <strong>Well done!</strong> Akun Keuangan baru berhasil di daftarkan.
-                                                        </div>
-                                                        <?php elseif ($this->session->flashdata('nipsalah')): ?>
-                                                            <div class="alert alert-icon alert-danger border-danger alert-dismissible fade show" role="alert">
-                                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                                                                </button> <i class="material-icons list-icon">not_interested</i>  <strong>Oh snap!</strong> NIP yang dimasukkan sudah terdaftar
-                                                            </div>
-                                                            <?php elseif ($this->session->flashdata('keuangan-gagal')): ?>
-                                                               <div class="alert alert-icon alert-danger border-danger alert-dismissible fade show" role="alert">
-                                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                                                                </button> <i class="material-icons list-icon">not_interested</i>  <strong>Oh snap!</strong> Akun Keuangan baru gagal didaftarkan
-                                                            </div>
-                                                        <?php endif ?>
-                                                    </div>
-                                                </div>
-                                                <form action="#" method ="post">
+                                                <form action="<?php echo base_url ('admin/Tambahakunbendahara') ?>" method ="post">
                                                     <div class="form-group row">
                                                         <label class="col-md-3 col-form-label" for="l0">NIP</label>
                                                         <div class="col-md-9">
