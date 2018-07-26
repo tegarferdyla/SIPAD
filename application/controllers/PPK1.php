@@ -13,6 +13,12 @@ class PPK1 extends CI_Controller {
 			redirect('admin');
 		} else if ($this->session->userdata('divisi') == 'Kasatker') {
 			redirect('kasatker');
+		} else if ($this->session->userdata('divisi') == 'BMN') {
+			redirect('bmn');
+		} else if ($this->session->userdata('divisi') == 'Keuangan') {
+			redirect('keuangan');
+		} else if ($this->session->userdata('divisi') == 'Bendahara') {
+				redirect('bendahara');
 		}
 	}
 	public function editprofile() {
@@ -227,11 +233,11 @@ class PPK1 extends CI_Controller {
 				'input_by' => $this->session->userdata('nama'),
 				'id_ppk' => $id_ppk,
 			);
-			$resultchecknip = $this->Datatahun_model->validasitahun($tahun);
-			if ($resultchecknip > 0) {
-				$this->session->set_flashdata('tahunsalah', 'true');
-				redirect('ppk1/inputtahun');
-			} else {
+			// $resultchecknip = $this->Datatahun_model->validasitahun($tahun);
+			// if ($resultchecknip > 0) {
+			// 	$this->session->set_flashdata('tahunsalah', 'true');
+			// 	redirect('ppk1/inputtahun');
+			// } else {
 				$input = $this->Datatahun_model->Tambahtahun($data, 'tbl_tahun');
 				if ($input > 0) {
 					$lokasi = "./assets/data/" . $tahun;
@@ -242,7 +248,7 @@ class PPK1 extends CI_Controller {
 					$this->session->set_flashdata('gagal', 'true');
 					redirect(base_url('ppk1/inputtahun'));
 				}
-			}
+			// }
 		}
 	}
 	public function jenispaket($tahun) {

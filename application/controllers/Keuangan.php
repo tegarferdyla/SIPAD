@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  *
  */
-class Bmn extends CI_Controller {
+class Keuangan extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		if (!$this->session->has_userdata('status')) {
@@ -15,38 +15,36 @@ class Bmn extends CI_Controller {
 			redirect('kasatker');
 		} else if ($this->session->userdata('divisi') == 'PPK') {
 			redirect('ppk1');
-		}
-		else if ($this->session->userdata('divisi') == 'Keuangan') {
-			redirect('Keuangan');
-		}
-		else if ($this->session->userdata('divisi') == 'Bendahara') {
+		}else if ($this->session->userdata('divisi') == 'BMN') {
+			redirect('bmn');
+		}else if ($this->session->userdata('divisi') == 'Bendahara') {
 				redirect('bendahara');
-			}
+		}
 	}
 	public function index() {
 		$id_user = $this->session->userdata('id_user');
 		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
-		$this->load->view('bmn/header', $data);
+		$this->load->view('keuangan/header', $data);
 
 		$data['get_ppk']=$this->Datappk_model->datappk();
-		$this->load->view('bmn/sidebar',$data);
+		$this->load->view('keuangan/sidebar',$data);
 
-		$this->load->view('bmn/dashboard');
-		$this->load->view('bmn/footer');
+		$this->load->view('keuangan/dashboard');
+		$this->load->view('keuangan/footer');
 	}
 
 	public function tahun($id_ppk)
 	{
 		$id_user = $this->session->userdata('id_user');
 		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
-		$this->load->view('bmn/header', $data);
+		$this->load->view('keuangan/header', $data);
 
 		$data['get_ppk']=$this->Datappk_model->datappk();
-		$this->load->view('bmn/sidebar',$data);
+		$this->load->view('keuangan/sidebar',$data);
 
 		$data['get_tahun'] = $this->Datatahun_model->datatahun($id_ppk);
-		$this->load->view('bmn/tahun',$data);
-		$this->load->view('bmn/footer');
+		$this->load->view('keuangan/tahun',$data);
+		$this->load->view('keuangan/footer');
 	}
 
 	public function jenispaket($id_tahun)
@@ -54,14 +52,14 @@ class Bmn extends CI_Controller {
 
 			$id_user = $this->session->userdata('id_user');
 			$ini['user'] = $this->Datauser_model->GetWhereUser($id_user);
-			$this->load->view('bmn/header', $ini);
+			$this->load->view('keuangan/header', $ini);
 
 			$ppk['get_ppk']=$this->Datappk_model->datappk();
-			$this->load->view('bmn/sidebar',$ppk);
+			$this->load->view('keuangan/sidebar',$ppk);
 
 			$data['dapattahun'] = $this->Datatahun_model->dapatkantahun($id_tahun);
-			$this->load->view('bmn/tampilpaket',$data);
-			$this->load->view('bmn/footer');
+			$this->load->view('keuangan/tampilpaket',$data);
+			$this->load->view('keuangan/footer');
 		
 	}
 
@@ -69,28 +67,28 @@ class Bmn extends CI_Controller {
 	{
 			$id_user = $this->session->userdata('id_user');
 			$ini['user'] = $this->Datauser_model->GetWhereUser($id_user);
-			$this->load->view('bmn/header', $ini);
+			$this->load->view('keuangan/header', $ini);
 
 			$ppk['get_ppk']=$this->Datappk_model->datappk();
-			$this->load->view('bmn/sidebar',$ppk);
+			$this->load->view('keuangan/sidebar',$ppk);
 
 			$kontraktual['kontraktual'] = $this->Datapaket_model->kontraktual($id_tahun);
-			$this->load->view('bmn/kontraktual',$kontraktual);
-			$this->load->view('bmn/footer');
+			$this->load->view('keuangan/kontraktual',$kontraktual);
+			$this->load->view('keuangan/footer');
 	}
 	public function paketsuakelola($id_tahun)
 	{
 			$id_user = $this->session->userdata('id_user');
 			$ini['user'] = $this->Datauser_model->GetWhereUser($id_user);
-			$this->load->view('bmn/header', $ini);
+			$this->load->view('keuangan/header', $ini);
 
 			$ppk['get_ppk']=$this->Datappk_model->datappk();
-			$this->load->view('bmn/sidebar',$ppk);
+			$this->load->view('keuangan/sidebar',$ppk);
 
 			$suakelola['suakelola'] = $this->Datapaket_model->suakelola($id_tahun);
 			// print_r($suakelola);
-			$this->load->view('bmn/suakelola',$suakelola);
-			$this->load->view('bmn/footer');
+			$this->load->view('keuangan/suakelola',$suakelola);
+			$this->load->view('keuangan/footer');
 	}
 	public function dokumenkontraktual ($id_paket)
 	{
@@ -100,7 +98,7 @@ class Bmn extends CI_Controller {
 
 			if ($pendukung['pendukung'] == NULL) {
 				$this->session->set_flashdata('kosong', 'true');
-				redirect('bmn/paketkontraktual/'.$tahun);
+				redirect('keuangan/paketkontraktual/'.$tahun);
 			}
 			else{
 				$id_user = $this->session->userdata('id_user');
@@ -108,9 +106,9 @@ class Bmn extends CI_Controller {
 				$this->load->view('ppk1/header', $ini);
 
 				$ppk['get_ppk']=$this->Datappk_model->datappk();
-				$this->load->view('bmn/sidebar',$ppk);
+				$this->load->view('keuangan/sidebar',$ppk);
 
-				$this->load->view('bmn/viewdokumenkontraktual',$pendukung);
+				$this->load->view('keuangan/viewdokumenkontraktual',$pendukung);
 				$this->load->view('ppk1/footer');
 			}
 
@@ -125,7 +123,7 @@ class Bmn extends CI_Controller {
 
 			if ($pendukung['pendukung'] == NULL) {
 				$this->session->set_flashdata('kosong', 'true');
-				redirect('bmn/paketkontraktual/'.$tahun);
+				redirect('keuangan/paketkontraktual/'.$tahun);
 			}
 			else{
 				$id_user = $this->session->userdata('id_user');
@@ -133,9 +131,9 @@ class Bmn extends CI_Controller {
 				$this->load->view('ppk1/header', $ini);
 
 				$ppk['get_ppk']=$this->Datappk_model->datappk();
-				$this->load->view('bmn/sidebar',$ppk);
+				$this->load->view('keuangan/sidebar',$ppk);
 
-				$this->load->view('bmn/viewdokumensuakelola',$pendukung);
+				$this->load->view('keuangan/viewdokumensuakelola',$pendukung);
 				$this->load->view('ppk1/footer');
 			}
 

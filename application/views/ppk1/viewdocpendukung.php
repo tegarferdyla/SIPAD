@@ -3,7 +3,7 @@
     <div class="row page-title clearfix">
         <div class="page-title-left">
             <h6 class="page-title-heading mr-0 mr-r-5">Dokumen Pendukung</h6>
-            <span class="text-muted">Konsultasi Supervisi Pembangunan Sanitasi Terpadu Kawasan Strategis 3 Kabupaten Bima</span>
+            <span class="text-muted"><?php echo $show[0]['nama_paket']; ?></span>
         </div>
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">

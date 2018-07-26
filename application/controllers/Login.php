@@ -75,6 +75,15 @@ class Login extends CI_Controller
 			elseif($this->session->userdata('bagian')=='PPK') {
 				redirect(base_url('ppk1'));
 			}
+			elseif($this->session->userdata('bagian')=='BMN'){
+				redirect(base_url('bmn'));
+			}
+			else if ($this->session->userdata('bagian') == 'Keuangan') {
+			redirect('keuangan');
+			}
+			else if ($this->session->userdata('bagian') == 'Bendahara') {
+			redirect('bendahara');
+			}
 		}
 		else{
 			$this->session->set_flashdata('gagallogin', 'true');

@@ -21,6 +21,15 @@ class Datatahun_model extends CI_Model {
 		$query = $this->db->get();
 		return $query->result_array();
 	}
+	public function dapatkantahun($id_tahun)
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_tahun');
+		$this->db->where('id_tahun', $id_tahun);
+		$this->db->order_by('nama_tahun', 'ASC');
+		$query = $this->db->get();
+		return $query->result_array();
+	}
 	public function GetWhereTahun($where="")
 	{
      	$res=$this->db->query("SELECT * FROM tbl_tahun ".$where);

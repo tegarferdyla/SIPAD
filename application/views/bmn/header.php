@@ -20,13 +20,13 @@
     <link href="<?php echo base_url('assets/css/style.css') ?>" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url('assets/vendors/material-icons/material-icons.css') ?>" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url('assets/vendors/mono-social-icons/monosocialiconsfont.css') ?>" rel="stylesheet" type="text/css">
-    <link href="<?php echo base_url('assets/vendors/feather-icons/feather.css') ?>" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url('assets/vendors/feather-icons/feather.css') ?>" rel="stylesheet" type="text/css"> 
     <!-- Head Libs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script data-pace-options='{ "ajax": false, "selectors": [ "img" ]}' src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
     <!-- CSS -->
    <!--  <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600%7CRoboto:400" rel="stylesheet" type="text/css">
-
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.7.0/css/perfect-scrollbar.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" type="text/css">
@@ -34,9 +34,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/switchery/0.8.2/switchery.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.25/daterangepicker.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" type="text/css">
-
-
-
+    
+    
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css" rel="stylesheet" type="text/css">
      <link href="<?php echo base_url('assets/css/style.css') ?>" rel="stylesheet" type="text/css">
     <!-- Head Libs -->
@@ -78,7 +78,7 @@
             <!-- /.navbar-right -->
             <!-- User Image with Dropdown -->
             <ul class="nav navbar-nav">
-                <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle dropdown-toggle-user ripple" data-toggle="dropdown"><span class="avatar thumb-xs2"><span style="color:#007fff"><?php echo ucwords($this->session->userdata('nama')); ?></span> &nbsp;<img src="<?php echo base_url('assets/demo/users/user1.jpg') ?>" class="rounded-circle" alt=""> <i class="feather feather-chevron-down list-icon"></i></span></a>
+                <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle dropdown-toggle-user ripple" data-toggle="dropdown"><span class="avatar thumb-xs2"><span style="color:#007fff"><?php echo ucwords($user['nama']); ?></span> &nbsp;<img src="<?php echo base_url('assets/img/'.$user['foto']) ?>" class="rounded-circle" alt=""> <i class="feather feather-chevron-down list-icon"></i></span></a>
                     <div
                     class="dropdown-menu dropdown-left dropdown-card dropdown-card-profile animated flipInY">
                     <div class="card">
