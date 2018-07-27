@@ -8,9 +8,10 @@
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="<?php echo base_url('admin') ?>">Dashboard</a>
-                </li>
-                <li class="breadcrumb-item active">View Dokumen</li>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('PPK1') ?>">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('ppk1/jenispaket/'.$tahun->id_tahun) ?>"><?php echo $tahun->nama_tahun ?></a></li>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('ppk1/pilihpaket/'.$tahun->id_tahun.'/'.$show[0]['jenis']) ?>"><?php echo ucwords($show[0]['jenis']) ?></a></li>
+                <li class="breadcrumb-item active">View Dokumen Pendukung</li>
             </ol>
         </div>
         <!-- /.page-title-right -->
@@ -46,7 +47,6 @@
                                                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Aksi
                                                     <span class="caret"></span></button>
                                                     <ul class="dropdown-menu list-unstyled card-body">
-                                                        <li><a href="<?php echo site_url('PPK1/inputdokpendukung/'. $show[0]['id_paket']) ?>">Input Dokumen</a></li>
                                                         <li><a href="<?php echo site_url('PPK1/editdocpend/'. $show[0]['id_paket']) ?>">Edit Dokumen</a></li>
                                                     </ul>
                                             </div>
@@ -61,6 +61,11 @@
                                             <i class="feather feather-eye text-dark"></i>
                                             <input type="hidden" value="<?= $pendukung->bmn_surat_alih ?>">
                                         </button>
+                                        <?php if ($pendukung->bmn_surat_alih!=NULL) {?>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bmn_surat_alih) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php }else{ ?>
+                                            <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php } ?>
                                     </p>
                             </div>
                             <div class="form-group col-md-6">
@@ -70,6 +75,11 @@
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value ="<?php $pendukung->bmn_rekomendasi ?>">
                                         </button>
+                                         <?php if ($pendukung->bmn_rekomendasi!=NULL) {?>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bmn_rekomendasi) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php }else{ ?>
+                                            <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php } ?>
                                     </p>
                             </div>
                         </div>
@@ -81,6 +91,11 @@
                                             <i class="feather feather-eye text-success"></i>
                                         <input type="hidden" value ="<?php $pendukung->bmn_surat_hibah ?>">
                                         </button>
+                                         <?php if ($pendukung->bmn_surat_hibah!=NULL) {?>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bmn_surat_hibah) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php }else{ ?>
+                                            <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php } ?>
                                     </p>
                             </div>
                         </div>
@@ -95,6 +110,11 @@
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value ="<?php $pendukung->keuangan_permohonan ?>">
                                         </button>
+                                         <?php if ($pendukung->keuangan_permohonan!=NULL) {?>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_permohonan) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php }else{ ?>
+                                            <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php } ?>
                                     </p>
                         </div>
                         <div class="form-group col-md-6">
@@ -104,6 +124,11 @@
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value ="<?php $pendukung->keuangan_kuitansi ?>">
                                         </button>
+                                         <?php if ($pendukung->keuangan_kuitansi!=NULL) {?>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_kuitansi) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php }else{ ?>
+                                            <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php } ?>
                                     </p>
                             </div>
                         </div>
@@ -115,6 +140,11 @@
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value ="<?php $pendukung->keuangan_kartu ?>">
                                         </button>
+                                         <?php if ($pendukung->keuangan_kartu!=NULL) {?>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_kartu) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php }else{ ?>
+                                            <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php } ?>
                                     </p>
                         </div>
                         <div class="form-group col-md-6">
@@ -124,6 +154,11 @@
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value ="<?php $pendukung->keuangan_faktur ?>">
                                         </button>
+                                         <?php if ($pendukung->keuangan_faktur!=NULL) {?>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_faktur) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php }else{ ?>
+                                            <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php } ?>
                                     </p>
                         </div>
                     </div>
@@ -135,6 +170,11 @@
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value ="<?php $pendukung->keuangan_pph ?>">
                                         </button>
+                                         <?php if ($pendukung->keuangan_pph!=NULL) {?>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_pph) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php }else{ ?>
+                                            <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php } ?>
                                     </p>
                         </div>
                         <div class="form-group col-md-6">
@@ -144,6 +184,11 @@
                                             <i class="feather feather-eye text-success"></i>
                                         <input type="hidden" value ="<?php $pendukung->keuangan_spp ?>">
                                     </button>
+                                     <?php if ($pendukung->keuangan_spp!=NULL) {?>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_spp) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php }else{ ?>
+                                            <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php } ?>
                                 </p>
                         </div>
                     </div>
@@ -155,6 +200,11 @@
                                            <i class="feather feather-eye text-success"></i>
                                            <input type="hidden" value="<?php $pendukung->keuangan_spm ?>"> 
                                        </button>
+                                        <?php if ($pendukung->keuangan_spm!=NULL) {?>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_spm) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php }else{ ?>
+                                            <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php } ?>
                                     </p>
                         </div>
                         <div class="form-group col-md-6">
@@ -164,6 +214,11 @@
                                         <i class="feather feather-eye text-success"></i>
                                         <input type="hidden" value = "<?php $pendukung->keuangan_sp2d ?>">
                                         </button>
+                                         <?php if ($pendukung->keuangan_sp2d!=NULL) {?>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_sp2d) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php }else{ ?>
+                                            <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php } ?>
                                     </p>
                         </div>
                     </div>
@@ -178,6 +233,11 @@
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value="<?php $pendukung->bendahara_lpj ?>">
                                         </button>
+                                         <?php if ($pendukung->bendahara_lpj!=NULL) {?>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bendahara_lpj) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php }else{ ?>
+                                            <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php } ?>
                                     </p>
                         </div>
                         <div class="form-group col-md-6">
@@ -187,6 +247,11 @@
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value="<?php $pendukung->bendahara_bapkdr ?>">
                                         </button>
+                                         <?php if ($pendukung->bendahara_bapkdr!=NULL) {?>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bendahara_bapkdr) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php }else{ ?>
+                                            <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php } ?>
                                     </p>
                             </div>
                         </div>
@@ -198,6 +263,11 @@
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value="<?php $pendukung->bendahara_rekening ?>">
                                         </button>
+                                         <?php if ($pendukung->bendahara_rekening!=NULL) {?>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bendahara_rekening) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php }else{ ?>
+                                            <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php } ?>
                                     </p>
                         </div>
                         <div class="form-group col-md-6">
@@ -207,6 +277,11 @@
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value="<?php $pendukung->bendahara_bapk ?>">
                                         </button>
+                                         <?php if ($pendukung->bendahara_bapk!=NULL) {?>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bendahara_bapk) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php }else{ ?>
+                                            <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
+                                        <?php } ?>
                                     </p>
                         </div>
                     </div>

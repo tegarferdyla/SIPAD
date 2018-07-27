@@ -280,6 +280,7 @@ class PPK1 extends CI_Controller {
 	public function pilihpaket($tahun, $jenis) {
 		$id_ppk = $this->session->userdata('id_ppk');
 		$data['jenis'] = $this->Datapaket_model->cekjenis($jenis, $tahun, $id_ppk);
+		$data['tahun'] = $this->Datatahun_model->cektahun($tahun);
 		if ($data['jenis'] == NULL) {
 			$this->session->set_flashdata('kosong', 'true');
 			redirect('ppk1/jenispaket/' . $tahun);
@@ -310,6 +311,8 @@ class PPK1 extends CI_Controller {
 		$this->load->view('ppk1/sidebar', $ppk);
 
 		$data['show'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
+		$idtahun = $data['show'][0]["id_tahun"];
+		$data['tahun'] = $this->Datatahun_model->cektahun($idtahun);
 		$this->load->view('ppk1/input', $data);
 		$this->load->view('ppk1/footer');
 	}
@@ -325,6 +328,8 @@ class PPK1 extends CI_Controller {
 		$this->load->view('ppk1/sidebar', $ppk);
 
 		$data['show'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
+		$idtahun = $data['show'][0]["id_tahun"];
+		$data['tahun'] = $this->Datatahun_model->cektahun($idtahun);
 		$this->load->view('ppk1/inputpendukung', $data);
 		$this->load->view('ppk1/footer');
 	}
