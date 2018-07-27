@@ -7,8 +7,11 @@
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="<?php echo site_url('admin') ?>">Dashboard</a>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('PPK1') ?>">Dashboard</a></li>
+                <li class="breadcrumb-item">
+                    <a href="<?php echo site_url('ppk1/jenispaket/'.$tahun->id_tahun) ?>"><?php echo $tahun->nama_tahun ?></a>
                 </li>
+                <li class="breadcrumb-item active"><?php echo ucwords($jenis[0]['jenis']) ?></li>
             </ol>
         </div>
         <!-- /.page-title-right -->

@@ -3,14 +3,15 @@
     <div class="row page-title clearfix">
         <div class="page-title-left">
             <h6 class="page-title-heading mr-0 mr-r-5">Dokumen Pendukung</h6>
-            <span class="text-muted">Konsultasi Supervisi Pembangunan Sanitasi Terpadu Kawasan Strategis 3 Kabupaten Bima</span>
+            <span class="text-muted"><?php echo ucwords($show[0]['nama_paket']) ?></span>
         </div>
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="<?php echo base_url('admin') ?>">Dashboard</a>
-                </li>
-                <li class="breadcrumb-item active">Input Dokumen</li>
+               <li class="breadcrumb-item"><a href="<?php echo site_url('PPK1') ?>">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('ppk1/jenispaket/'.$tahun->id_tahun) ?>"><?php echo $tahun->nama_tahun ?></a></li>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('ppk1/pilihpaket/'.$tahun->id_tahun.'/'.$show[0]['jenis']) ?>"><?php echo ucwords($show[0]['jenis']) ?></a></li>
+                <li class="breadcrumb-item active">Input Dokumen Pendukung</li>
             </ol>
         </div>
         <!-- /.page-title-right -->
