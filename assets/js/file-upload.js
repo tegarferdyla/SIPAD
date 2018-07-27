@@ -48,12 +48,12 @@
         this.element = $(element);
         var defaultText = this.element.text();
         
-        var label = this.element.text();
+        var p = this.element.text();
         var input = $('input', this.element);
         
         this.element.text('');
         this.element.append('<span class="file-upload-text"></span>');
-        $('.file-upload-text', this.element).text(label);
+        $('.file-upload-text', this.element).text(p);
         
         this.element.append(input);
         
@@ -61,12 +61,12 @@
             var input = $(this);
             
             if (input.val()) {
-                var label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-                $('.file-upload-text', $(this).parent('label')).text(label);
+                var p = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+                $('.file-upload-text', $(this).parent('p')).text(p);
             }
             else {
 
-                $('.file-upload-text', $(this).parent('label')).text(defaultText);
+                $('.file-upload-text', $(this).parent('p')).text(defaultText);
             }
         });
     };
