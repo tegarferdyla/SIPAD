@@ -20,9 +20,15 @@ class Login extends CI_Controller
 				}else if ($this->session->userdata('divisi')=='Kasatker') {
 					redirect('kasatker');
 				}
-				elseif ($this->session->userdata('divisi')=='PPK Ir. Hani Mayanas') {
+				elseif ($this->session->userdata('bagian')=='PPK') {
 					redirect('ppk1');
-				}
+				}elseif ($this->session->userdata('bagian')=='BMN') {
+					redirect('bmn');
+				}elseif ($this->session->userdata('bagian')=='Keuangan') {
+					redirect('keuangan');
+				}elseif ($this->session->userdata('bagian')=='Bendahara') {
+					redirect('bendahara');
+				}  
 			}
 		}
 	}

@@ -13,11 +13,11 @@ class PPK1 extends CI_Controller {
 			redirect('admin');
 		} else if ($this->session->userdata('divisi') == 'Kasatker') {
 			redirect('kasatker');
-		} else if ($this->session->userdata('divisi') == 'BMN') {
+		} else if ($this->session->userdata('bagian') == 'BMN') {
 			redirect('bmn');
-		} else if ($this->session->userdata('divisi') == 'Keuangan') {
+		} else if ($this->session->userdata('bagian') == 'Keuangan') {
 			redirect('keuangan');
-		} else if ($this->session->userdata('divisi') == 'Bendahara') {
+		} else if ($this->session->userdata('bagian') == 'Bendahara') {
 				redirect('bendahara');
 		}
 	}

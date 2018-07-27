@@ -13,11 +13,13 @@ class Bendahara extends CI_Controller {
 			redirect('admin');
 		} else if ($this->session->userdata('divisi') == 'Kasatker') {
 			redirect('kasatker');
-		} else if ($this->session->userdata('divisi') == 'PPK') {
+		} else if ($this->session->userdata('bagian') == 'PPK') {
 			redirect('ppk1');
-		}else if ($this->session->userdata('divisi') == 'BMN') {
+		}else if ($this->session->userdata('bagian') == 'BMN') {
 			redirect('bmn');
-		}
+		}else if ($this->session->userdata('bagian') == 'Keuangan') {
+			redirect('keuangan');
+		}	
 	}
 	public function editprofile() {
 		$id_user = $this->session->userdata('id_user');

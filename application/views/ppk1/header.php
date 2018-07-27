@@ -72,10 +72,10 @@
             </ul>
             <!-- /.navbar-left -->
             <!-- Search Form -->
-            <form class="navbar-search d-none d-sm-block" role="search"><i class="feather feather-search list-icon"></i>
+            <!-- <form class="navbar-search d-none d-sm-block" role="search"><i class="feather feather-search list-icon"></i>
                 <input type="search" class="search-query" placeholder="Pencarian Dokumen ..."> 
                 <a href="javascript:void(0);" class="remove-focus"><i class="feather feather-x"></i></a>
-            </form>
+            </form> -->
             <!-- /.navbar-search -->
             <div class="spacer"></div>
             <!-- Right Menu -->

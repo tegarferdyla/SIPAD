@@ -13,13 +13,13 @@ class Bmn extends CI_Controller {
 			redirect('admin');
 		} else if ($this->session->userdata('divisi') == 'Kasatker') {
 			redirect('kasatker');
-		} else if ($this->session->userdata('divisi') == 'PPK') {
+		} else if ($this->session->userdata('bagian') == 'PPK') {
 			redirect('ppk1');
 		}
-		else if ($this->session->userdata('divisi') == 'Keuangan') {
+		else if ($this->session->userdata('bagian') == 'Keuangan') {
 			redirect('Keuangan');
 		}
-		else if ($this->session->userdata('divisi') == 'Bendahara') {
+		else if ($this->session->userdata('bagian') == 'Bendahara') {
 				redirect('bendahara');
 			}
 	}

@@ -2,7 +2,7 @@
         <!-- SIDEBAR -->
         <aside class="site-sidebar scrollbar-enabled" data-suppress-scroll-x="true">
             <!-- Sidebar Menu -->
-             <div class="side-content mr-t-30 mr-lr-15"><a class="btn btn-block btn-info ripple fw-600" href="<?php echo base_url('bmn') ?>">DASHBOARD BMN<br><!-- <?php echo $nama ?> --></a>
+             <div class="side-content mr-t-30 mr-lr-15"><a class="btn btn-block btn-info ripple fw-600" href="<?php echo base_url('bendahara') ?>">DASHBOARD <br> BENDAHARA<!-- <?php echo $nama ?> --></a>
             </div>
             <nav class="sidebar-nav">
                 <ul class="nav in side-menu">
