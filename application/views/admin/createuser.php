@@ -61,9 +61,7 @@
                             <div class="widget-body clearfix">
                                 <div class="tabs tabs-bordered">
                                     <ul class="nav nav-tabs">
-                                        <li class="nav-item active"><a class="nav-link" href="#kasatker-tab-bordered-1" data-toggle="tab" aria-expanded="true">Kasatker</a>
-                                        </li>
-                                        <li class="nav-item"><a class="nav-link" href="#ppk-tab-bordered-1" data-toggle="tab" aria-expanded="true">PPK</a>
+                                        <li class="nav-item active"><a class="nav-link" href="#ppk-tab-bordered-1" data-toggle="tab" aria-expanded="true">PPK</a>
                                         </li>
                                         <li class="nav-item"><a class="nav-link" href="#bmn-tab-bordered-1" data-toggle="tab" aria-expanded="true">BMN</a>
                                         </li>
@@ -73,10 +71,7 @@
                                         </li>
                                     </ul>
                                     <div class="tab-content">
-                                        <div class="tab-pane active" id="kasatker-tab-bordered-1">
-                                            <p>Input Kasatker.</p>
-                                        </div>
-                                        <div class="tab-pane" id="ppk-tab-bordered-1">
+                                        <div class="tab-pane active" id="ppk-tab-bordered-1">
                                               
                                             <form action ="<?php echo base_url ('admin/Tambahakun') ?>" method="post" >
                                                 <div class="form-group row">

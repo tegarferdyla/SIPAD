@@ -74,8 +74,8 @@
                                             <td><?php echo $u['deskripsi']; ?></td>
                                             <td><?php echo $u['input_by']; ?></td>
                                             <td>
-                                                <a href="<?php echo base_url()."ppk1/edittahun/".$u['id_tahun'];?>"><i class="list-icon feather feather-edit" title="Edit"></i></a> &nbsp;
-                                                <a onclick="return confirm('Apa anda yakin ingin menghapus data ini?')" href="<?php echo base_url()."ppk1/hapustahun/".$u['id_tahun']; ?>"><i class="list-icon text-danger feather feather-trash-2" title="Delete"></i></a>
+                                                <a href="<?php echo base_url()."ppk1/edittahun/".$u['id_tahun'];?>"><i class="list-icon feather feather-edit" title="Edit"> Edit </i></a> &nbsp;
+                                                <!-- <a onclick="return confirm('Apa anda yakin ingin menghapus data ini?')" href="<?php echo base_url()."ppk1/hapustahun/".$u['id_tahun']; ?>"><i class="list-icon text-danger feather feather-trash-2" title="Delete"></i></a> -->
                                             </td>
                                         </tr>
                                         <?php 

@@ -19,6 +19,65 @@ class Bendahara extends CI_Controller {
 			redirect('bmn');
 		}
 	}
+	public function editprofile() {
+		$id_user = $this->session->userdata('id_user');
+		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
+		$this->load->view('bendahara/header', $data);
+
+		$data['get_ppk']=$this->Datappk_model->datappk();
+		$this->load->view('bendahara/sidebar',$data);
+
+		$this->load->view('bendahara/editakun', $data);
+		$this->load->view('bendahara/footer');
+	}
+	public function changeprofile() {
+		$id_user = $this->session->userdata('id_user');
+		$config['upload_path'] = './assets/img/';
+		$config['allowed_types'] = 'jpg|png|gif';
+		$config['max_size'] = 100000;
+		$config['overwrite'] = TRUE;
+
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload('myfiles')) {
+			// $this->upload->do_upload('myfiles');
+			$result = $this->upload->data();
+			$data_update = array(
+				// 'foto'  => $result['file_name'],
+				'nama' => $this->input->post('nama_user'),
+				'email' => $this->input->post('email'),
+				'alamat' => $this->input->post('alamat'),
+			);
+
+			$result = $this->Datauser_model->UpdateDataUser($data_update, $id_user);
+
+			if ($result > 0) {
+				$this->session->set_flashdata('updateberhasil', 'true');
+				redirect('bendahara/editprofile');
+			} else {
+				$this->session->set_flashdata('updategagal', 'true');
+				redirect('bendahara/editprofile');
+			}
+		} else {
+			$result = $this->upload->data();
+			$data_update = array(
+				'foto' => $result['file_name'],
+				'nama' => $this->input->post('nama_user'),
+				'email' => $this->input->post('email'),
+				'alamat' => $this->input->post('alamat'),
+			);
+
+			$result = $this->Datauser_model->UpdateDataUser($data_update, $id_user);
+
+			if ($result > 0) {
+				$this->session->set_flashdata('updateberhasil', 'true');
+				redirect('bendahara/editprofile');
+			} else {
+				$this->session->set_flashdata('updategagal', 'true');
+				redirect('bendahara/editprofile');
+			}
+		}
+
+	}
 	public function index() {
 		$id_user = $this->session->userdata('id_user');
 		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);

@@ -44,11 +44,17 @@
                                             <input class="form-control" id="l0" placeholder="Nama" type="text" name="nama" value="<?php echo $user['nama'] ?>">
                                         </div>
                                     </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label" for="l0">Divisi</label>
+                                        <div class="col-md-9">
+                                            <input class="form-control" id="l0" placeholder="" type="text" name="divisi" value="<?php echo $user['bagian']?>" readonly>
+                                        </div>
+                                    </div><!-- 
                                   <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="l13">Divisi</label>
                                         <div class="col-md-9">
                                             <select class="form-control" id="l13" name="divisi">
-                                                <option value=""><?=$user['divisi']?></option>
+                                                <option value=""><?php echo $user['bagian'] ?></option>
                                                 <?php foreach ($get_ppk as $u) { ?>
                                                 <option value="<?php echo $u['nama']; ?>"><?php echo $u['nama']; ?></option>
                                                 <?php 
@@ -56,7 +62,7 @@
                                                 ?>
                                             </select>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="l0">Email</label>
                                         <div class="col-md-9">
@@ -73,7 +79,7 @@
                                         <div class="form-group row">
                                             <div class="col-md-9 ml-md-auto btn-list">
                                                 <button class="btn btn-primary btn-rounded" onclick="return confirm('Apa anda yakin ingin mengubah data ini?')" type="submit">Submit</button>
-                                                <button class="btn btn-outline-default btn-rounded" type="reset">Cancel</button>
+                                                <button class="btn btn-outline-default btn-rounded" type=""><a href="<?php echo site_url('admin/daftaruser') ?>">Cancel</a></button>
                                             </div>
                                         </div>
                                     </div>

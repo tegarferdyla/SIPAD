@@ -285,12 +285,12 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 			$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
 			$data['get_ppk']=$this->Datappk_model->datappk();
 			// $data = array (
-			// 	"id_user" 	=> $user[0]['id_user'],
-			// 	"nama"	  	=> $user[0]['nama'],
-			// 	"NIP"	  	=> $user[0]['NIP'],
-			// 	"divisi"	=> $user[0]['divisi'],
-			// 	"email"		=> $user[0]['email'],
-			// 	"username"	=> $user[0]['username']
+			//  	"id_user" 	=> $user[0]['id_user'],
+			//  	"nama"	  	=> $user[0]['nama'],
+			//  	"NIP"	  	=> $user[0]['NIP'],
+			//  	"divisi"	=> $user[0]['divisi'],
+			//  	"email"		=> $user[0]['email'],
+			//  	"username"	=> $user[0]['username']
 			// );
 
 
@@ -311,7 +311,7 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 				'id_user'	 =>$id_user,
 				'NIP'		 => $NIP,
 				'nama' 	 	 => $nama,
-				'divisi' 	 => $divisi,
+				'bagian' 	 => $divisi,
 				'email' 	 => $email,
 				'username'   => $username
 			);
