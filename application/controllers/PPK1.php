@@ -875,8 +875,15 @@ class PPK1 extends CI_Controller {
 	}
 	public function test($id_paket) {
 		// $cari['show'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
-		$data['show'] = $this->Datapaket_model->showidpkt('tbl_pendukung', $id_paket);
-		$this->load->view('ppk1/test', $data);
+		$data['paket'] = $this->Datapaket_model->showidpkt('tbl_pendukung', $id_paket);
+		// $this->load->view('ppk1/test', $data);
+		// print_r (json_encode($data,JSON_PRETTY_PRINT));
+		$this->output
+		->set_status_header(200)
+		->set_content_type('application/json', 'utf-8')
+		->set_output(json_encode($data, JSON_PRETTY_PRINT))
+		->_display();
+		exit;
 
 	}
 	public function testkirim() {

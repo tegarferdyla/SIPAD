@@ -60,7 +60,7 @@
                                 </p>
                                 <div class="col-sm-10">
                                     <input type="hidden" value="<?php echo $show[0]['id_paket'] ?>" name="id_paket">
-                                    <p class="file-upload btn btn-primary btn-hiden">
+                                    <p class="file-upload btn btn-primary">
                                         Perbaharui <input type="file" name="file1" accept="application/pdf">
                                     </p>
                                 </div>
@@ -74,7 +74,7 @@
                                     </button>
                                 </p>
                                 <div class="col-sm-10">
-                                    <p class="file-upload btn btn-primary btn-hiden">
+                                    <p class="file-upload btn btn-primary">
                                         Perbaharui <input type="file" name="file2" accept="application/pdf">
                                     </p>
                                 </div>
@@ -90,7 +90,7 @@
                                     </button>
                                 </p>
                                 <div class="col-sm-10">
-                                    <p class="file-upload btn btn-primary btn-hiden">
+                                    <p class="file-upload btn btn-primary">
                                         Perbaharui <input type="file" name="file3" accept="application/pdf">
                                     </p>
                                 </div>
@@ -109,7 +109,7 @@
                                     </button>
                                 </p>
                                 <div class="col-sm-10">
-                                    <p class="file-upload btn btn-primary btn-hiden">
+                                    <p class="file-upload btn btn-primary">
                                         Perbaharui <input type="file" name="file4" accept="application/pdf">
                                     </p>
                                 </div>
@@ -123,7 +123,7 @@
                                     </button>
                                 </p>
                                 <div class="col-sm-10">
-                                    <p class="file-upload btn btn-primary btn-hiden">
+                                    <p class="file-upload btn btn-primary">
                                         Perbaharui <input type="file" name="file5" accept="application/pdf">
                                     </p>
                                 </div>
@@ -139,7 +139,7 @@
                                     </button>
                                 </p>
                                 <div class="col-sm-10">
-                                    <p class="file-upload btn btn-primary btn-hiden">
+                                    <p class="file-upload btn btn-primary">
                                         Perbaharui <input type="file" name="file6" accept="application/pdf">
                                     </p>
                                 </div>
@@ -153,7 +153,7 @@
                                     </button>
                                 </p>
                                 <div class="col-sm-10">
-                                    <p class="file-upload btn btn-primary btn-hiden">
+                                    <p class="file-upload btn btn-primary">
                                         Perbaharui <input type="file" name="file7" accept="application/pdf">
                                     </p>
                                 </div>
@@ -169,7 +169,7 @@
                                     </button>
                                 </p>
                                 <div class="col-sm-10">
-                                    <p class="file-upload btn btn-primary btn-hiden">
+                                    <p class="file-upload btn btn-primary">
                                         Perbaharui <input type="file" name="file8" accept="application/pdf">
                                     </p>
                                 </div>
@@ -183,7 +183,7 @@
                                     </button>
                                 </p>
                                 <div class="col-sm-10">
-                                    <p class="file-upload btn btn-primary btn-hiden">
+                                    <p class="file-upload btn btn-primary">
                                         Perbaharui <input type="file" name="file9" accept="application/pdf">
                                     </p>
                                 </div>
@@ -199,7 +199,7 @@
                                     </button>
                                 </p>
                                 <div class="col-sm-10">
-                                    <p class="file-upload btn btn-primary btn-hiden">
+                                    <p class="file-upload btn btn-primary">
                                         Perbaharui <input type="file" name="file10" accept="application/pdf">
                                     </p>
                                 </div>
@@ -213,7 +213,7 @@
                                     </button>
                                 </p>
                                 <div class="col-sm-10">
-                                    <p class="file-upload btn btn-primary btn-hiden">
+                                    <p class="file-upload btn btn-primary">
                                         Perbaharui <input type="file" name="file11" accept="application/pdf">
                                     </p>
                                 </div>
@@ -232,7 +232,7 @@
                                     </button>
                                 </p>
                                 <div class="col-sm-10">
-                                    <p class="file-upload btn btn-primary btn-hiden">
+                                    <p class="file-upload btn btn-primary">
                                         Perbaharui <input type="file" name="file12" accept="application/pdf">
                                     </p>
                                 </div>
@@ -246,7 +246,7 @@
                                     </button>
                                 </p>
                                 <div class="col-sm-10">
-                                    <p class="file-upload btn btn-primary btn-hiden">
+                                    <p class="file-upload btn btn-primary">
                                         Perbaharui <input type="file" name="file13" accept="application/pdf">
                                     </p>
                                 </div>
@@ -262,7 +262,7 @@
                                     </button>
                                 </p>
                                 <div class="col-sm-10">
-                                    <p class="file-upload btn btn-primary btn-hiden">
+                                    <p class="file-upload btn btn-primary">
                                         Perbaharui <input type="file" name="file14" accept="application/pdf">
                                     </p>
                                 </div>
@@ -276,7 +276,7 @@
                                     </button>
                                 </p>
                                 <div class="col-sm-10">
-                                    <p class="file-upload btn btn-primary btn-hiden">
+                                    <p class="file-upload btn btn-primary">
                                         Perbaharui <input type="file" name="file15" accept="application/pdf">
                                     </p>
                                 </div>
@@ -319,6 +319,9 @@
             var a = $("#modalCustom .modal-body").find("embed").prop("src",value)
             $("#modalCustom .modal-header .modal-title").html(value2)
             }
+        });
+        $('.file-upload').click(function() {
+            $('.file-upload').file_upload();
         });
     </script>
 </main>

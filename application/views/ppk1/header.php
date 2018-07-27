@@ -56,7 +56,7 @@
         <nav class="navbar">
             <!-- Logo Area -->
             <div class="navbar-header">
-                <a href="index.html" class="navbar-brand">
+                <a href="<?php echo base_url() ?>" class="navbar-brand">
                     <!-- <p class="logo-expand" alt=""><span style="color:#007fff">SIPAD</span></p> -->
                     <img class="logo-expand" style="width:150px; " src="<?php echo base_url('assets/assets1/img/sipadtulis.png') ?>" alt="">
                     <img class="logo-collapse" alt="" src="<?php echo base_url('assets/assets1/img/sipadlog.png') ?>">
@@ -66,13 +66,15 @@
             <!-- /.navbar-header -->
             <!-- Left Menu & Sidebar Toggle -->
             <ul class="nav navbar-nav">
-                <li class="sidebar-toggle dropdown"><a href="javascript:void(0)" class="ripple"><i class="feather feather-menu list-icon fs-20"></i></a>
+                <li class="sidebar-toggle dropdown">
+                    <a href="javascript:void(0)" class="ripple"><i class="feather feather-menu list-icon fs-20"></i></a>
                 </li>
             </ul>
             <!-- /.navbar-left -->
             <!-- Search Form -->
             <form class="navbar-search d-none d-sm-block" role="search"><i class="feather feather-search list-icon"></i>
-                <input type="search" class="search-query" placeholder="Pencarian Dokumen ..."> <a href="javascript:void(0);" class="remove-focus"><i class="feather feather-x"></i></a>
+                <input type="search" class="search-query" placeholder="Pencarian Dokumen ..."> 
+                <a href="javascript:void(0);" class="remove-focus"><i class="feather feather-x"></i></a>
             </form>
             <!-- /.navbar-search -->
             <div class="spacer"></div>
@@ -84,25 +86,45 @@
             <!-- /.navbar-right -->
             <!-- User Image with Dropdown -->
             <ul class="nav navbar-nav">
-                <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle dropdown-toggle-user ripple" data-toggle="dropdown"><span class="avatar thumb-xs2"><span style="color:#007fff"><?php echo ucwords($user['nama']); ?></span> &nbsp;<img src="<?php echo base_url('assets/img/'.$user['foto']) ?>" class="rounded-circle" alt=""> <i class="feather feather-chevron-down list-icon"></i></span></a>
-                    <div
-                    class="dropdown-menu dropdown-left dropdown-card dropdown-card-profile animated flipInY">
-                    <div class="card">
-                    <ul class="list-unstyled card-body">
-                        <li><a href="<?php echo site_url('ppk1/editprofile') ?>"><span><span class="align-middle">Pengaturan Akun</span></span></a>
-                        </li>
-                        <li><a href="#"><span><span class="align-middle">Ubah Password</span></span></a></li>
-                        <li><a href="<?php echo base_url('login?logout=signout'); ?>"><span><span class="align-middle">Keluar</span></span></a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropdown-toggle dropdown-toggle-user ripple" data-toggle="dropdown">
+                        <span class="avatar thumb-xs2">
+                            <span style="color:#007fff"><?php echo ucwords($user['nama']); ?></span> &nbsp;<img src="<?php echo base_url('assets/img/'.$user['foto']) ?>" class="rounded-circle" alt=""> 
+                            <i class="feather feather-chevron-down list-icon"></i>
+                        </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-left dropdown-card dropdown-card-profile animated flipInY">
+                        <div class="card">
+                            <ul class="list-unstyled card-body">
+                                <li>
+                                    <a href="<?php echo site_url('ppk1/editprofile') ?>"><span><span class="align-middle">Pengaturan Akun</span></span></a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span>
+                                            <span class="align-middle">Ubah Password</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo base_url('login?logout=signout'); ?>">
+                                        <span>
+                                            <span class="align-middle">Keluar</span>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        <!-- /.card-body -->
+                        </div>
+                    <!-- /.card -->
+                    </div>
                 </li>
             </ul>
-                    <!-- /.card-body -->
-                </div>
-                <!-- /.card -->
-            </div>
             <!-- /.dropdown-card-profile -->
-        </li>
+                    <!-- </li> -->
         <!-- /.dropdown -->
-    </ul>
-    <!-- /.navbar-nav -->
-</nav>
+    <!-- </ul> -->
+        <!-- /.navbar-nav -->
+        </nav>
     <!-- /.navbar -->
+    <!-- </div> -->

@@ -45,9 +45,9 @@
                             </div>
                             <!-- /.col-lg-6 -->
                             <div class="col-sm-6">
-                                <h5 class="h2 fw-semibold mt-0">58.3%</h5>
+                                <h5 class="h2 fw-semibold mt-0">90%</h5>
                                 <div class="progress w-50 mb-3">
-                                    <div class="progress-bar bg-info" style="background: linear-gradient(to right, #17bff0, #8be0f9); width: 58.3%" role="progressbar"><span class="sr-only">60% Complete</span>
+                                    <div class="progress-bar bg-info" style="background: linear-gradient(to right, #17bff0, #8be0f9); width: 58.3%" role="progressbar"><span class="sr-only">90% Complete</span>
                                     </div>
                                 </div>
                                 <!-- /.progress -->

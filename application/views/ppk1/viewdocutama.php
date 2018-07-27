@@ -59,6 +59,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc1->surat_md ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
 
                             <!-- <input type="file" name="file1" accept="application/pdf" class="form-control"> -->
@@ -70,6 +73,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc1->surat_mh ?>">
                                 </button>
+                                <?php if ($doc1->surat_mh!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_mh) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                         </div>
                     </div>
@@ -81,6 +87,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc1->surat_kl ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                             <!-- <input class="form-control" type="file" name="file3" accept="application/pdf"> -->
                         </div>
@@ -91,6 +100,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc1->kesepakatan_bersama ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                           <!--   <input class="form-control" type="file" name="file4" accept="application/pdf"> -->
                         </div>
@@ -103,6 +115,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc1->perjanjian_kerjasama ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                            <!--  <input class="form-control" type="file" name="file5" accept="application/pdf"> -->
                         </div>
@@ -126,6 +141,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc1->sppbj ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                             <!-- <input class="form-control" type="file" name="file6" accept="application/pdf"> -->
                         </div>
@@ -137,6 +155,9 @@
                                 <i class="feather feather-eye text-dark"></i>
                                 <input type="hidden" value="<?= $doc1->spmk ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                         </p>
                            <!--  <input class="form-control" type="file" name="file7" accept="application/pdf"> -->
                         </div>
@@ -150,6 +171,7 @@
                                 <i class="feather feather-eye text-dark"></i>
                                 <input type="hidden" value="<?= $doc1->naskah_kontrak ?>">
                                 </button>
+
                         </p>
                             <!-- <input class="form-control" type="file" name="file8" accept="application/pdf"> -->
                         </div>
@@ -160,8 +182,11 @@
                                value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->rencana_mk) ?>">
                                 <i class="feather feather-eye text-dark"></i>
                                 <input type="hidden" value="<?= $doc1->rencana_mk ?>">
-                                </button>
-                        </p>
+                                </button>  
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
+                            </p>
                            <!--  <input class="form-control" type="file" name="file9" accept="application/pdf"> -->
                         </div>
                     </div>
@@ -174,7 +199,10 @@
                                 <i class="feather feather-eye text-dark"></i>
                                 <input type="hidden" value="<?= $doc1->bcp ?>">
                                 </button>
-                        </p>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
+                            </p>
                             <!-- <input class="form-control" type="file" name="file10" accept="application/pdf"> -->
                         </div>
                     </div>
@@ -196,6 +224,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc1->mc0_dd ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                             <!-- <input class="form-control" type="file" name="file11" accept="application/pdf"> -->
                         </div>
@@ -206,6 +237,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc1->mc0_bal ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                            <!--  <input class="form-control" type="file" name="file12" accept="application/pdf"> -->
                         </div>
@@ -218,6 +252,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc1->mc0_jdst ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                             <!-- <input class="form-control" type="file" name="file13" accept="application/pdf"> -->
                         </div>
@@ -240,6 +277,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc4->pasca_boq ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                             <!-- <input class="form-control" type="file" value="" name="file14" accept="application/pdf"> -->
                         </div>
@@ -250,6 +290,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc4->pasca_jdst ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                             <!-- <input class="form-control" type="file" name="file15" accept="application/pdf"> -->
                         </div>
@@ -262,6 +305,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc4->pasca_slp ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                            <!--  <input class="form-control" type="file" name="file16" accept="application/pdf"> -->
                         </div>
@@ -272,6 +318,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc4->pasca_kurva ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                            <!--  <input class="form-control" type="file" name="file17" accept="application/pdf"> -->
                         </div>
@@ -284,6 +333,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc4->pasca_shop ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                             <!-- <input class="form-control" type="file" name="file18" accept="application/pdf"> -->
                         </div>
@@ -294,6 +346,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc4->pasca_bakn ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                             <!-- <input class="form-control" type="file" name="file19" accept="application/pdf"> -->
                         </div>
@@ -306,6 +361,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc4->pasca_nai ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                             <!-- <input class="form-control" type="file" name="file20" accept="application/pdf"> -->
                         </div>
@@ -336,6 +394,9 @@
                                                     <i class="feather feather-eye text-dark"></i>
                                                     <input type="hidden" value="<?= $doc5->addii_bal ?>">
                                                 </button>
+                                                <?php if ($doc1->surat_md!=NULL) {?>
+                                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                                <?php } ?>
                                             </p>
                                         </div>
                                         <div class="form-group col-md-6">
@@ -345,6 +406,9 @@
                                                     <i class="feather feather-eye text-dark"></i>
                                                     <input type="hidden" value="<?= $doc5->addii_boq ?>">
                                                 </button>
+                                                <?php if ($doc1->surat_md!=NULL) {?>
+                                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                                <?php } ?>
                                             </p>
                                         <!-- <input class="form-control" type="file" name="file22" accept="application/pdf"> -->
                                         </div>
@@ -357,6 +421,9 @@
                                                 <i class="feather feather-eye text-dark"></i>
                                                 <input type="hidden" value="<?= $doc5->addii_jdst ?>">
                                                 </button>
+                                                <?php if ($doc1->surat_md!=NULL) {?>
+                                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                                <?php } ?>
                                             </p>
                                         </div>
                                         <div class="form-group col-md-6">
@@ -366,6 +433,9 @@
                                                     <i class="feather feather-eye text-dark"></i>
                                                     <input type="hidden" value="<?= $doc5->addii_slp ?>">
                                                 </button>
+                                                <?php if ($doc1->surat_md!=NULL) {?>
+                                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                                <?php } ?>
                                             </p>
                                         </div>
                                     </div>
@@ -377,6 +447,9 @@
                                                     <i class="feather feather-eye text-dark"></i>
                                                     <input type="hidden" value="<?= $doc5->addii_kurva ?>">
                                                 </button>
+                                                <?php if ($doc1->surat_md!=NULL) {?>
+                                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                                <?php } ?>
                                             </p>
                                         </div>
                                         <div class="form-group col-md-6">
@@ -386,6 +459,9 @@
                                                     <i class="feather feather-eye text-dark"></i>
                                                     <input type="hidden" value="<?= $doc5->addii_shop ?>">
                                                 </button>
+                                                <?php if ($doc1->surat_md!=NULL) {?>
+                                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                                <?php } ?>
                                             </p>
                                         </div>
                                     </div>
@@ -397,6 +473,9 @@
                                                     <i class="feather feather-eye text-dark"></i>
                                                     <input type="hidden" value="<?= $doc5->addii_bakln ?>">
                                                 </button>
+                                                <?php if ($doc1->surat_md!=NULL) {?>
+                                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                                <?php } ?>
                                             </p>
                                         </div>
                                         <div class="form-group col-md-6">
@@ -406,6 +485,9 @@
                                                     <i class="feather feather-eye text-dark"></i>
                                                     <input type="hidden" value="<?= $doc5->addii_naii ?>">
                                                 </button>
+                                                <?php if ($doc1->surat_md!=NULL) {?>
+                                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                                <?php } ?>
                                             </p>
                                         </div>
                                     </div>
@@ -438,6 +520,9 @@
                                                     <i class="feather feather-eye text-dark"></i>
                                                     <input type="hidden" value="<?= $doc6->addiii_bal ?>">
                                                 </button>
+                                                <?php if ($doc1->surat_md!=NULL) {?>
+                                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                                <?php } ?>
                                             </p>
                                         </div>
                                         <div class="form-group col-md-6">
@@ -447,6 +532,9 @@
                                                     <i class="feather feather-eye text-dark"></i>
                                                     <input type="hidden" value="<?= $doc6->addiii_boq ?>">
                                                 </button>
+                                                <?php if ($doc1->surat_md!=NULL) {?>
+                                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                                <?php } ?>
                                             </p>
                                         </div>
                                     </div>
@@ -458,6 +546,9 @@
                                                     <i class="feather feather-eye text-dark"></i>
                                                     <input type="hidden" value="<?= $doc6->addiii_jdst ?>">
                                                 </button>
+                                                <?php if ($doc1->surat_md!=NULL) {?>
+                                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                                <?php } ?>
                                             </p>
                                         </div>
                                         <div class="form-group col-md-6">
@@ -467,6 +558,9 @@
                                                     <i class="feather feather-eye text-dark"></i>
                                                     <input type="hidden" value="<?= $doc6->addiii_slp ?>">
                                                 </button>
+                                                <?php if ($doc1->surat_md!=NULL) {?>
+                                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                                <?php } ?>
                                             </p>
                                         </div>
                                     </div>
@@ -478,6 +572,9 @@
                                                     <i class="feather feather-eye text-dark"></i>
                                                     <input type="hidden" value="<?= $doc6->addiii_kurva ?>">
                                                 </button>
+                                                <?php if ($doc1->surat_md!=NULL) {?>
+                                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                                <?php } ?>
                                             </p>
                                         </div>
                                         <div class="form-group col-md-6">
@@ -487,6 +584,9 @@
                                                     <i class="feather feather-eye text-dark"></i>
                                                     <input type="hidden" value="<?= $doc6->addiii_shop ?>">
                                                 </button>
+                                                <?php if ($doc1->surat_md!=NULL) {?>
+                                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                                <?php } ?>
                                             </p>
                                         </div>
                                     </div>
@@ -498,6 +598,9 @@
                                                     <i class="feather feather-eye text-dark"></i>
                                                     <input type="hidden" value="<?= $doc6->addiii_bakln ?>">
                                                 </button>
+                                                <?php if ($doc1->surat_md!=NULL) {?>
+                                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                                <?php } ?>
                                             </p>
                                         </div>
                                         <div class="form-group col-md-6">
@@ -507,6 +610,9 @@
                                                     <i class="feather feather-eye text-dark"></i>
                                                     <input type="hidden" value="<?= $doc6->addii_naiii ?>">
                                                 </button>
+                                                <?php if ($doc1->surat_md!=NULL) {?>
+                                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                                <?php } ?>
                                             </p>
                                         </div>
                                     </div>
@@ -540,6 +646,9 @@
                                                     <i class="feather feather-eye text-dark"></i>
                                                     <input type="hidden" value="<?= $doc7->addiv_bal ?>">
                                                 </button>
+                                                <?php if ($doc1->surat_md!=NULL) {?>
+                                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                                <?php } ?>
                                             </p>
                                         </div>
                                         <div class="form-group col-md-6">
@@ -549,6 +658,9 @@
                                                     <i class="feather feather-eye text-dark"></i>
                                                     <input type="hidden" value="<?= $doc7->addiv_boq ?>">
                                                 </button>
+                                                <?php if ($doc1->surat_md!=NULL) {?>
+                                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                                <?php } ?>
                                             </p>
                                         </div>
                                     </div>
@@ -560,6 +672,9 @@
                                                     <i class="feather feather-eye text-dark"></i>
                                                     <input type="hidden" value="<?= $doc7->addiv_jdst ?>">
                                                 </button>
+                                                <?php if ($doc1->surat_md!=NULL) {?>
+                                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                                <?php } ?>
                                             </p>
                                         </div>
                                         <div class="form-group col-md-6">
@@ -569,6 +684,9 @@
                                                     <i class="feather feather-eye text-dark"></i>
                                                     <input type="hidden" value="<?= $doc7->addiv_slp ?>">
                                                 </button>
+                                                <?php if ($doc1->surat_md!=NULL) {?>
+                                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                                <?php } ?>
                                             </p>
                                         </div>
                                     </div>
@@ -580,6 +698,9 @@
                                                     <i class="feather feather-eye text-dark"></i>
                                                     <input type="hidden" value="<?= $doc7->addiv_kurva ?>">
                                                 </button>
+                                                <?php if ($doc1->surat_md!=NULL) {?>
+                                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                                <?php } ?>
                                             </p>
                                         </div>
                                         <div class="form-group col-md-6">
@@ -589,6 +710,9 @@
                                                     <i class="feather feather-eye text-dark"></i>
                                                     <input type="hidden" value="<?= $doc7->addiv_shop ?>">
                                                 </button>
+                                                <?php if ($doc1->surat_md!=NULL) {?>
+                                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                                <?php } ?>
                                             </p>
                                         </div>
                                     </div>
@@ -600,6 +724,9 @@
                                                     <i class="feather feather-eye text-dark"></i>
                                                     <input type="hidden" value="<?= $doc7->addiv_bakn ?>">
                                                 </button>
+                                                <?php if ($doc1->surat_md!=NULL) {?>
+                                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                                <?php } ?>
                                             </p>
                                         </div>
                                         <div class="form-group col-md-6">
@@ -609,6 +736,9 @@
                                                     <i class="feather feather-eye text-dark"></i>
                                                     <input type="hidden" value="<?= $doc7->addiv_naiv ?>">
                                                 </button>
+                                                <?php if ($doc1->surat_md!=NULL) {?>
+                                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                                <?php } ?>
                                             </p>
                                         </div>
                                     </div>
@@ -635,6 +765,9 @@
                                 <i class="feather feather-eye text-dark"></i>
                                 <input type="hidden" value="<?= $doc2->laporan_harian1 ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                         </div>
                         <div class="form-group col-md-6">
@@ -644,6 +777,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc2->laporan_mingguan1 ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                         </div>
                     </div>
@@ -655,6 +791,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc2->bulanan_kontraktor ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                             <!-- <input class="form-control" type="file" value="" name="file47" accept="application/pdf"> -->
                         </div>
@@ -665,6 +804,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc2->sertifikat_pembayaran ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                         </div>
                     </div>
@@ -687,6 +829,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc2->laporan_harian2 ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                         </div>
                         <div class="form-group col-md-6">
@@ -696,6 +841,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc2->laporan_mingguan2 ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                         </div>
                     </div>
@@ -707,6 +855,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc2->bulanan_konsultan ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                         </div>
                     </div>
@@ -728,6 +879,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc2->berita_apm ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                         </div>
                     </div>
@@ -749,6 +903,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc2->berita_ascm ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                         </div>
                     </div>
@@ -770,6 +927,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc2->provisional_sp ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                         </div>
                         <div class="form-group col-md-6">
@@ -779,6 +939,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc2->provisional_bafv ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                         </div>
                     </div>
@@ -790,6 +953,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc2->provisional_basv ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                         </div>
                         <div class="form-group col-md-6">
@@ -799,6 +965,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc2->provisional_bastp ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                         </div>
                     </div>
@@ -820,6 +989,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc3->final_sp ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                         </div>
                         <div class="form-group col-md-6">
@@ -829,6 +1001,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc3->final_bafv ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                         </div>
                     </div>
@@ -840,6 +1015,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc3->final_basv ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                         </div>
                         <div class="form-group col-md-6">
@@ -849,6 +1027,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc3->final_bastp ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                         </div>
                     </div>
@@ -870,6 +1051,9 @@
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $doc3->final_dokumentasi ?>">
                                 </button>
+                                <?php if ($doc1->surat_md!=NULL) {?>
+                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                <?php } ?>
                             </p>
                         </div>
                     </div>

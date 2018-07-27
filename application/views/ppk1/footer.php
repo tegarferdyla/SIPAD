@@ -1,6 +1,6 @@
 <footer class="footer">Hak Cipta &copy; 2018 <a href="https://www.instagram.com/tegarferdyla/" title="">---------</a>
     </footer>
-    </div>
+</div>
     <!--/ #wrapper -->
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
