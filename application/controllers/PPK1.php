@@ -233,11 +233,11 @@ class PPK1 extends CI_Controller {
 				'input_by' => $this->session->userdata('nama'),
 				'id_ppk' => $id_ppk,
 			);
-			// $resultchecknip = $this->Datatahun_model->validasitahun($tahun);
-			// if ($resultchecknip > 0) {
-			// 	$this->session->set_flashdata('tahunsalah', 'true');
-			// 	redirect('ppk1/inputtahun');
-			// } else {
+			 $resultchecknip = $this->Datatahun_model->validasitahun($tahun);
+			 if ($resultchecknip > 0) {
+			 	$this->session->set_flashdata('tahunsalah', 'true');
+			 	redirect('ppk1/inputtahun');
+			 } else {
 				$input = $this->Datatahun_model->Tambahtahun($data, 'tbl_tahun');
 				if ($input > 0) {
 					$lokasi = "./assets/data/" . $tahun;
@@ -248,7 +248,7 @@ class PPK1 extends CI_Controller {
 					$this->session->set_flashdata('gagal', 'true');
 					redirect(base_url('ppk1/inputtahun'));
 				}
-			// }
+			 }
 		}
 	}
 	public function jenispaket($tahun) {
@@ -572,7 +572,7 @@ class PPK1 extends CI_Controller {
 		$id_ppk = $this->session->userdata('id_ppk');
 		$data = array(
 			'id_paket' => $this->Penomoran_model->IDPaket(),
-			'nama_paket' => $nama_paket,
+			'nama_paket' => strtoupper($nama_paket),
 			'jenis' => $jenis_paket,
 			'deskripsi' => $deskripsi,
 			'input_by' => $this->session->userdata('nama'),
@@ -594,6 +594,7 @@ class PPK1 extends CI_Controller {
 			$this->session->set_flashdata('gagal', 'true');
 			redirect(base_url('ppk1/inputpaket'));
 		}
+		
 	}
 	public function viewdocutama($id_paket) {
 		$data['paket'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);

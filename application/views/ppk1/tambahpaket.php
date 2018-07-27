@@ -31,6 +31,11 @@
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                                             </button> <i class="material-icons list-icon">check_circle</i>  <strong>Well done!</strong> Data Paket baru berhasil di daftarkan.
                                         </div>
+                                         <?php elseif ($this->session->flashdata('paketsalah')): ?>
+                                        <div class="alert alert-icon alert-success border-danger alert-dismissible fade show" role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                                            </button><i class="material-icons list-icon">not_interested</i>  <strong>Well done!</strong> Data Paket sudah terdaftar.
+                                        </div>
                                         <?php elseif ($this->session->flashdata('gagal')): ?>
                                          <div class="alert alert-icon alert-danger border-danger alert-dismissible fade show" role="alert">
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>

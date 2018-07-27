@@ -139,6 +139,14 @@ class Datapaket_model extends CI_Model {
 		$query = $this->db->get();
 		return $query->result_array();
 	}
+	public function validasipaket($nama_paket)
+	{
+		$this->db->select('*');
+        $this->db->from('tbl_paket');
+        $this->db->where('nama_paket',$nama_paket);
+        $query = $this->db->get();
+        return $query->num_rows();
+	}
 	public function suakelola($id_tahun)
 	{
 		$this->db->select('*');
