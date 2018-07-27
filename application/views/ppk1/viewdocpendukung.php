@@ -73,7 +73,7 @@
                                     <p> <?php echo $pendukung->bmn_rekomendasi; ?>
                                         <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->bmn_rekomendasi) ?>">
                                             <i class="feather feather-eye text-success"></i>
-                                            <input type="hidden" value ="<?php $pendukung->bmn_rekomendasi ?>">
+                                            <input type="hidden" value ="<?php echo $pendukung->bmn_rekomendasi ?>">
                                         </button>
                                          <?php if ($pendukung->bmn_rekomendasi!=NULL) {?>
                                             <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bmn_rekomendasi) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
@@ -89,7 +89,7 @@
                                      <p> <?php echo $pendukung->bmn_surat_hibah; ?>
                                         <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->bmn_surat_hibah) ?>">
                                             <i class="feather feather-eye text-success"></i>
-                                        <input type="hidden" value ="<?php $pendukung->bmn_surat_hibah ?>">
+                                        <input type="hidden" value ="<?php echo $pendukung->bmn_surat_hibah ?>">
                                         </button>
                                          <?php if ($pendukung->bmn_surat_hibah!=NULL) {?>
                                             <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bmn_surat_hibah) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
@@ -108,7 +108,7 @@
                                     <p> <?php echo $pendukung->keuangan_permohonan; ?>
                                         <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->keuangan_permohonan) ?>">
                                             <i class="feather feather-eye text-success"></i>
-                                            <input type="hidden" value ="<?php $pendukung->keuangan_permohonan ?>">
+                                            <input type="hidden" value ="<?php echo $pendukung->keuangan_permohonan ?>">
                                         </button>
                                          <?php if ($pendukung->keuangan_permohonan!=NULL) {?>
                                             <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_permohonan) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
@@ -122,7 +122,7 @@
                                     <p> <?php echo $pendukung->keuangan_kuitansi; ?>
                                         <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->keuangan_kuitansi) ?>">
                                             <i class="feather feather-eye text-success"></i>
-                                            <input type="hidden" value ="<?php $pendukung->keuangan_kuitansi ?>">
+                                            <input type="hidden" value ="<?php echo $pendukung->keuangan_kuitansi ?>">
                                         </button>
                                          <?php if ($pendukung->keuangan_kuitansi!=NULL) {?>
                                             <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_kuitansi) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
@@ -138,7 +138,7 @@
                                    <p> <?php echo $pendukung->keuangan_kartu; ?>
                                         <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->keuangan_kartu) ?>">
                                             <i class="feather feather-eye text-success"></i>
-                                            <input type="hidden" value ="<?php $pendukung->keuangan_kartu ?>">
+                                            <input type="hidden" value ="<?php echo $pendukung->keuangan_kartu ?>">
                                         </button>
                                          <?php if ($pendukung->keuangan_kartu!=NULL) {?>
                                             <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_kartu) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
@@ -152,7 +152,7 @@
                                     <p> <?php echo $pendukung->keuangan_faktur; ?>
                                         <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->keuangan_faktur) ?>">
                                             <i class="feather feather-eye text-success"></i>
-                                            <input type="hidden" value ="<?php $pendukung->keuangan_faktur ?>">
+                                            <input type="hidden" value ="<?php echo $pendukung->keuangan_faktur ?>">
                                         </button>
                                          <?php if ($pendukung->keuangan_faktur!=NULL) {?>
                                             <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_faktur) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
@@ -168,7 +168,7 @@
                                     <p> <?php echo $pendukung->keuangan_pph; ?>
                                         <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->keuangan_pph) ?>">
                                             <i class="feather feather-eye text-success"></i>
-                                            <input type="hidden" value ="<?php $pendukung->keuangan_pph ?>">
+                                            <input type="hidden" value ="<?php echo $pendukung->keuangan_pph ?>">
                                         </button>
                                          <?php if ($pendukung->keuangan_pph!=NULL) {?>
                                             <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_pph) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
@@ -182,7 +182,7 @@
                                 <p> <?php echo $pendukung->keuangan_spp; ?>
                                     <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->keuangan_spp) ?>">
                                             <i class="feather feather-eye text-success"></i>
-                                        <input type="hidden" value ="<?php $pendukung->keuangan_spp ?>">
+                                        <input type="hidden" value ="<?php echo $pendukung->keuangan_spp ?>">
                                     </button>
                                      <?php if ($pendukung->keuangan_spp!=NULL) {?>
                                             <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_spp) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
@@ -198,7 +198,7 @@
                                     <p> <?php echo $pendukung->keuangan_spm; ?>
                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['nama_paket']. '/' . $pendukung->keuangan_spm)?>">
                                            <i class="feather feather-eye text-success"></i>
-                                           <input type="hidden" value="<?php $pendukung->keuangan_spm ?>"> 
+                                           <input type="hidden" value="<?php echo $pendukung->keuangan_spm ?>"> 
                                        </button>
                                         <?php if ($pendukung->keuangan_spm!=NULL) {?>
                                             <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_spm) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
@@ -212,7 +212,7 @@
                                     <p> <?php echo $pendukung->keuangan_sp2d; ?>
                                         <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'.$tahun->nama_tahun. '/' . $paket[0]['jenis']. '/' . $pendukung->keuangan_sp2d) ?>">
                                         <i class="feather feather-eye text-success"></i>
-                                        <input type="hidden" value = "<?php $pendukung->keuangan_sp2d ?>">
+                                        <input type="hidden" value = "<?php echo $pendukung->keuangan_sp2d ?>">
                                         </button>
                                          <?php if ($pendukung->keuangan_sp2d!=NULL) {?>
                                             <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_sp2d) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
@@ -231,7 +231,7 @@
                                     <p> <?php echo $pendukung->bendahara_lpj; ?>
                                         <button class="btn btn-show" data-toggle = "modal" data-target ="#modalCustom" value="<?php echo base_url('assets/data/' .$tahun->nama_tahun. '/' . $paket[0]['jenis']. '/' . $pendukung->bendahara_lpj) ?>">
                                             <i class="feather feather-eye text-success"></i>
-                                            <input type="hidden" value="<?php $pendukung->bendahara_lpj ?>">
+                                            <input type="hidden" value="<?php echo $pendukung->bendahara_lpj ?>">
                                         </button>
                                          <?php if ($pendukung->bendahara_lpj!=NULL) {?>
                                             <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bendahara_lpj) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
@@ -245,7 +245,7 @@
                                      <p> <?php echo $pendukung->bendahara_bapkdr ?>
                                         <button class="btn btn-show" data-toggle = "modal" data-target ="#modalCustom" value="<?php echo base_url ('assets/data/' .$tahun->nama_tahun. '/' .$paket[0]['jenis']. '/' .$pendukung->bendahara_bapkdr) ?>">
                                             <i class="feather feather-eye text-success"></i>
-                                            <input type="hidden" value="<?php $pendukung->bendahara_bapkdr ?>">
+                                            <input type="hidden" value="<?php echo $pendukung->bendahara_bapkdr ?>">
                                         </button>
                                          <?php if ($pendukung->bendahara_bapkdr!=NULL) {?>
                                             <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bendahara_bapkdr) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
@@ -261,7 +261,7 @@
                                     <p> <?php echo $pendukung->bendahara_rekening ?>
                                         <button class="btn btn-show" data-toggle = "modal" data-target = "#modalCustom" value="<?php echo base_url ('assets/data/' .$tahun->nama_tahun. '/' .$paket[0]['jenis']. '/' .$pendukung->bendahara_rekening) ?>">
                                             <i class="feather feather-eye text-success"></i>
-                                            <input type="hidden" value="<?php $pendukung->bendahara_rekening ?>">
+                                            <input type="hidden" value="<?php echo $pendukung->bendahara_rekening ?>">
                                         </button>
                                          <?php if ($pendukung->bendahara_rekening!=NULL) {?>
                                             <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bendahara_rekening) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
@@ -275,7 +275,7 @@
                                     <p> <?php echo $pendukung->bendahara_bapk; ?>
                                         <button class="btn btn-show" data-toggle = "modal" data-target = "#modalCustom" value="<?php echo base_url('assets/data/' .$tahun->nama_tahun. '/'. $paket[0]['jenis']. '/'. $pendukung->bendahara_bapk) ?>">
                                             <i class="feather feather-eye text-success"></i>
-                                            <input type="hidden" value="<?php $pendukung->bendahara_bapk ?>">
+                                            <input type="hidden" value="<?php echo $pendukung->bendahara_bapk ?>">
                                         </button>
                                          <?php if ($pendukung->bendahara_bapk!=NULL) {?>
                                             <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bendahara_bapk) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
@@ -323,34 +323,6 @@
                     var topic      = $(this).val(),
                         $container = $('[data-topic="' + topic + '"]');
                     $container.toggle();
-
-                    // var display = $container.css('display');
-                    // switch (true) {
-                    //     case ('css' == topic && 'block' == display):
-                    //         $('#interviewForm').bootstrapValidator('addField', 'css_frameworks[]', {
-                    //             validators: {
-                    //                 notEmpty: {
-                    //                     message: 'Please choose at least 1 framework'
-                    //                 }
-                    //             }
-                    //         });
-                    //         break;
-                    //     case ('css' == topic && 'none' == display):
-                    //         $('#interviewForm').bootstrapValidator('removeField', 'css_frameworks[]');
-                    //         break;
-                    //     case ('javascript' == topic && 'block' == display):
-                    //         $('#interviewForm').bootstrapValidator('addField', 'js_frameworks[]', {
-                    //             validators: {
-                    //                 notEmpty: {
-                    //                     message: 'The name of framework is required'
-                    //                 }
-                    //             }
-                    //         });
-                    //         break;
-                    //     case ('javascript' == topic && 'none' == display):
-                    //         $('#interviewForm').bootstrapValidator('removeField', 'js_frameworks[]');
-                    //         break;
-                    // }
                 });
     });
     $(".btn-show").click(function() {
