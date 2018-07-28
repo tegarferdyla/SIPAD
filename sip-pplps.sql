@@ -1,53 +1,74 @@
--- --------------------------------------------------------
--- Host:                         127.0.0.1
--- Versi server:                 10.1.28-MariaDB - mariadb.org binary distribution
--- OS Server:                    Win32
--- HeidiSQL Versi:               9.5.0.5196
--- --------------------------------------------------------
+-- phpMyAdmin SQL Dump
+-- version 4.8.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Generation Time: Jul 27, 2018 at 03:26 PM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 7.0.30
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8 */;
-/*!50503 SET NAMES utf8mb4 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
+--
+-- Database: `sip-pplps`
+--
 
--- Membuang struktur basisdata untuk sip-pplps
-CREATE DATABASE IF NOT EXISTS `sip-pplps` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `sip-pplps`;
+-- --------------------------------------------------------
 
--- membuang struktur untuk table sip-pplps.admin
-CREATE TABLE IF NOT EXISTS `admin` (
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
   `id_admin` varchar(7) NOT NULL,
   `username` varchar(30) NOT NULL,
   `password` varchar(50) NOT NULL,
-  `nama` varchar(30) NOT NULL,
-  PRIMARY KEY (`id_admin`)
+  `nama` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel sip-pplps.admin: ~1 rows (lebih kurang)
-/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
-REPLACE INTO `admin` (`id_admin`, `username`, `password`, `nama`) VALUES
-	('AD00001', 'admin', 'df70d98996977a7b6f8dcf37c3265a38', 'Administrator');
-/*!40000 ALTER TABLE `admin` ENABLE KEYS */;
+--
+-- Dumping data for table `admin`
+--
 
--- membuang struktur untuk table sip-pplps.ppk
-CREATE TABLE IF NOT EXISTS `ppk` (
+INSERT INTO `admin` (`id_admin`, `username`, `password`, `nama`) VALUES
+('AD00001', 'admin', 'df70d98996977a7b6f8dcf37c3265a38', 'Administrator');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ppk`
+--
+
+CREATE TABLE `ppk` (
   `id_ppk` varchar(7) NOT NULL,
   `nama` varchar(50) NOT NULL,
-  `keterangan` text NOT NULL,
-  PRIMARY KEY (`id_ppk`)
+  `keterangan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel sip-pplps.ppk: ~2 rows (lebih kurang)
-/*!40000 ALTER TABLE `ppk` DISABLE KEYS */;
-REPLACE INTO `ppk` (`id_ppk`, `nama`, `keterangan`) VALUES
-	('PPK0001', 'PPK Ir. Hani Mayanas', 'Satker Ir. Hani Mayanas'),
-	('PPK0002', 'PPK Nuris Wahyudi, SST', 'Satker Nuris Wahyudi, SSTI');
-/*!40000 ALTER TABLE `ppk` ENABLE KEYS */;
+--
+-- Dumping data for table `ppk`
+--
 
--- membuang struktur untuk table sip-pplps.tbl_addendumii
-CREATE TABLE IF NOT EXISTS `tbl_addendumii` (
+INSERT INTO `ppk` (`id_ppk`, `nama`, `keterangan`) VALUES
+('PPK0001', 'PPK Ir. Hani Mayanas', 'Satker Ir. Hani Mayanas'),
+('PPK0002', 'PPK Nuris Wahyudi, SST', 'Satker Nuris Wahyudi, SSTI');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_addendumii`
+--
+
+CREATE TABLE `tbl_addendumii` (
   `id_addii` varchar(7) NOT NULL,
   `id_paket` varchar(7) NOT NULL,
   `addii_bal` varchar(100) NOT NULL,
@@ -57,16 +78,16 @@ CREATE TABLE IF NOT EXISTS `tbl_addendumii` (
   `addii_kurva` varchar(100) NOT NULL,
   `addii_shop` varchar(100) NOT NULL,
   `addii_bakln` varchar(100) NOT NULL,
-  `addii_naii` varchar(100) NOT NULL,
-  PRIMARY KEY (`id_addii`)
+  `addii_naii` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel sip-pplps.tbl_addendumii: ~1 rows (lebih kurang)
-/*!40000 ALTER TABLE `tbl_addendumii` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_addendumii` ENABLE KEYS */;
+-- --------------------------------------------------------
 
--- membuang struktur untuk table sip-pplps.tbl_addendumiii
-CREATE TABLE IF NOT EXISTS `tbl_addendumiii` (
+--
+-- Table structure for table `tbl_addendumiii`
+--
+
+CREATE TABLE `tbl_addendumiii` (
   `id_addiii` varchar(7) NOT NULL,
   `id_paket` varchar(7) NOT NULL,
   `addiii_bal` varchar(100) NOT NULL,
@@ -76,16 +97,16 @@ CREATE TABLE IF NOT EXISTS `tbl_addendumiii` (
   `addiii_kurva` varchar(100) NOT NULL,
   `addiii_shop` varchar(100) NOT NULL,
   `addiii_bakln` varchar(100) NOT NULL,
-  `addii_naiii` varchar(100) NOT NULL,
-  PRIMARY KEY (`id_addiii`)
+  `addii_naiii` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel sip-pplps.tbl_addendumiii: ~1 rows (lebih kurang)
-/*!40000 ALTER TABLE `tbl_addendumiii` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_addendumiii` ENABLE KEYS */;
+-- --------------------------------------------------------
 
--- membuang struktur untuk table sip-pplps.tbl_addendumiv
-CREATE TABLE IF NOT EXISTS `tbl_addendumiv` (
+--
+-- Table structure for table `tbl_addendumiv`
+--
+
+CREATE TABLE `tbl_addendumiv` (
   `id_addiv` varchar(7) NOT NULL,
   `id_paket` varchar(7) NOT NULL,
   `addiv_bal` varchar(100) NOT NULL,
@@ -95,16 +116,16 @@ CREATE TABLE IF NOT EXISTS `tbl_addendumiv` (
   `addiv_kurva` varchar(100) NOT NULL,
   `addiv_shop` varchar(100) NOT NULL,
   `addiv_bakn` varchar(100) NOT NULL,
-  `addiv_naiv` varchar(100) NOT NULL,
-  PRIMARY KEY (`id_addiv`)
+  `addiv_naiv` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel sip-pplps.tbl_addendumiv: ~1 rows (lebih kurang)
-/*!40000 ALTER TABLE `tbl_addendumiv` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_addendumiv` ENABLE KEYS */;
+-- --------------------------------------------------------
 
--- membuang struktur untuk table sip-pplps.tbl_doc1
-CREATE TABLE IF NOT EXISTS `tbl_doc1` (
+--
+-- Table structure for table `tbl_doc1`
+--
+
+CREATE TABLE `tbl_doc1` (
   `id_doc` varchar(7) NOT NULL,
   `id_paket` varchar(7) NOT NULL,
   `surat_md` varchar(100) NOT NULL,
@@ -119,16 +140,16 @@ CREATE TABLE IF NOT EXISTS `tbl_doc1` (
   `bcp` varchar(100) NOT NULL,
   `mc0_dd` varchar(100) NOT NULL,
   `mc0_bal` varchar(100) NOT NULL,
-  `mc0_jdst` varchar(100) NOT NULL,
-  PRIMARY KEY (`id_doc`)
+  `mc0_jdst` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel sip-pplps.tbl_doc1: ~1 rows (lebih kurang)
-/*!40000 ALTER TABLE `tbl_doc1` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_doc1` ENABLE KEYS */;
+-- --------------------------------------------------------
 
--- membuang struktur untuk table sip-pplps.tbl_doc2
-CREATE TABLE IF NOT EXISTS `tbl_doc2` (
+--
+-- Table structure for table `tbl_doc2`
+--
+
+CREATE TABLE `tbl_doc2` (
   `id_doc2` varchar(7) NOT NULL,
   `id_paket` varchar(7) NOT NULL,
   `laporan_harian1` varchar(100) NOT NULL,
@@ -143,51 +164,55 @@ CREATE TABLE IF NOT EXISTS `tbl_doc2` (
   `provisional_sp` varchar(100) NOT NULL,
   `provisional_bafv` varchar(100) NOT NULL,
   `provisional_basv` varchar(100) NOT NULL,
-  `provisional_bastp` varchar(100) NOT NULL,
-  PRIMARY KEY (`id_doc2`)
+  `provisional_bastp` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel sip-pplps.tbl_doc2: ~1 rows (lebih kurang)
-/*!40000 ALTER TABLE `tbl_doc2` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_doc2` ENABLE KEYS */;
+-- --------------------------------------------------------
 
--- membuang struktur untuk table sip-pplps.tbl_doc3
-CREATE TABLE IF NOT EXISTS `tbl_doc3` (
+--
+-- Table structure for table `tbl_doc3`
+--
+
+CREATE TABLE `tbl_doc3` (
   `id_doc3` varchar(7) NOT NULL,
   `id_paket` varchar(7) NOT NULL,
   `final_sp` varchar(100) NOT NULL,
   `final_bafv` varchar(100) NOT NULL,
   `final_basv` varchar(100) NOT NULL,
   `final_bastp` varchar(100) NOT NULL,
-  `final_dokumentasi` varchar(100) NOT NULL,
-  PRIMARY KEY (`id_doc3`)
+  `final_dokumentasi` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel sip-pplps.tbl_doc3: ~1 rows (lebih kurang)
-/*!40000 ALTER TABLE `tbl_doc3` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_doc3` ENABLE KEYS */;
+-- --------------------------------------------------------
 
--- membuang struktur untuk table sip-pplps.tbl_paket
-CREATE TABLE IF NOT EXISTS `tbl_paket` (
+--
+-- Table structure for table `tbl_paket`
+--
+
+CREATE TABLE `tbl_paket` (
   `id_paket` varchar(7) NOT NULL,
   `nama_paket` varchar(150) NOT NULL,
   `jenis` enum('kontraktual','suakelola') NOT NULL,
   `deskripsi` text NOT NULL,
   `input_by` varchar(50) NOT NULL,
   `id_tahun` varchar(7) NOT NULL,
-  `id_ppk` varchar(7) NOT NULL,
-  PRIMARY KEY (`id_paket`),
-  KEY `id_tahun` (`id_tahun`)
+  `id_ppk` varchar(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel sip-pplps.tbl_paket: ~0 rows (lebih kurang)
-/*!40000 ALTER TABLE `tbl_paket` DISABLE KEYS */;
-REPLACE INTO `tbl_paket` (`id_paket`, `nama_paket`, `jenis`, `deskripsi`, `input_by`, `id_tahun`, `id_ppk`) VALUES
-	('PKT0001', 'Test 2014', 'kontraktual', 'Ini Tahun 2014', 'Tegar Ferdyla M', 'THN0001', 'PPK0001');
-/*!40000 ALTER TABLE `tbl_paket` ENABLE KEYS */;
+--
+-- Dumping data for table `tbl_paket`
+--
 
--- membuang struktur untuk table sip-pplps.tbl_pascamc0
-CREATE TABLE IF NOT EXISTS `tbl_pascamc0` (
+INSERT INTO `tbl_paket` (`id_paket`, `nama_paket`, `jenis`, `deskripsi`, `input_by`, `id_tahun`, `id_ppk`) VALUES
+('PKT0001', 'Paket percobaan lagi', 'kontraktual', 'kontraktual 2099', 'Tegar Ferdyla M', 'THN0001', 'PPK0001');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_pascamc0`
+--
+
+CREATE TABLE `tbl_pascamc0` (
   `id_pasca` varchar(7) NOT NULL,
   `id_paket` varchar(7) NOT NULL,
   `pasca_boq` varchar(100) NOT NULL,
@@ -196,16 +221,16 @@ CREATE TABLE IF NOT EXISTS `tbl_pascamc0` (
   `pasca_kurva` varchar(100) NOT NULL,
   `pasca_shop` varchar(100) NOT NULL,
   `pasca_bakn` varchar(100) NOT NULL,
-  `pasca_nai` varchar(100) NOT NULL,
-  PRIMARY KEY (`id_pasca`)
+  `pasca_nai` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel sip-pplps.tbl_pascamc0: ~1 rows (lebih kurang)
-/*!40000 ALTER TABLE `tbl_pascamc0` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_pascamc0` ENABLE KEYS */;
+-- --------------------------------------------------------
 
--- membuang struktur untuk table sip-pplps.tbl_pendukung
-CREATE TABLE IF NOT EXISTS `tbl_pendukung` (
+--
+-- Table structure for table `tbl_pendukung`
+--
+
+CREATE TABLE `tbl_pendukung` (
   `id_pendukung` varchar(7) NOT NULL,
   `id_paket` varchar(7) NOT NULL,
   `bmn_surat_alih` varchar(100) NOT NULL,
@@ -222,33 +247,65 @@ CREATE TABLE IF NOT EXISTS `tbl_pendukung` (
   `bendahara_lpj` varchar(100) NOT NULL,
   `bendahara_bapkdr` varchar(100) NOT NULL,
   `bendahara_rekening` varchar(100) NOT NULL,
-  `bendahara_bapk` varchar(100) NOT NULL,
-  PRIMARY KEY (`id_pendukung`)
+  `bendahara_bapk` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel sip-pplps.tbl_pendukung: ~0 rows (lebih kurang)
-/*!40000 ALTER TABLE `tbl_pendukung` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_pendukung` ENABLE KEYS */;
+--
+-- Dumping data for table `tbl_pendukung`
+--
 
--- membuang struktur untuk table sip-pplps.tbl_tahun
-CREATE TABLE IF NOT EXISTS `tbl_tahun` (
+INSERT INTO `tbl_pendukung` (`id_pendukung`, `id_paket`, `bmn_surat_alih`, `bmn_rekomendasi`, `bmn_surat_hibah`, `keuangan_permohonan`, `keuangan_kuitansi`, `keuangan_kartu`, `keuangan_faktur`, `keuangan_pph`, `keuangan_spp`, `keuangan_spm`, `keuangan_sp2d`, `bendahara_lpj`, `bendahara_bapkdr`, `bendahara_rekening`, `bendahara_bapk`) VALUES
+('DOC0001', 'PKT0001', '', '2099-Paket percobaan lagi-Pendukung-54961-ID-implementasi-pimansu-dalam-pencegahan-na_2.pdf', '2099-Paket percobaan lagi-Pendukung-54961-ID-implementasi-pimansu-dalam-pencegahan-na_3.pdf', '', '2099-Paket percobaan lagi-Pendukung-54961-ID-implementasi-pimansu-dalam-pencegahan-na_4.pdf', '', '', '', '', '', '', '', '2099-Paket percobaan lagi-Pendukung-54961-ID-implementasi-pimansu-dalam-pencegahan-na_5.pdf', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_pokja`
+--
+
+CREATE TABLE `tbl_pokja` (
+  `id_pendukung` varchar(7) NOT NULL,
+  `id_paket` varchar(7) NOT NULL,
+  `pokja_surat_perintah` varchar(100) NOT NULL,
+  `pokja_dokumen_lelang` varchar(100) NOT NULL,
+  `pokja_add_dokumen` varchar(100) NOT NULL,
+  `pokja_undangan` varchar(100) NOT NULL,
+  `pokja_pembuktian` varchar(100) NOT NULL,
+  `pokja_aanwijzing` varchar(100) NOT NULL,
+  `pokja_pemenang` varchar(100) NOT NULL,
+  `pokja_undangan_negosiasi` varchar(100) NOT NULL,
+  `pokja_berita_negosiasi` varchar(100) NOT NULL,
+  `pokja_hasil_seleksi` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_tahun`
+--
+
+CREATE TABLE `tbl_tahun` (
   `id_tahun` varchar(7) NOT NULL,
   `nama_tahun` varchar(4) NOT NULL,
   `deskripsi` text NOT NULL,
   `input_by` varchar(50) NOT NULL,
-  `id_ppk` varchar(7) NOT NULL,
-  PRIMARY KEY (`id_tahun`),
-  KEY `id_ppk` (`id_ppk`)
+  `id_ppk` varchar(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel sip-pplps.tbl_tahun: ~0 rows (lebih kurang)
-/*!40000 ALTER TABLE `tbl_tahun` DISABLE KEYS */;
-REPLACE INTO `tbl_tahun` (`id_tahun`, `nama_tahun`, `deskripsi`, `input_by`, `id_ppk`) VALUES
-	('THN0001', '2014', 'Tahun 2014', 'Tegar Ferdyla M', 'PPK0001');
-/*!40000 ALTER TABLE `tbl_tahun` ENABLE KEYS */;
+--
+-- Dumping data for table `tbl_tahun`
+--
 
--- membuang struktur untuk table sip-pplps.user
-CREATE TABLE IF NOT EXISTS `user` (
+INSERT INTO `tbl_tahun` (`id_tahun`, `nama_tahun`, `deskripsi`, `input_by`, `id_ppk`) VALUES
+('THN0001', '2099', 'Cek toko tahun', 'Tegar Ferdyla M', 'PPK0001');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
   `id_user` varchar(7) NOT NULL,
   `username` varchar(25) NOT NULL,
   `password` varchar(50) NOT NULL,
@@ -258,20 +315,112 @@ CREATE TABLE IF NOT EXISTS `user` (
   `email` varchar(100) NOT NULL,
   `alamat` text NOT NULL,
   `foto` varchar(100) NOT NULL,
-  `id_ppk` varchar(7) NOT NULL,
-  PRIMARY KEY (`id_user`)
+  `id_ppk` varchar(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel sip-pplps.user: ~5 rows (lebih kurang)
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-REPLACE INTO `user` (`id_user`, `username`, `password`, `NIP`, `nama`, `bagian`, `email`, `alamat`, `foto`, `id_ppk`) VALUES
-	('USR0001', 'tegarferdyla', 'df70d98996977a7b6f8dcf37c3265a38', '123456789011', 'Tegar Ferdyla M', 'PPK', 'tegar@gmail.com', 'Jl.Joglo', 'user1.jpg', 'PPK0001'),
-	('USR0002', 'hendra', 'df70d98996977a7b6f8dcf37c3265a38', '123456789012', 'Hendra', 'PPK', 'hendra@gmail.com', 'Jl.Meruya', 'user1.jpg', 'PPK0002'),
-	('USR0003', 'asal', 'df70d98996977a7b6f8dcf37c3265a38', '123456789013', 'Asal', 'PPK', 'asal@gmail.com', 'Jl.Asal', 'user1.jpg', 'PPK0002'),
-	('USR0004', 'dalas98', 'bc5111e0de8ead33001887d4979536bc', '123456789069', 'Yusuf Farhan', 'PPK', 'dalas98@gmail.com', 'Perum', 'user1.jpg', 'PPK0001'),
-	('USR0005', 'tegarfm', '3ddeeab4529e3557fd663e618c7d090b', '12456789044', 'Tegar Ferdyla', 'PPK', 'tegarferdyla@gmail.com', 'Komplek DKI', 'user1.jpg', 'PPK0002');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+--
+-- Dumping data for table `user`
+--
 
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+INSERT INTO `user` (`id_user`, `username`, `password`, `NIP`, `nama`, `bagian`, `email`, `alamat`, `foto`, `id_ppk`) VALUES
+('USR0001', 'tegarferdyla', 'df70d98996977a7b6f8dcf37c3265a38', '123456789011', 'Tegar Ferdyla M', 'PPK', 'tegar@gmail.com', 'Jl.Joglo', 'user1.jpg', 'PPK0001'),
+('USR0002', 'hendra', 'df70d98996977a7b6f8dcf37c3265a38', '123456789012', 'Hendra', 'PPK', 'hendra@gmail.com', 'Jl.Meruya', 'user1.jpg', 'PPK0002'),
+('USR0003', 'asal', 'df70d98996977a7b6f8dcf37c3265a38', '123456789013', 'Asal', 'PPK', 'asal@gmail.com', 'Jl.Asal', 'user1.jpg', 'PPK0002'),
+('USR0004', 'dalas98', 'bc5111e0de8ead33001887d4979536bc', '123456789069', 'Yusuf Farhan', 'PPK', 'dalas98@gmail.com', 'Perum', 'user1.jpg', 'PPK0001'),
+('USR0005', 'tegarfm', '3ddeeab4529e3557fd663e618c7d090b', '12456789044', 'Tegar Ferdyla', 'PPK', 'tegarferdyla@gmail.com', 'Komplek DKI', 'user1.jpg', 'PPK0002');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id_admin`);
+
+--
+-- Indexes for table `ppk`
+--
+ALTER TABLE `ppk`
+  ADD PRIMARY KEY (`id_ppk`);
+
+--
+-- Indexes for table `tbl_addendumii`
+--
+ALTER TABLE `tbl_addendumii`
+  ADD PRIMARY KEY (`id_addii`);
+
+--
+-- Indexes for table `tbl_addendumiii`
+--
+ALTER TABLE `tbl_addendumiii`
+  ADD PRIMARY KEY (`id_addiii`);
+
+--
+-- Indexes for table `tbl_addendumiv`
+--
+ALTER TABLE `tbl_addendumiv`
+  ADD PRIMARY KEY (`id_addiv`);
+
+--
+-- Indexes for table `tbl_doc1`
+--
+ALTER TABLE `tbl_doc1`
+  ADD PRIMARY KEY (`id_doc`);
+
+--
+-- Indexes for table `tbl_doc2`
+--
+ALTER TABLE `tbl_doc2`
+  ADD PRIMARY KEY (`id_doc2`);
+
+--
+-- Indexes for table `tbl_doc3`
+--
+ALTER TABLE `tbl_doc3`
+  ADD PRIMARY KEY (`id_doc3`);
+
+--
+-- Indexes for table `tbl_paket`
+--
+ALTER TABLE `tbl_paket`
+  ADD PRIMARY KEY (`id_paket`),
+  ADD KEY `id_tahun` (`id_tahun`);
+
+--
+-- Indexes for table `tbl_pascamc0`
+--
+ALTER TABLE `tbl_pascamc0`
+  ADD PRIMARY KEY (`id_pasca`);
+
+--
+-- Indexes for table `tbl_pendukung`
+--
+ALTER TABLE `tbl_pendukung`
+  ADD PRIMARY KEY (`id_pendukung`);
+
+--
+-- Indexes for table `tbl_pokja`
+--
+ALTER TABLE `tbl_pokja`
+  ADD PRIMARY KEY (`id_pendukung`),
+  ADD UNIQUE KEY `id_paket` (`id_paket`);
+
+--
+-- Indexes for table `tbl_tahun`
+--
+ALTER TABLE `tbl_tahun`
+  ADD PRIMARY KEY (`id_tahun`),
+  ADD KEY `id_ppk` (`id_ppk`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id_user`);
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
