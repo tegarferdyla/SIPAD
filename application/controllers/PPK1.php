@@ -19,6 +19,8 @@ class PPK1 extends CI_Controller {
 			redirect('keuangan');
 		} else if ($this->session->userdata('bagian') == 'Bendahara') {
 				redirect('bendahara');
+		}else if ($this->session->userdata('bagian') == 'Pokja') {
+			redirect('pokja');
 		}
 	}
 	public function editprofile() {

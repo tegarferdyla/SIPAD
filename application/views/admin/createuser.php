@@ -36,6 +36,11 @@
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                             </button> <i class="material-icons list-icon">check_circle</i>  <strong>Well done!</strong> Akun Bendahara baru berhasil di daftarkan.
                         </div>
+                        <?php elseif ($this->session->flashdata('pokja-berhasil')): ?>
+                        <div class="alert alert-icon alert-success border-success alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                            </button> <i class="material-icons list-icon">check_circle</i>  <strong>Well done!</strong> Akun Pokja baru berhasil di daftarkan.
+                        </div>
                         <?php elseif ($this->session->flashdata('nipsalah')): ?>
                             <div class="alert alert-icon alert-danger border-danger alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
@@ -68,6 +73,8 @@
                                         <li class="nav-item"><a class="nav-link" href="#keuangan-tab-bordered-1" data-toggle="tab" aria-expanded="true">Keuangan</a>
                                         </li>
                                         <li class="nav-item"><a class="nav-link" href="#bendahara-tab-bordered-1" data-toggle="tab" aria-expanded="true">Bendahara</a>
+                                        </li>
+                                        <li class="nav-item"><a class="nav-link" href="#pokja-tab-bordered-1" data-toggle="tab" aria-expanded="true">Pokja</a>
                                         </li>
                                     </ul>
                                     <div class="tab-content">
@@ -259,6 +266,59 @@
                                                         <div class="col-md-9">
                                                             <span class="text-danger"></span>
                                                             <input class="form-control" id="l0" placeholder="Divisi" type="text" name="divisi" value="Bendahara" readonly="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 col-form-label" for="l0">Email</label>
+                                                        <div class="col-md-9">
+                                                            <span class="text-danger"><?=form_error('email') ?></span>
+                                                            <input class="form-control" id="l0" placeholder="Email" type="email" name="email" >
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 col-form-label" for="l15">Alamat</label>
+                                                        <div class="col-md-9">
+                                                            <textarea class="form-control" id="l15" rows="3" name="alamat"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 col-form-label" for="l0">Username</label>
+                                                        <div class="col-md-9">
+                                                            <span class="text-danger"><?=form_error('username') ?></span>
+                                                            <input class="form-control" id="" placeholder="Username" type="text" name="username">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-actions">
+                                                    <div class="form-group row">
+                                                        <div class="col-md-9 ml-md-auto btn-list">
+                                                            <button class="btn btn-primary btn-rounded" type="submit">Submit</button>
+                                                            <button class="btn btn-outline-default btn-rounded" type="reset">Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </form>
+                                        </div>
+                                        <div class="tab-pane active" id="pokja-tab-bordered-1">
+                                            <form action="<?php echo base_url ('admin/Tambahakunpokja') ?>" method ="post">
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 col-form-label" for="l0">NIP</label>
+                                                        <div class="col-md-9">
+                                                            <span class="text-danger"><?=form_error('nip') ?></span>
+                                                            <input class="form-control" id="l0" placeholder="NIP" type="text" name="nip">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 col-form-label" for="l0">Nama Lengkap</label>
+                                                        <div class="col-md-9">
+                                                            <span class="text-danger"><?=form_error('nama') ?></span>
+                                                            <input class="form-control" id="l0" placeholder="Nama Lengkap" type="text" name="nama">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3 col-form-label" for="l0">Divisi</label>
+                                                        <div class="col-md-9">
+                                                            <span class="text-danger"></span>
+                                                            <input class="form-control" id="l0" placeholder="Divisi" type="text" name="divisi" value="Pokja" readonly="">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">

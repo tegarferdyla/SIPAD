@@ -7,7 +7,7 @@
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="<?php echo base_url('bendahara') ?>">Dashboard</a>
+                        <li class="breadcrumb-item"><a href="<?php echo base_url('admin') ?>">Dashboard</a>
                         </li>
                         <li class="breadcrumb-item active">Edit Akun</li>
                     </ol>
@@ -44,7 +44,7 @@
                                         <?php endif ?>
                                     </div>
                                 </div> 
-                                <?php echo form_open_multipart('bendahara/changeprofile'); ?>
+                                <?php echo form_open_multipart('pokja/changeprofile'); ?>
                                     <div class="form-group row">
                                         <div class="col-md-12 text-center">
                                             <img src="<?php echo base_url('assets/img/'.$user['foto']) ?>" class="rounded-circle img-thumbnail thumb-lg " style="width:190px"  alt="">

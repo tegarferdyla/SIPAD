@@ -19,6 +19,8 @@ class Keuangan extends CI_Controller {
 			redirect('bmn');
 		}else if ($this->session->userdata('bagian') == 'Bendahara') {
 				redirect('bendahara');
+		}else if ($this->session->userdata('bagian') == 'Pokja') {
+			redirect('pokja');
 		}
 	}
 	public function editprofile() {

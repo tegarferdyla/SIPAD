@@ -2,7 +2,7 @@
     <!-- Page Title Area -->
     <div class="row page-title clearfix">
         <div class="page-title-left">
-            <h6 class="page-title-heading mr-0 mr-r-5">Daftar Paket Suakelola</h6>
+            <h6 class="page-title-heading mr-0 mr-r-5">Daftar Paket Kontraktual</h6>
         </div>
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">
@@ -28,9 +28,18 @@
                             </div>
                         </div>
                         <div class="row">
-
+                            <?php if ($this->session->flashdata('kosong')): ?>
+                                <div class="col-md-12">
+                                    <div class="alert-group">
+                                        <div class="alert alert-warning alert-dismissable">
+                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                            Data paket yang anda pilih tidak tersedia harap daftarkan paket anda terlebih dahulu
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endif?>
                         </div>
-                        <?php foreach ($suakelola as $u ) {?>
+                        <?php foreach ($kontraktual as $u ) {?>
                         <div class="accordion" id="accordion-3" role="tablist" aria-multiselectable="true">
                             <div class="card card-outline-success">
                                 <div class="card-header" role="tab" id="heading4">
@@ -39,7 +48,7 @@
                                 <div id="<?php echo ucwords($u['id_paket']); ?>" class="card-collapse collapse" role="tabpanel" aria-labelledby="heading4">
                                     <div class="card-body">
                                         <ul class="list-group">
-                                            <a href="<?php echo base_url('')."keuangan/dokumensuakelola/".$u['id_paket'] ?>"><li class="list-group-item">View Dokumen</li></a>
+                                            <a href="<?php echo base_url('')."pokja/inputdokumen/".$u['id_paket'] ?>"><li class="list-group-item">Input Dokumen</li></a>
                                         </ul>
                                     </div>
                                 </div>

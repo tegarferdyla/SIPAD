@@ -9,7 +9,7 @@
                     <li class="menu-item-has-children"><a href="javascript:void(0);"><i class="list-icon feather feather-briefcase"></i> <span class="hide-menu">Divisi</span></a>
                         <ul class="list-unstyled sub-menu">
                         <?php foreach ($get_ppk  as $u) { ?>
-                            <li><a href="<?php echo base_url()."bmn/tahun/".$u['id_ppk']; ?>"=><?php echo $u['nama']; ?></a>
+                            <li><a href="<?php echo base_url()."keuangan/tahun/".$u['id_ppk']; ?>"=><?php echo $u['nama']; ?></a>
                         <?php } ?>    
                         </ul>
                     </li>

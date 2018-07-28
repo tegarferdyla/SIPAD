@@ -19,6 +19,8 @@ class Bendahara extends CI_Controller {
 			redirect('bmn');
 		}else if ($this->session->userdata('bagian') == 'Keuangan') {
 			redirect('keuangan');
+		}else if ($this->session->userdata('bagian') == 'Pokja') {
+			redirect('pokja');
 		}	
 	}
 	public function editprofile() {

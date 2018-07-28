@@ -28,7 +28,9 @@ class Login extends CI_Controller
 					redirect('keuangan');
 				}elseif ($this->session->userdata('bagian')=='Bendahara') {
 					redirect('bendahara');
-				}  
+				}elseif ($this->session->userdata('bagian')=='Pokja') {
+					redirect('pokja');
+				}    
 			}
 		}
 	}
@@ -85,10 +87,13 @@ class Login extends CI_Controller
 				redirect(base_url('bmn'));
 			}
 			else if ($this->session->userdata('bagian') == 'Keuangan') {
-			redirect('keuangan');
+				redirect('keuangan');
 			}
 			else if ($this->session->userdata('bagian') == 'Bendahara') {
-			redirect('bendahara');
+				redirect('bendahara');
+			}
+			else if ($this->session->userdata('bagian') == 'Pokja') {
+				redirect('pokja');
 			}
 		}
 		else{

@@ -54,6 +54,8 @@
                                         </li>
                                         <li class="nav-item"><a class="nav-link" href="#bendahara-tab-bordered-1" data-toggle="tab" aria-expanded="true">Bendahara</a>
                                         </li>
+                                        <li class="nav-item"><a class="nav-link" href="#pokja-tab-bordered-1" data-toggle="tab" aria-expanded="true">Pokja</a>
+                                        </li>
                                     </ul>
                                     <!-- /.nav-tabs -->
                                     <div class="tab-content">
@@ -185,6 +187,43 @@
                                         <?php $no= 1; ?>
                                         <?php 
                                              foreach ($bendahara as $u) {
+                                         ?>
+                                        <tr>
+                                            <td><?php echo ($no++); ?></td>
+                                            <td><?php echo ($u->NIP); ?></td>
+                                            <td><?php echo ucwords($u->nama); ?></td>
+                                            <td><?php echo ($u->divisi); ?></td>
+                                            <td><?php echo ($u->email); ?></td>
+                                            <td><?php echo ($u->username); ?></td>
+
+                                            <td>
+                                                <a href="<?php echo base_url()."admin/edituser/".$u->id_user;?>"><i class="list-icon feather feather-edit" title="Edit"></i></a> &nbsp;
+                                                <a onclick="return confirm('Apa anda yakin ingin menghapus data ini?')" href="<?php echo base_url()."admin/hapususer/".$u->id_user; ?>"><i class="list-icon text-danger feather feather-trash-2" title="Delete"></i></a>
+                                            </td>
+                                        </tr>
+                                        <?php 
+                                            }
+                                         ?>
+                                        </tbody>
+                                    </table>
+                                        </div>
+                                        <div class="tab-pane" id="pokja-tab-bordered-1">
+                                            <table class="table table-responsive" data-toggle="datatables">
+                                            <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>NIP</th>
+                                            <th>Nama</th>
+                                            <th>Divisi</th>
+                                            <th>Email</th>
+                                            <th>Username</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php $no= 1; ?>
+                                        <?php 
+                                             foreach ($pokja as $u) {
                                          ?>
                                         <tr>
                                             <td><?php echo ($no++); ?></td>
