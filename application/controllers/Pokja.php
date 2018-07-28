@@ -132,9 +132,10 @@ class pokja extends CI_Controller {
 
 			$ppk['get_ppk']=$this->Datappk_model->datappk();
 			$this->load->view('pokja/sidebar',$ppk);
-
-			$kontraktual['kontraktual'] = $this->Datapaket_model->kontraktual($id_tahun);
-			$this->load->view('pokja/kontraktual',$kontraktual);
+			
+			$data['dapattahun'] = $this->Datatahun_model->dapatkantahun($id_tahun);
+			$data['kontraktual'] = $this->Datapaket_model->kontraktual($id_tahun);
+			$this->load->view('pokja/kontraktual',$data);
 			$this->load->view('pokja/footer');
 	}
 	public function paketsuakelola($id_tahun)
@@ -146,22 +147,180 @@ class pokja extends CI_Controller {
 			$ppk['get_ppk']=$this->Datappk_model->datappk();
 			$this->load->view('pokja/sidebar',$ppk);
 
-			$suakelola['suakelola'] = $this->Datapaket_model->suakelola($id_tahun);
-			// print_r($suakelola);
-			$this->load->view('pokja/suakelola',$suakelola);
+			$data['suakelola'] = $this->Datapaket_model->suakelola($id_tahun);
+			$data['dapattahun'] = $this->Datatahun_model->dapatkantahun($id_tahun);
+			$this->load->view('pokja/suakelola',$data);
 			$this->load->view('pokja/footer');
 	}
 	public function inputdokumen($id_paket)
 	{
-		 		$id_user = $this->session->userdata('id_user');
-	 			$ini['user'] = $this->Datauser_model->GetWhereUser($id_user);
-	 			$this->load->view('ppk1/header', $ini);
+		$data['pokja'] = $this->Datapaket_model->showidpkt('tbl_pokja', $id_paket);
+		if ($data['pokja'] != NULL) {
+			redirect('Pokja/viewdoc/' . $id_paket);
+		} else {
+	 		$id_user = $this->session->userdata('id_user');
+			$ini['user'] = $this->Datauser_model->GetWhereUser($id_user);
+			$this->load->view('ppk1/header', $ini);
 
-	 			$ppk['get_ppk']=$this->Datappk_model->datappk();
-	 			$this->load->view('pokja/sidebar',$ppk);
+			$ppk['get_ppk']=$this->Datappk_model->datappk();
+			$this->load->view('pokja/sidebar',$ppk);
 
-	 			$this->load->view('pokja/inputdokumen');
-	 			$this->load->view('ppk1/footer');
+			$data['show'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
+			$this->load->view('pokja/inputdokumen',$data);
+			$this->load->view('ppk1/footer');
+		}
+	}
+	public function savedoc()
+	{
+		$id_paket = $this->input->post('id_paket');
+		$cari = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
+		$jenis = $cari[0]["jenis"];
+		$nama_paket = $cari[0]["nama_paket"];
+		$idtahun = $cari[0]["id_tahun"];
+		$carithn = $this->Datatahun_model->cektahun($idtahun);
+		$tahun = $carithn->nama_tahun;
+		$id_pendukung = $this->Penomoran_model->IDPokja();
+
+		$file = [
+			'upload_path' => './assets/data/' . $tahun . '/' . $jenis . '/' . $nama_paket . '/',
+			'allowed_types' => 'pdf',
+			'overwrite' => TRUE,
+			// 'encrypt_name' => TRUE
+		];
+		$namabaru = $tahun . "-" . $nama_paket . "-";
+		$this->load->library('upload', $file);
+		for ($i = 1; $i <= 10; $i++) {
+			$files[$i] = $_FILES['file'.$i]['name'];
+			if (!$this->upload->do_upload('file' . $i)) {
+				$this->upload->display_errors();
+			} else {
+				// $this->upload->do_upload('file'.$i);
+				$a[$i] = $this->upload->data();
+				rename($a[$i]['full_path'], $a[$i]['file_path'] . $namabaru . $a[$i]['file_name']);
+			}
+			if (!empty($files[$i])) {
+				$namaajah[$i] = $tahun . "-" . $nama_paket . "-";
+				$namafile[$i] = $a[$i]['file_name'];
+			} else {
+				$namaajah[$i] = "";
+				$namafile[$i] = "";
+			}
+		}
+
+		$doc = array(
+			'id_pendukung' => $id_pendukung,
+			'id_paket' => $id_paket,
+			'pokja_surat_perintah' => $namaajah[1] . $namafile[1],
+			'pokja_dokumen_lelang' => $namaajah[2] . $namafile[2],
+			'pokja_add_dokumen' => $namaajah[3] . $namafile[3],
+			'pokja_undangan' => $namaajah[4] . $namafile[4],
+			'pokja_pembuktian' => $namaajah[5] . $namafile[5],
+			'pokja_aanwijzing' => $namaajah[6] . $namafile[6],
+			'pokja_pemenang' => $namaajah[7] . $namafile[7],
+			'pokja_undangan_negosiasi' => $namaajah[8] . $namafile[8],
+			'pokja_berita_negosiasi' => $namaajah[9] . $namafile[9],
+			'pokja_hasil_seleksi' => $namaajah[10] . $namafile[10]
+		);
+		$tambahdoc = $this->Datapaket_model->insertdoc1('tbl_pokja', $doc);
+		if ($tambahdoc>0) {
+			redirect('pokja/viewdoc','refresh');
+		}
+	}
+	public function viewdoc($id_paket)
+	{
+		$data['paket'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
+		$idtahun = $data['paket'][0]['id_tahun'];
+		$data['tahun'] = $this->Datatahun_model->cektahun($idtahun);
+		$data['show'] = $this->Datapaket_model->showidpkt('tbl_pokja', $id_paket);
+		if ($data['show'] == NULL) {
+			redirect('Pokja/inputdokumen/' . $id_paket);
+		} else {
+		$id_user = $this->session->userdata('id_user');
+		$ini['user'] = $this->Datauser_model->GetWhereUser($id_user);
+		$this->load->view('ppk1/header', $ini);
+
+		$ppk['get_ppk']=$this->Datappk_model->datappk();
+		$this->load->view('pokja/sidebar',$ppk);
+		$this->load->view('pokja/viewdoc',$data);
+		$this->load->view('ppk1/footer');
+		}
+	}
+	public function editdoc($id_paket)
+	{
+		$id_user = $this->session->userdata('id_user');
+		$ini['user'] = $this->Datauser_model->GetWhereUser($id_user);
+		$this->load->view('ppk1/header', $ini);
+
+		$ppk['get_ppk']=$this->Datappk_model->datappk();
+		$this->load->view('pokja/sidebar',$ppk);
+		$data['paket'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
+		$idtahun = $data['paket'][0]['id_tahun'];
+		$data['tahun'] = $this->Datatahun_model->cektahun($idtahun);
+		$data['show'] = $this->Datapaket_model->showidpkt('tbl_pokja', $id_paket);
+		$this->load->view('pokja/edit',$data);
+		$this->load->view('ppk1/footer');
+	}
+	public function updatedoc()
+	{
+		$id_paket = $this->input->post('id_paket');
+		$cari = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
+		$jenis = $cari[0]["jenis"];
+		$nama_paket = $cari[0]["nama_paket"];
+		$idtahun = $cari[0]["id_tahun"];
+		$carithn = $this->Datatahun_model->cektahun($idtahun);
+		$tahun = $carithn->nama_tahun;
+		$file = [
+			'upload_path' => './assets/data/' . $tahun . '/' . $jenis . '/' . $nama_paket . '/',
+			'allowed_types' => 'pdf',
+			'overwrite' => TRUE,
+			// 'encrypt_name' => TRUE
+		];
+		$namabaru = $tahun . "-" . $nama_paket . "-";
+		$this->load->library('upload', $file);
+		for ($i = 1; $i <= 10; $i++) {
+			$delfile[$i] = $this->input->post('delf'.$i);
+			$files[$i] = $_FILES['file'.$i]['name'];
+			if (!$this->upload->do_upload('file' . $i)) {
+				$this->upload->display_errors();
+			} else {
+				$this->upload->do_upload('file'.$i);
+				$a[$i] = $this->upload->data();
+				rename($a[$i]['full_path'], $a[$i]['file_path'] . $namabaru . $a[$i]['file_name']);
+			}
+			if (!empty($files[$i])) {
+				$namaajah[$i] = $tahun . "-" . $nama_paket . "-";
+				$namafile[$i] = $a[$i]['file_name'];
+				unlink($a[$i]['file_path'].$delfile[$i]);
+			} else {
+				$namaajah[$i] = "";
+				$namafile[$i] = $delfile[$i];
+			}
+		}
+		$where = array ('id_paket' => $id_paket);
+		$ganti = array(
+			'pokja_surat_perintah' => $namaajah[1] . $namafile[1],
+			'pokja_dokumen_lelang' => $namaajah[2] . $namafile[2],
+			'pokja_add_dokumen' => $namaajah[3] . $namafile[3],
+			'pokja_undangan' => $namaajah[4] . $namafile[4],
+			'pokja_pembuktian' => $namaajah[5] . $namafile[5],
+			'pokja_aanwijzing' => $namaajah[6] . $namafile[6],
+			'pokja_pemenang' => $namaajah[7] . $namafile[7],
+			'pokja_undangan_negosiasi' => $namaajah[8] . $namafile[8],
+			'pokja_berita_negosiasi' => $namaajah[9] . $namafile[9],
+			'pokja_hasil_seleksi' => $namaajah[10] . $namafile[10]
+		);
+		$tambahpendukung = $this->Datapaket_model->updatedocpend('tbl_pokja', $ganti, $where);
+		if ($tambahpendukung > 0) {
+			$this->session->set_flashdata('updateberhasil', true);
+			redirect('pokja/editdoc/' . $id_paket);
+		}
+	}
+	public function download($tahun,$jenis,$nama_paket,$nama_file) {
+		// $name = str_replace('%20',' ', $nama_file);
+		$name = rawurldecode($nama_file);
+		$paket = str_replace('%20',' ', $nama_paket);
+		$data = file_get_contents("./assets/data/".$tahun."/".$jenis."/".$paket."/".$name);
+		force_download($name,$data);
 	}
 	// public function dokumenkontraktual ($id_paket)
 	// {

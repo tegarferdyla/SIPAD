@@ -26,7 +26,7 @@
     <div class="widget-list">
         <div class="col-md-12 widget-holder">
             <div class="widget-bg">
-                    <form id="interviewForm" method="post" action="<?php echo site_url('') ?>" enctype="multipart/form-data">
+                    <form method="post" action="<?php echo site_url('Pokja/savedoc') ?>" enctype="multipart/form-data">
                     <div class="widget-body clearfix">
                         <div class="row">
                         <div class="col-md-11">
@@ -46,7 +46,7 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label class="form-control-label text-blue" for="">Surat Perintah Lelang</label>
-                                <input type="hidden" name="id_paket" value="">
+                                <input type="hidden" name="id_paket" value="<?php echo $show[0]['id_paket'] ?>">
                                 <input class="form-control" type="file" name="file1" accept="application/pdf">
                             </div>
                             <div class="form-group col-md-6">
@@ -122,34 +122,6 @@
                     var topic      = $(this).val(),
                         $container = $('[data-topic="' + topic + '"]');
                     $container.toggle();
-
-                    // var display = $container.css('display');
-                    // switch (true) {
-                    //     case ('css' == topic && 'block' == display):
-                    //         $('#interviewForm').bootstrapValidator('addField', 'css_frameworks[]', {
-                    //             validators: {
-                    //                 notEmpty: {
-                    //                     message: 'Please choose at least 1 framework'
-                    //                 }
-                    //             }
-                    //         });
-                    //         break;
-                    //     case ('css' == topic && 'none' == display):
-                    //         $('#interviewForm').bootstrapValidator('removeField', 'css_frameworks[]');
-                    //         break;
-                    //     case ('javascript' == topic && 'block' == display):
-                    //         $('#interviewForm').bootstrapValidator('addField', 'js_frameworks[]', {
-                    //             validators: {
-                    //                 notEmpty: {
-                    //                     message: 'The name of framework is required'
-                    //                 }
-                    //             }
-                    //         });
-                    //         break;
-                    //     case ('javascript' == topic && 'none' == display):
-                    //         $('#interviewForm').bootstrapValidator('removeField', 'js_frameworks[]');
-                    //         break;
-                    // }
                 });
     });
 </script>
