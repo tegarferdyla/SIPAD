@@ -62,7 +62,7 @@
                                     <input type="hidden" value="<?= $doc1->surat_md ?>">
                                 </button>
                                 <?php if ($doc1->surat_md!=NULL) {?>
-                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                    <a href="<?php echo site_url('ppk1/testkirim/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                 <?php }else{ ?>
                                     <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
                                 <?php } ?>
@@ -78,7 +78,7 @@
                                     <input type="hidden" value="<?= $doc1->surat_mh ?>">
                                 </button>
                                 <?php if ($doc1->surat_mh!=NULL) {?>
-                                    <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_mh) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                    <a href="<?php echo site_url('ppk1/testkirim/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_mh) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                 <?php }else{ ?>
                                     <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
                                 <?php } ?>
