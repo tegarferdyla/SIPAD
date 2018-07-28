@@ -849,7 +849,7 @@ class PPK1 extends CI_Controller {
 				rename($a[$i]['full_path'], $a[$i]['file_path'] . $namabaru . $a[$i]['file_name']);
 			}
 			if (!empty($files[$i])) {
-				$namaajah[$i] = $tahun . "-" . $nama_paket . "-";
+				$namaajah[$i] = $tahun . "-" . $nama_paket . "-Pendukung-";
 				$namafile[$i] = $a[$i]['file_name'];
 				unlink($a[$i]['file_path'].$delfile[$i]);
 			} else {
@@ -894,11 +894,12 @@ class PPK1 extends CI_Controller {
 		exit;
 
 	}
-	public function testkirim() {
-		for ($i = 1; $i < 3; $i++) {
-			$input[$i] = $_FILES['file' . $i]['name'];
-		}
-		echo $input[1];
+	public function testkirim($tahun,$jenis,$nama_paket,$nama_file) {
+		// $name = str_replace('%20',' ', $nama_file);
+		$name = rawurldecode($nama_file);
+		$paket = str_replace('%20',' ', $nama_paket);
+		$data = file_get_contents("./assets/data/".$tahun."/".$jenis."/".$paket."/".$name);
+		force_download($name,$data);
 	}
 
 }
