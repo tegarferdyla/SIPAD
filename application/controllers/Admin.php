@@ -181,7 +181,7 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 					    $this->email->subject("Notifikasi");
 					    $this->email->message(
 					     "Selamat , ".$nama." akun anda berhasil dibuat dengan <br>
-					     Username : ".$username." dan password ".$password
+					     Username : ".$username." dan Password : ".$password
 					    );
 				  
 				    if($this->email->send())
