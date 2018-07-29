@@ -322,6 +322,12 @@ class pokja extends CI_Controller {
 		$data = file_get_contents("./assets/data/".$tahun."/".$jenis."/".$paket."/".$name);
 		force_download($name,$data);
 	}
+	public function test()
+	{
+		$this->load->view('pokja/header');
+		$this->load->view('ppk1/test');
+		$this->load->view('pokja/footer');
+	}
 	// public function dokumenkontraktual ($id_paket)
 	// {
 	// 		$pendukung['pendukung'] = $this->Datapaket_model->lihatpendukung($id_paket);

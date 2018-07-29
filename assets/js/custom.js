@@ -1408,7 +1408,7 @@
           ],
           datasets: [
             {
-              data: [39.4,22,33,12,12],
+              data: [40,22,33,12,12],
               backgroundColor: [
                 "#4671bd",
                 "#199bfc",
