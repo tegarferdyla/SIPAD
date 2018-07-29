@@ -104,6 +104,7 @@ class Keuangan extends CI_Controller {
 		$this->load->view('keuangan/sidebar',$data);
 
 		$data['get_tahun'] = $this->Datatahun_model->datatahun($id_ppk);
+		$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
 		$this->load->view('keuangan/tahun',$data);
 		$this->load->view('keuangan/footer');
 	}
@@ -119,6 +120,8 @@ class Keuangan extends CI_Controller {
 			$this->load->view('keuangan/sidebar',$ppk);
 
 			$data['dapattahun'] = $this->Datatahun_model->dapatkantahun($id_tahun);
+			$id_ppk = $data['dapattahun'][0]['id_ppk'];
+			$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
 			$this->load->view('keuangan/tampilpaket',$data);
 			$this->load->view('keuangan/footer');
 		

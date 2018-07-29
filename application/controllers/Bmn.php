@@ -105,6 +105,7 @@ class Bmn extends CI_Controller {
 		$this->load->view('bmn/sidebar',$data);
 
 		$data['get_tahun'] = $this->Datatahun_model->datatahun($id_ppk);
+		$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
 		$this->load->view('bmn/tahun',$data);
 		$this->load->view('bmn/footer');
 	}
@@ -120,6 +121,8 @@ class Bmn extends CI_Controller {
 			$this->load->view('bmn/sidebar',$ppk);
 
 			$data['dapattahun'] = $this->Datatahun_model->dapatkantahun($id_tahun);
+			$id_ppk = $data['dapattahun'][0]['id_ppk'];
+			$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
 			$this->load->view('bmn/tampilpaket',$data);
 			$this->load->view('bmn/footer');
 		
@@ -133,9 +136,14 @@ class Bmn extends CI_Controller {
 
 			$ppk['get_ppk']=$this->Datappk_model->datappk();
 			$this->load->view('bmn/sidebar',$ppk);
-
-			$kontraktual['kontraktual'] = $this->Datapaket_model->kontraktual($id_tahun);
-			$this->load->view('bmn/kontraktual',$kontraktual);
+			$data['dapattahun'] = $this->Datatahun_model->dapatkantahun($id_tahun);
+			$id_ppk = $data['dapattahun'][0]['id_ppk'];
+			$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
+			$data['kontraktual'] = $this->Datapaket_model->kontraktual($id_tahun);
+			if ($data['kontraktual']==NULL) {
+				redirect('bmn/jenispaket/'.$id_tahun,'refresh');
+			}
+			$this->load->view('bmn/kontraktual',$data);
 			$this->load->view('bmn/footer');
 	}
 	public function paketsuakelola($id_tahun)
@@ -146,19 +154,27 @@ class Bmn extends CI_Controller {
 
 			$ppk['get_ppk']=$this->Datappk_model->datappk();
 			$this->load->view('bmn/sidebar',$ppk);
-
-			$suakelola['suakelola'] = $this->Datapaket_model->suakelola($id_tahun);
-			// print_r($suakelola);
-			$this->load->view('bmn/suakelola',$suakelola);
+			$data['dapattahun'] = $this->Datatahun_model->dapatkantahun($id_tahun);
+			$id_ppk = $data['dapattahun'][0]['id_ppk'];
+			$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
+			$data['suakelola'] = $this->Datapaket_model->suakelola($id_tahun);
+			if ($data['suakelola']==NULL) {
+				redirect('bmn/jenispaket/'.$id_tahun,'refresh');
+			}
+			$this->load->view('bmn/suakelola',$data);
 			$this->load->view('bmn/footer');
 	}
 	public function dokumenkontraktual ($id_paket)
 	{
-			$pendukung['pendukung'] = $this->Datapaket_model->lihatpendukung($id_paket);
-			$caritahun = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
-			$tahun = $caritahun[0]['id_tahun'];
+			$data['pendukung'] = $this->Datapaket_model->lihatpendukung($id_paket);
+			$data['paket'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
+			$tahun = $data['paket'][0]['id_tahun'];
+			$data['tahun'] = $this->Datatahun_model->cektahun($tahun);
+			$data['show'] = $this->Datapaket_model->showidpkt('tbl_pokja', $id_paket);
+			$id_ppk = $data['tahun']->id_ppk;
+			$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
 
-			if ($pendukung['pendukung'] == NULL) {
+			if ($data['pendukung'] == NULL) {
 				$this->session->set_flashdata('kosong', 'true');
 				redirect('bmn/paketkontraktual/'.$tahun);
 			}
@@ -170,7 +186,7 @@ class Bmn extends CI_Controller {
 				$ppk['get_ppk']=$this->Datappk_model->datappk();
 				$this->load->view('bmn/sidebar',$ppk);
 
-				$this->load->view('bmn/viewdokumenkontraktual',$pendukung);
+				$this->load->view('bmn/viewdokumenkontraktual',$data);
 				$this->load->view('ppk1/footer');
 			}
 
@@ -179,11 +195,15 @@ class Bmn extends CI_Controller {
 	}
 	public function dokumensuakelola ($id_paket)
 	{
-			$pendukung['pendukung'] = $this->Datapaket_model->lihatpendukung($id_paket);
-			$caritahun = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
-			$tahun = $caritahun[0]['id_tahun'];
+			$data['pendukung'] = $this->Datapaket_model->lihatpendukung($id_paket);
+			$data['paket'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
+			$tahun = $data['paket'][0]['id_tahun'];
+			$data['tahun'] = $this->Datatahun_model->cektahun($tahun);
+			$data['show'] = $this->Datapaket_model->showidpkt('tbl_pokja', $id_paket);
+			$id_ppk = $data['tahun']->id_ppk;
+			$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
 
-			if ($pendukung['pendukung'] == NULL) {
+			if ($data['pendukung'] == NULL) {
 				$this->session->set_flashdata('kosong', 'true');
 				redirect('bmn/paketkontraktual/'.$tahun);
 			}
@@ -195,7 +215,7 @@ class Bmn extends CI_Controller {
 				$ppk['get_ppk']=$this->Datappk_model->datappk();
 				$this->load->view('bmn/sidebar',$ppk);
 
-				$this->load->view('bmn/viewdokumensuakelola',$pendukung);
+				$this->load->view('bmn/viewdokumensuakelola',$data);
 				$this->load->view('ppk1/footer');
 			}
 
