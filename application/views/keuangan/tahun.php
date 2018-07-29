@@ -7,9 +7,9 @@
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Dashboard</a>
+                <li class="breadcrumb-item"><a href="<?= site_url('Keuangan') ?>">Dashboard</a>
                 </li>
-                <li class="breadcrumb-item active">Home</li>
+                <li class="breadcrumb-item active"><?php echo $namappk[0]['nama'] ?></li>
             </ol>
         </div>
         <!-- /.page-title-right -->
@@ -40,7 +40,7 @@
                             <p class="text-muted mr-b-5"><?php echo $u['deskripsi']; ?></p><span class="counter-title color-info"><?php echo $u['nama_tahun']; ?></span>
                             <!-- /.counter-title -->
                             <div class="progress" style="width: 70%; position: relative; top: 25px">
-                                <div class="progress-bar bg-info" style="width: 66%" role="progressbar"><span class="sr-only">20% Complete</span>
+                                <div class="progress-bar bg-info" style="width: 86%" role="progressbar"><span class="sr-only">100% Complete</span>
                                 </div>
                             </div>
                         </div>

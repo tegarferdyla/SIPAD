@@ -17,7 +17,7 @@
                 <li class="breadcrumb-item">
                     <a href="<?php echo site_url('Pokja/paket'.$paket[0]['jenis'].'/'.$tahun->id_tahun) ?>"><?php echo ucwords($paket[0]['jenis']) ?></a>
                 </li>
-                <li class="breadcrumb-item active">Ubah Dokumen</li>
+                <li class="breadcrumb-item active">View Dokumen</li>
             </ol>
         </div>
         <!-- /.page-title-right -->

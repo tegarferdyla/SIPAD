@@ -159,10 +159,8 @@ class pokja extends CI_Controller {
 		if ($data['suakelola']==NULL) {
 			redirect('Pokja/jenispaket/'.$id_tahun,'refresh');
 		}
-		foreach ($data['suakelola'] as $u) {
-		$id_ppk = $u['id_ppk'];
+		$id_ppk = $data['dapattahun'][0]['id_ppk'];
 		$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
-		}
 		$data['dapattahun'] = $this->Datatahun_model->dapatkantahun($id_tahun);
 		$this->load->view('pokja/suakelola',$data);
 		$this->load->view('pokja/footer');
