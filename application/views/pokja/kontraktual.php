@@ -7,8 +7,13 @@
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="<?php echo site_url('admin') ?>">Dashboard</a>
+                <li class="breadcrumb-item">
+                    <a href="<?php echo site_url('Pokja') ?>">Dashboard</a>
                 </li>
+                <li class="breadcrumb-item">
+                    <a href="<?php echo site_url('Pokja/jenispaket/'.$dapattahun[0]['id_tahun']) ?>"><?php echo $dapattahun[0]['nama_tahun'] ?></a>
+                </li>
+                <li class="breadcrumb-item active">Kontraktual</li>
             </ol>
         </div>
         <!-- /.page-title-right -->

@@ -194,5 +194,20 @@ class Penomoran_model extends CI_Model {
 		$kodejadi = "DOC" . $kodemax;
 		return $kodejadi;
 	}
+	public function IDPokja() {
+		$this->db->select("RIGHT(id_pendukung,4) AS kode");
+		$this->db->order_by('id_pendukung', 'DESC');
+		$this->db->limit(1);
+		$query = $this->db->get('tbl_pokja');
+		if ($query->num_rows() > 0) {
+			$data = $query->row();
+			$kode = intval($data->kode) + 1;
+		} else {
+			$kode = 1;
+		}
+		$kodemax = str_pad($kode, 4, "0", STR_PAD_LEFT);
+		$kodejadi = "PKJ" . $kodemax;
+		return $kodejadi;
+	}
 }
 ?>
