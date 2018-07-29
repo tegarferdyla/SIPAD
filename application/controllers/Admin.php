@@ -678,29 +678,29 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 		public function test()
 		{
 			$this->load->library('email');
-		    $config = array();
-		    $config['charset'] = 'utf-8';
-		    $config['useragent'] = 'Codeigniter';
-		    $config['protocol']= "smtp";
-		    $config['mailtype']= "html";
-		    $config['smtp_host']= "ssl://smtp.gmail.com";//pengaturan smtp
-		    $config['smtp_port']= "465";
-		    $config['smtp_timeout']= "400";
-		    $config['smtp_user']= "sipad.information@gmail.com"; // isi dengan email kamu
-		    $config['smtp_pass']= "coba12345"; // isi dengan password kamu
-		    $config['crlf']="\r\n"; 
-		    $config['newline']="\r\n"; 
-		    $config['wordwrap'] = TRUE;
-		    //memanggil library email dan set konfigurasi untuk pengiriman email
-		   
-		    $this->email->initialize($config);
-		    //konfigurasi pengiriman
-		    $this->email->from($config['smtp_user']);
-		    $this->email->to('tegarferdyla@gmail.com');
-		    $this->email->subject("Notifikasi");
-		    $this->email->message(
-		     "nih pake email baru gua kirim 23.40 ya"
-		    );
+			$config = array();
+			$config['charset'] = 'utf-8';
+			$config['useragent'] = 'Codeigniter';
+			$config['protocol']= "smtp";
+			$config['mailtype']= "html";
+			$config['smtp_host']= "ssl://smtp.gmail.com";//pengaturan smtp
+			$config['smtp_port']= "465";
+			$config['smtp_timeout']= "400";
+			$config['smtp_user']= "sipad.information@gmail.com"; // isi dengan email kamu
+			$config['smtp_pass']= "coba12345"; // isi dengan password kamu
+			$config['crlf']="\r\n"; 
+			$config['newline']="\r\n"; 
+			$config['wordwrap'] = TRUE;
+			//memanggil library email dan set konfigurasi untuk pengiriman email
+
+			$this->email->initialize($config);
+			//konfigurasi pengiriman
+			$this->email->from('SIPAD Information');
+			$this->email->to('dalas98@gmail.com');
+			$this->email->subject("Pembuatan Akun");
+			$this->email->message(
+			"00.06"
+			);
 	  
 	    if($this->email->send())
 	    {
