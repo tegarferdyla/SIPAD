@@ -7,9 +7,8 @@
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="<?php base_url() ?>">Dashboard</a>
+                <li class="breadcrumb-item"><a href="<?php site_url('Pokja') ?>">Dashboard</a>
                 </li>
-                <li class="breadcrumb-item active">Home</li>
             </ol>
         </div>
         <!-- /.page-title-right -->
