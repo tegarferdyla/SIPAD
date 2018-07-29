@@ -8,10 +8,16 @@
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="<?php echo site_url('Pokja') ?>">Dashboard</a></li>
-                <!-- <li class="breadcrumb-item"><a href="<?php echo site_url('ppk1/jenispaket/'.$tahun->id_tahun) ?>"><?php echo $tahun->nama_tahun ?></a></li>
-                <li class="breadcrumb-item"><a href="<?php echo site_url('ppk1/pilihpaket/'.$tahun->id_tahun.'/'.$show[0]['jenis']) ?>"><?php echo ucwords($show[0]['jenis']) ?></a></li> -->
-                <li class="breadcrumb-item active">View Dokumen</li>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('Pokja') ?>">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('Pokja/tahun/'.$namappk[0]['id_ppk']) ?>"><?php echo $namappk[0]['nama'] ?></a>
+                <li class="breadcrumb-item">
+                    <a href="<?php echo site_url('Pokja/jenispaket/'.$tahun->id_tahun) ?>"><?php echo $tahun->nama_tahun ?></a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="<?php echo site_url('Pokja/paket'.$paket[0]['jenis'].'/'.$tahun->id_tahun) ?>"><?php echo ucwords($paket[0]['jenis']) ?></a>
+                </li>
+                <li class="breadcrumb-item active">Lihat Dokumen</li>
             </ol>
         </div>
         <!-- /.page-title-right -->

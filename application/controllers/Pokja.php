@@ -104,6 +104,7 @@ class pokja extends CI_Controller {
 		$this->load->view('pokja/sidebar',$data);
 
 		$data['get_tahun'] = $this->Datatahun_model->datatahun($id_ppk);
+		$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
 		$this->load->view('pokja/tahun',$data);
 		$this->load->view('pokja/footer');
 	}
@@ -119,6 +120,8 @@ class pokja extends CI_Controller {
 			$this->load->view('pokja/sidebar',$ppk);
 
 			$data['dapattahun'] = $this->Datatahun_model->dapatkantahun($id_tahun);
+			$id_ppk = $data['dapattahun'][0]['id_ppk'];
+			$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
 			$this->load->view('pokja/tampilpaket',$data);
 			$this->load->view('pokja/footer');
 		
@@ -134,23 +137,35 @@ class pokja extends CI_Controller {
 			$this->load->view('pokja/sidebar',$ppk);
 			
 			$data['dapattahun'] = $this->Datatahun_model->dapatkantahun($id_tahun);
+			$id_ppk = $data['dapattahun'][0]['id_ppk'];
+			$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
 			$data['kontraktual'] = $this->Datapaket_model->kontraktual($id_tahun);
+			if ($data['kontraktual']==NULL) {
+				redirect('Pokja/jenispaket/'.$id_tahun,'refresh');
+			}
 			$this->load->view('pokja/kontraktual',$data);
 			$this->load->view('pokja/footer');
 	}
 	public function paketsuakelola($id_tahun)
 	{
-			$id_user = $this->session->userdata('id_user');
-			$ini['user'] = $this->Datauser_model->GetWhereUser($id_user);
-			$this->load->view('pokja/header', $ini);
+		$id_user = $this->session->userdata('id_user');
+		$ini['user'] = $this->Datauser_model->GetWhereUser($id_user);
+		$this->load->view('pokja/header', $ini);
 
-			$ppk['get_ppk']=$this->Datappk_model->datappk();
-			$this->load->view('pokja/sidebar',$ppk);
+		$ppk['get_ppk']=$this->Datappk_model->datappk();
+		$this->load->view('pokja/sidebar',$ppk);
 
-			$data['suakelola'] = $this->Datapaket_model->suakelola($id_tahun);
-			$data['dapattahun'] = $this->Datatahun_model->dapatkantahun($id_tahun);
-			$this->load->view('pokja/suakelola',$data);
-			$this->load->view('pokja/footer');
+		$data['suakelola'] = $this->Datapaket_model->suakelola($id_tahun);
+		if ($data['suakelola']==NULL) {
+			redirect('Pokja/jenispaket/'.$id_tahun,'refresh');
+		}
+		foreach ($data['suakelola'] as $u) {
+		$id_ppk = $u['id_ppk'];
+		$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
+		}
+		$data['dapattahun'] = $this->Datatahun_model->dapatkantahun($id_tahun);
+		$this->load->view('pokja/suakelola',$data);
+		$this->load->view('pokja/footer');
 	}
 	public function inputdokumen($id_paket)
 	{
@@ -166,6 +181,10 @@ class pokja extends CI_Controller {
 			$this->load->view('pokja/sidebar',$ppk);
 
 			$data['show'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
+			$id_tahun = $data['show'][0]['id_tahun'];
+			$data['dapattahun'] = $this->Datatahun_model->dapatkantahun($id_tahun);
+			$id_ppk = $data['dapattahun'][0]['id_ppk'];
+			$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
 			$this->load->view('pokja/inputdokumen',$data);
 			$this->load->view('ppk1/footer');
 		}
@@ -223,7 +242,7 @@ class pokja extends CI_Controller {
 		);
 		$tambahdoc = $this->Datapaket_model->insertdoc1('tbl_pokja', $doc);
 		if ($tambahdoc>0) {
-			redirect('pokja/viewdoc','refresh');
+			redirect('pokja/viewdoc/'.$id_paket,'refresh');
 		}
 	}
 	public function viewdoc($id_paket)
@@ -232,6 +251,8 @@ class pokja extends CI_Controller {
 		$idtahun = $data['paket'][0]['id_tahun'];
 		$data['tahun'] = $this->Datatahun_model->cektahun($idtahun);
 		$data['show'] = $this->Datapaket_model->showidpkt('tbl_pokja', $id_paket);
+		$id_ppk = $data['tahun']->id_ppk;
+		$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
 		if ($data['show'] == NULL) {
 			redirect('Pokja/inputdokumen/' . $id_paket);
 		} else {
@@ -256,6 +277,8 @@ class pokja extends CI_Controller {
 		$data['paket'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
 		$idtahun = $data['paket'][0]['id_tahun'];
 		$data['tahun'] = $this->Datatahun_model->cektahun($idtahun);
+		$id_ppk = $data['tahun']->id_ppk;
+		$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
 		$data['show'] = $this->Datapaket_model->showidpkt('tbl_pokja', $id_paket);
 		$this->load->view('pokja/edit',$data);
 		$this->load->view('ppk1/footer');
@@ -321,6 +344,14 @@ class pokja extends CI_Controller {
 		$paket = str_replace('%20',' ', $nama_paket);
 		$data = file_get_contents("./assets/data/".$tahun."/".$jenis."/".$paket."/".$name);
 		force_download($name,$data);
+	}
+	public function test($id_tahun)
+	{
+		$data['suakelola'] = $this->Datapaket_model->suakelola($id_tahun);
+		foreach ($data['suakelola'] as $u) {
+		$id_ppk = $u['id_ppk'];
+		$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
+		}
 	}
 	// public function dokumenkontraktual ($id_paket)
 	// {

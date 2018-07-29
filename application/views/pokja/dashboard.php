@@ -7,9 +7,8 @@
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="<?php base_url() ?>">Dashboard</a>
+                <li class="breadcrumb-item"><a href="<?php site_url('Pokja') ?>">Dashboard</a>
                 </li>
-                <li class="breadcrumb-item active">Home</li>
             </ol>
         </div>
         <!-- /.page-title-right -->
@@ -37,7 +36,7 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="pos-relative" style="height: 200px">
-                                    <canvas id="chartJsDoughnutLegend"></canvas><span class="h6 fw-600 text-muted fs-13 text-uppercase m-0 absolute-center">Prosentase</span>
+                                    <canvas id="chartkurs" style="height: 50px"></canvas>
                                 </div>
                                 <!-- /.something -->
                               <!--   <div class="counter-info heading-font-family text-center mt-3 mb-3 fs-13"><span class="color-success"><i class="fa fa-arrow-circle-o-up"></i> <strong>34%</strong> </span>more than last week</div> -->
@@ -45,9 +44,9 @@
                             </div>
                             <!-- /.col-lg-6 -->
                             <div class="col-sm-6">
-                                <h5 class="h2 fw-semibold mt-0">90%</h5>
+                                <h5 class="h2 fw-semibold mt-0">100%</h5>
                                 <div class="progress w-50 mb-3">
-                                    <div class="progress-bar bg-info" style="background: linear-gradient(to right, #17bff0, #8be0f9); width: 58.3%" role="progressbar"><span class="sr-only">90% Complete</span>
+                                    <div class="progress-bar bg-info" style="background: linear-gradient(to right, #17bff0, #8be0f9); width: 100%" role="progressbar">
                                     </div>
                                 </div>
                                 <!-- /.progress -->
@@ -81,4 +80,65 @@
             <!-- /.widget-holder -->
         </div>
         <hr>
+        <script type="text/javascript">
+            var ctx = $('#chartkurs').get(0).getContext('2d');
+            var myChart = new Chart(ctx, {
+            type:'pie',
+            data: {
+             
+              labels : [ 
+                      'dokumen1','dokumen2','dokumen3','dokumen4'
+                    ],
+              datasets : [{
+                label : false,
+                    data : [
+                        10,19,40,50
+                                  ], 
+            backgroundColor: [
+                "#41fbca",
+                "#e56e14",
+                "#1c0bdc",
+                "#a4b319",
+                "#c6066a",
+                "#ebcd79",
+                "#86ee4f",
+                "#36b419",
+                "#0bdbff",
+                "#4b652d",
+                "#f08ce0",
+                "#57645b",
+                "#4920d3",
+                "#9df78f",
+                "#6dbd2d",
+                "#a2e2fd",
+                "#35499a",
+                "#4d37d1",
+                "#a7eae7",
+                        ],
+            hoverBackgroundColor: [
+                  "#41fbca",
+                  "#e56e14",
+                  "#1c0bdc",
+                  "#a4b319",
+                  "#c6066a",
+                  "#ebcd79",
+                  "#86ee4f",
+                  "#36b419",
+                  "#0bdbff",
+                  "#4b652d",
+                  "#f08ce0",
+                  "#57645b",
+                  "#4920d3",
+                  "#9df78f",
+                  "#6dbd2d",
+                  "#a2e2fd",
+                  "#35499a",
+                  "#4d37d1",
+                  "#a7eae7",
+                      ]
+                }
+              ]
+            }
+            });
+        </script>
     </main>

@@ -8,6 +8,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="<?php echo site_url('Pokja') ?>">Dashboard</a>
                 </li>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('Pokja/tahun/'.$namappk[0]['id_ppk']) ?>"><?php echo $namappk[0]['nama'] ?></a>
                 <li class="breadcrumb-item active"><?php echo $dapattahun[0]['nama_tahun'] ?></li>
             </ol>
         </div>
