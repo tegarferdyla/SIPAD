@@ -9,10 +9,10 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="<?php echo site_url('Pokja') ?>">Dashboard</a>
                 </li>
-                <!-- <li class="breadcrumb-item"><a href="<?php echo site_url('Pokja/tahun/'.$namappk[0]['id_ppk']) ?>"><?php echo $namappk[0]['nama'] ?></a>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('Pokja/tahun/'.$namappk[0]['id_ppk']) ?>"><?php echo $namappk[0]['nama'] ?></a>
                 <li class="breadcrumb-item">
                     <a href="<?php echo site_url('Pokja/jenispaket/'.$dapattahun[0]['id_tahun']) ?>"><?php echo $dapattahun[0]['nama_tahun'] ?></a>
-                </li> -->
+                </li>
                 <li class="breadcrumb-item active">Suakelola</li>
             </ol>
         </div>
@@ -44,7 +44,7 @@
                                 <div id="<?php echo ucwords($u['id_paket']); ?>" class="card-collapse collapse" role="tabpanel" aria-labelledby="heading4">
                                     <div class="card-body">
                                         <ul class="list-group">
-                                            <a href="<?php echo base_url('')."pokja/dokumensuakelola/".$u['id_paket'] ?>"><li class="list-group-item">Input Dokumen</li></a>
+                                            <a href="<?php echo base_url('')."pokja/viewdoc/".$u['id_paket'] ?>"><li class="list-group-item">Input Dokumen</li></a>
                                         </ul>
                                     </div>
                                 </div>

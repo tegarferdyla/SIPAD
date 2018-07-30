@@ -7,9 +7,7 @@
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="<?php base_url() ?>">Dashboard</a>
-                </li>
-                <li class="breadcrumb-item active">Home</li>
+                <li class="breadcrumb-item active">Dashboard</li>
             </ol>
         </div>
         <!-- /.page-title-right -->
@@ -36,8 +34,8 @@
                     <div class="container-fluid pd-20">
                         <div class="row">
                             <div class="col-sm-6">
-                                <div class="pos-relative" style="height: 200px">
-                                    <canvas id="chartJsDoughnutLegend"></canvas><span class="h6 fw-600 text-muted fs-13 text-uppercase m-0 absolute-center">Prosentase</span>
+                                <div class="pos-relative" style="height: 300px">
+                                    <canvas id="chartkurs"></canvas>
                                 </div>
                                 <!-- /.something -->
                               <!--   <div class="counter-info heading-font-family text-center mt-3 mb-3 fs-13"><span class="color-success"><i class="fa fa-arrow-circle-o-up"></i> <strong>34%</strong> </span>more than last week</div> -->
@@ -45,9 +43,9 @@
                             </div>
                             <!-- /.col-lg-6 -->
                             <div class="col-sm-6">
-                                <h5 class="h2 fw-semibold mt-0">58.3%</h5>
+                                <h5 class="h2 fw-semibold mt-0">100%</h5>
                                 <div class="progress w-50 mb-3">
-                                    <div class="progress-bar bg-info" style="background: linear-gradient(to right, #17bff0, #8be0f9); width: 58.3%" role="progressbar"><span class="sr-only">60% Complete</span>
+                                    <div class="progress-bar bg-info" style="background: linear-gradient(to right, #17bff0, #8be0f9); width: 100%" role="progressbar">
                                     </div>
                                 </div>
                                 <!-- /.progress -->
@@ -55,14 +53,12 @@
                                     <br>Dokumen yang sudah di unggah</p>
                                     <div class="row">
                                         <div class="col-6">
-                                            <p class="heading-font-family fs-13 mb-3"><i class="fa fa-square mr-2 mr-0-rtl ml-2-rtl" style="color: #4671bd"></i> PPK 1</p>
-                                            <p class="heading-font-family fs-13 mb-3"><i class="fa fa-square mr-2 mr-0-rtl ml-2-rtl" style="color: #199bfc"></i> PPK 2</p>
-                                            <p class="heading-font-family fs-13 mb-3"><i class="fa fa-square mr-2 mr-0-rtl ml-2-rtl" style="color: #54c273"></i> PPK 3</p>
+                                            <?php foreach ($chart as $r) {?>
+                                            <p class="heading-font-family fs-13 mb-3"><i class="fa fa-square mr-2 mr-0-rtl ml-2-rtl" style="color: #4671bd"></i><?php echo $r->nama ?></p>
+                                            <?php } ?>
                                         </div>
                                         <!-- /.col-6 -->
                                         <div class="col-6">
-                                            <p class="heading-font-family fs-13 mb-3"><i class="fa fa-square mr-2 mr-0-rtl ml-2-rtl" style="color: #25d7fb"></i> PPK 4</p>
-                                            <p class="heading-font-family fs-13 mb-3"><i class="fa fa-square mr-2 mr-0-rtl ml-2-rtl" style="color: #c4fa5e"></i> PPK 5</p>
                                         </div>
                                         <!-- /.col-6 -->
                                     </div>
@@ -81,4 +77,61 @@
             <!-- /.widget-holder -->
         </div>
         <hr>
+        <script type="text/javascript">
+            var ctx = $('#chartkurs').get(0).getContext('2d');
+            var data3 = {
+                labels: [
+                <?php foreach ($chart as $r) {
+                    echo "'$r->nama',";
+                }?>
+                ],
+                datasets: [{
+                    data: [
+                    <?php foreach ($chart as $r) {
+                        echo "'$r->jumlah_paket',";
+                    }?>
+                    ],
+                    backgroundColor: [
+                    "#51bcd4",
+                    "#d75151",
+                    "#eace52",
+                    "#dce5e7",
+                    "#fff000"
+                    ],
+                    hoverBackgroundColor: [
+                    "#51bcd4",
+                    "#d75151",
+                    "#eace52",
+                    "#dce5e7",
+                    "#fff000",
+                    ],
+                    hoverBorderColor: '#fff',
+                    borderWidth: 8,
+                }]
+            }
+            var chartJsPie = new Chart(ctx,{
+                type: "pie",
+                data: data3,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    legend: {
+                        display: false,
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false,
+                        titleFontColor: "#000",
+                        titleMarginBottom: 0,
+                        backgroundColor: "rgba(255,255,255,.9)",
+                        bodyFontColor: "#000",
+                        borderColor: "#e9e9e9",
+                        bodySpacing: 0,
+                        borderWidth: 2,
+                        xPadding: 10,
+                        yPadding: 10,
+                    },
+                }
+            });
+        </script>
     </main>

@@ -85,11 +85,10 @@ class pokja extends CI_Controller {
 	public function index() {
 		$id_user = $this->session->userdata('id_user');
 		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
-		$this->load->view('pokja/header', $data);
-
 		$data['get_ppk']=$this->Datappk_model->datappk();
-		$this->load->view('pokja/sidebar',$data);
-
+		$data['chart'] = $this->Datapaket_model->chart();
+		$this->load->view('pokja/header', $data);
+		$this->load->view('pokja/sidebar');
 		$this->load->view('pokja/dashboard');
 		$this->load->view('pokja/footer');
 	}
@@ -159,9 +158,9 @@ class pokja extends CI_Controller {
 		if ($data['suakelola']==NULL) {
 			redirect('Pokja/jenispaket/'.$id_tahun,'refresh');
 		}
+		$data['dapattahun'] = $this->Datatahun_model->dapatkantahun($id_tahun);
 		$id_ppk = $data['dapattahun'][0]['id_ppk'];
 		$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
-		$data['dapattahun'] = $this->Datatahun_model->dapatkantahun($id_tahun);
 		$this->load->view('pokja/suakelola',$data);
 		$this->load->view('pokja/footer');
 	}
@@ -343,13 +342,24 @@ class pokja extends CI_Controller {
 		$data = file_get_contents("./assets/data/".$tahun."/".$jenis."/".$paket."/".$name);
 		force_download($name,$data);
 	}
-	public function test($id_tahun)
+	public function gantipass()
 	{
-		$data['suakelola'] = $this->Datapaket_model->suakelola($id_tahun);
-		foreach ($data['suakelola'] as $u) {
-		$id_ppk = $u['id_ppk'];
-		$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
-		}
+		$id_user = $this->session->userdata('id_user');
+		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
+		$id_ppk = $this->session->userdata('id_ppk');
+		$this->load->view('pokja/header', $data);
+
+		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+		$data['get_ppk']=$this->Datappk_model->datappk();
+		$this->load->view('pokja/sidebar', $data);
+
+		$this->load->view('pokja/gantipass', $data);
+		$this->load->view('pokja/footer');
+	}
+	public function test()
+	{
+		$data['chart'] = $this->Datapaket_model->chart();
+		print_r($data);
 	}
 	// public function dokumenkontraktual ($id_paket)
 	// {

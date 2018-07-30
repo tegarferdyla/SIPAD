@@ -162,5 +162,10 @@ class Datapaket_model extends CI_Model {
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
+	public function chart()
+    {
+    	$sql = $this->db->query("SELECT a.nama, COUNT(b.nama_paket) jumlah_paket FROM ppk a, tbl_paket b WHERE a.id_ppk = b.id_ppk GROUP BY b.id_ppk");
+    	return $sql->result();
+    }
 }
 ?>

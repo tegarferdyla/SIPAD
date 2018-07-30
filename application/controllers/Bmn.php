@@ -83,16 +83,29 @@ class Bmn extends CI_Controller {
 		}
 
 	}
+	public function gantipass()
+	{
+		$id_user = $this->session->userdata('id_user');
+		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
+		$id_ppk = $this->session->userdata('id_ppk');
+		$this->load->view('bmn/header', $data);
+
+		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+		$data['get_ppk']=$this->Datappk_model->datappk();
+		$this->load->view('bmn/sidebar', $data);
+
+		$this->load->view('bmn/gantipass', $data);
+		$this->load->view('bmn/footer');
+	}
 	public function index() {
 		$id_user = $this->session->userdata('id_user');
 		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
-		$this->load->view('bmn/header', $data);
-
+		$data['chart'] = $this->Datapaket_model->chart();
 		$data['get_ppk']=$this->Datappk_model->datappk();
-		$this->load->view('bmn/sidebar',$data);
-
+		$this->load->view('pokja/header', $data);
+		$this->load->view('bmn/sidebar');
 		$this->load->view('bmn/dashboard');
-		$this->load->view('bmn/footer');
+		$this->load->view('bmn/footer');		
 	}
 
 	public function tahun($id_ppk)

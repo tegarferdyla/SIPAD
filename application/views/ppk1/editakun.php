@@ -7,7 +7,7 @@
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="<?php echo base_url('admin') ?>">Dashboard</a>
+                        <li class="breadcrumb-item"><a href="<?php echo base_url('ppk1') ?>">Dashboard</a>
                         </li>
                         <li class="breadcrumb-item active">Edit Akun</li>
                     </ol>

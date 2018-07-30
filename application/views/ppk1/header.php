@@ -100,7 +100,7 @@
                                     <a href="<?php echo site_url('ppk1/editprofile') ?>"><span><span class="align-middle">Pengaturan Akun</span></span></a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="<?php echo site_url('ppk1/gantipass') ?>">
                                         <span>
                                             <span class="align-middle">Ubah Password</span>
                                         </span>

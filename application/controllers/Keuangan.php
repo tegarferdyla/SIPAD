@@ -85,11 +85,10 @@ class Keuangan extends CI_Controller {
 	public function index() {
 		$id_user = $this->session->userdata('id_user');
 		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
-		$this->load->view('keuangan/header', $data);
-
+		$data['chart'] = $this->Datapaket_model->chart();
 		$data['get_ppk']=$this->Datappk_model->datappk();
-		$this->load->view('keuangan/sidebar',$data);
-
+		$this->load->view('pokja/header', $data);
+		$this->load->view('keuangan/sidebar');
 		$this->load->view('keuangan/dashboard');
 		$this->load->view('keuangan/footer');
 	}
@@ -137,6 +136,7 @@ class Keuangan extends CI_Controller {
 			$this->load->view('keuangan/sidebar',$ppk);
 
 			$kontraktual['kontraktual'] = $this->Datapaket_model->kontraktual($id_tahun);
+
 			$this->load->view('keuangan/kontraktual',$kontraktual);
 			$this->load->view('keuangan/footer');
 	}

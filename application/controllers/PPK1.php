@@ -496,9 +496,6 @@ class PPK1 extends CI_Controller {
 		$tahun = $carithn->nama_tahun;
 
 		$id_pendukung = $this->Penomoran_model->IDPend();
-		// $addendumii = $this->input->post('topic1');
-		// $addendumiii = $this->input->post('topic2');
-		// $addendumiv = $this->input->post('topic3');
 
 		$file = [
 			'upload_path' => './assets/data/' . $tahun . '/' . $jenis . '/' . $nama_paket . '/',
@@ -880,6 +877,20 @@ class PPK1 extends CI_Controller {
 			$this->session->set_flashdata('updateberhasil', true);
 			redirect('ppk1/editdocpend/' . $id_paket);
 		}
+	}
+	public function gantipass()
+	{
+		$id_user = $this->session->userdata('id_user');
+		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
+		$id_ppk = $this->session->userdata('id_ppk');
+		$this->load->view('ppk1/header', $data);
+
+		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+		$ppk = array("nama" => $ppk[0]['nama']);
+		$this->load->view('ppk1/sidebar', $ppk);
+
+		$this->load->view('ppk1/gantipass', $data);
+		$this->load->view('ppk1/footer');
 	}
 	public function test($id_paket) {
 		// $cari['show'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);

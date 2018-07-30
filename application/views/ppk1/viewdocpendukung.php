@@ -196,7 +196,7 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">SPM</label>
                                     <p> <?php echo $pendukung->keuangan_spm; ?>
-                                       <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['nama_paket']. '/' . $pendukung->keuangan_spm)?>">
+                                       <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->keuangan_spm) ?>">
                                            <i class="feather feather-eye text-success"></i>
                                            <input type="hidden" value="<?php echo $pendukung->keuangan_spm ?>"> 
                                        </button>
@@ -210,7 +210,7 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">SP2D</label>
                                     <p> <?php echo $pendukung->keuangan_sp2d; ?>
-                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'.$tahun->nama_tahun. '/' . $paket[0]['jenis']. '/' . $pendukung->keuangan_sp2d) ?>">
+                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->keuangan_sp2d) ?>">
                                         <i class="feather feather-eye text-success"></i>
                                         <input type="hidden" value = "<?php echo $pendukung->keuangan_sp2d ?>">
                                         </button>
@@ -229,7 +229,7 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">LPJ</label>
                                     <p> <?php echo $pendukung->bendahara_lpj; ?>
-                                        <button class="btn btn-show" data-toggle = "modal" data-target ="#modalCustom" value="<?php echo base_url('assets/data/' .$tahun->nama_tahun. '/' . $paket[0]['jenis']. '/' . $pendukung->bendahara_lpj) ?>">
+                                        <button class="btn btn-show" data-toggle = "modal" data-target ="#modalCustom" value="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->bendahara_lpj) ?>">
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value="<?php echo $pendukung->bendahara_lpj ?>">
                                         </button>
@@ -243,7 +243,7 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Berita Acara Pemeriksaan Kas dan Rekonsiliasi</label>
                                      <p> <?php echo $pendukung->bendahara_bapkdr ?>
-                                        <button class="btn btn-show" data-toggle = "modal" data-target ="#modalCustom" value="<?php echo base_url ('assets/data/' .$tahun->nama_tahun. '/' .$paket[0]['jenis']. '/' .$pendukung->bendahara_bapkdr) ?>">
+                                        <button class="btn btn-show" data-toggle = "modal" data-target ="#modalCustom" value="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' .$pendukung->bendahara_bapkdr) ?>">
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value="<?php echo $pendukung->bendahara_bapkdr ?>">
                                         </button>
@@ -259,7 +259,7 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Rekening koran</label>
                                     <p> <?php echo $pendukung->bendahara_rekening ?>
-                                        <button class="btn btn-show" data-toggle = "modal" data-target = "#modalCustom" value="<?php echo base_url ('assets/data/' .$tahun->nama_tahun. '/' .$paket[0]['jenis']. '/' .$pendukung->bendahara_rekening) ?>">
+                                        <button class="btn btn-show" data-toggle = "modal" data-target = "#modalCustom" value="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' .$pendukung->bendahara_rekening) ?>">
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value="<?php echo $pendukung->bendahara_rekening ?>">
                                         </button>
@@ -273,7 +273,7 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Berita Acara Pemeriksaan Kas</label>
                                     <p> <?php echo $pendukung->bendahara_bapk; ?>
-                                        <button class="btn btn-show" data-toggle = "modal" data-target = "#modalCustom" value="<?php echo base_url('assets/data/' .$tahun->nama_tahun. '/'. $paket[0]['jenis']. '/'. $pendukung->bendahara_bapk) ?>">
+                                        <button class="btn btn-show" data-toggle = "modal" data-target = "#modalCustom" value="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->bendahara_bapk) ?>">
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value="<?php echo $pendukung->bendahara_bapk ?>">
                                         </button>
