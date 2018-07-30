@@ -17,7 +17,7 @@ class Login extends CI_Controller
 			if ($this->session->has_userdata('status')) {
 				if ($this->session->userdata('role') == "admin") {
 					redirect('admin');
-				}else if ($this->session->userdata('divisi')=='Kasatker') {
+				}else if ($this->session->userdata('bagian')=='Kasatker') {
 					redirect('kasatker');
 				}
 				elseif ($this->session->userdata('bagian')=='PPK') {

@@ -9,7 +9,14 @@
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="<?php echo base_url('admin') ?>">Dashboard</a>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('bmn') ?>">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('bmn/tahun/'.$namappk[0]['id_ppk']) ?>"><?php echo $namappk[0]['nama'] ?></a>
+                <li class="breadcrumb-item">
+                    <a href="<?php echo site_url('bmn/jenispaket/'.$tahun->id_tahun) ?>"><?php echo $tahun->nama_tahun ?></a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="<?php echo site_url('bmn/paket'.$paket[0]['jenis'].'/'.$tahun->id_tahun) ?>"><?php echo ucwords($paket[0]['jenis']) ?></a>
                 </li>
                 <li class="breadcrumb-item active">View Dokumen</li>
             </ol>

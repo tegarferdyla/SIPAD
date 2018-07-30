@@ -6,9 +6,10 @@
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Dashboard</a>
+               <li class="breadcrumb-item"><a href="<?php echo site_url('keuangan') ?>">Dashboard</a>
                 </li>
-                <li class="breadcrumb-item active">Home</li>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('keuangan/tahun/'.$namappk[0]['id_ppk']) ?>"><?php echo $namappk[0]['nama'] ?></a>
+                <li class="breadcrumb-item active"><?php echo $dapattahun[0]['nama_tahun'] ?></li>
             </ol>
         </div>
         <!-- /.page-title-right -->

@@ -38,16 +38,6 @@
                         <div class="col-md-11">
                            <button type="button" class="btn btn-info">Pokja</button>
                         </div>
-                        <div class="col-md-1">
-                                            <div class="dropdown">
-                                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Aksi
-                                                    <span class="caret"></span></button>
-                                                    <ul class="dropdown-menu list-unstyled card-body">
-                                                        <li><a href="#">View Dokumen</a></li>
-                                                        <li><a href="#">Edit Dokuken</a></li>
-                                                    </ul>
-                                            </div>
-                                        </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
