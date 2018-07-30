@@ -7,8 +7,13 @@
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="<?php echo site_url('admin') ?>">Dashboard</a>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('Keuangan') ?>">Dashboard</a>
                 </li>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('Keuangan/tahun/'.$namappk[0]['id_ppk']) ?>"><?php echo $namappk[0]['nama'] ?></a>
+                <li class="breadcrumb-item">
+                    <a href="<?php echo site_url('Keuangan/jenispaket/'.$dapattahun[0]['id_tahun']) ?>"><?php echo $dapattahun[0]['nama_tahun'] ?></a>
+                </li>
+                <li class="breadcrumb-item active">Suakelola</li>
             </ol>
         </div>
         <!-- /.page-title-right -->

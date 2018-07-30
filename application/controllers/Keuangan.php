@@ -87,7 +87,7 @@ class Keuangan extends CI_Controller {
 		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
 		$data['chart'] = $this->Datapaket_model->chart();
 		$data['get_ppk']=$this->Datappk_model->datappk();
-		$this->load->view('pokja/header', $data);
+		$this->load->view('keuangan/header', $data);
 		$this->load->view('keuangan/sidebar');
 		$this->load->view('keuangan/dashboard');
 		$this->load->view('keuangan/footer');
@@ -110,59 +110,71 @@ class Keuangan extends CI_Controller {
 
 	public function jenispaket($id_tahun)
 	{
+		$id_user = $this->session->userdata('id_user');
+		$ini['user'] = $this->Datauser_model->GetWhereUser($id_user);
+		$this->load->view('keuangan/header', $ini);
 
-			$id_user = $this->session->userdata('id_user');
-			$ini['user'] = $this->Datauser_model->GetWhereUser($id_user);
-			$this->load->view('keuangan/header', $ini);
+		$ppk['get_ppk']=$this->Datappk_model->datappk();
+		$this->load->view('keuangan/sidebar',$ppk);
 
-			$ppk['get_ppk']=$this->Datappk_model->datappk();
-			$this->load->view('keuangan/sidebar',$ppk);
-
-			$data['dapattahun'] = $this->Datatahun_model->dapatkantahun($id_tahun);
-			$id_ppk = $data['dapattahun'][0]['id_ppk'];
-			$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
-			$this->load->view('keuangan/tampilpaket',$data);
-			$this->load->view('keuangan/footer');
+		$data['dapattahun'] = $this->Datatahun_model->dapatkantahun($id_tahun);
+		$id_ppk = $data['dapattahun'][0]['id_ppk'];
+		$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
+		$this->load->view('keuangan/tampilpaket',$data);
+		$this->load->view('keuangan/footer');
 		
 	}
 
 	public function paketkontraktual($id_tahun)
 	{
-			$id_user = $this->session->userdata('id_user');
-			$ini['user'] = $this->Datauser_model->GetWhereUser($id_user);
-			$this->load->view('keuangan/header', $ini);
+		$id_user = $this->session->userdata('id_user');
+		$ini['user'] = $this->Datauser_model->GetWhereUser($id_user);
+		$this->load->view('keuangan/header', $ini);
 
-			$ppk['get_ppk']=$this->Datappk_model->datappk();
-			$this->load->view('keuangan/sidebar',$ppk);
-
-			$kontraktual['kontraktual'] = $this->Datapaket_model->kontraktual($id_tahun);
-
-			$this->load->view('keuangan/kontraktual',$kontraktual);
-			$this->load->view('keuangan/footer');
+		$ppk['get_ppk']=$this->Datappk_model->datappk();
+		$this->load->view('keuangan/sidebar',$ppk);
+		
+		$data['dapattahun'] = $this->Datatahun_model->dapatkantahun($id_tahun);
+		$id_ppk = $data['dapattahun'][0]['id_ppk'];
+		$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
+		$data['kontraktual'] = $this->Datapaket_model->kontraktual($id_tahun);
+		if ($data['kontraktual']==NULL) {
+			redirect('keuangan/jenispaket/'.$id_tahun,'refresh');
+		}
+		$this->load->view('keuangan/kontraktual',$data);
+		$this->load->view('keuangan/footer');
 	}
 	public function paketsuakelola($id_tahun)
 	{
-			$id_user = $this->session->userdata('id_user');
-			$ini['user'] = $this->Datauser_model->GetWhereUser($id_user);
-			$this->load->view('keuangan/header', $ini);
+		$id_user = $this->session->userdata('id_user');
+		$ini['user'] = $this->Datauser_model->GetWhereUser($id_user);
+		$this->load->view('keuangan/header', $ini);
 
-			$ppk['get_ppk']=$this->Datappk_model->datappk();
-			$this->load->view('keuangan/sidebar',$ppk);
+		$ppk['get_ppk']=$this->Datappk_model->datappk();
+		$this->load->view('keuangan/sidebar',$ppk);
 
-			$suakelola['suakelola'] = $this->Datapaket_model->suakelola($id_tahun);
-			// print_r($suakelola);
-			$this->load->view('keuangan/suakelola',$suakelola);
-			$this->load->view('keuangan/footer');
+		$data['suakelola'] = $this->Datapaket_model->suakelola($id_tahun);
+		if ($data['suakelola']==NULL) {
+			redirect('keuangan/jenispaket/'.$id_tahun,'refresh');
+		}
+		$data['dapattahun'] = $this->Datatahun_model->dapatkantahun($id_tahun);
+		$id_ppk = $data['dapattahun'][0]['id_ppk'];
+		$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
+		$this->load->view('keuangan/suakelola',$data);
+		$this->load->view('keuangan/footer');
 	}
 	public function dokumenkontraktual ($id_paket)
 	{
-			$pendukung['pendukung'] = $this->Datapaket_model->lihatpendukung($id_paket);
-			$caritahun = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
-			$tahun = $caritahun[0]['id_tahun'];
+			$data['pendukung'] = $this->Datapaket_model->lihatpendukung($id_paket);
+			$data['paket'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
+			$idtahun = $data['paket'][0]['id_tahun'];
+			$data['tahun'] = $this->Datatahun_model->cektahun($idtahun);
+			$id_ppk = $data['tahun']->id_ppk;
+			$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
 
-			if ($pendukung['pendukung'] == NULL) {
+			if ($data['pendukung'] == NULL) {
 				$this->session->set_flashdata('kosong', 'true');
-				redirect('keuangan/paketkontraktual/'.$tahun);
+				redirect('keuangan/paketkontraktual/'.$idtahun);
 			}
 			else{
 				$id_user = $this->session->userdata('id_user');
@@ -172,7 +184,7 @@ class Keuangan extends CI_Controller {
 				$ppk['get_ppk']=$this->Datappk_model->datappk();
 				$this->load->view('keuangan/sidebar',$ppk);
 
-				$this->load->view('keuangan/viewdokumenkontraktual',$pendukung);
+				$this->load->view('keuangan/viewdokumenkontraktual',$data);
 				$this->load->view('ppk1/footer');
 			}
 
@@ -181,11 +193,14 @@ class Keuangan extends CI_Controller {
 	}
 	public function dokumensuakelola ($id_paket)
 	{
-			$pendukung['pendukung'] = $this->Datapaket_model->lihatpendukung($id_paket);
-			$caritahun = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
-			$tahun = $caritahun[0]['id_tahun'];
+			$data['pendukung'] = $this->Datapaket_model->lihatpendukung($id_paket);
+			$data['paket'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
+			$idtahun = $data['paket'][0]['id_tahun'];
+			$data['tahun'] = $this->Datatahun_model->cektahun($idtahun);
+			$id_ppk = $data['tahun']->id_ppk;
+			$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
 
-			if ($pendukung['pendukung'] == NULL) {
+			if ($data['pendukung'] == NULL) {
 				$this->session->set_flashdata('kosong', 'true');
 				redirect('keuangan/paketkontraktual/'.$tahun);
 			}
@@ -197,12 +212,23 @@ class Keuangan extends CI_Controller {
 				$ppk['get_ppk']=$this->Datappk_model->datappk();
 				$this->load->view('keuangan/sidebar',$ppk);
 
-				$this->load->view('keuangan/viewdokumensuakelola',$pendukung);
+				$this->load->view('keuangan/viewdokumensuakelola',$data);
 				$this->load->view('ppk1/footer');
 			}
+	}
+	public function gantipass()
+	{
+		$id_user = $this->session->userdata('id_user');
+		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
+		$id_ppk = $this->session->userdata('id_ppk');
+		$this->load->view('bmn/header', $data);
 
-			
+		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+		$data['get_ppk']=$this->Datappk_model->datappk();
+		$this->load->view('bmn/sidebar', $data);
 
+		$this->load->view('bmn/gantipass', $data);
+		$this->load->view('bmn/footer');
 	}
 }
 

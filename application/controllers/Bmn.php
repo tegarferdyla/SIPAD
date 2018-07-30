@@ -102,7 +102,7 @@ class Bmn extends CI_Controller {
 		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
 		$data['chart'] = $this->Datapaket_model->chart();
 		$data['get_ppk']=$this->Datappk_model->datappk();
-		$this->load->view('pokja/header', $data);
+		$this->load->view('bmn/header', $data);
 		$this->load->view('bmn/sidebar');
 		$this->load->view('bmn/dashboard');
 		$this->load->view('bmn/footer');		
