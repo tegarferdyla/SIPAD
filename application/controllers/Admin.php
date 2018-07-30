@@ -9,23 +9,21 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 		public function __construct()
 		{
 			parent::__construct();
-			if (!$this->session->has_userdata('status')) {
-				redirect('login');
-			}else if($this->session->userdata('divisi') =='Kasatker'){
-				redirect('kasatker');
-			}
-			else if($this->session->userdata('bagian') =='PPK'){
-				redirect('ppk1');
-			}
-			else if ($this->session->userdata('divisi') == 'BMN') {
-				redirect('bmn');
-			}
-			else if ($this->session->userdata('divisi') == 'Keuangan') {
-				redirect('keuangan');
-			}
-			else if ($this->session->userdata('divisi') == 'Bendahara') {
-				redirect('bendahara');
-			}
+		if (!$this->session->has_userdata('status')) {
+			redirect('login');
+		} else if ($this->session->userdata('divisi') == 'Kasatker') {
+			redirect('kasatker');
+		} else if ($this->session->userdata('bagian') == 'PPK') {
+			redirect('ppk1');
+		}else if ($this->session->userdata('bagian') == 'BMN') {
+			redirect('bmn');
+		}else if ($this->session->userdata('bagian') == 'Keuangan') {
+			redirect('keuangan');
+		}else if ($this->session->userdata('bagian') == 'Bendahara') {
+			redirect('bendahara');
+		}else if ($this->session->userdata('bagian') == 'Pokja'){
+			redirect('pokja');
+		}
 		}
 
 		public function index () 

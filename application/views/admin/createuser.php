@@ -298,7 +298,7 @@
                                                 </div>
                                                 </form>
                                         </div>
-                                        <div class="tab-pane active" id="pokja-tab-bordered-1">
+                                        <div class="tab-pane" id="pokja-tab-bordered-1">
                                             <form action="<?php echo base_url ('admin/Tambahakunpokja') ?>" method ="post">
                                                     <div class="form-group row">
                                                         <label class="col-md-3 col-form-label" for="l0">NIP</label>
