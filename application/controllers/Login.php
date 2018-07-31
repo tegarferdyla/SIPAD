@@ -17,10 +17,9 @@ class Login extends CI_Controller
 			if ($this->session->has_userdata('status')) {
 				if ($this->session->userdata('role') == "admin") {
 					redirect('admin');
-				}else if ($this->session->userdata('bagian')=='Kasatker') {
+				}elseif ($this->session->userdata('bagian')=='Kasatker') {
 					redirect('kasatker');
-				}
-				elseif ($this->session->userdata('bagian')=='PPK') {
+				}elseif ($this->session->userdata('bagian')=='PPK') {
 					redirect('ppk1');
 				}elseif ($this->session->userdata('bagian')=='BMN') {
 					redirect('bmn');
@@ -77,7 +76,7 @@ class Login extends CI_Controller
 				'id_ppk' => $result['id_ppk']
 			);
 			$this->session->set_userdata($data_session);
-			if ($this->session->userdata('divisi')=='Kasatker') {
+			if ($this->session->userdata('bagian')=='Kasatker') {
 				redirect(base_url('kasatker'));
 			}
 			elseif($this->session->userdata('bagian')=='PPK') {

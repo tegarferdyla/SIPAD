@@ -235,7 +235,7 @@ class PPK1 extends CI_Controller {
 				'input_by' => $this->session->userdata('nama'),
 				'id_ppk' => $id_ppk,
 			);
-			 $resultchecknip = $this->Datatahun_model->validasitahun($tahun);
+			 $resultchecknip = $this->Datatahun_model->validasitahun($tahun,$id_ppk);
 			 if ($resultchecknip > 0) {
 			 	$this->session->set_flashdata('tahunsalah', 'true');
 			 	redirect('ppk1/inputtahun');
@@ -479,6 +479,11 @@ class PPK1 extends CI_Controller {
 			'final_dokumentasi' => $namaajah[62] . $namafile[62],
 		);
 		$tambahdoc7 = $this->Datapaket_model->insertdoc6('tbl_doc3', $doc4);
+		$data_pendukung = array(
+			'id_pendukung' => $this->Penomoran_model->IDPend(),
+			'id_paket' => $id_paket
+		);
+		$pendukung = $this->Datapaket_model->insertpend('tbl_pendukung',$data_pendukung);
 		$result = ($tambahdoc1 && $tambahdoc2 && $tambahdoc6 && $tambahdoc7);
 		if ($result > 0) {
 			$this->session->set_flashdata('updateberhasil', true);
@@ -567,10 +572,10 @@ class PPK1 extends CI_Controller {
 		$jenis_paket = $this->input->post('jenis_paket');
 		$tahun_paket = $this->input->post('tahun_paket');
 		$deskripsi = $this->input->post('deskripsi');
-
+		$id_paket = $this->Penomoran_model->IDPaket();
 		$id_ppk = $this->session->userdata('id_ppk');
 		$data = array(
-			'id_paket' => $this->Penomoran_model->IDPaket(),
+			'id_paket' => $id_paket,
 			'nama_paket' => strtoupper($nama_paket),
 			'jenis' => $jenis_paket,
 			'deskripsi' => $deskripsi,
@@ -579,6 +584,54 @@ class PPK1 extends CI_Controller {
 			'id_ppk' => $id_ppk,
 		);
 		$input = $this->Datapaket_model->Tambahpaket($data, 'tbl_paket');
+		$id_doc = $this->Penomoran_model->IDdoc();
+		$doc1 = array(
+			'id_doc' => $id_doc,
+			'id_paket' => $id_paket
+		);
+		$tambahdoc1 = $this->Datapaket_model->insertdoc1('tbl_doc1', $doc1);
+
+		$doc2 = array(
+			'id_pasca' => $this->Penomoran_model->IDPsc(),
+			'id_paket' => $id_paket
+		);
+		$tambahdoc2 = $this->Datapaket_model->insertdoc2('tbl_pascamc0', $doc2);
+		// if ($addendumii == "on") {
+			$datadendumii = array(
+				'id_addii' => $this->Penomoran_model->IDadd2(),
+				'id_paket' => $id_paket
+			);
+			$tambahdoc3 = $this->Datapaket_model->insertdoc3('tbl_addendumii', $datadendumii);
+		// }
+		// if ($addendumiii == "on") {
+			$datadendumiii = array(
+				'id_addiii' => $this->Penomoran_model->IDadd3(),
+				'id_paket' => $id_paket
+			);
+			$tambahdoc4 = $this->Datapaket_model->insertdoc4('tbl_addendumiii', $datadendumiii);
+		// }
+		// if ($addendumiv == "on") {
+			$datadendumiv = array(
+				'id_addiv' => $this->Penomoran_model->IDadd4(),
+				'id_paket' => $id_paket
+			);
+			$tambahdoc5 = $this->Datapaket_model->insertdoc4('tbl_addendumiv', $datadendumiv);
+		// }
+		$doc3 = array(
+			'id_doc2' => $this->Penomoran_model->IDdoc2(),
+			'id_paket' => $id_paket
+		);
+		$tambahdoc6 = $this->Datapaket_model->insertdoc5('tbl_doc2', $doc3);
+		$doc4 = array(
+			'id_doc3' => $this->Penomoran_model->IDdoc3(),
+			'id_paket' => $id_paket
+		);
+		$tambahdoc7 = $this->Datapaket_model->insertdoc6('tbl_doc3', $doc4);
+		$data_pendukung = array(
+			'id_pendukung' => $this->Penomoran_model->IDPend(),
+			'id_paket' => $id_paket
+		);
+		$pendukung = $this->Datapaket_model->insertpend('tbl_pendukung',$data_pendukung);
 		if ($input > 0) {
 			$tahun = $this->Datatahun_model->GetWhereTahun("where id_tahun ='$tahun_paket'");
 			$data = array(
@@ -607,7 +660,7 @@ class PPK1 extends CI_Controller {
 		$data['doc6'] = $this->Datapaket_model->showdata6('tbl_addendumiii', $id_paket);
 		$data['doc7'] = $this->Datapaket_model->showdata7('tbl_addendumiv', $id_paket);
 		if ($data['doc1'] == NULL) {
-			redirect('PPK1/inputdokutama/' . $id_paket);
+			redirect('PPK1/editdocutama/' . $id_paket);
 		} else {
 			$id_ppk = $this->session->userdata('id_ppk');
 			$id_user = $this->session->userdata('id_user');
@@ -630,7 +683,7 @@ class PPK1 extends CI_Controller {
 		$data['pendukung'] = $this->Datapaket_model->showpendukung('tbl_pendukung', $id_paket);
 		// $this->load->view('ppk1/header', $data);
 		if ($data['pendukung'] == NULL) {
-			redirect('PPK1/inputdokpendukung/' . $id_paket);
+			redirect('PPK1/editdocpend/' . $id_paket);
 		} else {
 			$id_ppk = $this->session->userdata('id_ppk');
 			$id_user = $this->session->userdata('id_user');
