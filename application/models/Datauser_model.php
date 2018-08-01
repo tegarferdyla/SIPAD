@@ -78,6 +78,33 @@
           $this->db->where($where);
           $this->db->delete($table);
       }
-
+      public function resetpassword($data,$email,$user)
+      {
+        $this->db->where('username', $user);
+        $this->db->where('email', $email);
+        return $this->db->update('user', $data);
+      }
+      public function validemail($user,$email)
+      {
+        $this->db->select('*');
+        $this->db->from('user');
+        $this->db->where('username',$user);
+        $this->db->where('email',$email);
+        $query = $this->db->get();
+        return $query->row_array();
+      }
+      public function validpassword($password)
+      {
+        $this->db->select('*');
+        $this->db->from('user');
+        $this->db->where('password',$password);
+        $query = $this->db->get();
+        return $query->row_array();
+      }
+      public function updatepakepass($data,$password)
+      {
+        $this->db->where('password',$password);
+        return $this->db->update('user',$data);
+      }
   }
  ?>
