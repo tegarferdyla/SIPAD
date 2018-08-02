@@ -62,10 +62,7 @@
                     <div class="form-group no-gutters mb-0">
                         <div class="col-md-12 d-flex">
                             <div class="checkbox checkbox-primary mr-auto mr-0-rtl ml-auto-rtl">
-                                <label class="d-flex">
-                                    <input type="checkbox"> <span class="label-text">Ingat Password</span>
-                                </label>
-                            </div><a href="javascript:void(0)" id="to-recover" class="my-auto pb-2 text-right"><i class="material-icons mr-2 fs-18">lock</i>Lupa Password?</a>
+                            </div><a href="<?php echo site_url('Login/lupapassword') ?>" id="to-recover" class="my-auto pb-2 text-right"><i class="material-icons mr-2 fs-18">lock</i>Lupa Password?</a>
                         </div>
                         <!-- /.col-md-12 -->
                     </div>

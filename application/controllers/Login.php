@@ -17,7 +17,7 @@ class Login extends CI_Controller
 			if ($this->session->has_userdata('status')) {
 				if ($this->session->userdata('role') == "admin") {
 					redirect('admin');
-				}elseif ($this->session->userdata('bagian')=='Kasatker') {
+				}else if ($this->session->userdata('bagian')=='Kasatker') {
 					redirect('kasatker');
 				}elseif ($this->session->userdata('bagian')=='PPK') {
 					redirect('ppk1');
@@ -76,7 +76,7 @@ class Login extends CI_Controller
 				'id_ppk' => $result['id_ppk']
 			);
 			$this->session->set_userdata($data_session);
-			if ($this->session->userdata('bagian')=='Kasatker') {
+			if ($this->session->userdata('divisi')=='Kasatker') {
 				redirect(base_url('kasatker'));
 			}
 			elseif($this->session->userdata('bagian')=='PPK') {
@@ -100,6 +100,86 @@ class Login extends CI_Controller
 			redirect('login');
 		}
 	}
+
+	public function lupapassword()
+	{
+		$this->load->view('home/resetpassword');
+	}
+	public function resetpassword()
+	{
+		$user = $this->input->post('username');
+		$email = $this->input->post('email');
+		$this->load->library('generate_token');
+		$valid = $this->Datauser_model->validemail($user, $email);
+		if ($email != $valid['email']) {
+			redirect('login/lupapassword');
+		}
+		$renewpass = $this->generate_token->get_token(15);
+		$data = array('password' => $renewpass );
+		$result = $this->Datauser_model->resetpassword($data,$email,$user);
+		$this->load->library('email');
+		$config = array();
+		$config['charset'] = 'utf-8';
+		$config['useragent'] = 'Codeigniter';
+		$config['protocol']= "smtp";
+		$config['mailtype']= "html";
+		$config['smtp_host']= "ssl://smtp.gmail.com";//pengaturan smtp
+		$config['smtp_port']= "465";
+		$config['smtp_timeout']= "400";
+		$config['smtp_user']= "sipad.information@gmail.com"; // isi dengan email kamu
+		$config['smtp_pass']= "coba12345"; // isi dengan password kamu
+		$config['crlf']="\r\n"; 
+		$config['newline']="\r\n"; 
+		$config['wordwrap'] = TRUE;
+		//memanggil library email dan set konfigurasi untuk pengiriman email
+
+		$this->email->initialize($config);
+		//konfigurasi pengiriman
+		$this->email->from('SIPAD Information');
+		$this->email->to('dalas98@gmail.com');
+		$this->email->subject("Pembuatan Akun");
+		$this->email->message(
+		"Masukan Kode Berikut ".$renewpass." <br> atau Klik Tombol Dibawah ini<br><br>".
+		"<a href=".site_url('login/tokensend?token='.$renewpass)." style='background-color: #4CAF50; border: none; color: white; padding: 10px 20px;text-align: center; text-decoration: none;display: inline-block; font-size: 14px;'>Reset Password</a>"
+		);
+
+		if($this->email->send())
+		{
+			redirect('login/validtoken');
+		}
+
+	}
+	public function validtoken()
+	{
+		$this->load->view('home/validtoken');
+	}
+	public function tokensend()
+	{
+		$token = $this->input->get('token');
+		$valid = $this->Datauser_model->validpassword($token);
+		if ($token != $valid['password']) {
+			echo "kode verifikasi salah atau expired";
+		}else{
+			redirect('login/newpassword?auth='.$token);
+		}
+	}
+	public function newpassword()
+	{
+		$token = $this->input->get('auth');
+		$data['user'] = $this->Datauser_model->validpassword($token);
+		$this->load->view('home/newpassword',$data);
+	}
+	public function sendpassword()
+	{
+		$token = $this->input->post('token');
+		$password = $this->input->post('password');
+		$data = array('password' => md5($password));
+		$result = $this->Datauser_model->UpdateDataUser($data,$token);
+		if ($result>0) {
+			echo "berhasil silahkan login";
+		}
+	}
+		
 }
 
  ?>
