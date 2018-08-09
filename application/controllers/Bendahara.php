@@ -11,7 +11,7 @@ class Bendahara extends CI_Controller {
 			redirect('login');
 		} else if ($this->session->userdata('role') == 'admin') {
 			redirect('admin');
-		} else if ($this->session->userdata('divisi') == 'Kasatker') {
+		} else if ($this->session->userdata('bagian') == 'Kasatker') {
 			redirect('kasatker');
 		} else if ($this->session->userdata('bagian') == 'PPK') {
 			redirect('ppk1');

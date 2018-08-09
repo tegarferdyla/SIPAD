@@ -6,48 +6,124 @@
 	 */
 	class Kasatker extends CI_Controller
 	{
-		public function __construct()
-		{
-			parent::__construct();
-			if (!$this->session->has_userdata('status')) {
-				redirect('login');
-			}else if($this->session->userdata('role') =='admin'){
-				redirect('admin');
+		public function __construct() {
+		parent::__construct();
+		if (!$this->session->has_userdata('status')) {
+			redirect('login');
+		} else if ($this->session->userdata('role') == 'admin') {
+			redirect('admin');
+		} else if ($this->session->userdata('bagian') == 'bmn') {
+			redirect('bmn');
+		} else if ($this->session->userdata('bagian') == 'PPK') {
+			redirect('ppk1');
+		}
+		else if ($this->session->userdata('bagian') == 'Keuangan') {
+			redirect('Keuangan');
+		}else if ($this->session->userdata('bagian') == 'Bendahara') {
+			redirect('bendahara');
+		}else if ($this->session->userdata('bagian') == 'Pokja') {
+			redirect('pokja');
+		}
+	}
+		public function editprofile() {
+		$id_user = $this->session->userdata('id_user');
+		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
+		$this->load->view('kasatker/header', $data);
+
+		$data['get_ppk']=$this->Datappk_model->datappk();
+		$this->load->view('kasatker/sidebar',$data);
+
+		$this->load->view('kasatker/editakun', $data);
+		$this->load->view('kasatker/footer');
+	}
+	public function changeprofile() {
+		$id_user = $this->session->userdata('id_user');
+		$config['upload_path'] = './assets/img/';
+		$config['allowed_types'] = 'jpg|png|gif';
+		$config['max_size'] = 100000;
+		$config['overwrite'] = TRUE;
+
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload('myfiles')) {
+			// $this->upload->do_upload('myfiles');
+			$result = $this->upload->data();
+			$data_update = array(
+				// 'foto'  => $result['file_name'],
+				'nama' => $this->input->post('nama_user'),
+				'email' => $this->input->post('email'),
+				'alamat' => $this->input->post('alamat'),
+			);
+
+			$result = $this->Datauser_model->UpdateDataUser($data_update, $id_user);
+
+			if ($result > 0) {
+				$this->session->set_flashdata('updateberhasil', 'true');
+				redirect('kasatker/editprofile');
+			} else {
+				$this->session->set_flashdata('updategagal', 'true');
+				redirect('kasatker/editprofile');
 			}
-			else if($this->session->userdata('bagian') =='PPK'){
-				redirect('ppk1');
+		} else {
+			$result = $this->upload->data();
+			$data_update = array(
+				'foto' => $result['file_name'],
+				'nama' => $this->input->post('nama_user'),
+				'email' => $this->input->post('email'),
+				'alamat' => $this->input->post('alamat'),
+			);
+
+			$result = $this->Datauser_model->UpdateDataUser($data_update, $id_user);
+
+			if ($result > 0) {
+				$this->session->set_flashdata('updateberhasil', 'true');
+				redirect('kasatker/editprofile');
+			} else {
+				$this->session->set_flashdata('updategagal', 'true');
+				redirect('kasatker/editprofile');
 			}
 		}
-		
+
+	}
+	public function gantipass()
+	{
+		$id_user = $this->session->userdata('id_user');
+		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
+		$id_ppk = $this->session->userdata('id_ppk');
+		$this->load->view('kasatker/header', $data);
+
+		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+		$data['get_ppk']=$this->Datappk_model->datappk();
+		$this->load->view('kasatker/sidebar', $data);
+
+		$this->load->view('kasatker/gantipass', $data);
+		$this->load->view('kasatker/footer');
+	}
 		public function index () 
 		{
-			$this->load->view('kasatker/header');
+			$id_user = $this->session->userdata('id_user');
+			$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
+			$data['chart'] = $this->Datapaket_model->chart();
+			$data['get_ppk']=$this->Datappk_model->datappk();
+			$this->load->view('kasatker/header', $data);
 			$this->load->view('kasatker/sidebar');
 			$this->load->view('kasatker/dashboard');
 			$this->load->view('kasatker/footer');
 		}
+		public function tahun($id_ppk)
+		{
+		$id_user = $this->session->userdata('id_user');
+		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
+		$this->load->view('kasatker/header', $data);
 
-		public function datappk1 ()
-		{
-			$this->load->view('kasatker/header');
-			$this->load->view('kasatker/sidebar');
-			$this->load->view('kasatker/datappk1');
-			$this->load->view('kasatker/footer');
+		$data['get_ppk']=$this->Datappk_model->datappk();
+		$this->load->view('kasatker/sidebar',$data);
+
+		$data['get_tahun'] = $this->Datatahun_model->datatahun($id_ppk);
+		$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
+		$this->load->view('kasatker/tahun',$data);
+		$this->load->view('kasatker/footer');
 		}
-		public function profile ()
-		{
-			$this->load->view('kasatker/header');
-			$this->load->view('kasatker/sidebar');
-			$this->load->view('kasatker/profile');
-			$this->load->view('kasatker/footer');
-		}
-		public function changepassword ()
-		{
-			$this->load->view('kasatker/header');
-			$this->load->view('kasatker/sidebar');
-			$this->load->view('kasatker/changepassword');
-			$this->load->view('kasatker/footer');
-		}
+
 		public function test($id_tahun)
 		{
 			$countdata['tbl_doc1'] = $this->Datapaket_model->countonme($id_tahun);
@@ -104,8 +180,21 @@
 			// print_r($data);
 			// echo "</pre>";
 
-			$this->load->view('kasatker/header');
-			$this->load->view('kasatker/sidebar');
+			$id_user = $this->session->userdata('id_user');
+			$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
+			$this->load->view('kasatker/header', $data);
+
+			$data['get_ppk']=$this->Datappk_model->datappk();
+			$this->load->view('kasatker/sidebar',$data);
+			$data['get_tahun'] = $this->Datatahun_model->dapatkantahun($id_tahun);
+			$id_ppk =  $data['get_tahun'][0]['id_ppk'];
+			$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
+			
+			if ($data['hasil']==NULL) {
+				$this->session->set_flashdata('kosong','true');
+				redirect('kasatker/tahun/'.$id_ppk);
+			}
+
 			$this->load->view('kasatker/testfile',$data);
 			$this->load->view('kasatker/footer');
 		}

@@ -39,8 +39,8 @@
                             <div class="col-sm-6">
                                 <h5 class="h2 fw-semibold mt-0">100%</h5>
                                 <!-- /.progress -->
-                                <p class="heading-font-family fs-13">Total Prosentase
-                                    <br>Dokumen yang sudah di unggah</p>
+                                <p class="heading-font-family fs-13">Total Persentase
+                                    <br>Paket Disetiap PPK</p>
                                     <div class="row">
                                         <div class="col-6">
                                             <?php foreach ($chart as $r) {?>

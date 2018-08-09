@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 			parent::__construct();
 		if (!$this->session->has_userdata('status')) {
 			redirect('login');
-		} else if ($this->session->userdata('divisi') == 'Kasatker') {
+		} else if ($this->session->userdata('bagian') == 'Kasatker') {
 			redirect('kasatker');
 		} else if ($this->session->userdata('bagian') == 'PPK') {
 			redirect('ppk1');

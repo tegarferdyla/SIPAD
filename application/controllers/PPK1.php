@@ -11,7 +11,7 @@ class PPK1 extends CI_Controller {
 			redirect('login');
 		} else if ($this->session->userdata('role') == 'admin') {
 			redirect('admin');
-		} else if ($this->session->userdata('divisi') == 'Kasatker') {
+		} else if ($this->session->userdata('bagian') == 'Kasatker') {
 			redirect('kasatker');
 		} else if ($this->session->userdata('bagian') == 'BMN') {
 			redirect('bmn');
@@ -576,7 +576,7 @@ class PPK1 extends CI_Controller {
 		$id_ppk = $this->session->userdata('id_ppk');
 		$data = array(
 			'id_paket' => $id_paket,
-			'nama_paket' => strtoupper($nama_paket),
+			'nama_paket' => ucwords($nama_paket),
 			'jenis' => $jenis_paket,
 			'deskripsi' => $deskripsi,
 			'input_by' => $this->session->userdata('nama'),

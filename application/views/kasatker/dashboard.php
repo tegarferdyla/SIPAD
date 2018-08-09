@@ -2,14 +2,12 @@
     <!-- Page Title Area -->
     <div class="row page-title clearfix">
         <div class="page-title-left">
-            <p class="page-title-description mr-0 d-none d-md-inline-block">Sistem Informasi Pengelolaan Arsip Dokumen - Satker Pengembangan Penyehatan Lingkungan Permukiman Strategis</p>
+            <p class="page-title-description mr-0 d-none d-md-inline-block">Sistem Informasi Pengelolaan Arsip Dokumen</p>
         </div>
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Dashboard</a>
-                </li>
-                <li class="breadcrumb-item active">Home</li>
+                <li class="breadcrumb-item active">Dashboard</li>
             </ol>
         </div>
         <!-- /.page-title-right -->
@@ -19,116 +17,111 @@
     <!-- Different data widgets ============ -->
     <!-- =================================== -->
     <div class="widget-list row">
-        <div class="widget-holder widget-sm col-md-3 widget-full-height">
+        <div class="widget-holder widget-full-content widget-full-height col-lg-12 ">
             <div class="widget-bg">
-                <div class="widget-body">
-                    <div class="counter-w-info media">
-                        <div class="media-body">
-                            <p class="text-muted mr-b-5">Dokumen PPK PLP JABODETABEK</p><span class="counter-title color-primary"><span class="counter">2860</span> </span>
-                            <!-- /.counter-title -->
-                            <div class="mr-t-20"><span data-toggle="sparklines" data-height="15" data-width="70" data-line-color="#1976d2" data-line-width="3" data-spot-radius="1" data-fill-color="rgba(0,0,0,0)" data-spot-color="undefined" data-min-spot-color="undefined"
-                                data-max-spot-color="undefined" data-highlight-line-color="undefined"><!-- 10,5,7,8,3,0,4,12,10,8,12 --></span>
-                            </div>
-                        </div>
-                        <!-- /.media-body -->
-                        <div class="pull-right align-self-center"><i class="list-icon feather feather-file bg-primary"></i>
-                        </div>
-                    </div>
-                    <!-- /.counter-w-info -->
+                <div class="widget-heading">
+                    <h5 class="widget-title">Persentase Paket Setiap PPk</h5>
+                    <!-- /.widget-graph-info -->
                 </div>
-                <!-- /.widget-body -->
-            </div>
-            <!-- /.widget-bg -->
-        </div>
-        <!-- /.widget-holder -->
-        <div class="widget-holder widget-sm col-md-3 widget-full-height">
-            <div class="widget-bg">
+                <!-- .widget-heading -->
                 <div class="widget-body">
-                    <div class="counter-w-info media">
-                        <div class="media-body">
-                            <p class="text-muted mr-b-5">Dokumen PPK PENGELOLAAN PERSAMPAHAN</p><span class="counter-title color-info"><span class="counter">58</span></span>
-                            <!-- /.counter-title -->
-                            <div class="progress" style="width: 70%; position: relative; top: 25px">
-                                <div class="progress-bar bg-info" style="width: 66%" role="progressbar"><span class="sr-only">20% Complete</span>
+                    <div class="container-fluid pd-20">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="pos-relative" style="height: 300px">
+                                    <canvas id="chartkurs"></canvas>
                                 </div>
+                                <!-- /.something -->
+                              <!--   <div class="counter-info heading-font-family text-center mt-3 mb-3 fs-13"><span class="color-success"><i class="fa fa-arrow-circle-o-up"></i> <strong>34%</strong> </span>more than last week</div> -->
+                                <!-- /.counter-info -->
                             </div>
-                        </div>
-                        <!-- /.media-body -->
-                        <div class="pull-right align-self-center"><i class="list-icon feather feather-file bg-info"></i>
-                        </div>
-                    </div>
-                    <!-- /.counter-w-info -->
-                </div>
-                <!-- /.widget-body -->
-            </div>
-            <!-- /.widget-bg -->
-        </div>
-        <!-- /.widget-holder -->
-        <div class="widget-holder widget-sm col-md-3 widget-full-height">
-            <div class="widget-bg">
-                <div class="widget-body">
-                    <div class="counter-w-info media">
-                        <div class="media-body">
-                            <p class="text-muted mr-b-5">Dokumen PPK PENGELOLAAN AIR LIMBAH</p><span class="counter-title color-pink"><span class="counter">5</span> </span>
-                            <!-- /.counter-title -->
-                            <div style="margin-top: 15px"><span data-toggle="sparklines" data-height="15" data-bar-width="3" data-type="bar" data-chart-range-min="0" data-bar-spacing="3" data-bar-color="#ff6b88"><!-- 2,4,5,3,2,3,5,3,2,3,5,4,2 --></span>
-                            </div>
-                        </div>
-                        <!-- /.media-body -->
-                        <div class="pull-right align-self-center"><i class="list-icon feather feather-file bg-pink"></i>
-                        </div>
-                    </div>
-                    <!-- /.counter-w-info -->
-                </div>
-                <!-- /.widget-body -->
-            </div>
-            <!-- /.widget-bg -->
-        </div>
-        <div class="widget-holder widget-sm col-md-3 widget-full-height">
-            <div class="widget-bg">
-                <div class="widget-body">
-                    <div class="counter-w-info media">
-                        <div class="media-body">
-                            <p class="text-muted mr-b-5">Dokumen PPK PLP BANTEN</p><span class="counter-title color-danger"><span class="counter">8</span> </span>
-                            <!-- /.counter-title -->
-                           <div class="progress" style="width: 70%; position: relative; top: 25px">
-                                <div class="progress-bar bg-danger" style="width: 66%" role="progressbar"><span class="sr-only">20% Complete</span>
+                            <!-- /.col-lg-6 -->
+                            <div class="col-sm-6">
+                                <h5 class="h2 fw-semibold mt-0">100%</h5>
+                                <!-- /.progress -->
+                                <p class="heading-font-family fs-13">Total Persentase
+                                    <br>Paket Disetiap PPK</p>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <?php foreach ($chart as $r) {?>
+                                            <p class="heading-font-family fs-13 mb-3"><i class="fa fa-square mr-2 mr-0-rtl ml-2-rtl" style="color: #51bcd4"></i><?php echo $r->nama ?></p>
+                                            <?php } ?>
+                                        </div>
+                                        <!-- /.col-6 -->
+                                        <div class="col-6">
+                                        </div>
+                                        <!-- /.col-6 -->
+                                    </div>
+                                    <!-- /.row -->
                                 </div>
+                                <!-- /.col-lg-6 -->
                             </div>
+                            <!-- /.row -->
                         </div>
-                        <!-- /.media-body -->
-                        <div class="pull-right align-self-center"><i class="list-icon feather feather-file bg-danger"></i>
-                        </div>
+                        <!-- /.container-fluid -->
                     </div>
-                    <!-- /.counter-w-info -->
+                    <!-- /.widget-body -->
                 </div>
-                <!-- /.widget-body -->
+                <!-- /.widget-bg -->
             </div>
-            <!-- /.widget-bg -->
-        </div>
             <!-- /.widget-holder -->
         </div>
-        <div class="widget-list row">
-            <div class="widget-holder widget-sm col-md-3 widget-full-height">
-            <div class="widget-bg">
-                <div class="widget-body">
-                    <div class="counter-w-info media">
-                        <div class="media-body">
-                            <p class="text-muted mr-b-5">Dokumen PPK PEMBINAAN TEKNIS</p><span class="counter-title color-warning"><span class="counter">280</span> </span>
-                            <!-- /.counter-title -->
-                          <div style="margin-top: 15px"><span data-toggle="sparklines" data-height="15" data-bar-width="3" data-type="bar" data-chart-range-min="0" data-bar-spacing="3" data-bar-color="yellow"><!-- 2,4,5,3,2,3,5,3,2,3,5,4,2 --></span>
-                            </div>
-                        </div>
-                        <!-- /.media-body -->
-                        <div class="pull-right align-self-center"><i class="list-icon feather feather-file bg-warning"></i>
-                        </div>
-                    </div>
-                    <!-- /.counter-w-info -->
-                </div>
-                <!-- /.widget-body -->
-            </div>
-            <!-- /.widget-bg -->
-        </div>
-        </div>
         <hr>
+        <script type="text/javascript">
+            var ctx = $('#chartkurs').get(0).getContext('2d');
+            var data3 = {
+                labels: [
+                <?php foreach ($chart as $r) {
+                    echo "'$r->nama',";
+                }?>
+                ],
+                datasets: [{
+                    data: [
+                    <?php foreach ($chart as $r) {
+                        echo "'$r->jumlah_paket',";
+                    }?>
+                    ],
+                    backgroundColor: [
+                    "#51bcd4",
+                    "#d75151",
+                    "#eace52",
+                    "#dce5e7",
+                    "#fff000"
+                    ],
+                    hoverBackgroundColor: [
+                    "#51bcd4",
+                    "#d75151",
+                    "#eace52",
+                    "#dce5e7",
+                    "#fff000",
+                    ],
+                    hoverBorderColor: '#fff',
+                    borderWidth: 8,
+                }]
+            }
+            var chartJsPie = new Chart(ctx,{
+                type: "pie",
+                data: data3,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    legend: {
+                        display: false,
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false,
+                        titleFontColor: "#000",
+                        titleMarginBottom: 0,
+                        backgroundColor: "rgba(255,255,255,.9)",
+                        bodyFontColor: "#000",
+                        borderColor: "#e9e9e9",
+                        bodySpacing: 0,
+                        borderWidth: 2,
+                        xPadding: 10,
+                        yPadding: 10,
+                    },
+                }
+            });
+        </script>
     </main>

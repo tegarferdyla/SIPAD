@@ -10,11 +10,26 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/css/pace.css') ?>">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Sistem Informasi Pengelolaan Arsip Dokumen - Satker Pengembangan Penyehatan Lingkungan Permukiman Strategis</title>
-    <!-- CSS -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600%7CRoboto:400" rel="stylesheet" type="text/css">
+    <link href="assets/vendors/material-icons/material-icons.css" rel="stylesheet" type="text/css">
+    <link href="assets/vendors/mono-social-icons/monosocialiconsfont.css" rel="stylesheet" type="text/css">
+    <link href="assets/vendors/feather-icons/feather.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.7.0/css/perfect-scrollbar.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-footable/3.1.4/footable.bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url('assets/css/style.css') ?>" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url('assets/vendors/material-icons/material-icons.css') ?>" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url('assets/vendors/mono-social-icons/monosocialiconsfont.css') ?>" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url('assets/vendors/feather-icons/feather.css') ?>" rel="stylesheet" type="text/css"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <!-- Head Libs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script data-pace-options='{ "ajax": false, "selectors": [ "img" ]}' src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+    <!-- CSS -->
+   <!--  <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600%7CRoboto:400" rel="stylesheet" type="text/css">
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.7.0/css/perfect-scrollbar.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" type="text/css">
@@ -28,8 +43,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css" rel="stylesheet" type="text/css">
      <link href="<?php echo base_url('assets/css/style.css') ?>" rel="stylesheet" type="text/css">
     <!-- Head Libs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-    <script data-pace-options='{ "ajax": false, "selectors": [ "img" ]}' src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script data-pace-options='{ "ajax": false, "selectors": [ "img" ]}' src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>  -->
 </head>
 
 <body class="sidebar-dark sidebar-expand navbar-brand-dark header-light">
@@ -53,7 +68,7 @@
             </ul>
             <!-- /.navbar-left -->
             <!-- Search Form -->
-            <form class="navbar-search d-none d-sm-block" role="search"><i class="feather feather-search list-icon"></i> 
+            <form class="navbar-search d-none d-sm-block" role="search"><i class="feather feather-search list-icon"></i>
                 <input type="search" class="search-query" placeholder="Pencarian Dokumen ..."> <a href="javascript:void(0);" class="remove-focus"><i class="feather feather-x"></i></a>
             </form>
             <!-- /.navbar-search -->
@@ -66,15 +81,15 @@
             <!-- /.navbar-right -->
             <!-- User Image with Dropdown -->
             <ul class="nav navbar-nav">
-                <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle dropdown-toggle-user ripple" data-toggle="dropdown"><span class="avatar thumb-xs2"><span style="color:#007fff"><?php echo ucwords($this->session->userdata('nama')); ?></span> &nbsp;<img src="<?php echo base_url('assets/demo/users/user1.jpg') ?>" class="rounded-circle" alt=""> <i class="feather feather-chevron-down list-icon"></i></span></a>
+                <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle dropdown-toggle-user ripple" data-toggle="dropdown"><span class="avatar thumb-xs2"><span style="color:#007fff"><?php echo ucwords($user['nama']); ?></span> &nbsp;<img src="<?php echo base_url('assets/img/'.$user['foto']) ?>" class="rounded-circle" alt=""> <i class="feather feather-chevron-down list-icon"></i></span></a>
                     <div
                     class="dropdown-menu dropdown-left dropdown-card dropdown-card-profile animated flipInY">
                     <div class="card">
                     <ul class="list-unstyled card-body">
-                        <li><a href="#"><span><span class="align-middle">Pengaturan Akun</span></span></a>
+                        <li><a href="<?php echo site_url('kasatker/editprofile') ?>"><span><span class="align-middle">Pengaturan Akun</span></span></a>
                         </li>
-                        <li><a href="#"><span><span class="align-middle">Ubah Password</span></span></a></li>
-                        <li><a href="<?php echo base_url('login?logout=signout');?>"><span><span class="align-middle">Keluar</span></span></a></li>
+                        <li><a href="<?php echo site_url('kasatker/gantipass') ?>"><span><span class="align-middle">Ubah Password</span></span></a></li>
+                        <li><a href="<?php echo base_url('login?logout=signout'); ?>"><span><span class="align-middle">Keluar</span></span></a></li>
                 </li>
             </ul>
                     <!-- /.card-body -->
