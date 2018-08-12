@@ -170,6 +170,14 @@ class Datapaket_model extends CI_Model {
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
+	public function showidthn($tahun)
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_tahun');
+		$this->db->where('nama_tahun', $tahun);
+		$query = $this->db->get();
+		return $query->result();
+	}
 	public function chart()
     {
     	$sql = $this->db->query("SELECT a.nama, COUNT(b.nama_paket) jumlah_paket FROM ppk a, tbl_paket b WHERE a.id_ppk = b.id_ppk GROUP BY b.id_ppk");

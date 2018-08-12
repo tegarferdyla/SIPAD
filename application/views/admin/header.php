@@ -78,7 +78,7 @@
             <!-- /.navbar-right -->
             <!-- User Image with Dropdown -->
             <ul class="nav navbar-nav">
-                <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle dropdown-toggle-user ripple" data-toggle="dropdown"><span class="avatar thumb-xs2"><span style="color:#007fff"><?php echo ucwords($this->session->userdata('nama')); ?></span> &nbsp;<img src="<?php echo base_url('assets/demo/users/user1.jpg') ?>" class="rounded-circle" alt=""> <i class="feather feather-chevron-down list-icon"></i></span></a>
+                <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle dropdown-toggle-user ripple" data-toggle="dropdown"><span class="avatar thumb-xs2"><span style="color:#007fff"><?php echo ucwords($this->session->userdata('nama')); ?></span> &nbsp;<img src="<?php echo base_url('assets/img/user1.jpg') ?>" class="rounded-circle" alt=""> <i class="feather feather-chevron-down list-icon"></i></span></a>
                     <div
                     class="dropdown-menu dropdown-left dropdown-card dropdown-card-profile animated flipInY">
                     <div class="card">

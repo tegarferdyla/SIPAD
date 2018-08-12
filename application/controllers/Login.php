@@ -20,7 +20,7 @@ class Login extends CI_Controller
 				}else if ($this->session->userdata('bagian')=='Kasatker') {
 					redirect('kasatker');
 				}elseif ($this->session->userdata('bagian')=='PPK') {
-					redirect('ppk1');
+					redirect('PPK1');
 				}elseif ($this->session->userdata('bagian')=='BMN') {
 					redirect('bmn');
 				}elseif ($this->session->userdata('bagian')=='Keuangan') {
@@ -80,7 +80,7 @@ class Login extends CI_Controller
 				redirect(base_url('kasatker'));
 			}
 			elseif($this->session->userdata('bagian')=='PPK') {
-				redirect(base_url('ppk1'));
+				redirect(base_url('PPK1'));
 			}
 			elseif($this->session->userdata('bagian')=='BMN'){
 				redirect(base_url('bmn'));
