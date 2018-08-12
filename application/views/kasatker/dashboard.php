@@ -17,6 +17,29 @@
     <!-- Different data widgets ============ -->
     <!-- =================================== -->
     <div class="widget-list row">
+        <?php foreach ($get_ppk as $u): ?>
+            <div class="widget-holder widget-sm col-md-3 widget-full-height">
+                <div class="widget-bg">
+                    <div class="widget-body">
+                        <div class="counter-w-info media">
+                            <div class="media-body">
+                                <p class="text-muted mr-b-5"><?php echo $u['nama'] ?></p><span class="counter-title color-info"><span class="counter">1238918</span></span>
+                                <!-- /.counter-title -->
+                                <div class="progress" style="width: 70%; position: relative; top: 25px">
+                                    <div class="progress-bar bg-info" style="width: 80%" role="progressbar">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.media-body -->
+                            <div class="pull-right align-self-center"><i class="list-icon feather feather-file bg-warning"></i>
+                            </div>
+                        </div>
+                        <!-- /.counter-w-info -->
+                    </div>
+                </div>
+            </div>
+        <?php endforeach ?>
+
         <div class="widget-holder widget-full-content widget-full-height col-lg-12 ">
             <div class="widget-bg">
                 <div class="widget-heading">

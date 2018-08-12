@@ -1,6 +1,6 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Generate_Token extends CI_Model
+class Generate_token extends CI_Model
 {
   function get_token($panjang){
     $token = array(
