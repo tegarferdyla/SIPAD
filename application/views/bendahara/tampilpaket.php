@@ -50,7 +50,7 @@
                                         <div class="blog-post blog-post-card text-center">
                                             <figure>
                                                 <a href= "<?php echo base_url()."Bendahara/paketkontraktual/".$u['id_tahun']; ?>">
-                                                    <img src="<?php echo base_url("assets/demo/cards/jembatan1.jpg") ?>" alt="Blog Post 1">
+                                                    <img src="<?php echo base_url("assets/img/jembatan1.jpg") ?>" alt="Blog Post 1">
                                                </a>
                                             </figure>
                                             <header>
@@ -67,7 +67,7 @@
                                         <div class="blog-post blog-post-card text-center">
                                             <figure>
                                                 <a href="<?php echo base_url()."Bendahara/paketsuakelola/".$u['id_tahun']; ?>">
-                                                    <img src="<?php echo base_url("assets/demo/cards/toba.jpg") ?>" alt="">
+                                                    <img src="<?php echo base_url("assets/img/toba.jpg") ?>" alt="">
                                             </figure>
                                             <header>
                                                 <h4 class="h3 fw-300 m-1 blog-post-title">Pilih Suakelola</h4>

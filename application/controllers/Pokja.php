@@ -193,17 +193,19 @@ class pokja extends CI_Controller {
 		$jenis = $cari[0]["jenis"];
 		$nama_paket = $cari[0]["nama_paket"];
 		$idtahun = $cari[0]["id_tahun"];
+		$id_ppk =$cari[0]["id_ppk"];
+		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
 		$carithn = $this->Datatahun_model->cektahun($idtahun);
 		$tahun = $carithn->nama_tahun;
 		$id_pendukung = $this->Penomoran_model->IDPokja();
 
 		$file = [
-			'upload_path' => './assets/data/' . $tahun . '/' . $jenis . '/' . $nama_paket . '/',
+			'upload_path' => './assets/data/' . $tahun . '/'. $ppk[0]['nama'].'/' . $jenis . '/' . $nama_paket . '/',
 			'allowed_types' => 'pdf',
 			'overwrite' => TRUE,
 			// 'encrypt_name' => TRUE
 		];
-		$namabaru = $tahun . "-" . $nama_paket . "-";
+		$namabaru = $tahun . "-" . $nama_paket . "-Pokja-";
 		$this->load->library('upload', $file);
 		for ($i = 1; $i <= 10; $i++) {
 			$files[$i] = $_FILES['file'.$i]['name'];
@@ -215,7 +217,7 @@ class pokja extends CI_Controller {
 				rename($a[$i]['full_path'], $a[$i]['file_path'] . $namabaru . $a[$i]['file_name']);
 			}
 			if (!empty($files[$i])) {
-				$namaajah[$i] = $tahun . "-" . $nama_paket . "-";
+				$namaajah[$i] = $tahun . "-" . $nama_paket . "-Pokja-";
 				$namafile[$i] = $a[$i]['file_name'];
 			} else {
 				$namaajah[$i] = "";
@@ -287,15 +289,17 @@ class pokja extends CI_Controller {
 		$jenis = $cari[0]["jenis"];
 		$nama_paket = $cari[0]["nama_paket"];
 		$idtahun = $cari[0]["id_tahun"];
+		$id_ppk =$cari[0]["id_ppk"];
+		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
 		$carithn = $this->Datatahun_model->cektahun($idtahun);
 		$tahun = $carithn->nama_tahun;
 		$file = [
-			'upload_path' => './assets/data/' . $tahun . '/' . $jenis . '/' . $nama_paket . '/',
+			'upload_path' => './assets/data/' . $tahun . '/' .$ppk[0]['nama'] .'/' . $jenis . '/' . $nama_paket . '/',
 			'allowed_types' => 'pdf',
 			'overwrite' => TRUE,
 			// 'encrypt_name' => TRUE
 		];
-		$namabaru = $tahun . "-" . $nama_paket . "-";
+		$namabaru = $tahun . "-" . $nama_paket . "-Pokja-";
 		$this->load->library('upload', $file);
 		for ($i = 1; $i <= 10; $i++) {
 			$delfile[$i] = $this->input->post('delf'.$i);
@@ -308,7 +312,7 @@ class pokja extends CI_Controller {
 				rename($a[$i]['full_path'], $a[$i]['file_path'] . $namabaru . $a[$i]['file_name']);
 			}
 			if (!empty($files[$i])) {
-				$namaajah[$i] = $tahun . "-" . $nama_paket . "-";
+				$namaajah[$i] = $tahun . "-" . $nama_paket . "-Pokja-";
 				$namafile[$i] = $a[$i]['file_name'];
 				unlink($a[$i]['file_path'].$delfile[$i]);
 			} else {
@@ -335,11 +339,11 @@ class pokja extends CI_Controller {
 			redirect('Pokja/editdoc/' . $id_paket);
 		}
 	}
-	public function download($tahun,$jenis,$nama_paket,$nama_file) {
+	public function download($tahun,$namappk,$jenis,$nama_paket,$nama_file) {
 		// $name = str_replace('%20',' ', $nama_file);
 		$name = rawurldecode($nama_file);
 		$paket = str_replace('%20',' ', $nama_paket);
-		$data = file_get_contents("./assets/data/".$tahun."/".$jenis."/".$paket."/".$name);
+		$data = file_get_contents("./assets/data/".$tahun."/".$namappk."/".$jenis."/".$paket."/".$name);
 		force_download($name,$data);
 	}
 	public function gantipass()
@@ -358,8 +362,18 @@ class pokja extends CI_Controller {
 	}
 	public function test()
 	{
-		$data['chart'] = $this->Datapaket_model->chart();
-		print_r($data);
+		$id_paket = 'PKT0005';
+		$cari = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
+		$jenis = $cari[0]["jenis"];
+		$nama_paket = $cari[0]["nama_paket"];
+		$idtahun = $cari[0]["id_tahun"];
+		$id_ppk =$cari[0]["id_ppk"];
+		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+
+		echo $ppk[0]['nama'];
+
+		// $data['chart'] = $this->Datapaket_model->chart();
+		// print_r($data);
 	}
 	// public function dokumenkontraktual ($id_paket)
 	// {

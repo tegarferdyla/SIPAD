@@ -63,12 +63,12 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Surat Perintah Lelang</label>
-                            <p><button class="btn btn-show"  data-toggle="modal" data-target="#modalCustom" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_surat_perintah']) ?>">
+                            <p><button class="btn btn-show"  data-toggle="modal" data-target="#modalCustom" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/'.$namappk[0]['nama']. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_surat_perintah']) ?>">
                                    <i class="feather feather-eye text-dark"></i>
                                    <input type="hidden" value="<?= $show[0]['pokja_surat_perintah'] ?>">
                                 </button>
                                 <?php if ($show[0]['pokja_surat_perintah']!=NULL) {?>
-                                    <a href="<?php echo site_url('pokja/download/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_surat_perintah']) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                    <a href="<?php echo site_url('pokja/download/' . $tahun->nama_tahun . '/'.$namappk[0]['nama']. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_surat_perintah']) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                 <?php }else{ ?>
                                     <a href="" class="btn btn-default disabled" target="_blank">
                                         <span class="feather feather-download"></span>
@@ -79,12 +79,12 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Dokumen Lelang</label>
-                            <p> <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $show[0]['pokja_dokumen_lelang']) ?>">
+                            <p> <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'.$namappk[0]['nama']. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $show[0]['pokja_dokumen_lelang']) ?>">
                                     <i class="feather feather-eye text-success"></i>
                                     <input type="hidden" value ="<?php echo $show[0]['pokja_dokumen_lelang'] ?>">
                                 </button>
                                 <?php if ($show[0]['pokja_dokumen_lelang']!=NULL) {?>
-                                    <a href="<?php echo site_url('pokja/download/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_dokumen_lelang']) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                    <a href="<?php echo site_url('pokja/download/' . $tahun->nama_tahun . '/'.$namappk[0]['nama']. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_dokumen_lelang']) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                 <?php }else{ ?>
                                     <a href="" class="btn btn-default disabled" target="_blank">
                                         <span class="feather feather-download"></span>
@@ -99,12 +99,12 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Add Dokumen Lelang</label>
                             <p> 
-                                <button class="btn btn-show"  data-toggle="modal" data-target="#modalCustom" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_add_dokumen']) ?>">
+                                <button class="btn btn-show"  data-toggle="modal" data-target="#modalCustom" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/'.$namappk[0]['nama']. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_add_dokumen']) ?>">
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $show[0]['pokja_add_dokumen'] ?>">
                                 </button>
                                 <?php if ($show[0]['pokja_add_dokumen']!=NULL) {?>
-                                    <a href="<?php echo site_url('pokja/download/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_add_dokumen']) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                    <a href="<?php echo site_url('pokja/download/' . $tahun->nama_tahun . '/'.$namappk[0]['nama']. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_add_dokumen']) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                 <?php }else{ ?>
                                     <a href="" class="btn btn-default disabled" target="_blank">
                                         <span class="feather feather-download"></span>
@@ -116,12 +116,12 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Undangan Pembuktian</label>
                             <p> 
-                                <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $show[0]['pokja_undangan']) ?>">
+                                <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'.$namappk[0]['nama']. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $show[0]['pokja_undangan']) ?>">
                                     <i class="feather feather-eye text-success"></i>
                                     <input type="hidden" value ="<?php echo $show[0]['pokja_undangan'] ?>">
                                 </button>
                                 <?php if ($show[0]['pokja_undangan']!=NULL) {?>
-                                    <a href="<?php echo site_url('pokja/download/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_undangan']) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                    <a href="<?php echo site_url('pokja/download/' . $tahun->nama_tahun . '/'.$namappk[0]['nama']. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_undangan']) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                 <?php }else{ ?>
                                     <a href="" class="btn btn-default disabled" target="_blank">
                                         <span class="feather feather-download"></span>
@@ -136,12 +136,12 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Berita Acara Pembuktian</label>
                             <p> 
-                                <button class="btn btn-show"  data-toggle="modal" data-target="#modalCustom" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_pembuktian']) ?>">
+                                <button class="btn btn-show"  data-toggle="modal" data-target="#modalCustom" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/'.$namappk[0]['nama']. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_pembuktian']) ?>">
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $show[0]['pokja_pembuktian'] ?>">
                                 </button>
                                 <?php if ($show[0]['pokja_pembuktian']!=NULL) {?>
-                                    <a href="<?php echo site_url('pokja/download/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_pembuktian']) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                    <a href="<?php echo site_url('pokja/download/' . $tahun->nama_tahun . '/'.$namappk[0]['nama']. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_pembuktian']) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                 <?php }else{ ?>
                                     <a href="" class="btn btn-default disabled" target="_blank">
                                         <span class="feather feather-download"></span>
@@ -153,12 +153,12 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Berita Acara Aanwijzing</label>
                             <p> 
-                                <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $show[0]['pokja_aanwijzing']) ?>">
+                                <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'.$namappk[0]['nama']. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $show[0]['pokja_aanwijzing']) ?>">
                                     <i class="feather feather-eye text-success"></i>
                                     <input type="hidden" value ="<?php echo $show[0]['pokja_aanwijzing'] ?>">
                                 </button>
                                 <?php if ($show[0]['pokja_aanwijzing']!=NULL) {?>
-                                    <a href="<?php echo site_url('pokja/download/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_aanwijzing']) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                    <a href="<?php echo site_url('pokja/download/' . $tahun->nama_tahun . '/'.$namappk[0]['nama']. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_aanwijzing']) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                 <?php }else{ ?>
                                     <a href="" class="btn btn-default disabled" target="_blank">
                                         <span class="feather feather-download"></span>
@@ -173,12 +173,12 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Berita Acara Penetapan Pemenang</label>
                             <p> 
-                                <button class="btn btn-show"  data-toggle="modal" data-target="#modalCustom" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_pemenang']) ?>">
+                                <button class="btn btn-show"  data-toggle="modal" data-target="#modalCustom" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/'.$namappk[0]['nama']. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_pemenang']) ?>">
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $show[0]['pokja_pemenang'] ?>">
                                 </button>
                                 <?php if ($show[0]['pokja_pemenang']!=NULL) {?>
-                                    <a href="<?php echo site_url('pokja/download/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_pemenang']) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                    <a href="<?php echo site_url('pokja/download/' . $tahun->nama_tahun . '/'.$namappk[0]['nama']. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_pemenang']) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                 <?php }else{ ?>
                                     <a href="" class="btn btn-default disabled" target="_blank">
                                         <span class="feather feather-download"></span>
@@ -190,12 +190,12 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Udangan Klarifikasi dan Negosiasi</label>
                             <p> 
-                                <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $show[0]['pokja_undangan_negosiasi']) ?>">
+                                <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'.$namappk[0]['nama']. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $show[0]['pokja_undangan_negosiasi']) ?>">
                                     <i class="feather feather-eye text-success"></i>
                                     <input type="hidden" value ="<?php echo $show[0]['pokja_undangan_negosiasi'] ?>">
                                 </button>
                                 <?php if ($show[0]['pokja_undangan_negosiasi']!=NULL) {?>
-                                    <a href="<?php echo site_url('pokja/download/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_undangan_negosiasi']) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                    <a href="<?php echo site_url('pokja/download/' . $tahun->nama_tahun . '/'.$namappk[0]['nama']. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_undangan_negosiasi']) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                 <?php }else{ ?>
                                     <a href="" class="btn btn-default disabled" target="_blank">
                                         <span class="feather feather-download"></span>
@@ -210,12 +210,12 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Berita Acara Klarifikasi dan Negosiasi</label>
                             <p> 
-                                <button class="btn btn-show"  data-toggle="modal" data-target="#modalCustom" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_berita_negosiasi']) ?>">
+                                <button class="btn btn-show"  data-toggle="modal" data-target="#modalCustom" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/'.$namappk[0]['nama']. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_berita_negosiasi']) ?>">
                                     <i class="feather feather-eye text-dark"></i>
                                     <input type="hidden" value="<?= $show[0]['pokja_berita_negosiasi'] ?>">
                                 </button>
                                 <?php if ($show[0]['pokja_berita_negosiasi']!=NULL) {?>
-                                    <a href="<?php echo site_url('pokja/download/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_berita_negosiasi']) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                    <a href="<?php echo site_url('pokja/download/' . $tahun->nama_tahun . '/'.$namappk[0]['nama']. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_berita_negosiasi']) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                 <?php }else{ ?>
                                     <a href="" class="btn btn-default disabled" target="_blank">
                                         <span class="feather feather-download"></span>
@@ -227,12 +227,12 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Berita Acara Hasil Seleksi</label>
                             <p> 
-                                <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $show[0]['pokja_hasil_seleksi']) ?>">
+                                <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'.$namappk[0]['nama']. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $show[0]['pokja_hasil_seleksi']) ?>">
                                     <i class="feather feather-eye text-success"></i>
                                     <input type="hidden" value ="<?php echo $show[0]['pokja_hasil_seleksi'] ?>">
                                 </button>
                                 <?php if ($show[0]['pokja_hasil_seleksi']!=NULL) {?>
-                                    <a href="<?php echo site_url('pokja/download/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_hasil_seleksi']) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                    <a href="<?php echo site_url('pokja/download/' . $tahun->nama_tahun . '/'.$namappk[0]['nama']. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_hasil_seleksi']) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                 <?php }else{ ?>
                                     <a href="" class="btn btn-default disabled" target="_blank">
                                         <span class="feather feather-download"></span>

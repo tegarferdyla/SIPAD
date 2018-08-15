@@ -40,7 +40,7 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Permohonan Pembayaran</label>
                                     <p> <?php echo $u['keuangan_permohonan']; ?>
-                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/suakelola/'.$u['nama_paket'].'/'.$u['keuangan_permohonan']) ?>">
+                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/'.$namappk[0]['nama'].'/suakelola/'.$u['nama_paket'].'/'.$u['keuangan_permohonan']) ?>">
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value ="<?php echo $u['keuangan_permohonan']; ?>">
                                         </button>
@@ -49,7 +49,7 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Kuitansi</label>
                                     <p>  <?php echo $u['keuangan_kuitansi']; ?>
-                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/suakelola/'.$u['nama_paket'].'/'.$u['keuangan_kuitansi']) ?>">
+                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/'.$namappk[0]['nama'].'/suakelola/'.$u['nama_paket'].'/'.$u['keuangan_kuitansi']) ?>">
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value ="<?php echo $u['keuangan_kuitansi']; ?>">
                                         </button>
@@ -60,7 +60,7 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Kartu Pengawasan (Karwas)</label>
                                    <p> <?php echo $u['keuangan_kartu']; ?>
-                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/suakelola/'.$u['nama_paket'].'/'.$u['keuangan_kartu']) ?>">
+                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/'.$namappk[0]['nama'].'/suakelola/'.$u['nama_paket'].'/'.$u['keuangan_kartu']) ?>">
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value ="<?php echo $u['keuangan_kartu']; ?>">
                                         </button>
@@ -69,7 +69,7 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue">Faktur Pajak</label>
                                     <p> <?php echo $u['keuangan_faktur']; ?>
-                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/suakelola/'.$u['nama_paket'].'/'.$u['keuangan_faktur']) ?>">
+                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/'.$namappk[0]['nama'].'/suakelola/'.$u['nama_paket'].'/'.$u['keuangan_faktur']) ?>">
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value =" <?php echo $u['keuangan_faktur']; ?>">
                                         </button>
@@ -80,7 +80,7 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">PPh dan PPN</label>
                                     <p> <?php echo $u['keuangan_pph']; ?>
-                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/suakelola/'.$u['nama_paket'].'/'.$u['keuangan_pph']) ?>">
+                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/'.$namappk[0]['nama'].'/suakelola/'.$u['nama_paket'].'/'.$u['keuangan_pph']) ?>">
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value =" <?php echo $u['keuangan_pph']; ?>">
                                         </button>
@@ -89,7 +89,7 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">SPP</label>
                                 <p><?php echo $u['keuangan_spp']; ?>
-                                    <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/suakelola/'.$u['nama_paket'].'/'.$u['keuangan_spp']) ?>">
+                                    <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/'.$namappk[0]['nama'].'/suakelola/'.$u['nama_paket'].'/'.$u['keuangan_spp']) ?>">
                                             <i class="feather feather-eye text-success"></i>
                                         <input type="hidden" value ="<?php echo $u['keuangan_pph']; ?>">
                                     </button>
@@ -100,7 +100,7 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">SPM</label>
                                     <p> <?php echo $u['keuangan_spm']; ?>
-                                       <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/suakelola/'.$u['nama_paket'].'/'.$u['keuangan_spm']) ?>">
+                                       <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/'.$namappk[0]['nama'].'/suakelola/'.$u['nama_paket'].'/'.$u['keuangan_spm']) ?>">
                                            <i class="feather feather-eye text-success"></i>
                                            <input type="hidden" value="<?php echo $u['keuangan_spm']; ?>"> 
                                        </button>
@@ -109,7 +109,7 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">SP2D</label>
                                     <p> <?php echo $u['keuangan_sp2d']; ?>
-                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/suakelola/'.$u['nama_paket'].'/'.$u['keuangan_sp2d']) ?>">
+                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/'.$namappk[0]['nama'].'/suakelola/'.$u['nama_paket'].'/'.$u['keuangan_sp2d']) ?>">
                                         <i class="feather feather-eye text-success"></i>
                                         <input type="hidden" value = "<?php echo $u['keuangan_sp2d']; ?>">
                                         </button>

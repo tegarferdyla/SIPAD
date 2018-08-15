@@ -390,6 +390,12 @@ class PPK1 extends CI_Controller {
 
 	public function simpandoc() {
 		$id_paket = $this->input->post('id_paket');
+		$id_ppk = $this->session->userdata('id_ppk');
+		$nama = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+			$data = array(
+				"nama" => $nama[0]['nama'],
+			);
+		$nama = $data['nama'];
 		$cari = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
 		$jenis = $cari[0]["jenis"];
 		$nama_paket = $cari[0]["nama_paket"];
@@ -403,7 +409,7 @@ class PPK1 extends CI_Controller {
 		$addendumiv = $this->input->post('topic3');
 
 		$file = [
-			'upload_path' => './assets/data/' . $tahun . '/' . $jenis . '/' . $nama_paket . '/',
+			'upload_path' => './assets/data/' . $tahun . '/'. $nama . '/' . $jenis . '/' . $nama_paket . '/',
 			'allowed_types' => 'pdf',
 			'overwrite' => TRUE,
 			// 'encrypt_name' => TRUE
@@ -545,6 +551,12 @@ class PPK1 extends CI_Controller {
 	}
 	public function simpandocpendukung() {
 		$id_paket = $this->input->post('id_paket');
+		$id_ppk = $this->session->userdata('id_ppk');
+		$nama = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+			$data = array(
+				"nama" => $nama[0]['nama'],
+			);
+		$nama = $data['nama'];
 		$cari = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
 		$jenis = $cari[0]["jenis"];
 		$nama_paket = $cari[0]["nama_paket"];
@@ -555,7 +567,7 @@ class PPK1 extends CI_Controller {
 		$id_pendukung = $this->Penomoran_model->IDPend();
 
 		$file = [
-			'upload_path' => './assets/data/' . $tahun . '/' . $jenis . '/' . $nama_paket . '/',
+			'upload_path' => './assets/data/' . $tahun . '/' . $nama . '/' . $jenis . '/' . $nama_paket . '/',
 			'allowed_types' => 'pdf',
 			'overwrite' => TRUE,
 		];
@@ -691,7 +703,14 @@ class PPK1 extends CI_Controller {
 				"nama_tahun" => $tahun[0]['nama_tahun'],
 			);
 			$tahun = $data['nama_tahun'];
-			$lokasi = "./assets/data/" . $tahun . "/" . $jenis_paket . "/" . $nama_paket;
+
+			$id_ppk = $this->session->userdata('id_ppk');
+			$nama = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+			$data = array(
+				"nama" => $nama[0]['nama'],
+			);
+			$nama = $data['nama'];
+			$lokasi = "./assets/data/" . $tahun . "/" . $nama . "/" . $jenis_paket . "/" . $nama_paket;
 			mkdir($lokasi, 0777, true);
 			$this->session->set_flashdata('berhasil', 'true');
 			redirect(base_url('PPK1/inputpaket'));
@@ -783,6 +802,12 @@ class PPK1 extends CI_Controller {
 	public function updatedocutama()
 	{
 		$id_paket = $this->input->post('id_paket');
+		$id_ppk = $this->session->userdata('id_ppk');
+		$nama = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+			$data = array(
+				"nama" => $nama[0]['nama'],
+			);
+		$nama = $data['nama'];
 		$cari = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
 		$jenis = $cari[0]["jenis"];
 		$nama_paket = $cari[0]["nama_paket"];
@@ -790,7 +815,7 @@ class PPK1 extends CI_Controller {
 		$carithn = $this->Datatahun_model->cektahun($idtahun);
 		$tahun = $carithn->nama_tahun;
 		$file = [
-			'upload_path' => './assets/data/' . $tahun . '/' . $jenis . '/' . $nama_paket . '/',
+			'upload_path' => './assets/data/' . $tahun . '/' . $nama . '/' . $jenis . '/' . $nama_paket . '/',
 			'allowed_types' => 'pdf',
 			'overwrite' => TRUE,
 			// 'encrypt_name' => TRUE
@@ -928,6 +953,12 @@ class PPK1 extends CI_Controller {
 	public function updatedocpend()
 	{
 		$id_paket = $this->input->post('id_paket');
+		$id_ppk = $this->session->userdata('id_ppk');
+		$nama = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+			$data = array(
+				"nama" => $nama[0]['nama'],
+			);
+		$nama = $data['nama'];
 		$cari = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
 		$jenis = $cari[0]["jenis"];
 		$nama_paket = $cari[0]["nama_paket"];
@@ -935,7 +966,7 @@ class PPK1 extends CI_Controller {
 		$carithn = $this->Datatahun_model->cektahun($idtahun);
 		$tahun = $carithn->nama_tahun;
 		$file = [
-			'upload_path' => './assets/data/' . $tahun . '/' . $jenis . '/' . $nama_paket . '/',
+			'upload_path' => './assets/data/' . $tahun . '/' . $nama . '/' . $jenis . '/' . $nama_paket . '/',
 			'allowed_types' => 'pdf',
 			'overwrite' => TRUE,
 			// 'encrypt_name' => TRUE
@@ -1019,11 +1050,11 @@ class PPK1 extends CI_Controller {
 		echo "assets/data/2018/".$nama;
 
 	}
-	public function testkirim($tahun,$jenis,$nama_paket,$nama_file) {
+	public function testkirim($tahun,$nama,$jenis,$nama_paket,$nama_file) {
 		// $name = str_replace('%20',' ', $nama_file);
 		$name = rawurldecode($nama_file);
 		$paket = str_replace('%20',' ', $nama_paket);
-		$data = file_get_contents("./assets/data/".$tahun."/".$jenis."/".$paket."/".$name);
+		$data = file_get_contents("./assets/data/".$tahun."/".$nama."/".$jenis."/".$paket."/".$name);
 		force_download($name,$data);
 	}
 	public function laporanpaket($tahun,$jenis)
