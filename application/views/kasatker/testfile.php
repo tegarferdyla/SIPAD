@@ -8,7 +8,8 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="<?= site_url('Kasatker') ?>">Dashboard</a>
                 </li>
-                <li class="breadcrumb-item active"><?php echo $namappk[0]['nama'] ?></li>
+                <li class="breadcrumb-item"><a href=""><?php echo $namappk[0]['nama'] ?></a></li>
+                <li class="breadcrumb-item active"><?php echo $get_tahun[0]['nama_tahun'] ?></li>
             </ol>
         </div>
         <!-- /.page-title-right -->
@@ -18,7 +19,7 @@
         <div class="row">
             <div class="col-md-10"></div>
             <div class="col-md-2">
-                <a href="<?php  echo site_url('Kasatker/laporan') ?>" style="float: right;" class="btn btn-info"> <i class="feather feather-printer" title="Cetak Laporan"></i>&nbsp;Cetak Laporan</a>
+                <a href="<?php  echo site_url('Kasatker/laporan/'.$get_tahun[0]['id_tahun']) ?>" style="float: right;" class="btn btn-info"> <i class="feather feather-printer" title="Cetak Laporan"></i>&nbsp;Cetak Laporan</a>
             </div>
         </div>            
         <br>    

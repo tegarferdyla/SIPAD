@@ -134,6 +134,9 @@
 			$countdata['tbl_addendumiv'] = $this->Datapaket_model->countdoc6($id_tahun);
 			$countdata['tbl_pascamc0'] = $this->Datapaket_model->countdoc7($id_tahun);
 			$countdata['tbl_pendukung'] = $this->Datapaket_model->countdoc8($id_tahun);
+			$data['tahun'] = $this->Datatahun_model->cektahun($id_tahun);
+			$id_ppk = $data['tahun']->id_ppk;
+			$data['get_tahun'] = $this->Datatahun_model->datatahun($id_ppk);
 
 			$nama_paket = $this->Datapaket_model->lihatpaket($id_tahun);
 			for($i=0;$i<count($nama_paket);$i++){
@@ -176,14 +179,10 @@
 			}
 			$cetak = json_encode($json);
 			$data['hasil'] = json_decode($cetak);
-			// echo "<pre>";
-			// print_r($data);
-			// echo "</pre>";
 
 			$id_user = $this->session->userdata('id_user');
 			$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
 			$this->load->view('kasatker/header', $data);
-
 			$data['get_ppk']=$this->Datappk_model->datappk();
 			$this->load->view('kasatker/sidebar',$data);
 			$data['get_tahun'] = $this->Datatahun_model->dapatkantahun($id_tahun);
@@ -198,74 +197,65 @@
 			$this->load->view('kasatker/testfile',$data);
 			$this->load->view('kasatker/footer');
 		}
-		public function testhit()
+
+		public function laporan($id_tahun)
 		{
-			$tahun = date('Y');
-			$find = $this->Datapaket_model->showidthn($tahun);
-			for ($j=0; $j < count($find); $j++) { 
-				$id_tahun = $find[$j]->id_tahun;
-				$id_ppk = $find[$j]->id_ppk;
-				$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
-				$countdata['tbl_doc1'] = $this->Datapaket_model->countonme($id_tahun);
-				$countdata['tbl_doc2'] = $this->Datapaket_model->countdoc2($id_tahun);
-				$countdata['tbl_doc3'] = $this->Datapaket_model->countdoc3($id_tahun);
-				$countdata['tbl_addendumii'] = $this->Datapaket_model->countdoc4($id_tahun);
-				$countdata['tbl_addendumiii'] = $this->Datapaket_model->countdoc5($id_tahun);
-				$countdata['tbl_addendumiv'] = $this->Datapaket_model->countdoc6($id_tahun);
-				$countdata['tbl_pascamc0'] = $this->Datapaket_model->countdoc7($id_tahun);
-				$countdata['tbl_pendukung'] = $this->Datapaket_model->countdoc8($id_tahun);
 
-				$nama_paket = $this->Datapaket_model->lihatpaket($id_tahun);
-				for($i=0;$i<count($nama_paket);$i++){
-					$nama = $nama_paket[$i]['nama_paket'];
-					$num_doc1 = $countdata['tbl_doc1'][$i]->hasil;
-					$num_doc2 = $countdata['tbl_doc2'][$i]->hasil;
-					$num_doc3 = $countdata['tbl_doc3'][$i]->hasil;
-					$num_doc4 = $countdata['tbl_pascamc0'][$i]->hasil;
-					$num_doc5 = $countdata['tbl_addendumii'][$i]->hasil;
-					$num_doc6 = $countdata['tbl_addendumiii'][$i]->hasil;
-					$num_doc7 = $countdata['tbl_addendumiv'][$i]->hasil;
-					if ($countdata['tbl_pendukung']==NULL) {
-						$pendukung = 0;
-					}else{
-						$pendukung = $countdata['tbl_pendukung'][$i]->hasil;
-					}
-					if ($countdata['tbl_addendumii'][$i]->hasil == 0) {
-						$adendum2 = 0;
-					}else{
-						$adendum2 = 8;
-					}
+			$countdata['tbl_doc1'] = $this->Datapaket_model->countonme($id_tahun);
+			$countdata['tbl_doc2'] = $this->Datapaket_model->countdoc2($id_tahun);
+			$countdata['tbl_doc3'] = $this->Datapaket_model->countdoc3($id_tahun);
+			$countdata['tbl_addendumii'] = $this->Datapaket_model->countdoc4($id_tahun);
+			$countdata['tbl_addendumiii'] = $this->Datapaket_model->countdoc5($id_tahun);
+			$countdata['tbl_addendumiv'] = $this->Datapaket_model->countdoc6($id_tahun);
+			$countdata['tbl_pascamc0'] = $this->Datapaket_model->countdoc7($id_tahun);
+			$countdata['tbl_pendukung'] = $this->Datapaket_model->countdoc8($id_tahun);
+			$data['tahun'] = $this->Datatahun_model->cektahun($id_tahun);
+			$id_ppk = $data['tahun']->id_ppk;
+			$data['ppk'] = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
 
-					if ($countdata['tbl_addendumiii'][$i]->hasil == 0) {
-						$adendum3 = 0;
-					}else{
-						$adendum3 = 8;
-					}
-
-					if ($countdata['tbl_addendumiv'][$i]->hasil == 0) {
-						$adendum4 = 0;
-					}else{
-						$adendum4 = 8;
-					}
-
-					$num1 = $num_doc1+$num_doc2+$num_doc3+$num_doc4+$pendukung+$num_doc5+$num_doc6+$num_doc7;
-					$num2 = 53+$adendum2+$adendum3+$adendum4;
-					$hitungan = ($num1/$num2)*100;
-					$hasil[]['total'] = number_format($hitungan,1);
-					$json[] = array('nama_ppk' => $data['namappk'][0]['nama'],'id_ppk' => $id_ppk,'nama_paket'=> $nama,'paket_terkumpul' => $num1, 'total' => $hasil[$i]['total']);
+			$nama_paket = $this->Datapaket_model->lihatpaket($id_tahun);
+			$jenis = $nama_paket[0]['jenis'];
+			for($i=0;$i<count($nama_paket);$i++){
+				$nama = $nama_paket[$i]['nama_paket'];
+				$num_doc1 = $countdata['tbl_doc1'][$i]->hasil;
+				$num_doc2 = $countdata['tbl_doc2'][$i]->hasil;
+				$num_doc3 = $countdata['tbl_doc3'][$i]->hasil;
+				$num_doc4 = $countdata['tbl_pascamc0'][$i]->hasil;
+				$num_doc5 = $countdata['tbl_addendumii'][$i]->hasil;
+				$num_doc6 = $countdata['tbl_addendumiii'][$i]->hasil;
+				$num_doc7 = $countdata['tbl_addendumiv'][$i]->hasil;
+				if ($countdata['tbl_pendukung']==NULL) {
+					$pendukung = 0;
+				}else{
+					$pendukung = $countdata['tbl_pendukung'][$i]->hasil;
 				}
-				$cetak = json_encode($json);
-				$data['hasil'] = json_decode($cetak);
-			}
-			echo "<pre>";
-			print_r ($data['hasil']);
-			echo "</pre>";
-			
-		}
+				if ($countdata['tbl_addendumii'][$i]->hasil == 0) {
+					$adendum2 = 0;
+				}else{
+					$adendum2 = 8;
+				}
 
-		public function laporan ()
-		{
-			$this->load->view('kasatker/laporanpaket');
+				if ($countdata['tbl_addendumiii'][$i]->hasil == 0) {
+					$adendum3 = 0;
+				}else{
+					$adendum3 = 8;
+				}
+
+				if ($countdata['tbl_addendumiv'][$i]->hasil == 0) {
+					$adendum4 = 0;
+				}else{
+					$adendum4 = 8;
+				}
+
+				$num1 = $num_doc1+$num_doc2+$num_doc3+$num_doc4+$pendukung+$num_doc5+$num_doc6+$num_doc7;
+				$num2 = 53+$adendum2+$adendum3+$adendum4;
+				$hitungan = ($num1/$num2)*100;
+				$hasil[]['total'] = number_format($hitungan,1);
+				$json[] = array('nama_paket'=> $nama,'jenis'=>$jenis,'paket_terkumpul' => $num1, 'total' => $hasil[$i]['total']);
+			}
+			$cetak = json_encode($json);
+			$data['hasil'] = json_decode($cetak);
+			$this->load->view('kasatker/laporanpaket',$data);
 		}
 
 	}

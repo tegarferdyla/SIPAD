@@ -91,7 +91,7 @@
                         <tbody>
                             <tr class="col-header nama-mitra">
                                 <td style="padding: 20px;" colspan="3">
-                                    <h2 class="col-white">Nama PPK Disini</h2>
+                                    <h2 class="col-white"><?php echo $ppk[0]['nama'] ?></h2>
                                     <small class="col-white"><i>PENGEMBANGAN PENYEHATAN LINGKUNGAN PERMUKIMAN STRATEGIS KEMENTRIAN PEKERJAAN UMUM</i></small>
                                 </td>
                                 <td style="padding: 20px;" colspan="1">
@@ -100,7 +100,7 @@
                             </tr>
                             <tr style="font-size: 13px;">
                                 <td style="font-weight: 600;" colspan="3" class="col-tosca">
-                                   Tahun : 2018
+                                   Tahun : <?php echo $tahun->nama_tahun ?>
                                 </td>
                                 <td style="font-weight: 600;" class="col-tosca" style="padding: 20px;" colspan="1">
                                    <p style="float: right;"></p>
@@ -121,27 +121,14 @@
                                 <td class="p-10 col-white bg-tosca center">PERSENTASE</td>
                                 <td class="p-10 col-white bg-tosca">JENIS</td>
                             </tr>
-                            <tr style="font-size: 13px;" class="bg-grey">
-                                <td class="p-10 center">1</td>
-                                <td class="p-10">Nama Paket Cup</td>
-                                <td class="p-10 center">72%</td>
-                                <td class="p-10">Kontraktual</td>
-                            </tr>
-                            <tr style="font-size: 13px;" class="bg-grey">
-                                <td class="p-10 center">2</td>
-                                <td class="p-10">Nama Paket 2 Cup</td>
-                                <td class="p-10 center">75%</td>
-                                <td class="p-10">Suakelola</td>
-                            </tr>
-                            <!-- 
-                            <?php $no = 0; foreach ($hasil as $r) {
-                                $no++?>
+                            <?php $no=0;  foreach ($hasil as $r): $no++?>
                                 <tr style="font-size: 13px;" class="bg-grey">
-                                    <td class="p-10 center"><?php echo $no;?></td>
+                                    <td class="p-10 center"><?php echo $no; ?></td>
                                     <td class="p-10"><?php echo $r->nama_paket ?></td>
                                     <td class="p-10 center"><?php echo $r->total ?>%</td>
-                            </tr>
-                            <?php } ?> -->
+                                    <td class="p-10"><?php echo ucwords($r->jenis) ?></td>
+                                </tr>
+                            <?php endforeach ?>
                         </tbody>
                     </table>
                 </td>
