@@ -38,7 +38,7 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">LPJ</label>
                                     <p> <?php echo $u['bendahara_lpj']; ?>
-                                        <button class="btn btn-show" data-toggle = "modal" data-target ="#modalCustom" value="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/suakelola/'.$u['nama_paket'].'/'.$u['bendahara_lpj']) ?>">
+                                        <button class="btn btn-show" data-toggle = "modal" data-target ="#modalCustom" value="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/'.$namappk[0]['nama'].'/suakelola/'.$u['nama_paket'].'/'.$u['bendahara_lpj']) ?>">
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value="<?php echo $u['bendahara_lpj']; ?>">
                                         </button>
@@ -47,7 +47,7 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Berita Acara Pemeriksaan Kas dan Rekonsiliasi</label>
                                      <p><?php echo $u['bendahara_bapkdr']; ?>
-                                        <button class="btn btn-show" data-toggle = "modal" data-target ="#modalCustom" value="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/suakelola/'.$u['nama_paket'].'/'.$u['bendahara_bapkdr']) ?>">
+                                        <button class="btn btn-show" data-toggle = "modal" data-target ="#modalCustom" value="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/'.$namappk[0]['nama'].'/suakelola/'.$u['nama_paket'].'/'.$u['bendahara_bapkdr']) ?>">
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value="<?php echo $u['bendahara_bapkdr']; ?>">
                                         </button>
@@ -58,7 +58,7 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Rekening koran</label>
                                     <p> <?php echo $u['bendahara_rekening']; ?>
-                                        <button class="btn btn-show" data-toggle = "modal" data-target = "#modalCustom" value="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/suakelola/'.$u['nama_paket'].'/'.$u['bendahara_rekening']) ?>">
+                                        <button class="btn btn-show" data-toggle = "modal" data-target = "#modalCustom" value="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/'.$namappk[0]['nama'].'/suakelola/'.$u['nama_paket'].'/'.$u['bendahara_rekening']) ?>">
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value=" <?php echo $u['bendahara_rekening']; ?>">
                                         </button>
@@ -67,7 +67,7 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Berita Acara Pemeriksaan Kas</label>
                                     <p><?php echo $u['bendahara_bapk']; ?>
-                                        <button class="btn btn-show" data-toggle = "modal" data-target = "#modalCustom" value="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/suakelola/'.$u['nama_paket'].'/'.$u['bendahara_bapk']) ?>">
+                                        <button class="btn btn-show" data-toggle = "modal" data-target = "#modalCustom" value="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/'.$namappk[0]['nama'].'/suakelola/'.$u['nama_paket'].'/'.$u['bendahara_bapk']) ?>">
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value="<?php echo $u['bendahara_bapk']; ?>">
                                         </button>

@@ -63,7 +63,7 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label class="form-control-label text-blue" for="">Surat Perintah Lelang</label>
-                                <p><button class="btn btn-show" type="button" type="button" data-toggle="modal" data-target="#modalCustom" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_surat_perintah']) ?>">
+                                <p><button class="btn btn-show" type="button" type="button" data-toggle="modal" data-target="#modalCustom" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/'.$namappk[0]['nama']. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_surat_perintah']) ?>">
                                        <i class="feather feather-eye text-dark"></i>
                                        <input type="hidden" value="<?= $show[0]['pokja_surat_perintah'] ?>" name="delf1">
                                     </button>
@@ -78,7 +78,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label class="form-control-label text-blue" for="">Dokumen Lelang</label>
-                                <p> <button class="btn btn-show" type="button" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $show[0]['pokja_dokumen_lelang']) ?>">
+                                <p> <button class="btn btn-show" type="button" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun.'/'.$namappk[0]['nama']. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $show[0]['pokja_dokumen_lelang']) ?>">
                                         <i class="feather feather-eye text-success"></i>
                                         <input type="hidden" value ="<?php echo $show[0]['pokja_dokumen_lelang'] ?>" name="delf2">
                                     </button>
@@ -96,7 +96,7 @@
                             <div class="form-group col-md-6">
                                 <label class="form-control-label text-blue" for="">Add Dokumen Lelang</label>
                                 <p> 
-                                    <button class="btn btn-show" type="button"  data-toggle="modal" data-target="#modalCustom" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_add_dokumen']) ?>">
+                                    <button class="btn btn-show" type="button"  data-toggle="modal" data-target="#modalCustom" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/'.$namappk[0]['nama']. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_add_dokumen']) ?>">
                                         <i class="feather feather-eye text-dark"></i>
                                         <input type="hidden" value="<?= $show[0]['pokja_add_dokumen'] ?>" name="delf3">
                                     </button>
@@ -111,7 +111,7 @@
                             <div class="form-group col-md-6">
                                 <label class="form-control-label text-blue" for="">Undangan Pembuktian</label>
                                 <p> 
-                                    <button class="btn btn-show" type="button" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $show[0]['pokja_undangan']) ?>">
+                                    <button class="btn btn-show" type="button" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun.'/'.$namappk[0]['nama']. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $show[0]['pokja_undangan']) ?>">
                                         <i class="feather feather-eye text-success"></i>
                                         <input type="hidden" value ="<?php echo $show[0]['pokja_undangan'] ?>" name="delf4">
                                     </button>
@@ -129,7 +129,7 @@
                             <div class="form-group col-md-6">
                                 <label class="form-control-label text-blue" for="">Berita Acara Pembuktian</label>
                                 <p> 
-                                    <button class="btn btn-show" type="button"  data-toggle="modal" data-target="#modalCustom" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_pembuktian']) ?>">
+                                    <button class="btn btn-show" type="button"  data-toggle="modal" data-target="#modalCustom" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/'.$namappk[0]['nama']. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_pembuktian']) ?>">
                                         <i class="feather feather-eye text-dark"></i>
                                         <input type="hidden" value="<?= $show[0]['pokja_pembuktian'] ?>" name="delf5">
                                     </button>
@@ -144,7 +144,7 @@
                             <div class="form-group col-md-6">
                                 <label class="form-control-label text-blue" for="">Berita Acara Aanwijzing</label>
                                 <p> 
-                                    <button class="btn btn-show" type="button" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $show[0]['pokja_aanwijzing']) ?>">
+                                    <button class="btn btn-show" type="button" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun.'/'.$namappk[0]['nama']. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $show[0]['pokja_aanwijzing']) ?>">
                                         <i class="feather feather-eye text-success"></i>
                                         <input type="hidden" value ="<?php echo $show[0]['pokja_aanwijzing'] ?>" name="delf6">
                                     </button>
@@ -162,7 +162,7 @@
                             <div class="form-group col-md-6">
                                 <label class="form-control-label text-blue" for="">Berita Acara Penetapan Pemenang</label>
                                 <p> 
-                                    <button class="btn btn-show" type="button"  data-toggle="modal" data-target="#modalCustom" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_pemenang']) ?>">
+                                    <button class="btn btn-show" type="button"  data-toggle="modal" data-target="#modalCustom" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/'.$namappk[0]['nama']. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_pemenang']) ?>">
                                         <i class="feather feather-eye text-dark"></i>
                                         <input type="hidden" value="<?= $show[0]['pokja_pemenang'] ?>" name="delf7">
                                     </button>
@@ -177,7 +177,7 @@
                             <div class="form-group col-md-6">
                                 <label class="form-control-label text-blue" for="">Udangan Klarifikasi dan Negosiasi</label>
                                 <p> 
-                                    <button class="btn btn-show" type="button" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $show[0]['pokja_undangan_negosiasi']) ?>">
+                                    <button class="btn btn-show" type="button" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun.'/'.$namappk[0]['nama']. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $show[0]['pokja_undangan_negosiasi']) ?>">
                                         <i class="feather feather-eye text-success"></i>
                                         <input type="hidden" value ="<?php echo $show[0]['pokja_undangan_negosiasi'] ?>" name="delf8">
                                     </button>
@@ -195,7 +195,7 @@
                             <div class="form-group col-md-6">
                                 <label class="form-control-label text-blue" for="">Berita Acara Klarifikasi dan Negosiasi</label>
                                 <p> 
-                                    <button class="btn btn-show" type="button"  data-toggle="modal" data-target="#modalCustom" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_berita_negosiasi']) ?>">
+                                    <button class="btn btn-show" type="button"  data-toggle="modal" data-target="#modalCustom" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/'.$namappk[0]['nama']. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $show[0]['pokja_berita_negosiasi']) ?>">
                                         <i class="feather feather-eye text-dark"></i>
                                         <input type="hidden" value="<?= $show[0]['pokja_berita_negosiasi'] ?>" name="delf9">
                                     </button>
@@ -210,7 +210,7 @@
                             <div class="form-group col-md-6">
                                 <label class="form-control-label text-blue" for="">Berita Acara Hasil Seleksi</label>
                                 <p> 
-                                    <button class="btn btn-show" type="button" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $show[0]['pokja_hasil_seleksi']) ?>">
+                                    <button class="btn btn-show" type="button" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun.'/'.$namappk[0]['nama']. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $show[0]['pokja_hasil_seleksi']) ?>">
                                         <i class="feather feather-eye text-success"></i>
                                         <input type="hidden" value ="<?php echo $show[0]['pokja_hasil_seleksi'] ?>" name="delf10">
                                     </button>
@@ -223,7 +223,7 @@
                                 </p>
                             </div>
                         </div>
-                        <input type="submit" name="update" value="Ubah" class="btn btn-success">
+                        <input type="submit" name="update" value="Save Update" class="btn btn-success btn-block">
                     </div>
                 </form>
             </div>

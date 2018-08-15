@@ -41,7 +41,7 @@
                                 <label class="form-control-label text-blue" for="">Surat Alih Status</label>
                                      <p> <?php echo $u['bmn_surat_alih']; ?>
                                         <button class="btn btn-show"  data-toggle="modal" data-target="#modalCustom" 
-                                            value="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/suakelola/'.$u['nama_paket'].'/'.$u['bmn_surat_alih']) ?>">
+                                            value="<?php echo base_url('assets/data/'.$u['nama_tahun']. '/' .$namappk[0]['nama'] . '/suakelola/'.$u['nama_paket'].'/'.$u['bmn_surat_alih']) ?>">
                                             <i class="feather feather-eye text-dark"></i>
                                             <input type="hidden" value="<?php echo $u['bmn_surat_alih']; ?>">
                                         </button>
@@ -50,7 +50,7 @@
                             <div class="form-group col-md-6">
                                 <label class="form-control-label text-blue" for="">Rekomendasi Teknis</label>
                                     <p> <?php echo $u['bmn_rekomendasi']; ?>
-                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/suakelola/'.$u['nama_paket'].'/'.$u['bmn_rekomendasi']) ?>">
+                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'.$u['nama_tahun']. '/' .$namappk[0]['nama'] . '/suakelola/'.$u['nama_paket'].'/'.$u['bmn_rekomendasi']) ?>">
                                             <i class="feather feather-eye text-dark"></i>
                                             <input type="hidden" value ="<?php echo $u['bmn_rekomendasi'] ?>">
                                         </button>
@@ -61,7 +61,7 @@
                             <div class="form-group col-md-6">
                                 <label class="form-control-label text-blue" for="">Surat Hibah ke Kementrian Keuangan</label>
                                      <p> <?php echo $u['bmn_surat_hibah']; ?>
-                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'.$u['nama_tahun'].'/suakelola/'.$u['nama_paket'].'/'.$u['bmn_surat_hibah']) ?>">
+                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'.$u['nama_tahun']. '/' .$namappk[0]['nama'] . '/suakelola/'.$u['nama_paket'].'/'.$u['bmn_surat_hibah']) ?>">
                                             <i class="feather feather-eye text-dark"></i>
                                         <input type="hidden" value ="<?php echo $u['bmn_surat_hibah']; ?>">
                                         </button>

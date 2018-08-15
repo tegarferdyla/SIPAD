@@ -65,12 +65,12 @@
                                 <label class="form-control-label text-blue" for="">Surat Alih Status</label>
                                      <p> <?php echo $pendukung->bmn_surat_alih ?>
                                         <button class="btn btn-show"  data-toggle="modal" data-target="#modalCustom" 
-                                            value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bmn_surat_alih) ?>">
+                                            value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/'.$nama. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bmn_surat_alih) ?>">
                                             <i class="feather feather-eye text-dark"></i>
                                             <input type="hidden" value="<?= $pendukung->bmn_surat_alih ?>">
                                         </button>
                                         <?php if ($pendukung->bmn_surat_alih!=NULL) {?>
-                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bmn_surat_alih) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/'.$nama. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bmn_surat_alih) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php }else{ ?>
                                             <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php } ?>
@@ -79,12 +79,12 @@
                             <div class="form-group col-md-6">
                                 <label class="form-control-label text-blue" for="">Rekomendasi Teknis</label>
                                     <p> <?php echo $pendukung->bmn_rekomendasi; ?>
-                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->bmn_rekomendasi) ?>">
+                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'.$nama. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->bmn_rekomendasi) ?>">
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value ="<?php echo $pendukung->bmn_rekomendasi ?>">
                                         </button>
                                          <?php if ($pendukung->bmn_rekomendasi!=NULL) {?>
-                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bmn_rekomendasi) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/'.$nama. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bmn_rekomendasi) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php }else{ ?>
                                             <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php } ?>
@@ -95,12 +95,12 @@
                             <div class="form-group col-md-6">
                                 <label class="form-control-label text-blue" for="">Surat Hibah ke Kementrian Keuangan</label>
                                      <p> <?php echo $pendukung->bmn_surat_hibah; ?>
-                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->bmn_surat_hibah) ?>">
+                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'.$nama. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->bmn_surat_hibah) ?>">
                                             <i class="feather feather-eye text-success"></i>
                                         <input type="hidden" value ="<?php echo $pendukung->bmn_surat_hibah ?>">
                                         </button>
                                          <?php if ($pendukung->bmn_surat_hibah!=NULL) {?>
-                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bmn_surat_hibah) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/'.$nama. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bmn_surat_hibah) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php }else{ ?>
                                             <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php } ?>
@@ -115,12 +115,12 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Permohonan Pembayaran</label>
                                     <p> <?php echo $pendukung->keuangan_permohonan; ?>
-                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->keuangan_permohonan) ?>">
+                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'.$nama. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->keuangan_permohonan) ?>">
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value ="<?php echo $pendukung->keuangan_permohonan ?>">
                                         </button>
                                          <?php if ($pendukung->keuangan_permohonan!=NULL) {?>
-                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_permohonan) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/'.$nama. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_permohonan) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php }else{ ?>
                                             <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php } ?>
@@ -129,12 +129,12 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Kuitansi</label>
                                     <p> <?php echo $pendukung->keuangan_kuitansi; ?>
-                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->keuangan_kuitansi) ?>">
+                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'.$nama. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->keuangan_kuitansi) ?>">
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value ="<?php echo $pendukung->keuangan_kuitansi ?>">
                                         </button>
                                          <?php if ($pendukung->keuangan_kuitansi!=NULL) {?>
-                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_kuitansi) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/'.$nama. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_kuitansi) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php }else{ ?>
                                             <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php } ?>
@@ -145,12 +145,12 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Kartu Pengawasan (Karwas)</label>
                                    <p> <?php echo $pendukung->keuangan_kartu; ?>
-                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->keuangan_kartu) ?>">
+                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'.$nama. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->keuangan_kartu) ?>">
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value ="<?php echo $pendukung->keuangan_kartu ?>">
                                         </button>
                                          <?php if ($pendukung->keuangan_kartu!=NULL) {?>
-                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_kartu) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/'.$nama. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_kartu) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php }else{ ?>
                                             <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php } ?>
@@ -159,12 +159,12 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue">Faktur Pajak</label>
                                     <p> <?php echo $pendukung->keuangan_faktur; ?>
-                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->keuangan_faktur) ?>">
+                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'.$nama. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->keuangan_faktur) ?>">
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value ="<?php echo $pendukung->keuangan_faktur ?>">
                                         </button>
                                          <?php if ($pendukung->keuangan_faktur!=NULL) {?>
-                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_faktur) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/'.$nama. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_faktur) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php }else{ ?>
                                             <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php } ?>
@@ -175,12 +175,12 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">PPh dan PPN</label>
                                     <p> <?php echo $pendukung->keuangan_pph; ?>
-                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->keuangan_pph) ?>">
+                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'.$nama. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->keuangan_pph) ?>">
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value ="<?php echo $pendukung->keuangan_pph ?>">
                                         </button>
                                          <?php if ($pendukung->keuangan_pph!=NULL) {?>
-                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_pph) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/'.$nama. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_pph) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php }else{ ?>
                                             <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php } ?>
@@ -189,12 +189,12 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">SPP</label>
                                 <p> <?php echo $pendukung->keuangan_spp; ?>
-                                    <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->keuangan_spp) ?>">
+                                    <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'.$nama. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->keuangan_spp) ?>">
                                             <i class="feather feather-eye text-success"></i>
                                         <input type="hidden" value ="<?php echo $pendukung->keuangan_spp ?>">
                                     </button>
                                      <?php if ($pendukung->keuangan_spp!=NULL) {?>
-                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_spp) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/'.$nama. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_spp) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php }else{ ?>
                                             <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php } ?>
@@ -205,12 +205,12 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">SPM</label>
                                     <p> <?php echo $pendukung->keuangan_spm; ?>
-                                       <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->keuangan_spm) ?>">
+                                       <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'.$nama. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->keuangan_spm) ?>">
                                            <i class="feather feather-eye text-success"></i>
                                            <input type="hidden" value="<?php echo $pendukung->keuangan_spm ?>"> 
                                        </button>
                                         <?php if ($pendukung->keuangan_spm!=NULL) {?>
-                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_spm) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/'.$nama. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_spm) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php }else{ ?>
                                             <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php } ?>
@@ -219,12 +219,12 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">SP2D</label>
                                     <p> <?php echo $pendukung->keuangan_sp2d; ?>
-                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->keuangan_sp2d) ?>">
+                                        <button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" value ="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'.$nama. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->keuangan_sp2d) ?>">
                                         <i class="feather feather-eye text-success"></i>
                                         <input type="hidden" value = "<?php echo $pendukung->keuangan_sp2d ?>">
                                         </button>
                                          <?php if ($pendukung->keuangan_sp2d!=NULL) {?>
-                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_sp2d) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/'.$nama. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->keuangan_sp2d) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php }else{ ?>
                                             <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php } ?>
@@ -239,12 +239,12 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">LPJ</label>
                                     <p> <?php echo $pendukung->bendahara_lpj; ?>
-                                        <button class="btn btn-show" data-toggle = "modal" data-target ="#modalCustom" value="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->bendahara_lpj) ?>">
+                                        <button class="btn btn-show" data-toggle = "modal" data-target ="#modalCustom" value="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'.$nama. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->bendahara_lpj) ?>">
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value="<?php echo $pendukung->bendahara_lpj ?>">
                                         </button>
                                          <?php if ($pendukung->bendahara_lpj!=NULL) {?>
-                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bendahara_lpj) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/'.$nama. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bendahara_lpj) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php }else{ ?>
                                             <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php } ?>
@@ -253,12 +253,12 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Berita Acara Pemeriksaan Kas dan Rekonsiliasi</label>
                                      <p> <?php echo $pendukung->bendahara_bapkdr ?>
-                                        <button class="btn btn-show" data-toggle = "modal" data-target ="#modalCustom" value="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' .$pendukung->bendahara_bapkdr) ?>">
+                                        <button class="btn btn-show" data-toggle = "modal" data-target ="#modalCustom" value="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'.$nama. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' .$pendukung->bendahara_bapkdr) ?>">
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value="<?php echo $pendukung->bendahara_bapkdr ?>">
                                         </button>
                                          <?php if ($pendukung->bendahara_bapkdr!=NULL) {?>
-                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bendahara_bapkdr) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/'.$nama. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bendahara_bapkdr) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php }else{ ?>
                                             <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php } ?>
@@ -269,12 +269,12 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Rekening koran</label>
                                     <p> <?php echo $pendukung->bendahara_rekening ?>
-                                        <button class="btn btn-show" data-toggle = "modal" data-target = "#modalCustom" value="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' .$pendukung->bendahara_rekening) ?>">
+                                        <button class="btn btn-show" data-toggle = "modal" data-target = "#modalCustom" value="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'.$nama. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' .$pendukung->bendahara_rekening) ?>">
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value="<?php echo $pendukung->bendahara_rekening ?>">
                                         </button>
                                          <?php if ($pendukung->bendahara_rekening!=NULL) {?>
-                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bendahara_rekening) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/'.$nama. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bendahara_rekening) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php }else{ ?>
                                             <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php } ?>
@@ -283,12 +283,12 @@
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Berita Acara Pemeriksaan Kas</label>
                                     <p> <?php echo $pendukung->bendahara_bapk; ?>
-                                        <button class="btn btn-show" data-toggle = "modal" data-target = "#modalCustom" value="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->bendahara_bapk) ?>">
+                                        <button class="btn btn-show" data-toggle = "modal" data-target = "#modalCustom" value="<?php echo base_url('assets/data/'. $tahun->nama_tahun. '/'.$nama. '/'. $paket[0]['jenis'] . '/' .$paket[0]['nama_paket'] . '/' . $pendukung->bendahara_bapk) ?>">
                                             <i class="feather feather-eye text-success"></i>
                                             <input type="hidden" value="<?php echo $pendukung->bendahara_bapk ?>">
                                         </button>
                                          <?php if ($pendukung->bendahara_bapk!=NULL) {?>
-                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bendahara_bapk) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
+                                            <a href="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/'.$nama. '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $pendukung->bendahara_bapk) ?>" class="btn btn-default" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php }else{ ?>
                                             <a href="" class="btn btn-default disabled" target="_blank"><span class="feather feather-download"></span></a>
                                         <?php } ?>
