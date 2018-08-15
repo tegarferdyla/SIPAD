@@ -11,18 +11,18 @@
 		if (!$this->session->has_userdata('status')) {
 			redirect('login');
 		} else if ($this->session->userdata('role') == 'admin') {
-			redirect('admin');
-		} else if ($this->session->userdata('bagian') == 'bmn') {
-			redirect('bmn');
+			redirect('Admin');
+		} else if ($this->session->userdata('bagian') == 'Bmn') {
+			redirect('Bmn');
 		} else if ($this->session->userdata('bagian') == 'PPK') {
-			redirect('ppk1');
+			redirect('PPK1');
 		}
 		else if ($this->session->userdata('bagian') == 'Keuangan') {
 			redirect('Keuangan');
 		}else if ($this->session->userdata('bagian') == 'Bendahara') {
-			redirect('bendahara');
+			redirect('Bendahara');
 		}else if ($this->session->userdata('bagian') == 'Pokja') {
-			redirect('pokja');
+			redirect('Pokja');
 		}
 	}
 		public function editprofile() {
@@ -58,10 +58,10 @@
 
 			if ($result > 0) {
 				$this->session->set_flashdata('updateberhasil', 'true');
-				redirect('kasatker/editprofile');
+				redirect('Kasatker/editprofile');
 			} else {
 				$this->session->set_flashdata('updategagal', 'true');
-				redirect('kasatker/editprofile');
+				redirect('Kasatker/editprofile');
 			}
 		} else {
 			$result = $this->upload->data();
@@ -76,10 +76,10 @@
 
 			if ($result > 0) {
 				$this->session->set_flashdata('updateberhasil', 'true');
-				redirect('kasatker/editprofile');
+				redirect('Kasatker/editprofile');
 			} else {
 				$this->session->set_flashdata('updategagal', 'true');
-				redirect('kasatker/editprofile');
+				redirect('Kasatker/editprofile');
 			}
 		}
 
@@ -192,7 +192,7 @@
 			
 			if ($data['hasil']==NULL) {
 				$this->session->set_flashdata('kosong','true');
-				redirect('kasatker/tahun/'.$id_ppk);
+				redirect('Kasatker/tahun/'.$id_ppk);
 			}
 
 			$this->load->view('kasatker/testfile',$data);
@@ -261,6 +261,11 @@
 			print_r ($data['hasil']);
 			echo "</pre>";
 			
+		}
+
+		public function laporan ()
+		{
+			$this->load->view('kasatker/laporanpaket');
 		}
 
 	}

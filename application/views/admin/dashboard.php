@@ -68,7 +68,7 @@
         <div class="widget-holder widget-sm col-md-4 widget-full-height">
             <div class="widget-bg">
                 <div class="widget-body">
-                     <a href=" <?php echo site_url('admin/daftarppk') ?>">
+                     <a href=" <?php echo site_url('Admin/daftarppk') ?>">
                     <div class="counter-w-info media">
                         <div class="media-body">
                             <p class="text-muted mr-b-5">Total PPK</p><span class="counter-title color-pink"><span class="counter"><?php echo $jmlppk; ?></span> </span>

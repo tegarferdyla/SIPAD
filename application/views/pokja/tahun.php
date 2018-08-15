@@ -32,7 +32,7 @@
         <?php endif ?>
         <?php foreach ($get_tahun  as $u) { ?>
         <div class="widget-holder widget-sm col-md-3 widget-full-height">
-            <a href="<?php echo base_url()."pokja/jenispaket/".$u['id_tahun']; ?>">
+            <a href="<?php echo base_url()."Pokja/jenispaket/".$u['id_tahun']; ?>">
             <div class="widget-bg">
                 <div class="widget-body">
                     <div class="counter-w-info media">

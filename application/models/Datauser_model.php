@@ -37,6 +37,11 @@
       $query = $this->db->query("select id_user, NIP , nama , bagian as divisi , email , username from user where bagian = 'Pokja' ");
       return $query->result();  
     }
+    public function datakasatker()
+    {
+      $query = $this->db->query("select id_user, NIP , nama , bagian as divisi , email , username from user where bagian = 'Kasatker' ");
+      return $query->result();  
+    }
     //Model hitung jumlah user
     public function JumlahUser ()
     {

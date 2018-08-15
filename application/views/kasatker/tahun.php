@@ -7,7 +7,7 @@
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="<?= site_url('kasatker') ?>">Dashboard</a>
+                <li class="breadcrumb-item"><a href="<?= site_url('Kasatker') ?>">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active"><?php echo $namappk[0]['nama'] ?></li>
             </ol>
@@ -32,7 +32,7 @@
         <?php endif ?>
         <?php foreach ($get_tahun  as $u) { ?>
         <div class="widget-holder widget-sm col-md-3 widget-full-height">
-            <a href="<?php echo base_url()."kasatker/test/".$u['id_tahun']; ?>">
+            <a href="<?php echo base_url()."Kasatker/test/".$u['id_tahun']; ?>">
             <div class="widget-bg">
                 <div class="widget-body">
                     <div class="counter-w-info media">

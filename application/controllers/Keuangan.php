@@ -8,19 +8,19 @@ class Keuangan extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		if (!$this->session->has_userdata('status')) {
-			redirect('login');
+			redirect('Login');
 		} else if ($this->session->userdata('role') == 'admin') {
-			redirect('admin');
+			redirect('Admin');
 		} else if ($this->session->userdata('bagian') == 'Kasatker') {
-			redirect('kasatker');
+			redirect('Kasatker');
 		} else if ($this->session->userdata('bagian') == 'PPK') {
-			redirect('ppk1');
+			redirect('PPK1');
 		}else if ($this->session->userdata('bagian') == 'BMN') {
-			redirect('bmn');
+			redirect('Bmn');
 		}else if ($this->session->userdata('bagian') == 'Bendahara') {
-				redirect('bendahara');
+				redirect('Bendahara');
 		}else if ($this->session->userdata('bagian') == 'Pokja') {
-			redirect('pokja');
+			redirect('Pokja');
 		}
 	}
 	public function editprofile() {
@@ -56,10 +56,10 @@ class Keuangan extends CI_Controller {
 
 			if ($result > 0) {
 				$this->session->set_flashdata('updateberhasil', 'true');
-				redirect('keuangan/editprofile');
+				redirect('Keuangan/editprofile');
 			} else {
 				$this->session->set_flashdata('updategagal', 'true');
-				redirect('keuangan/editprofile');
+				redirect('Keuangan/editprofile');
 			}
 		} else {
 			$result = $this->upload->data();
@@ -74,10 +74,10 @@ class Keuangan extends CI_Controller {
 
 			if ($result > 0) {
 				$this->session->set_flashdata('updateberhasil', 'true');
-				redirect('keuangan/editprofile');
+				redirect('Keuangan/editprofile');
 			} else {
 				$this->session->set_flashdata('updategagal', 'true');
-				redirect('keuangan/editprofile');
+				redirect('Keuangan/editprofile');
 			}
 		}
 
@@ -139,7 +139,7 @@ class Keuangan extends CI_Controller {
 		$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
 		$data['kontraktual'] = $this->Datapaket_model->kontraktual($id_tahun);
 		if ($data['kontraktual']==NULL) {
-			redirect('keuangan/jenispaket/'.$id_tahun,'refresh');
+			redirect('Keuangan/jenispaket/'.$id_tahun,'refresh');
 		}
 		$this->load->view('keuangan/kontraktual',$data);
 		$this->load->view('keuangan/footer');
@@ -155,7 +155,7 @@ class Keuangan extends CI_Controller {
 
 		$data['suakelola'] = $this->Datapaket_model->suakelola($id_tahun);
 		if ($data['suakelola']==NULL) {
-			redirect('keuangan/jenispaket/'.$id_tahun,'refresh');
+			redirect('Keuangan/jenispaket/'.$id_tahun,'refresh');
 		}
 		$data['dapattahun'] = $this->Datatahun_model->dapatkantahun($id_tahun);
 		$id_ppk = $data['dapattahun'][0]['id_ppk'];
@@ -174,7 +174,7 @@ class Keuangan extends CI_Controller {
 
 			if ($data['pendukung'] == NULL) {
 				$this->session->set_flashdata('kosong', 'true');
-				redirect('keuangan/paketkontraktual/'.$idtahun);
+				redirect('Keuangan/paketkontraktual/'.$idtahun);
 			}
 			else{
 				$id_user = $this->session->userdata('id_user');
@@ -202,18 +202,18 @@ class Keuangan extends CI_Controller {
 
 			if ($data['pendukung'] == NULL) {
 				$this->session->set_flashdata('kosong', 'true');
-				redirect('keuangan/paketkontraktual/'.$tahun);
+				redirect('Keuangan/paketkontraktual/'.$tahun);
 			}
 			else{
 				$id_user = $this->session->userdata('id_user');
 				$ini['user'] = $this->Datauser_model->GetWhereUser($id_user);
-				$this->load->view('ppk1/header', $ini);
+				$this->load->view('keuangan/header', $ini);
 
 				$ppk['get_ppk']=$this->Datappk_model->datappk();
 				$this->load->view('keuangan/sidebar',$ppk);
 
 				$this->load->view('keuangan/viewdokumensuakelola',$data);
-				$this->load->view('ppk1/footer');
+				$this->load->view('keuangan/footer');
 			}
 	}
 	public function gantipass()
@@ -221,14 +221,14 @@ class Keuangan extends CI_Controller {
 		$id_user = $this->session->userdata('id_user');
 		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
 		$id_ppk = $this->session->userdata('id_ppk');
-		$this->load->view('bmn/header', $data);
+		$this->load->view('keuangan/header', $data);
 
 		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
 		$data['get_ppk']=$this->Datappk_model->datappk();
-		$this->load->view('bmn/sidebar', $data);
+		$this->load->view('keuangan/sidebar', $data);
 
-		$this->load->view('bmn/gantipass', $data);
-		$this->load->view('bmn/footer');
+		$this->load->view('keuangan/gantipass', $data);
+		$this->load->view('keuangan/footer');
 	}
 }
 

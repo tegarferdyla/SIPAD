@@ -27,6 +27,13 @@ class Datappk_model extends CI_Model
 	// result array $user['id_nama'];
 	// result  $user->id_nama
 	// Fungsi ambil & edit PPK
+	public function ambilnama ($id_ppk)
+	{
+		$this->db->select('nama');
+		$this->db->from('ppk');
+		$query = $this->db->get();
+		return $query->result_array();
+	}
 	public function GetWherePPK($where=""){
       $res=$this->db->query("SELECT * FROM ppk ".$where);
         return $res->result_array();

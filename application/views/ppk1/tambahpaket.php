@@ -7,7 +7,7 @@
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="<?php echo base_url('admin') ?>">Dashboard</a>
+                        <li class="breadcrumb-item"><a href="<?php echo base_url('PPK1') ?>">Dashboard</a>
                         </li>
                         <li class="breadcrumb-item active">Input Tahun</li>
                     </ol>
@@ -44,7 +44,7 @@
                                         <?php endif ?>
                                     </div>
                                 </div> 
-                                <form action ="<?php echo base_url ('ppk1/tambahpaket') ?>"  method="post">
+                                <form action ="<?php echo base_url ('PPK1/tambahpaket') ?>"  method="post">
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="l0">Nama Paket</label>
                                         <div class="col-md-9">

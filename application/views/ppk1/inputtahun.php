@@ -7,7 +7,7 @@
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="<?php echo base_url('admin') ?>">Dashboard</a>
+                        <li class="breadcrumb-item"><a href="<?php echo base_url('PPK1') ?>">Dashboard</a>
                         </li>
                         <li class="breadcrumb-item active">Input Tahun</li>
                     </ol>
@@ -48,6 +48,7 @@
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="l0">Nama Tahun</label>
                                         <div class="col-md-9">
+                                            <span class="text-danger"><?=form_error('tahun') ?></span>
                                             <input class="form-control" id="" placeholder="ex: 2014" type="number" min="1990" name="tahun">
                                         </div>
                                     </div>

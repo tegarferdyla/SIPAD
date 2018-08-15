@@ -4,7 +4,6 @@
     <div class="row page-title clearfix">
         <div class="page-title-left">
             <h6 class="page-title-heading mr-0 mr-r-5">Dokumen Pendukung</h6>
-            <span class="text-muted"><?php echo $u['nama_paket']; ?></span>
         </div>
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">
@@ -33,7 +32,10 @@
         <div class="col-md-12 widget-holder">
             <div class="widget-bg">
                     <div class="widget-body clearfix">
-                    <button type="button" class="btn btn-info">Keuangan</button><br><br>
+                    <div class="row"> 
+                        <h6 class="text-muted"><?php echo $u['nama_paket']; ?></h6>
+                    </div>
+                        <h4 class="box-title mr-b-0" >Keuangan</h4>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Permohonan Pembayaran</label>

@@ -47,14 +47,14 @@
                                     <div class="col-md-4 mr-b-30 d-flex">
                                         <div class="blog-post blog-post-card text-center">
                                             <figure>
-                                                <a href="<?php echo site_url('ppk1/pilihpaket/' . $id_tahun . '/kontraktual') ?>">
-                                                    <img src="<?php echo base_url("assets/demo/cards/jembatan1.jpg") ?>" alt="Blog Post 1">
+                                                <a href="<?php echo site_url('PPK1/pilihpaket/' . $id_tahun . '/kontraktual') ?>">
+                                                    <img src="<?php echo base_url("assets/img/jembatan1.jpg") ?>" alt="Blog Post 1">
                                                 </a>
                                             </figure>
                                             <header>
                                                 <h4 class="h3 fw-300 m-1 blog-post-title">Pilih Kontraktual</h4>
                                             </header>
-                                            <footer class="mr-t-30"><a href="<?php echo site_url('ppk1/pilihpaket/' . $id_tahun . '/kontraktual') ?>" class="btn btn-outline-primary btn-rounded">Klik!</a>
+                                            <footer class="mr-t-30"><a href="<?php echo site_url('PPK1/pilihpaket/' . $id_tahun . '/kontraktual') ?>" class="btn btn-outline-primary btn-rounded">Klik!</a>
                                             </footer>
                                         </div>
                                         <!-- /.blog-post -->
@@ -64,14 +64,14 @@
                                     <div class="col-md-4 mr-b-30 d-flex">
                                         <div class="blog-post blog-post-card text-center">
                                             <figure>
-                                                <a href="<?php echo site_url('ppk1/pilihpaket/' . $id_tahun . '/suakelola') ?>">
-                                                    <img src="<?php echo base_url("assets/demo/cards/toba.jpg") ?>" alt="">
+                                                <a href="<?php echo site_url('PPK1/pilihpaket/' . $id_tahun . '/suakelola') ?>">
+                                                    <img src="<?php echo base_url("assets/img/toba.jpg") ?>" alt="">
                                                 </a>
                                             </figure>
                                             <header>
                                                 <h4 class="h3 fw-300 m-1 blog-post-title">Pilih Suakelola</h4>
                                             </header>
-                                            <footer class="mr-t-30"><a href="<?php echo site_url('ppk1/pilihpaket/' . $id_tahun . '/suakelola') ?>" class="btn btn-outline-primary btn-rounded">Klik!</a>
+                                            <footer class="mr-t-30"><a href="<?php echo site_url('PPK1/pilihpaket/' . $id_tahun . '/suakelola') ?>" class="btn btn-outline-primary btn-rounded">Klik!</a>
                                             </footer>
                                         </div>
                                         <!-- /.blog-post -->

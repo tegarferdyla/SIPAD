@@ -4,19 +4,18 @@
     <div class="row page-title clearfix">
         <div class="page-title-left">
             <h6 class="page-title-heading mr-0 mr-r-5">Dokumen Pendukung</h6>
-            <span class="text-muted"><?php echo $u['nama_paket']; ?></span>
         </div>
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="<?php echo site_url('bmn') ?>">Dashboard</a>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('Bmn') ?>">Dashboard</a>
                 </li>
-                <li class="breadcrumb-item"><a href="<?php echo site_url('bmn/tahun/'.$namappk[0]['id_ppk']) ?>"><?php echo $namappk[0]['nama'] ?></a>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('Bmn/tahun/'.$namappk[0]['id_ppk']) ?>"><?php echo $namappk[0]['nama'] ?></a>
                 <li class="breadcrumb-item">
-                    <a href="<?php echo site_url('bmn/jenispaket/'.$tahun->id_tahun) ?>"><?php echo $tahun->nama_tahun ?></a>
+                    <a href="<?php echo site_url('Bmn/jenispaket/'.$tahun->id_tahun) ?>"><?php echo $tahun->nama_tahun ?></a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="<?php echo site_url('bmn/paket'.$paket[0]['jenis'].'/'.$tahun->id_tahun) ?>"><?php echo ucwords($paket[0]['jenis']) ?></a>
+                    <a href="<?php echo site_url('Bmn/paket'.$paket[0]['jenis'].'/'.$tahun->id_tahun) ?>"><?php echo ucwords($paket[0]['jenis']) ?></a>
                 </li>
                 <li class="breadcrumb-item active">View Dokumen</li>
             </ol>
@@ -27,15 +26,14 @@
     <!-- =================================== -->
     <!-- Different data widgets ============ -->
     <!-- =================================== -->
-    <div class="tab-content">
-    <div class="tab-pane active" id="input">
     <div class="widget-list">
         <div class="col-md-12 widget-holder">
             <div class="widget-bg">
                     <div class="widget-body clearfix">
-                        <div class="row">
-                           <button type="button" class="btn btn-info">BMN</button>
+                        <div class="row"> 
+                            <h6 class="text-muted"><?php echo $u['nama_paket']; ?></h6>
                         </div>
+                        <h4 class="box-title mr-b-0" >Bendahara</h4>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label class="form-control-label text-blue" for="">Surat Alih Status</label>
@@ -72,7 +70,6 @@
         </div>
     </div>
 </div>
-</div>
 <?php } ?>
    <!-- Modal -->
     <div class="modal fade" id="modalCustom" role="dialog">
@@ -92,11 +89,6 @@
         </div>
     </div>
   <!-- Modal -->
-<div class="tab-pane" id="profile-tab-bordered-1">
-
-</div>
-</div>
-</div>
 <!-- /.widget-list -->
 <script type="text/javascript">
     $(".btn-show").click(function() {

@@ -7,9 +7,9 @@
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="<?php echo base_url('admin') ?>">Dashboard</a>
+                        <li class="breadcrumb-item"><a href="<?php echo base_url('Admin') ?>">Dashboard</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="<?php echo base_url('admin/daftarppk') ?>">Daftar PPK</a></li>
+                        <li class="breadcrumb-item"><a href="<?php echo base_url('Admin/daftarppk') ?>">Daftar PPK</a></li>
                         <li class="breadcrumb-item active">Edit PPK</li>
                     </ol>
                 </div>
@@ -25,7 +25,7 @@
                         <div class="widget-bg">
                             <div class="widget-body clearfix">
                                 <h5 class="box-title mr-b-0">PPK</h5>   
-                                <form action="<?php echo base_url()."index.php/admin/updateppk" ?>" method="post">
+                                <form action="<?php echo base_url()."index.php/Admin/updateppk" ?>" method="post">
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="l0">Kode PPK</label>
                                         <div class="col-md-9">

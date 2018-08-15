@@ -8,19 +8,19 @@ class pokja extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		if (!$this->session->has_userdata('status')) {
-			redirect('login');
+			redirect('Login');
 		} else if ($this->session->userdata('role') == 'admin') {
-			redirect('admin');
+			redirect('Admin');
 		} else if ($this->session->userdata('bagian') == 'Kasatker') {
-			redirect('kasatker');
+			redirect('Kasatker');
 		} else if ($this->session->userdata('bagian') == 'PPK') {
-			redirect('ppk1');
+			redirect('PPK1');
 		}else if ($this->session->userdata('bagian') == 'BMN') {
-			redirect('bmn');
+			redirect('Bmn');
 		}else if ($this->session->userdata('bagian') == 'Keuangan') {
-			redirect('keuangan');
+			redirect('Keuangan');
 		}else if ($this->session->userdata('bagian') == 'Bendahara') {
-			redirect('bendahara');
+			redirect('Bendahara');
 		}	
 	}
 	public function editprofile() {
@@ -56,10 +56,10 @@ class pokja extends CI_Controller {
 
 			if ($result > 0) {
 				$this->session->set_flashdata('updateberhasil', 'true');
-				redirect('pokja/editprofile');
+				redirect('Pokja/editprofile');
 			} else {
 				$this->session->set_flashdata('updategagal', 'true');
-				redirect('pokja/editprofile');
+				redirect('Pokja/editprofile');
 			}
 		} else {
 			$result = $this->upload->data();
@@ -74,10 +74,10 @@ class pokja extends CI_Controller {
 
 			if ($result > 0) {
 				$this->session->set_flashdata('updateberhasil', 'true');
-				redirect('pokja/editprofile');
+				redirect('Pokja/editprofile');
 			} else {
 				$this->session->set_flashdata('updategagal', 'true');
-				redirect('pokja/editprofile');
+				redirect('Pokja/editprofile');
 			}
 		}
 
@@ -172,7 +172,7 @@ class pokja extends CI_Controller {
 		} else {
 	 		$id_user = $this->session->userdata('id_user');
 			$ini['user'] = $this->Datauser_model->GetWhereUser($id_user);
-			$this->load->view('ppk1/header', $ini);
+			$this->load->view('pokja/header', $ini);
 
 			$ppk['get_ppk']=$this->Datappk_model->datappk();
 			$this->load->view('pokja/sidebar',$ppk);
@@ -183,7 +183,7 @@ class pokja extends CI_Controller {
 			$id_ppk = $data['dapattahun'][0]['id_ppk'];
 			$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
 			$this->load->view('pokja/inputdokumen',$data);
-			$this->load->view('ppk1/footer');
+			$this->load->view('pokja/footer');
 		}
 	}
 	public function savedoc()
@@ -239,7 +239,7 @@ class pokja extends CI_Controller {
 		);
 		$tambahdoc = $this->Datapaket_model->insertdoc1('tbl_pokja', $doc);
 		if ($tambahdoc>0) {
-			redirect('pokja/viewdoc/'.$id_paket,'refresh');
+			redirect('Pokja/viewdoc/'.$id_paket,'refresh');
 		}
 	}
 	public function viewdoc($id_paket)
@@ -255,19 +255,19 @@ class pokja extends CI_Controller {
 		} else {
 		$id_user = $this->session->userdata('id_user');
 		$ini['user'] = $this->Datauser_model->GetWhereUser($id_user);
-		$this->load->view('ppk1/header', $ini);
+		$this->load->view('pokja/header', $ini);
 
 		$ppk['get_ppk']=$this->Datappk_model->datappk();
 		$this->load->view('pokja/sidebar',$ppk);
 		$this->load->view('pokja/viewdoc',$data);
-		$this->load->view('ppk1/footer');
+		$this->load->view('pokja/footer');
 		}
 	}
 	public function editdoc($id_paket)
 	{
 		$id_user = $this->session->userdata('id_user');
 		$ini['user'] = $this->Datauser_model->GetWhereUser($id_user);
-		$this->load->view('ppk1/header', $ini);
+		$this->load->view('pokja/header', $ini);
 
 		$ppk['get_ppk']=$this->Datappk_model->datappk();
 		$this->load->view('pokja/sidebar',$ppk);
@@ -278,7 +278,7 @@ class pokja extends CI_Controller {
 		$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
 		$data['show'] = $this->Datapaket_model->showidpkt('tbl_pokja', $id_paket);
 		$this->load->view('pokja/edit',$data);
-		$this->load->view('ppk1/footer');
+		$this->load->view('pokja/footer');
 	}
 	public function updatedoc()
 	{
@@ -332,7 +332,7 @@ class pokja extends CI_Controller {
 		$tambahpendukung = $this->Datapaket_model->updatedocpend('tbl_pokja', $ganti, $where);
 		if ($tambahpendukung > 0) {
 			$this->session->set_flashdata('updateberhasil', true);
-			redirect('pokja/editdoc/' . $id_paket);
+			redirect('Pokja/editdoc/' . $id_paket);
 		}
 	}
 	public function download($tahun,$jenis,$nama_paket,$nama_file) {
@@ -369,18 +369,18 @@ class pokja extends CI_Controller {
 
 	// 		if ($pendukung['pendukung'] == NULL) {
 	// 			$this->session->set_flashdata('kosong', 'true');
-	// 			redirect('pokja/paketkontraktual/'.$tahun);
+	// 			redirect('Pokja/paketkontraktual/'.$tahun);
 	// 		}
 	// 		else{
 	// 			$id_user = $this->session->userdata('id_user');
 	// 			$ini['user'] = $this->Datauser_model->GetWhereUser($id_user);
-	// 			$this->load->view('ppk1/header', $ini);
+	// 			$this->load->view('pokja/header', $ini);
 
 	// 			$ppk['get_ppk']=$this->Datappk_model->datappk();
 	// 			$this->load->view('pokja/sidebar',$ppk);
 
 	// 			$this->load->view('pokja/viewdokumenkontraktual',$pendukung);
-	// 			$this->load->view('ppk1/footer');
+	// 			$this->load->view('pokja/footer');
 	// 		}
 
 			
@@ -394,18 +394,18 @@ class pokja extends CI_Controller {
 
 	// 		if ($pendukung['pendukung'] == NULL) {
 	// 			$this->session->set_flashdata('kosong', 'true');
-	// 			redirect('pokja/paketkontraktual/'.$tahun);
+	// 			redirect('Pokja/paketkontraktual/'.$tahun);
 	// 		}
 	// 		else{
 	// 			$id_user = $this->session->userdata('id_user');
 	// 			$ini['user'] = $this->Datauser_model->GetWhereUser($id_user);
-	// 			$this->load->view('ppk1/header', $ini);
+	// 			$this->load->view('pokja/header', $ini);
 
 	// 			$ppk['get_ppk']=$this->Datappk_model->datappk();
 	// 			$this->load->view('pokja/sidebar',$ppk);
 
 	// 			$this->load->view('pokja/viewdokumensuakelola',$pendukung);
-	// 			$this->load->view('ppk1/footer');
+	// 			$this->load->view('pokja/footer');
 	// 		}
 
 			

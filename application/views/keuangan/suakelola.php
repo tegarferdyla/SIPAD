@@ -44,7 +44,7 @@
                                 <div id="<?php echo ucwords($u['id_paket']); ?>" class="card-collapse collapse" role="tabpanel" aria-labelledby="heading4">
                                     <div class="card-body">
                                         <ul class="list-group">
-                                            <a href="<?php echo base_url('')."keuangan/dokumensuakelola/".$u['id_paket'] ?>"><li class="list-group-item">View Dokumen</li></a>
+                                            <a href="<?php echo base_url('')."Keuangan/dokumensuakelola/".$u['id_paket'] ?>"><li class="list-group-item">View Dokumen</li></a>
                                         </ul>
                                     </div>
                                 </div>

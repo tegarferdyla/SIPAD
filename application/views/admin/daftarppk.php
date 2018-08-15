@@ -7,7 +7,7 @@
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="<?php echo site_url('admin') ?>">Dashboard</a>
+                        <li class="breadcrumb-item"><a href="<?php echo site_url('Admin') ?>">Dashboard</a>
                         </li>
                         <li class="breadcrumb-item active">Daftar PPK</li>
                     </ol>
@@ -72,8 +72,8 @@
                                             <td><?php echo $u['nama']; ?></td>
                                             <td><?php echo $u['keterangan']; ?></td>
                                             <td>
-                                                <a href="<?php echo base_url()."admin/editppk/".$u['id_ppk'];?>"><i class="list-icon feather feather-edit" title="Edit"></i></a> &nbsp;
-                                                <a onclick="return confirm('Apa anda yakin ingin menghapus data ini?')" href="<?php echo base_url()."admin/hapusppk/".$u['id_ppk']; ?>"><i class="list-icon text-danger feather feather-trash-2" title="Delete"></i></a>
+                                                <a href="<?php echo base_url()."Admin/editppk/".$u['id_ppk'];?>"><i class="list-icon feather feather-edit" title="Edit"></i></a> &nbsp;
+                                                <a onclick="return confirm('Apa anda yakin ingin menghapus data ini?')" href="<?php echo base_url()."Admin/hapusppk/".$u['id_ppk']; ?>"><i class="list-icon text-danger feather feather-trash-2" title="Delete"></i></a>
                                             </td>
                                         </tr>
                                         <?php 

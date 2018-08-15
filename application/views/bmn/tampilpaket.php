@@ -6,9 +6,9 @@
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="<?php echo site_url('bmn') ?>">Dashboard</a>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('Bmn') ?>">Dashboard</a>
                 </li>
-                <li class="breadcrumb-item"><a href="<?php echo site_url('bmn/tahun/'.$namappk[0]['id_ppk']) ?>"><?php echo $namappk[0]['nama'] ?></a>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('Bmn/tahun/'.$namappk[0]['id_ppk']) ?>"><?php echo $namappk[0]['nama'] ?></a>
                 <li class="breadcrumb-item active"><?php echo $dapattahun[0]['nama_tahun'] ?></li>
             </ol>
         </div>
@@ -49,14 +49,14 @@
                                     <div class="col-md-4 mr-b-30 d-flex">
                                         <div class="blog-post blog-post-card text-center">
                                             <figure>
-                                                <a href= "<?php echo base_url()."bmn/paketkontraktual/".$u['id_tahun']; ?>">
+                                                <a href= "<?php echo base_url()."Bmn/paketkontraktual/".$u['id_tahun']; ?>">
                                                     <img src="<?php echo base_url("assets/demo/cards/jembatan1.jpg") ?>" alt="Blog Post 1">
                                                </a>
                                             </figure>
                                             <header>
                                                 <h4 class="h3 fw-300 m-1 blog-post-title">Pilih Kontraktual</h4>
                                             </header>
-                                            <footer class="mr-t-30"><a href="<?php echo base_url()."bmn/paketkontraktual/".$u['id_tahun']; ?>" class="btn btn-outline-primary btn-rounded">Klik!</a>
+                                            <footer class="mr-t-30"><a href="<?php echo base_url()."Bmn/paketkontraktual/".$u['id_tahun']; ?>" class="btn btn-outline-primary btn-rounded">Klik!</a>
                                             </footer>
                                         </div>
                                         <!-- /.blog-post -->
@@ -66,13 +66,13 @@
                                     <div class="col-md-4 mr-b-30 d-flex">
                                         <div class="blog-post blog-post-card text-center">
                                             <figure>
-                                                <a href="<?php echo base_url()."bmn/paketsuakelola/".$u['id_tahun']; ?>">
+                                                <a href="<?php echo base_url()."Bmn/paketsuakelola/".$u['id_tahun']; ?>">
                                                     <img src="<?php echo base_url("assets/demo/cards/toba.jpg") ?>" alt="">
                                             </figure>
                                             <header>
                                                 <h4 class="h3 fw-300 m-1 blog-post-title">Pilih Suakelola</h4>
                                             </header>
-                                            <footer class="mr-t-30"><a href="<?php echo base_url()."bmn/paketsuakelola/".$u['id_tahun']; ?>" class="btn btn-outline-primary btn-rounded">Klik!</a>
+                                            <footer class="mr-t-30"><a href="<?php echo base_url()."Bmn/paketsuakelola/".$u['id_tahun']; ?>" class="btn btn-outline-primary btn-rounded">Klik!</a>
                                             </footer>
                                         </div>
                                         <!-- /.blog-post -->

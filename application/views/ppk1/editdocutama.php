@@ -3,14 +3,14 @@
 	<div class="row page-title clearfix">
 		<div class="page-title-left">
 			<h6 class="page-title-heading mr-0 mr-r-5">Dokumen Utama</h6>
-			<span class="text-muted"><?php echo $show[0]['nama_paket']; ?></span>
+			<small><?php echo $nama ?></small>					 
 		</div>
 		<!-- /.page-title-left -->
 		<div class="page-title-right d-none d-sm-inline-flex">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="<?php echo site_url('PPK1') ?>">Dashboard</a></li>
-                	<li class="breadcrumb-item"><a href="<?php echo site_url('ppk1/jenispaket/'.$tahun->id_tahun) ?>"><?php echo $tahun->nama_tahun ?></a></li>
-                	<li class="breadcrumb-item"><a href="<?php echo site_url('ppk1/pilihpaket/'.$tahun->id_tahun.'/'.$paket[0]['jenis']) ?>"><?php echo ucwords($paket[0]['jenis']) ?></a></li>
+                	<li class="breadcrumb-item"><a href="<?php echo site_url('PPK1/jenispaket/'.$tahun->id_tahun) ?>"><?php echo $tahun->nama_tahun ?></a></li>
+                	<li class="breadcrumb-item"><a href="<?php echo site_url('PPK1/pilihpaket/'.$tahun->id_tahun.'/'.$paket[0]['jenis']) ?>"><?php echo ucwords($paket[0]['jenis']) ?></a></li>
                 	<li class="breadcrumb-item active">Edit Dokumen</li>
 			</ol>
 		</div>
@@ -20,18 +20,28 @@
 	<!-- =================================== -->
 	<!-- Different data widgets ============ -->
 	<!-- =================================== -->
-	<form action="<?php echo site_url('ppk1/updatedocutama') ?>" method="post" enctype="multipart/form-data" id="interviewForm" >
+	<form action="<?php echo site_url('PPK1/updatedocutama') ?>" method="post" enctype="multipart/form-data" id="interviewForm" >
 		<div class="widget-list">
 			<div class="col-md-12 widget-holder">
 				<div class="widget-bg">
 					<div class="widget-body clearfix">
 						<div class="row">
-							<div class="col-md-11">
-								<h4 class="box-title mr-b-0" >Kelompok 1</h4>
-							</div>
-							<div class="col-1 btn btn-primary">
-								<a href="<?php echo site_url('ppk1/viewdocutama/' . $show[0]['id_paket']) ?>" class="text-white">Lihat</a>
-							</div>
+                            <div class="col-md-11">
+                                <h6 class="text-muted"><?php echo $show[0]['nama_paket']; ?></h6>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="dropdown">
+                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Aksi
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu list-unstyled card-body">
+                                        <li><a href="<?php echo site_url('PPK1/viewdocutama/'. $show[0]['id_paket']) ?>">Lihat Dokumen</a></li>
+                                    </ul>
+                                </div>
+                            </div>    
+                        </div>
+						<div class="row">
+							<h4 class="box-title mr-b-0" >Kelompok 1</h4>
 						</div>
 
 						<div class="row">
@@ -39,11 +49,11 @@
 								<label for="surat_md" class="form-control-label text-blue">Surat Minat Daerah</label>
                                         <input type="hidden" value="<?php echo $show[0]['id_paket'] ?>" name="id_paket">
 								<p>
+									<?php echo $doc1->surat_md ?>
 									<button class="btn btn-show" data-toggle="modal" data-target="#modalCustom" type="button" value="<?php echo base_url('assets/data/' . $tahun->nama_tahun . '/' . $paket[0]['jenis'] . '/' . $paket[0]['nama_paket'] . '/' . $doc1->surat_md) ?>">
 										<i class="feather feather-eye text-dark"></i>
 										<input type="hidden" value="<?= $doc1->surat_md ?>" name="delf1">
 									</button>
-									<?php echo $doc1->surat_md ?>
 								</p>
 								<div class="col-sm-10">
 									<p class="file-upload btn btn-primary">

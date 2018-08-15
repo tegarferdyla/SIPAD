@@ -7,7 +7,7 @@
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="<?php echo base_url('admin') ?>">Dashboard</a>
+                <li class="breadcrumb-item"><a href="<?php echo base_url('Pokja') ?>">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active">Edit Akun</li>
             </ol>
@@ -44,7 +44,7 @@
                                 <?php endif ?>
                             </div>
                         </div> 
-                        <form action="<?php echo site_url('home/updatepassword') ?>" method="post">
+                        <form action="<?php echo site_url('Home/updatepassword') ?>" method="post">
                             <div class="form-group row">
                                 <label class="col-md-3 col-form-label" for="l0">Password Lama</label>
                                 <div class="col-md-9">
