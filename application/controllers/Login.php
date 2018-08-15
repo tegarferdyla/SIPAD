@@ -18,17 +18,17 @@ class Login extends CI_Controller
 				if ($this->session->userdata('role') == "admin") {
 					redirect('admin');
 				}else if ($this->session->userdata('bagian')=='Kasatker') {
-					redirect('kasatker');
+					redirect('Kasatker');
 				}elseif ($this->session->userdata('bagian')=='PPK') {
 					redirect('PPK1');
 				}elseif ($this->session->userdata('bagian')=='BMN') {
-					redirect('bmn');
+					redirect('Nmn');
 				}elseif ($this->session->userdata('bagian')=='Keuangan') {
-					redirect('keuangan');
+					redirect('Keuangan');
 				}elseif ($this->session->userdata('bagian')=='Bendahara') {
-					redirect('bendahara');
+					redirect('Bendahara');
 				}elseif ($this->session->userdata('bagian')=='Pokja') {
-					redirect('pokja');
+					redirect('Pokja');
 				}    
 			}
 		}
@@ -61,7 +61,7 @@ class Login extends CI_Controller
 				'role' => "admin"
 			);
 			$this->session->set_userdata($data_session);
-			redirect(base_url('admin'));
+			redirect(base_url('Admin'));
 		}
 		elseif ($cekuser > 0 ) 
 		{
@@ -77,27 +77,27 @@ class Login extends CI_Controller
 			);
 			$this->session->set_userdata($data_session);
 			if ($this->session->userdata('bagian')=='Kasatker') {
-				redirect(base_url('kasatker'));
+				redirect(base_url('Kasatker'));
 			}
 			elseif($this->session->userdata('bagian')=='PPK') {
 				redirect(base_url('PPK1'));
 			}
 			elseif($this->session->userdata('bagian')=='BMN'){
-				redirect(base_url('bmn'));
+				redirect(base_url('Bmn'));
 			}
 			else if ($this->session->userdata('bagian') == 'Keuangan') {
-				redirect('keuangan');
+				redirect('Keuangan');
 			}
 			else if ($this->session->userdata('bagian') == 'Bendahara') {
-				redirect('bendahara');
+				redirect('Bendahara');
 			}
 			else if ($this->session->userdata('bagian') == 'Pokja') {
-				redirect('pokja');
+				redirect('Pokja');
 			}
 		}
 		else{
 			$this->session->set_flashdata('gagallogin', 'true');
-			redirect('login');
+			redirect('Login');
 		}
 	}
 
@@ -112,7 +112,7 @@ class Login extends CI_Controller
 		$this->load->library('generate_token');
 		$valid = $this->Datauser_model->validemail($user, $email);
 		if ($email != $valid['email']) {
-			redirect('login/lupapassword');
+			redirect('Login/lupapassword');
 		}
 		$renewpass = $this->generate_token->get_token(15);
 		$data = array('password' => $renewpass );
@@ -145,7 +145,7 @@ class Login extends CI_Controller
 
 		if($this->email->send())
 		{
-			redirect('login/validtoken');
+			redirect('Login/validtoken');
 		}
 
 	}

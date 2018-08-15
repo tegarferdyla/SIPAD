@@ -9,8 +9,8 @@
         <div class="page-title-right d-none d-sm-inline-flex">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="<?php echo site_url('PPK1') ?>">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="<?php echo site_url('ppk1/jenispaket/'.$tahun->id_tahun) ?>"><?php echo $tahun->nama_tahun ?></a></li>
-                <li class="breadcrumb-item"><a href="<?php echo site_url('ppk1/pilihpaket/'.$tahun->id_tahun.'/'.$show[0]['jenis']) ?>"><?php echo ucwords($show[0]['jenis']) ?></a></li>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('PPK1/jenispaket/'.$tahun->id_tahun) ?>"><?php echo $tahun->nama_tahun ?></a></li>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('PPK1/pilihpaket/'.$tahun->id_tahun.'/'.$show[0]['jenis']) ?>"><?php echo ucwords($show[0]['jenis']) ?></a></li>
                 <li class="breadcrumb-item active">Input Dokumen</li>
             </ol>
         </div>
@@ -44,7 +44,7 @@
                                                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Aksi
                                                     <span class="caret"></span></button>
                                                     <ul class="dropdown-menu list-unstyled card-body">
-                                                        <li><a href="<?php echo site_url('ppk1/viewdocutama/'.$show[0]['id_paket']) ?>">View Dokumen</a></li>
+                                                        <li><a href="<?php echo site_url('PPK1/viewdocutama/'.$show[0]['id_paket']) ?>">View Dokumen</a></li>
                                                     </ul>
                                             </div>
                                         </div>
@@ -430,7 +430,7 @@
                                         </div>
                                         <div class="col-md-3 ml-md-auto btn-list">
                                             <button class="btn btn-primary btn-rounded" type="submit">Submit</button>
-                                            <a href="<?php echo site_url('ppk1/viewdocutama/'.$show[0]['id_paket'] ) ?>" class="btn btn-outline-default btn-rounded">Cancel</a>
+                                            <a href="<?php echo site_url('PPK1/viewdocutama/'.$show[0]['id_paket'] ) ?>" class="btn btn-outline-default btn-rounded">Cancel</a>
                                             <!-- <button class="btn btn-outline-default btn-rounded" type="reset">Cancel</button> -->
                                         </div>
                                     </div>

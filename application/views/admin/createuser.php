@@ -7,7 +7,7 @@
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="<?php echo base_url('admin') ?>">Dashboard</a>
+                        <li class="breadcrumb-item"><a href="<?php echo base_url('Admin') ?>">Dashboard</a>
                         </li>
                         <li class="breadcrumb-item active">Tambah Akun</li>
                     </ol>
@@ -80,7 +80,7 @@
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="ppk-tab-bordered-1">
                                               
-                                            <form action ="<?php echo base_url ('admin/Tambahakun') ?>" method="post" >
+                                            <form action ="<?php echo base_url ('Admin/Tambahakun') ?>" method="post" >
                                                 <div class="form-group row">
                                                     <label class="col-md-3 col-form-label" for="l0">NIP</label>
                                                     <div class="col-md-9">
@@ -140,7 +140,7 @@
                                             </form>
                                         </div>
                                         <div class="tab-pane" id="bmn-tab-bordered-1">
-                                                <form action="<?php echo base_url ('admin/Tambahakunbmn') ?>" method ="post">
+                                                <form action="<?php echo base_url ('Admin/Tambahakunbmn') ?>" method ="post">
                                                     <div class="form-group row">
                                                         <label class="col-md-3 col-form-label" for="l0">NIP</label>
                                                         <div class="col-md-9">
@@ -193,7 +193,7 @@
                                                 </form> 
                                         </div>
                                         <div class="tab-pane" id="keuangan-tab-bordered-1">
-                                                <form action="<?php echo base_url ('admin/Tambahakunkeuangan') ?>" method ="post">
+                                                <form action="<?php echo base_url ('Admin/Tambahakunkeuangan') ?>" method ="post">
                                                     <div class="form-group row">
                                                         <label class="col-md-3 col-form-label" for="l0">NIP</label>
                                                         <div class="col-md-9">
@@ -246,7 +246,7 @@
                                                 </form>
                                         </div>
                                         <div class="tab-pane" id="bendahara-tab-bordered-1">
-                                                <form action="<?php echo base_url ('admin/Tambahakunbendahara') ?>" method ="post">
+                                                <form action="<?php echo base_url ('Admin/Tambahakunbendahara') ?>" method ="post">
                                                     <div class="form-group row">
                                                         <label class="col-md-3 col-form-label" for="l0">NIP</label>
                                                         <div class="col-md-9">
@@ -299,7 +299,7 @@
                                                 </form>
                                         </div>
                                         <div class="tab-pane" id="pokja-tab-bordered-1">
-                                            <form action="<?php echo base_url ('admin/Tambahakunpokja') ?>" method ="post">
+                                            <form action="<?php echo base_url ('Admin/Tambahakunpokja') ?>" method ="post">
                                                     <div class="form-group row">
                                                         <label class="col-md-3 col-form-label" for="l0">NIP</label>
                                                         <div class="col-md-9">

@@ -3,14 +3,14 @@
     <div class="row page-title clearfix">
         <div class="page-title-left">
             <h6 class="page-title-heading mr-0 mr-r-5">Dokumen Pendukung</h6>
-            <span class="text-muted"><?php echo ucwords($show[0]['nama_paket']) ?></span>
+            <span class="text-muted"><?php echo $nama ?></span>
         </div>
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="<?php echo site_url('PPK1') ?>">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="<?php echo site_url('ppk1/jenispaket/'.$tahun->id_tahun) ?>"><?php echo $tahun->nama_tahun ?></a></li>
-                <li class="breadcrumb-item"><a href="<?php echo site_url('ppk1/pilihpaket/'.$tahun->id_tahun.'/'.$show[0]['jenis']) ?>"><?php echo ucwords($show[0]['jenis']) ?></a></li>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('PPK1/jenispaket/'.$tahun->id_tahun) ?>"><?php echo $tahun->nama_tahun ?></a></li>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('PPK1/pilihpaket/'.$tahun->id_tahun.'/'.$show[0]['jenis']) ?>"><?php echo ucwords($show[0]['jenis']) ?></a></li>
                 <li class="breadcrumb-item active">Edit Dokumen Pendukung</li>
             </ol>
         </div>
@@ -37,8 +37,8 @@
                     <div class="widget-body clearfix">
                         <div class="row">
                             <div class="col-md-11">
-                                <button type="button" class="btn btn-info">BMN</button>
-                             </div>
+                                <h6 class="text-muted"><?php echo $show[0]['nama_paket']; ?></h6>
+                            </div>
                             <div class="col-md-1">
                                 <div class="dropdown">
                                     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Aksi
@@ -48,7 +48,10 @@
                                         <li><a href="<?php echo site_url('PPK1/viewdocpendukung/'. $show[0]['id_paket']) ?>">Lihat Dokumen</a></li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div>    
+                        </div>
+                        <div class="row">
+                            <button type="button" class="btn btn-info">BMN</button>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">

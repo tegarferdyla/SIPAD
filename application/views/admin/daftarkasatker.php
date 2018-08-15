@@ -7,7 +7,7 @@
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="<?php echo site_url('admin') ?>">Dashboard</a>
+                        <li class="breadcrumb-item"><a href="<?php echo site_url('Admin') ?>">Dashboard</a>
                         </li>
                         <li class="breadcrumb-item active">Daftar Kasatker</li>
                     </ol>
@@ -28,32 +28,41 @@
                             </div>
                             <!-- /.widget-heading -->
                             <div class="widget-body clearfix">
-                                <table class="table table-responsive" data-toggle="datatables">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Nama</th>
-                                            <th>Jabatan</th>
-                                            <th>Email</th>
-                                            <th>Alamat</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Dr. H. Hasir Tjenne, ST, M.Si</td>
-                                            <td>Kasatker</td>
-                                            <td>hasir@gmail.com</td>
-                                            <td>Pejompongan</td>
-                                            <td>
-                                                <a href=""><i class="list-icon feather feather-edit" title="Edit"></i></a> &nbsp;
-                                                <a href=""><i class="list-icon text-danger feather feather-trash-2" title="Delete"></i></a>
-                                            </td>
-                                        </tr>
+                                <<table class="table table-responsive" data-toggle="datatables">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>NIP</th>
+                                                <th>Nama</th>
+                                                <th>Divisi</th>
+                                                <th>Email</th>
+                                                <th>Username</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php $no= 1; ?>
+                                            <?php 
+                                                 foreach ($kasatker as $u) {
+                                             ?>
+                                            <tr>
+                                                <td><?php echo ($no++); ?></td>
+                                                <td><?php echo ($u->NIP); ?></td>
+                                                <td><?php echo ucwords($u->nama); ?></td>
+                                                <td><?php echo ($u->divisi); ?></td>
+                                                <td><?php echo ($u->email); ?></td>
+                                                <td><?php echo ($u->username); ?></td>
 
-                                    </tbody>
-                                </table>
+                                                <td>
+                                                    <a href="<?php echo base_url()."Admin/edituser/".$u->id_user;?>"><i class="list-icon feather feather-edit" title="Edit"></i></a> &nbsp;
+                                                    <a onclick="return confirm('Apa anda yakin ingin menghapus data ini?')" href="<?php echo base_url()."Admin/hapususer/".$u->id_user; ?>"><i class="list-icon text-danger feather feather-trash-2" title="Delete"></i></a>
+                                                </td>
+                                            </tr>
+                                            <?php 
+                                                }
+                                             ?>
+                                        </tbody>
+                                            </table>
                             </div>
                             <!-- /.widget-body -->
                         </div>

@@ -4,7 +4,6 @@
     <div class="row page-title clearfix">
         <div class="page-title-left">
             <h6 class="page-title-heading mr-0 mr-r-5">Dokumen Pendukung</h6>
-            <span class="text-muted"><?php echo $u['nama_paket']; ?></span>
         </div>
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">
@@ -27,13 +26,14 @@
     <!-- =================================== -->
     <!-- Different data widgets ============ -->
     <!-- =================================== -->
-    <div class="tab-content">
-    <div class="tab-pane active" id="input">
     <div class="widget-list">
         <div class="col-md-12 widget-holder">
             <div class="widget-bg">
                     <div class="widget-body clearfix">
-                    <button type="button" class="btn btn-info">Keuangan</button><br><br>
+                    <div class="row"> 
+                        <h6 class="text-muted"><?php echo $u['nama_paket']; ?></h6>
+                    </div>
+                        <h4 class="box-title mr-b-0" >Keuangan</h4>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label class="form-control-label text-blue" for="">Permohonan Pembayaran</label>
@@ -118,7 +118,6 @@
         </div>
     </div>
 </div>
-</div>
 <?php } ?>
    <!-- Modal -->
     <div class="modal fade" id="modalCustom" role="dialog">
@@ -138,11 +137,6 @@
         </div>
     </div>
   <!-- Modal -->
-<div class="tab-pane" id="profile-tab-bordered-1">
-
-</div>
-</div>
-</div>
 <!-- /.widget-list -->
 <script type="text/javascript">
     $(".btn-show").click(function() {

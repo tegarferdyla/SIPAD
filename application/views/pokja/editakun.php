@@ -44,7 +44,7 @@
                                         <?php endif ?>
                                     </div>
                                 </div> 
-                                <?php echo form_open_multipart('pokja/changeprofile'); ?>
+                                <?php echo form_open_multipart('Pokja/changeprofile'); ?>
                                     <div class="form-group row">
                                         <div class="col-md-12 text-center">
                                             <img src="<?php echo base_url('assets/img/'.$user['foto']) ?>" class="rounded-circle img-thumbnail thumb-lg " style="width:190px"  alt="">

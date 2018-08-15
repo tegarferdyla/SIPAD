@@ -8,20 +8,20 @@ class Bmn extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		if (!$this->session->has_userdata('status')) {
-			redirect('login');
+			redirect('Login');
 		} else if ($this->session->userdata('role') == 'admin') {
-			redirect('admin');
+			redirect('Admin');
 		} else if ($this->session->userdata('bagian') == 'Kasatker') {
-			redirect('kasatker');
+			redirect('Kasatker');
 		} else if ($this->session->userdata('bagian') == 'PPK') {
-			redirect('ppk1');
+			redirect('PPK1');
 		}
 		else if ($this->session->userdata('bagian') == 'Keuangan') {
 			redirect('Keuangan');
 		}else if ($this->session->userdata('bagian') == 'Bendahara') {
-			redirect('bendahara');
+			redirect('Bendahara');
 		}else if ($this->session->userdata('bagian') == 'Pokja') {
-			redirect('pokja');
+			redirect('Pokja');
 		}
 	}
 	public function editprofile() {
@@ -57,10 +57,10 @@ class Bmn extends CI_Controller {
 
 			if ($result > 0) {
 				$this->session->set_flashdata('updateberhasil', 'true');
-				redirect('bmn/editprofile');
+				redirect('Bmn/editprofile');
 			} else {
 				$this->session->set_flashdata('updategagal', 'true');
-				redirect('bmn/editprofile');
+				redirect('Bmn/editprofile');
 			}
 		} else {
 			$result = $this->upload->data();
@@ -75,10 +75,10 @@ class Bmn extends CI_Controller {
 
 			if ($result > 0) {
 				$this->session->set_flashdata('updateberhasil', 'true');
-				redirect('bmn/editprofile');
+				redirect('Bmn/editprofile');
 			} else {
 				$this->session->set_flashdata('updategagal', 'true');
-				redirect('bmn/editprofile');
+				redirect('Bmn/editprofile');
 			}
 		}
 
@@ -154,7 +154,7 @@ class Bmn extends CI_Controller {
 			$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
 			$data['kontraktual'] = $this->Datapaket_model->kontraktual($id_tahun);
 			if ($data['kontraktual']==NULL) {
-				redirect('bmn/jenispaket/'.$id_tahun,'refresh');
+				redirect('Bmn/jenispaket/'.$id_tahun,'refresh');
 			}
 			$this->load->view('bmn/kontraktual',$data);
 			$this->load->view('bmn/footer');
@@ -172,7 +172,7 @@ class Bmn extends CI_Controller {
 			$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
 			$data['suakelola'] = $this->Datapaket_model->suakelola($id_tahun);
 			if ($data['suakelola']==NULL) {
-				redirect('bmn/jenispaket/'.$id_tahun,'refresh');
+				redirect('Bmn/jenispaket/'.$id_tahun,'refresh');
 			}
 			$this->load->view('bmn/suakelola',$data);
 			$this->load->view('bmn/footer');
@@ -189,18 +189,18 @@ class Bmn extends CI_Controller {
 
 			if ($data['pendukung'] == NULL) {
 				$this->session->set_flashdata('kosong', 'true');
-				redirect('bmn/paketkontraktual/'.$tahun);
+				redirect('Bmn/paketkontraktual/'.$tahun);
 			}
 			else{
 				$id_user = $this->session->userdata('id_user');
 				$ini['user'] = $this->Datauser_model->GetWhereUser($id_user);
-				$this->load->view('ppk1/header', $ini);
+				$this->load->view('bmn/header', $ini);
 
 				$ppk['get_ppk']=$this->Datappk_model->datappk();
 				$this->load->view('bmn/sidebar',$ppk);
 
 				$this->load->view('bmn/viewdokumenkontraktual',$data);
-				$this->load->view('ppk1/footer');
+				$this->load->view('Bmn/footer');
 			}
 
 			
@@ -218,18 +218,18 @@ class Bmn extends CI_Controller {
 
 			if ($data['pendukung'] == NULL) {
 				$this->session->set_flashdata('kosong', 'true');
-				redirect('bmn/paketkontraktual/'.$tahun);
+				redirect('Bmn/paketkontraktual/'.$tahun);
 			}
 			else{
 				$id_user = $this->session->userdata('id_user');
 				$ini['user'] = $this->Datauser_model->GetWhereUser($id_user);
-				$this->load->view('ppk1/header', $ini);
+				$this->load->view('bmn/header', $ini);
 
 				$ppk['get_ppk']=$this->Datappk_model->datappk();
 				$this->load->view('bmn/sidebar',$ppk);
 
 				$this->load->view('bmn/viewdokumensuakelola',$data);
-				$this->load->view('ppk1/footer');
+				$this->load->view('bmn/footer');
 			}
 
 			

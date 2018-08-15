@@ -2,7 +2,7 @@
     <!-- Page Title Area -->
     <div class="row page-title clearfix">
         <div class="page-title-left">
-            <h6 class="page-title-heading mr-0 mr-r-5">Dokumen <?php echo ucwords($paket[0]['nama_paket']) ?></h6>
+            <h6 class="page-title-heading mr-0 mr-r-5">Dokumen</h6>
             <!-- <span class="text-muted"><?php echo $paket[0]['nama_paket']; ?></span> -->
         </div>
         <!-- /.page-title-left -->
@@ -43,20 +43,23 @@
                 <form  method="post" action="<?php echo site_url('Pokja/updatedoc') ?>" enctype="multipart/form-data">
                     <div class="widget-body clearfix">
                         <div class="row">
-                            <div class="col-md-11">
-                                <p class="btn btn-info text-white">POKJA</p>
-                            </div>
-                            <div class="col-md-1">
-                                <div class="dropdown">
-                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Aksi
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu list-unstyled card-body">
-                                        <li><a href="<?php echo site_url('pokja/viewdoc/'. $show[0]['id_paket']) ?>">Lihat Dokumen</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div class="col-md-11">
+                            <h6 class="text-muted"><?php echo ucwords($paket[0]['nama_paket']) ?></h6>
                         </div>
+                        <div class="col-md-1">
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Aksi
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu list-unstyled card-body">
+                                   <li><a href="<?php echo site_url('Pokja/viewdoc/'. $show[0]['id_paket']) ?>">Lihat Dokumen</a></li>
+                                </ul>
+                            </div>
+                        </div>    
+                        </div>
+                    <div class="row">  
+                        <h4 class="box-title mr-b-0" >POKJA</h4>
+                    </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label class="form-control-label text-blue" for="">Surat Perintah Lelang</label>

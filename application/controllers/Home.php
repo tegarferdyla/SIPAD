@@ -24,9 +24,11 @@
 			if ($validasipass != md5($oldpass)) {
 				$test = $this->session->set_flashdata('updategagal', 'true');
 				if ($bag == 'PPK') {
-					redirect('ppk1/gantipass',$test);
-				}elseif ($bag == 'BMN') {
-					redirect('BMN/gantipass',$test);
+					redirect('PPK1/gantipass',$test);
+				}elseif ($bag == 'Kasatker') {
+					redirect('Kasatker/gantipass',$test);
+				}elseif ($bag == 'Bmn') {
+					redirect('Bmn/gantipass',$test);
 				}elseif ($bag == 'Pokja') {
 					redirect('Pokja/gantipass',$test);
 				}elseif ($bag == 'Keuangan') {
@@ -37,9 +39,11 @@
 			}elseif($newpass != $repassnew){
 				$test = $this->session->set_flashdata('passbeda', 'true');
 				if ($bag == 'PPK') {
-					redirect('ppk1/gantipass',$test);
-				}elseif ($bag == 'BMN') {
-					redirect('BMN/gantipass',$test);
+					redirect('PPK1/gantipass',$test);
+				}elseif ($bag == 'Kasatker') {
+					redirect('Kasatker/gantipass',$test);
+				}elseif ($bag == 'Bmn') {
+					redirect('Bmn/gantipass',$test);
 				}elseif ($bag == 'Pokja') {
 					redirect('Pokja/gantipass',$test);
 				}elseif ($bag == 'Keuangan') {
@@ -53,9 +57,11 @@
 				if ($result>0) {
 					$test = $this->session->set_flashdata('updateberhasil', 'true');
 					if ($bag == 'PPK') {
-						redirect('ppk1/gantipass',$test);
+						redirect('PPK1/gantipass',$test);
+					}elseif ($bag == 'Kasatker') {
+					redirect('Kasatker/gantipass',$test);
 					}elseif ($bag == 'BMN') {
-						redirect('BMN/gantipass',$test);
+						redirect('Bmn/gantipass',$test);
 					}elseif ($bag == 'Pokja') {
 						redirect('Pokja/gantipass',$test);
 					}elseif ($bag == 'Keuangan') {

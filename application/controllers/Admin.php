@@ -12,17 +12,17 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 		if (!$this->session->has_userdata('status')) {
 			redirect('login');
 		} else if ($this->session->userdata('bagian') == 'Kasatker') {
-			redirect('kasatker');
+			redirect('Kasatker');
 		} else if ($this->session->userdata('bagian') == 'PPK') {
 			redirect('PPK1');
 		}else if ($this->session->userdata('bagian') == 'BMN') {
-			redirect('bmn');
+			redirect('Bmn');
 		}else if ($this->session->userdata('bagian') == 'Keuangan') {
-			redirect('keuangan');
+			redirect('Keuangan');
 		}else if ($this->session->userdata('bagian') == 'Bendahara') {
-			redirect('bendahara');
+			redirect('Bendahara');
 		}else if ($this->session->userdata('bagian') == 'Pokja'){
-			redirect('pokja');
+			redirect('Pokja');
 		}
 		}
 
@@ -43,12 +43,99 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 			$this->load->view('admin/inputkasatker');
 			$this->load->view('admin/footer1');
 		}
+		public function Tambahkasatker()
+		{
+			$this->form_validation->set_rules('nip', 'NIP' ,'trim|required|numeric|max_length[12]');
+			$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
+			$this->form_validation->set_rules('divisi', 'Divisi' , 'required');
+			$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+			$this->form_validation->set_rules('username','Username', 'required');
+			$this->load->library('generate_token');
+			
+			if ($this->form_validation->run() == FALSE) {
+				$this->load->view('admin/header');
+				$this->load->view('admin/sidebar');
+				$this->load->view('admin/inputkasatker');
+				$this->load->view('admin/footer1');
+			}
+			else {
+				$nip 		= $this->input->post('nip');
+				$nama 		= $this->input->post('nama');
+				$divisi 	= $this->input->post('divisi');
+				$email 		= $this->input->post('email');
+				$alamat 	= $this->input->post('alamat');
+				$username   = $this->input->post('username');
+				$password 	= $this->generate_token->get_token(8);
+
+				$data = array
+				(
+					'id_user'		=> $this->Penomoran_model->IDDaftar(),
+					'nip'			=> $nip,
+					'nama'			=> $nama,
+					'bagian'		=> $divisi,
+					'email'			=> $email,
+					'alamat'		=> $alamat,
+					'username'		=> $username,
+					'password'		=> md5($password),
+					// 'password'		=> $password,
+					'foto'			=> "default-avatar.jpg",
+					'id_ppk'		=> ""
+				);
+				$resultchecknip = $this->Datauser_model->ceknipuser($nip);
+				if ($resultchecknip > 0) {
+					$this->session->set_flashdata('nipsalah','true');
+					redirect('Admin/inputkasatker');
+				}
+				else {
+					$input = $this->Datauser_model->Tambahuser($data,'user');
+					if ($input > 0) {
+						$this->load->library('email');
+					    $config = array();
+					    $config['charset'] = 'utf-8';
+					    $config['useragent'] = 'Codeigniter';
+					    $config['protocol']= "smtp";
+					    $config['mailtype']= "html";
+					    $config['smtp_host']= "ssl://smtp.gmail.com";//pengaturan smtp
+					    $config['smtp_port']= "465";
+					    $config['smtp_timeout']= "400";
+					    $config['smtp_user']= "sipad.information@gmail.com"; // isi dengan email kamu
+					    $config['smtp_pass']= "coba12345"; // isi dengan password kamu
+					    $config['crlf']="\r\n"; 
+					    $config['newline']="\r\n"; 
+					    $config['wordwrap'] = TRUE;
+					    //memanggil library email dan set konfigurasi untuk pengiriman email
+					   
+					    $this->email->initialize($config);
+					    //konfigurasi pengiriman
+					    $this->email->from('SIPAD Information');
+					    $this->email->to($email);
+					    $this->email->subject("Notifikasi");
+					    $this->email->message(
+					     "Selamat , ".$nama." akun anda berhasil dibuat dengan <br>
+					     Username : ".$username." dan Password : ".$password
+					    );
+				  
+				    if($this->email->send())
+				    {
+						$this->session->set_flashdata('berhasil','true');
+						redirect(base_url('Admin/inputkasatker'));	
+						// echo "berhasil";
+					}
+						}
+					else{
+						$this->session->set_flashdata('gagal','true');
+						redirect(base_url('Admin/inputkasatker'));
+					}			
+				}
+			}
+		}
 
 		public function daftarkasatker ()
 		{
 			$this->load->view('admin/header');
 			$this->load->view('admin/sidebar');
-			$this->load->view('admin/daftarkasatker');
+			$data['kasatker'] = $this->Datauser_model->datakasatker();
+			$this->load->view('admin/daftarkasatker',$data);
 			$this->load->view('admin/footer1');
 		}
 
@@ -151,7 +238,7 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 				$resultchecknip = $this->Datauser_model->ceknipuser($nip);
 				if ($resultchecknip > 0) {
 					$this->session->set_flashdata('nipsalah','true');
-					redirect('admin/createuser');
+					redirect('Admin/createuser');
 				}
 				else {
 					$input = $this->Datauser_model->Tambahuser($data,'user');
@@ -185,13 +272,13 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 				    if($this->email->send())
 				    {
 						$this->session->set_flashdata('berhasil','true');
-						redirect(base_url('admin/createuser'));	
+						redirect(base_url('Admin/createuser'));	
 						// echo "berhasil";
 					}
 						}
 					else{
 						$this->session->set_flashdata('gagal','true');
-						redirect(base_url('admin/createuser'));
+						redirect(base_url('Admin/createuser'));
 					}			
 				}
 			}			
@@ -219,11 +306,11 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 				$input = $this->Datappk_model->Tambahppk($data,'ppk');
 					if ($input > 0) {
 						$this->session->set_flashdata('berhasil','true');
-						redirect(base_url('admin/inputppk'));
+						redirect(base_url('Admin/inputppk'));
 					}
 					else{
 						$this->session->set_flashdata('gagal','true');
-						redirect(base_url('admin/inputppk'));
+						redirect(base_url('Admin/inputppk'));
 					}			
 			}
 		}
@@ -259,11 +346,11 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 
 			if ($result > 0) {
 				$this->session->set_flashdata('updateberhasil','true');
-				redirect('admin/daftarppk');
+				redirect('Admin/daftarppk');
 			}
 			else {
 				$this->session->set_flashdata('updategagal','true');
-				redirect('admin/daftarppk');
+				redirect('Admin/daftarppk');
 			}
 		}
 
@@ -272,7 +359,7 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 			$where = array ('id_ppk' =>$id_ppk);
 			$result = $this->Datappk_model->hapusppk($where, 'ppk');
 			$this->session->set_flashdata('deleteberhasil','true');
-			redirect(base_url('admin/daftarppk'));
+			redirect(base_url('Admin/daftarppk'));
 			
 		}
 
@@ -320,11 +407,11 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 
 			if ($result > 0) {
 				$this->session->set_flashdata('updateberhasil','true');
-				redirect('admin/daftaruser');
+				redirect('Admin/daftaruser');
 			}
 			else {
 				$this->session->set_flashdata('updategagal','true');
-				redirect('admin/daftaruser');
+				redirect('Admin/daftaruser');
 			}
 		}
 		public function hapususer ($id_user)
@@ -332,7 +419,7 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 			$where = array ('id_user' =>$id_user);
 			$result = $this->Datauser_model->hapususer($where, 'user');
 			$this->session->set_flashdata('deleteberhasil','true');
-			redirect(base_url('admin/daftaruser'));
+			redirect(base_url('Admin/daftaruser'));
 			
 		}
 		//Tambah Akun BMN
@@ -377,7 +464,7 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 				$resultchecknip = $this->Datauser_model->ceknipuser($nip);
 				if ($resultchecknip > 0) {
 					$this->session->set_flashdata('nipsalah','true');
-					redirect('admin/createuser');
+					redirect('Admin/createuser');
 				}
 				else {
 					$input = $this->Datauser_model->Tambahuser($data,'user');
@@ -411,13 +498,13 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 				    if($this->email->send())
 				    {
 						$this->session->set_flashdata('bmn-berhasil','true');
-						redirect(base_url('admin/createuser'));	
+						redirect(base_url('Admin/createuser'));	
 						// echo "berhasil";
 					}
 						}
 					else{
 						$this->session->set_flashdata('gagal','true');
-						redirect(base_url('admin/createuser'));
+						redirect(base_url('Admin/createuser'));
 					}			
 				}
 			}
@@ -462,7 +549,7 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 				$resultchecknip = $this->Datauser_model->ceknipuser($nip);
 				if ($resultchecknip > 0) {
 					$this->session->set_flashdata('nipsalah','true');
-					redirect('admin/createuser');
+					redirect('Admin/createuser');
 				}
 				else {
 					$input = $this->Datauser_model->Tambahuser($data,'user');
@@ -496,13 +583,13 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 				    if($this->email->send())
 				    {
 						$this->session->set_flashdata('keuangan-berhasil','true');
-						redirect(base_url('admin/createuser'));	
+						redirect(base_url('Admin/createuser'));	
 						// echo "berhasil";
 					}
 						}
 					else{
 						$this->session->set_flashdata('gagal','true');
-						redirect(base_url('admin/createuser'));
+						redirect(base_url('Admin/createuser'));
 					}			
 				}
 			}
@@ -548,7 +635,7 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 				$resultchecknip = $this->Datauser_model->ceknipuser($nip);
 				if ($resultchecknip > 0) {
 					$this->session->set_flashdata('nipsalah','true');
-					redirect('admin/createuser');
+					redirect('Admin/createuser');
 				}
 				else {
 					$input = $this->Datauser_model->Tambahuser($data,'user');
@@ -582,13 +669,13 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 				    if($this->email->send())
 				    {
 						$this->session->set_flashdata('bmn-berhasil','true');
-						redirect(base_url('admin/createuser'));	
+						redirect(base_url('Admin/createuser'));	
 						// echo "berhasil";
 					}
 						}
 					else{
 						$this->session->set_flashdata('gagal','true');
-						redirect(base_url('admin/createuser'));
+						redirect(base_url('Admin/createuser'));
 					}			
 				}
 			}
@@ -634,7 +721,7 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 				$resultchecknip = $this->Datauser_model->ceknipuser($nip);
 				if ($resultchecknip > 0) {
 					$this->session->set_flashdata('nipsalah','true');
-					redirect('admin/createuser');
+					redirect('Admin/createuser');
 				}
 				else {
 					$input = $this->Datauser_model->Tambahuser($data,'user');
@@ -668,13 +755,13 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 				    if($this->email->send())
 				    {
 						$this->session->set_flashdata('bmn-berhasil','true');
-						redirect(base_url('admin/createuser'));	
+						redirect(base_url('Admin/createuser'));	
 						// echo "berhasil";
 					}
 						}
 					else{
 						$this->session->set_flashdata('gagal','true');
-						redirect(base_url('admin/createuser'));
+						redirect(base_url('Admin/createuser'));
 					}			
 				}
 			}

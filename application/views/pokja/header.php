@@ -85,9 +85,9 @@
                     class="dropdown-menu dropdown-left dropdown-card dropdown-card-profile animated flipInY">
                     <div class="card">
                     <ul class="list-unstyled card-body">
-                        <li><a href="<?php echo site_url('pokja/editprofile') ?>"><span><span class="align-middle">Pengaturan Akun</span></span></a>
+                        <li><a href="<?php echo site_url('Pokja/editprofile') ?>"><span><span class="align-middle">Pengaturan Akun</span></span></a>
                         </li>
-                        <li><a href="<?php echo site_url('pokja/gantipass') ?>"><span><span class="align-middle">Ubah Password</span></span></a></li>
+                        <li><a href="<?php echo site_url('Pokja/gantipass') ?>"><span><span class="align-middle">Ubah Password</span></span></a></li>
                         <li><a href="<?php echo base_url('login?logout=signout'); ?>"><span><span class="align-middle">Keluar</span></span></a></li>
                 </li>
             </ul>

@@ -1,4 +1,4 @@
-
+  
 <!DOCTYPE html>
 <html lang="en">
 
@@ -97,10 +97,10 @@
                         <div class="card">
                             <ul class="list-unstyled card-body">
                                 <li>
-                                    <a href="<?php echo site_url('ppk1/editprofile') ?>"><span><span class="align-middle">Pengaturan Akun</span></span></a>
+                                    <a href="<?php echo site_url('PPK1/editprofile') ?>"><span><span class="align-middle">Pengaturan Akun</span></span></a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo site_url('ppk1/gantipass') ?>">
+                                    <a href="<?php echo site_url('PPK1/gantipass') ?>">
                                         <span>
                                             <span class="align-middle">Ubah Password</span>
                                         </span>

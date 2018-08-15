@@ -7,7 +7,7 @@
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="<?php echo base_url('admin') ?>">Dashboard</a>
+                <li class="breadcrumb-item"><a href="<?php echo base_url('Bmn') ?>">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active">Edit Akun</li>
             </ol>
@@ -34,17 +34,17 @@
                                 <?php elseif ($this->session->flashdata('updategagal')): ?>
                                  <div class="alert alert-icon alert-danger border-danger alert-dismissible fade show" role="alert">
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                                    </button> <i class="material-icons list-icon">not_interested</i>  <strong>Oh snap!</strong> password lama salah.
+                                    </button> <i class="material-icons list-icon">not_interested</i>  <strong>Oh snap!</strong> Password lama salah.
                                 </div>
                                 <?php elseif ($this->session->flashdata('passbeda')): ?>
                                  <div class="alert alert-icon alert-warning border-danger alert-dismissible fade show" role="alert">
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                                    </button> <i class="material-icons list-icon">not_interested</i>  <strong>Oh snap!</strong> password tidak sama.
+                                    </button> <i class="material-icons list-icon">not_interested</i>  <strong>Oh snap!</strong> Password tidak sama.
                                 </div>
                                 <?php endif ?>
                             </div>
                         </div> 
-                        <form action="<?php echo site_url('home/updatepassword') ?>" method="post">
+                        <form action="<?php echo site_url('Home/updatepassword') ?>" method="post">
                             <div class="form-group row">
                                 <label class="col-md-3 col-form-label" for="l0">Password Lama</label>
                                 <div class="col-md-9">

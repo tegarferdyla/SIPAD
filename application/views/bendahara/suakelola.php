@@ -7,7 +7,7 @@
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="<?php echo site_url('admin') ?>">Dashboard</a>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('Bendahara') ?>">Dashboard</a>
                 </li>
             </ol>
         </div>
@@ -39,7 +39,7 @@
                                 <div id="<?php echo ucwords($u['id_paket']); ?>" class="card-collapse collapse" role="tabpanel" aria-labelledby="heading4">
                                     <div class="card-body">
                                         <ul class="list-group">
-                                            <a href="<?php echo base_url('')."bendahara/dokumensuakelola/".$u['id_paket'] ?>"><li class="list-group-item">View Dokumen</li></a>
+                                            <a href="<?php echo base_url('')."Bendahara/dokumensuakelola/".$u['id_paket'] ?>"><li class="list-group-item">View Dokumen</li></a>
                                         </ul>
                                     </div>
                                 </div>

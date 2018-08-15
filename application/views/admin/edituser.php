@@ -7,9 +7,9 @@
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="<?php echo base_url('admin') ?>">Dashboard</a>
+                        <li class="breadcrumb-item"><a href="<?php echo base_url('Admin') ?>">Dashboard</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="<?php echo base_url('admin/daftaruser') ?>">Daftar User</a></li>
+                        <li class="breadcrumb-item"><a href="<?php echo base_url('Admin/daftaruser') ?>">Daftar User</a></li>
                         <li class="breadcrumb-item active">Edit PPK</li>
                     </ol>
                 </div>
@@ -25,7 +25,7 @@
                         <div class="widget-bg">
                             <div class="widget-body clearfix">
                                 <h5 class="box-title mr-b-0">User</h5>   
-                                <form action="<?php echo base_url()."index.php/admin/updateuser" ?>" method="post">
+                                <form action="<?php echo base_url()."index.php/Admin/updateuser" ?>" method="post">
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="l0">Kode User</label>
                                         <div class="col-md-9">
@@ -79,7 +79,7 @@
                                         <div class="form-group row">
                                             <div class="col-md-9 ml-md-auto btn-list">
                                                 <button class="btn btn-primary btn-rounded" onclick="return confirm('Apa anda yakin ingin mengubah data ini?')" type="submit">Submit</button>
-                                                <button class="btn btn-outline-default btn-rounded" type=""><a href="<?php echo site_url('admin/daftaruser') ?>">Cancel</a></button>
+                                                <button class="btn btn-outline-default btn-rounded" type=""><a href="<?php echo site_url('Admin/daftaruser') ?>">Cancel</a></button>
                                             </div>
                                         </div>
                                     </div>

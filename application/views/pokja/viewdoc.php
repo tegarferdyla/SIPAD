@@ -41,9 +41,10 @@
         <div class="col-md-12 widget-holder">
             <div class="widget-bg">
                 <div class="widget-body clearfix">
-                    <div class="row">
+                    <div class="widget-body clearfix">
+                        <div class="row">
                         <div class="col-md-11">
-                            <button type="button" class="btn btn-info">POKJA</button>
+                            <h6 class="text-muted"><?php echo ucwords($paket[0]['nama_paket']) ?></h6>
                         </div>
                         <div class="col-md-1">
                             <div class="dropdown">
@@ -51,10 +52,13 @@
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu list-unstyled card-body">
-                                    <li><a href="<?php echo site_url('pokja/editdoc/'. $show[0]['id_paket']) ?>">Edit Dokumen</a></li>
+                                   <li><a href="<?php echo site_url('Pokja/editdoc/'. $show[0]['id_paket']) ?>">Edit Dokumen</a></li>
                                 </ul>
                             </div>
+                        </div>    
                         </div>
+                    <div class="row">  
+                        <h4 class="box-title mr-b-0" >POKJA</h4>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
