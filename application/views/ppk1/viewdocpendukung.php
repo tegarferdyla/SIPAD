@@ -50,7 +50,7 @@
                                     <ul class="dropdown-menu list-unstyled card-body">
                                         <!-- <li><a href="<?php echo site_url('PPK1/inputdokutama/' . $show[0]['id_paket']) ?>">Input Dokumen</a></li> -->
                                         <li><a href="<?php echo site_url('PPK1/editdocpend/' . $show[0]['id_paket']) ?>"><i class="feather feather-edit"></i> Edit Dokumen</a></li>
-                                    <li><a href="<?php  echo site_url('PPK1/detaillaporan') ?>"><i class="feather feather-printer"></i> Print Laporan</a></li>
+                                    <li><a href="<?php  echo site_url('PPK1/detaillaporan/'.$show[0]['id_paket']) ?>"><i class="feather feather-printer"></i> Print Laporan</a></li>
                                     </ul>
                                 </div>
                             </div>    
