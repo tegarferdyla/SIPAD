@@ -16,6 +16,20 @@
     <!-- =================================== -->
     <!-- Different data widgets ============ -->
     <!-- =================================== -->
+    <div class="widgets-list row">
+       <div class="col-md-12 widget-holder">
+            <div class="widget-bg">
+                <div class="widget-body">
+                    <h5 class="sub-heading-font-family mt-3">Laporan Persentasi Paket</h5><span class="sub-heading-font-family mb-3">Periode: 2018</span>
+                    <div style="height: 200px" class="my-4 pr-3">
+                        <canvas id="chartJsBar"></canvas>
+                    </div>
+                </div>
+            </div>   
+        </div> 
+    </div>
+    <hr>
+    <h5 class="sub-heading-font-family mt-3">Daftar Tahun</h5>
     <div class="widget-list row">
         <!-- /.widget-holder -->
         <?php if ($this->session->flashdata('kosong')):?>

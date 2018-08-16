@@ -41,7 +41,7 @@
                             </div>    
                         </div>
 						<div class="row">
-							<h4 class="box-title mr-b-0" >Kelompok 1</h4>
+							<h3 class="mr-b-0" >Kelompok 1</h3>
 						</div>
 
 						<div class="row">
