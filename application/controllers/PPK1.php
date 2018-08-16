@@ -1193,7 +1193,7 @@ class PPK1 extends CI_Controller {
 		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
 		$data['ppk'] = $ppk[0]['nama'];
 
-		$this->load->view('PPK1/detaillaporan',$data);
+		$this->load->view('ppk1/detaillaporan',$data);
 	}
 
 }
