@@ -1051,10 +1051,10 @@ class PPK1 extends CI_Controller {
 
 	}
 	public function testkirim($tahun,$nama,$jenis,$nama_paket,$nama_file) {
-		// $name = str_replace('%20',' ', $nama_file);
+		$name_ppk = str_replace('%20',' ', $nama);
 		$name = rawurldecode($nama_file);
 		$paket = str_replace('%20',' ', $nama_paket);
-		$data = file_get_contents("./assets/data/".$tahun."/".$nama."/".$jenis."/".$paket."/".$name);
+		$data = file_get_contents("./assets/data/".$tahun."/".$name_ppk."/".$jenis."/".$paket."/".$name);
 		force_download($name,$data);
 	}
 	public function laporanpaket($tahun,$jenis)
