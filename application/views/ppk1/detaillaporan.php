@@ -150,7 +150,7 @@
                             </tr>
                             <tr style="font-size: 13px;" class="bg-grey">
                                 <td class="p-10 center">2</td>
-                                <td class="p-10">Surat Minat Daerah</td>
+                                <td class="p-10">Surat Menerima Hibah</td>
                                 <?php if ($doc1->surat_mh!=NULL): ?>
                                     <td class="p-10"><?php echo $doc1->surat_mh ?></td>
                                     <td class="p-10 center">
