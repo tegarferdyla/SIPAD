@@ -23,9 +23,8 @@
     <link href="<?php echo base_url('assets/vendors/feather-icons/feather.css') ?>" rel="stylesheet" type="text/css">
    <!--  <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.css') ?>"/> -->
     <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrapValidator.css') ?>"/>
-
-     <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-1.10.2.min.js') ?>"></script>
-    <!-- <script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
    
     <!-- Head Libs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>

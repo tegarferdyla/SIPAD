@@ -40,7 +40,7 @@
                             <?php foreach ($hasil as $u) {?>
                             <div class="card card-outline-success">
                                 <div class="card-header" role="tab" id="heading4">
-                                    <h6 class="card-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-3" href="#<?php echo $u->id_paket ?>" aria-expanded="false" aria-controls="<?php echo $u->id_paket ?>"><?php echo $u->nama_paket ?><br><span class="text-white">Persentase Kelengkapan Dokumen : <?php echo $u->total; ?>%</span></a></h6>
+                                    <h6 class="card-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-3" href="#<?php echo $u->id_paket ?>" aria-expanded="false" aria-controls="<?php echo $u->id_paket ?>"><?php echo $u->nama_paket ?><br><span class="text-white">Persentase Kelengkapan Dokumen : </span><span class="<?php if($u->total<50){echo "text-danger";}else{echo "text-white";} ?>"><?php echo $u->total; ?>%</span></a></h6>
                                 </div>
                                 <div id="<?php echo $u->id_paket ?>" class="card-collapse collapse" role="tabpanel" aria-labelledby="heading4">
                                     <div class="card-body">

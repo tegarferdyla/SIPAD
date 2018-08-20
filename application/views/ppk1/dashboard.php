@@ -22,7 +22,7 @@
                 <div class="widget-body">
                     <h5 class="sub-heading-font-family mt-3">Laporan Persentasi Paket</h5><span class="sub-heading-font-family mb-3">Periode: 2018</span>
                     <div style="height: 200px" class="my-4 pr-3">
-                        <canvas id="chartJsBar"></canvas>
+                        <canvas id="barchart"></canvas>
                     </div>
                 </div>
             </div>   
@@ -73,4 +73,61 @@
             <!-- /.widget-holder -->
         </div>
         <hr>
+        <script type="text/javascript">
+            var ctx2 = $('#barchart').get(0).getContext('2d');
+            var data2 = {
+                labels: [
+                <?php foreach ($hasil as $r) {
+                    echo "'$r->nama_paket',";
+                }?>],
+                datasets: [
+                {
+                    label: "Data",
+                    backgroundColor: "#5867c3",
+                    data: [
+                    <?php foreach ($hasil as $r) {
+                        echo "'$r->total',";
+                    }?>,100]
+                },
+                ]
+            };
+
+            var chartJsBar = new Chart(ctx2, {
+                type: "bar",
+                data: data2,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    legend: {
+                        display: false
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false,
+                        titleFontColor: "#000",
+                        titleMarginBottom: 10,
+                        backgroundColor: "rgba(255,255,255,.9)",
+                        bodyFontColor: "#000",
+                        borderColor: "#e9e9e9",
+                        bodySpacing: 10,
+                        borderWidth: 3,
+                        xPadding: 10,
+                        yPadding: 10,
+                    },
+                    scales: {
+                        xAxes: [{
+                            gridLines: {
+                                display:false
+                            }
+                        }],
+                        yAxes: [{
+                            gridLines: {
+                                display:false
+                            }
+                        }]
+                    }
+                },
+                responsive: true
+            });
+        </script>
     </main>

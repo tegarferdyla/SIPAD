@@ -63,7 +63,15 @@ class Datatahun_model extends CI_Model {
 		$this->db->where($where);
 		$this->db->delete($table);
 	}
-
+	public function cektahunppk($tahun,$id_ppk)
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_tahun');
+		$this->db->where('nama_tahun',$tahun);
+		$this->db->where('id_ppk',$id_ppk);
+		$query = $this->db->get();
+		return $query->row();
+	}
 }
 
 ?>
