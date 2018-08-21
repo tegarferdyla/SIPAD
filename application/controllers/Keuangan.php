@@ -139,6 +139,7 @@ class Keuangan extends CI_Controller {
 		$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
 		$data['kontraktual'] = $this->Datapaket_model->kontraktual($id_tahun);
 		if ($data['kontraktual']==NULL) {
+			$this->session->set_flashdata('kosong', 'true');
 			redirect('Keuangan/jenispaket/'.$id_tahun,'refresh');
 		}
 		$this->load->view('keuangan/kontraktual',$data);
@@ -155,6 +156,7 @@ class Keuangan extends CI_Controller {
 
 		$data['suakelola'] = $this->Datapaket_model->suakelola($id_tahun);
 		if ($data['suakelola']==NULL) {
+			$this->session->set_flashdata('kosong', 'true');
 			redirect('Keuangan/jenispaket/'.$id_tahun,'refresh');
 		}
 		$data['dapattahun'] = $this->Datatahun_model->dapatkantahun($id_tahun);

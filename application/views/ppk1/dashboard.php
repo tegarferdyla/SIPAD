@@ -20,7 +20,7 @@
        <div class="col-md-12 widget-holder">
             <div class="widget-bg">
                 <div class="widget-body">
-                    <h5 class="sub-heading-font-family mt-3">Laporan Persentasi Paket</h5><span class="sub-heading-font-family mb-3">Periode: 2018</span>
+                    <h5 class="sub-heading-font-family mt-3">Laporan Persentasi Paket</h5><span class="sub-heading-font-family mb-3">Periode: <?php echo date('Y') ?></span>
                     <div style="height: 200px" class="my-4 pr-3">
                         <canvas id="barchart"></canvas>
                     </div>
@@ -49,15 +49,11 @@
                 <div class="widget-body">
                     <div class="counter-w-info media">
                         <div class="media-body">
-                            <p class="text-muted mr-b-5"><?php echo $u['deskripsi']; ?></p><span class="counter-title color-info"><span class="counter"><?php echo $u['nama_tahun']; ?></span></span>
+                            <p class="text-muted mr-b-5"><?php echo $u['deskripsi']; ?></p><span class="counter-title color-info"><span class=""><?php echo $u['nama_tahun']; ?></span></span>
                             <!-- /.counter-title -->
-                            <div class="progress" style="width: 70%; position: relative; top: 25px">
-                                <div class="progress-bar bg-info" style="width: 66%" role="progressbar"><span class="sr-only">20% Complete</span>
-                                </div>
-                            </div>
                         </div>
                         <!-- /.media-body -->
-                        <div class="pull-right align-self-center"><i class="list-icon feather feather-file bg-info"></i>
+                        <div class="pull-right align-self-center"><i class="list-icon feather feather-briefcase bg-info"></i>
                         </div>
                     </div>
                     <!-- /.counter-w-info -->

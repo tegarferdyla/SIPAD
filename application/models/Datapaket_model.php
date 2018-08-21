@@ -13,7 +13,30 @@ class Datapaket_model extends CI_Model {
 	public function Tambahpaket($data, $table) {
 		return $this->db->insert($table, $data);
 	}
+	public function updatepaket($table,$data_update,$where)
+	{
+		$res=$this->db->update($table,$data_update,$where);
+		return $res;
+	}
 
+	public function daftarpaket ($id_ppk){
+		$query = $this->db->query("SELECT b.id_paket, a.nama_tahun, b.nama_paket, b.jenis, b.input_by FROM tbl_tahun a , tbl_paket b WHERE b.id_tahun = a.id_tahun AND b.id_ppk = '$id_ppk' ORDER BY a.nama_tahun DESC");
+		 return $query->result_array();
+	}
+
+	public function GetWherePaket($id_paket)
+	{
+		$query = $this->db->query("SELECT b.id_paket, a.nama_tahun, b.nama_paket, b.jenis, b.deskripsi FROM tbl_tahun a , tbl_paket b WHERE b.id_tahun = a.id_tahun AND b.id_paket = '$id_paket' ");
+		return $query->result_array();
+	}
+	public function wherepaket($id_tahun)
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_paket');
+		$this->db->where('id_tahun', $id_tahun);
+		$query = $this->db->get();
+		return $query->result_array();
+	}
 	public function cekjenis($jenis, $tahun, $id_ppk) {
 		$this->db->select('*');
 		$this->db->from('tbl_paket');
@@ -186,6 +209,51 @@ class Datapaket_model extends CI_Model {
 		$this->db->where('nama_tahun', $tahun);
 		$query = $this->db->get();
 		return $query->result();
+	}
+	public function deletepaket($where,$table)
+	{
+		$this->db->where($where);
+		$this->db->delete($table);
+	}
+	public function deletedoc1($where,$table)
+	{
+		$this->db->where($where);
+		$this->db->delete($table);
+	}
+	public function deletedoc2($where,$table)
+	{
+		$this->db->where($where);
+		$this->db->delete($table);
+	}
+	public function deletedoc3($where,$table)
+	{
+		$this->db->where($where);
+		$this->db->delete($table);
+	}
+	public function deletedoc4($where,$table)
+	{
+		$this->db->where($where);
+		$this->db->delete($table);
+	}
+	public function deletedoc5($where,$table)
+	{
+		$this->db->where($where);
+		$this->db->delete($table);
+	}
+	public function deletedoc6($where,$table)
+	{
+		$this->db->where($where);
+		$this->db->delete($table);
+	}
+	public function deletedoc7($where,$table)
+	{
+		$this->db->where($where);
+		$this->db->delete($table);
+	}
+	public function deletedoc8($where,$table)
+	{
+		$this->db->where($where);
+		$this->db->delete($table);
 	}
 	public function chart()
     {

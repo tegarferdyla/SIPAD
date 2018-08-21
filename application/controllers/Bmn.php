@@ -154,6 +154,7 @@ class Bmn extends CI_Controller {
 			$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
 			$data['kontraktual'] = $this->Datapaket_model->kontraktual($id_tahun);
 			if ($data['kontraktual']==NULL) {
+				$this->session->set_flashdata('kosong', 'true');
 				redirect('Bmn/jenispaket/'.$id_tahun,'refresh');
 			}
 			$this->load->view('bmn/kontraktual',$data);
@@ -172,6 +173,7 @@ class Bmn extends CI_Controller {
 			$data['namappk'] = $this->Datappk_model->GetWherePPK("where id_ppk = '$id_ppk'");
 			$data['suakelola'] = $this->Datapaket_model->suakelola($id_tahun);
 			if ($data['suakelola']==NULL) {
+				$this->session->set_flashdata('kosong', 'true');
 				redirect('Bmn/jenispaket/'.$id_tahun,'refresh');
 			}
 			$this->load->view('bmn/suakelola',$data);

@@ -49,8 +49,8 @@
                                         <div class="col-md-9">
                                             <input class="form-control" id="l0" placeholder="" type="text" name="divisi" value="<?php echo $user['bagian']?>" readonly>
                                         </div>
-                                    </div><!-- 
-                                  <div class="form-group row">
+                                    </div> 
+                                  <!-- <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="l13">Divisi</label>
                                         <div class="col-md-9">
                                             <select class="form-control" id="l13" name="divisi">

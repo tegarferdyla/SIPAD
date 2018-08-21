@@ -2,14 +2,14 @@
             <!-- Page Title Area -->
             <div class="row page-title clearfix">
                 <div class="page-title-left">
-                    <h6 class="page-title-heading mr-0 mr-r-5">Input Tahun</h6>
+                    <h6 class="page-title-heading mr-0 mr-r-5">Input Paket</h6>
                 </div>
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="<?php echo base_url('PPK1') ?>">Dashboard</a>
                         </li>
-                        <li class="breadcrumb-item active">Input Tahun</li>
+                        <li class="breadcrumb-item active">Input Paket</li>
                     </ol>
                 </div>
                 <!-- /.page-title-right -->
@@ -32,7 +32,7 @@
                                             </button> <i class="material-icons list-icon">check_circle</i>  <strong>Well done!</strong> Data Paket baru berhasil di daftarkan.
                                         </div>
                                          <?php elseif ($this->session->flashdata('paketsalah')): ?>
-                                        <div class="alert alert-icon alert-success border-danger alert-dismissible fade show" role="alert">
+                                        <div class="alert alert-icon alert-danger border-danger alert-dismissible fade show" role="alert">
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                                             </button><i class="material-icons list-icon">not_interested</i>  <strong>Well done!</strong> Data Paket sudah terdaftar.
                                         </div>
@@ -54,7 +54,7 @@
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="l15">Jenis Paket</label>
                                         <div class="col-md-9">
-                                            <select name="jenis_paket" id="" class="form-control">
+                                            <select name="jenis_paket" id="" class="form-control" required="">
                                             <option value="">-- Pilih Jenis Paket --</option>
                                             <option value="kontraktual">Kontraktual</option>
                                             <option value="suakelola">Suakelola</option>
@@ -64,7 +64,7 @@
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="l15">Tahun Paket</label>
                                         <div class="col-md-9">
-                                            <select name="tahun_paket" id="" class="form-control">
+                                            <select name="tahun_paket" id="" class="form-control" required="">
                                             <option value="">-- Pilih Tahun Paket --</option>
                                            <?php foreach ($get_tahun as $u) { ?>
                                                 <option value="<?php echo $u['id_tahun']; ?>">Tahun <?php echo $u['nama_tahun']; ?></option>

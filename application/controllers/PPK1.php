@@ -23,6 +23,43 @@ class PPK1 extends CI_Controller {
 			redirect('Pokja');
 		}
 	}
+	public function daftarpaket()
+	{
+		$id_user = $this->session->userdata('id_user');
+		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
+		$this->load->view('ppk1/header', $data);
+
+		$id_ppk = $this->session->userdata('id_ppk');
+		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+		$ppk = array("nama" => $ppk[0]['nama']);
+		$this->load->view('ppk1/sidebar', $ppk);
+
+		$data['get_paket'] = $this->Datapaket_model->daftarpaket($id_ppk);
+		$this->load->view('ppk1/daftarpaket',$data);
+		$this->load->view('ppk1/footer');
+	}
+	public function editpaket($id_paket)
+	{
+		$id_ppk = $this->session->userdata('id_ppk');
+		$id_user = $this->session->userdata('id_user');
+		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
+		$this->load->view('ppk1/header', $data);
+
+		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+		$ppk = array("nama" => $ppk[0]['nama']);
+		$this->load->view('ppk1/sidebar', $ppk);
+
+		$paket = $this->Datapaket_model->GetWherepaket($id_paket);
+		$data = array(
+			"id_paket" => $paket[0]['id_paket'],
+			"nama_tahun" => $paket[0]['nama_tahun'],
+			"nama_paket" => $paket[0]['nama_paket'],
+			"jenis" => $paket[0]['jenis'],
+			"deskripsi" =>$paket[0]['deskripsi']
+		);
+		$this->load->view('ppk1/editpaket', $data);
+		$this->load->view('ppk1/footer');
+	}
 	public function editprofile() {
 		$id_user = $this->session->userdata('id_user');
 		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
@@ -89,24 +126,53 @@ class PPK1 extends CI_Controller {
 		$id_user = $this->session->userdata('id_user');
 		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
 		$this->load->view('ppk1/header', $data);
-
 		$id_ppk = $this->session->userdata('id_ppk');
 		$tahun =  date('Y');
 		$cetaktahun = $this->Datatahun_model->cektahunppk($tahun,$id_ppk);
-		$id_tahun = $cetaktahun->id_tahun;
-		$countdata['tbl_doc1'] = $this->Datapaket_model->countonme($id_tahun);
-		$countdata['tbl_doc2'] = $this->Datapaket_model->countdoc2($id_tahun);
-		$countdata['tbl_doc3'] = $this->Datapaket_model->countdoc3($id_tahun);
-		$countdata['tbl_addendumii'] = $this->Datapaket_model->countdoc4($id_tahun);
-		$countdata['tbl_addendumiii'] = $this->Datapaket_model->countdoc5($id_tahun);
-		$countdata['tbl_addendumiv'] = $this->Datapaket_model->countdoc6($id_tahun);
-		$countdata['tbl_pascamc0'] = $this->Datapaket_model->countdoc7($id_tahun);
-		$countdata['tbl_pendukung'] = $this->Datapaket_model->countdoc8($id_tahun);
-		$data['tahun'] = $this->Datatahun_model->cektahun($id_tahun);
-		$id_ppk = $data['tahun']->id_ppk;
-		$data['get_tahun'] = $this->Datatahun_model->datatahun($id_ppk);
-
-		$nama_paket = $this->Datapaket_model->lihatpaket($id_tahun);
+		// print_r($cekpaket);
+		if ($cetaktahun!=NULL) {
+			$id_tahun = $cetaktahun->id_tahun;
+			$cekpaket = $this->Datapaket_model->wherepaket($id_tahun);
+			if ($cekpaket!=NULL) {
+				$countdata['tbl_doc1'] = $this->Datapaket_model->countonme($id_tahun);
+				$countdata['tbl_doc2'] = $this->Datapaket_model->countdoc2($id_tahun);
+				$countdata['tbl_doc3'] = $this->Datapaket_model->countdoc3($id_tahun);
+				$countdata['tbl_addendumii'] = $this->Datapaket_model->countdoc4($id_tahun);
+				$countdata['tbl_addendumiii'] = $this->Datapaket_model->countdoc5($id_tahun);
+				$countdata['tbl_addendumiv'] = $this->Datapaket_model->countdoc6($id_tahun);
+				$countdata['tbl_pascamc0'] = $this->Datapaket_model->countdoc7($id_tahun);
+				$countdata['tbl_pendukung'] = $this->Datapaket_model->countdoc8($id_tahun);
+				// $data['tahun'] = $this->Datatahun_model->cektahun($id_tahun);
+				$nama_paket = $this->Datapaket_model->lihatpaket($id_tahun);
+			}else{
+				$buatcount = array('hasil' => '0');
+				$jadiobj = json_encode($buatcount);
+				// $data['tahun'] = array('hasil' => 0);
+				$countdata['tbl_doc1'][] = json_decode($jadiobj);
+				$countdata['tbl_doc2'][] = json_decode($jadiobj);
+				$countdata['tbl_doc3'][] = json_decode($jadiobj);
+				$countdata['tbl_addendumii'][] = json_decode($jadiobj);
+				$countdata['tbl_addendumiii'][] = json_decode($jadiobj);
+				$countdata['tbl_addendumiv'][] = json_decode($jadiobj);
+				$countdata['tbl_pascamc0'][] = json_decode($jadiobj);
+				$countdata['tbl_pendukung'][] = json_decode($jadiobj);
+				$nama_paket[] = array('nama_paket' => 'Tidak Ada Paket','jenis' => 'kosong');
+			}
+		}
+		else{
+			$buatcount = array('hasil' => '0');
+			$jadiobj = json_encode($buatcount);
+			// $data['tahun'] = array('hasil' => 0);
+			$countdata['tbl_doc1'][] = json_decode($jadiobj);
+			$countdata['tbl_doc2'][] = json_decode($jadiobj);
+			$countdata['tbl_doc3'][] = json_decode($jadiobj);
+			$countdata['tbl_addendumii'][] = json_decode($jadiobj);
+			$countdata['tbl_addendumiii'][] = json_decode($jadiobj);
+			$countdata['tbl_addendumiv'][] = json_decode($jadiobj);
+			$countdata['tbl_pascamc0'][] = json_decode($jadiobj);
+			$countdata['tbl_pendukung'][] = json_decode($jadiobj);
+			$nama_paket[] = array('nama_paket' => 'Tidak Ada Paket','jenis' => 'kosong');
+		}
 		for($i=0;$i<count($nama_paket);$i++){
 			$nama = $nama_paket[$i]['nama_paket'];
 			$jenis = $nama_paket[$i]['jenis'];
@@ -705,6 +771,12 @@ class PPK1 extends CI_Controller {
 			'id_tahun' => $tahun_paket,
 			'id_ppk' => $id_ppk,
 		);
+		$validasipaket = $this->Datapaket_model->validasipaket($nama_paket);
+		if ($validasipaket > 0) {
+			$this->session->set_flashdata('paketsalah','true');
+			redirect('PPK1/inputpaket');
+		}
+		else{
 		$input = $this->Datapaket_model->Tambahpaket($data, 'tbl_paket');
 		$id_doc = $this->Penomoran_model->IDdoc();
 		$doc1 = array(
@@ -754,6 +826,7 @@ class PPK1 extends CI_Controller {
 			'id_paket' => $id_paket
 		);
 		$pendukung = $this->Datapaket_model->insertpend('tbl_pendukung',$data_pendukung);
+		}
 		if ($input > 0) {
 			$tahun = $this->Datatahun_model->GetWhereTahun("where id_tahun ='$tahun_paket'");
 			$data = array(
@@ -767,7 +840,7 @@ class PPK1 extends CI_Controller {
 				"nama" => $nama[0]['nama'],
 			);
 			$nama = $data['nama'];
-			$lokasi = "./assets/data/" . $tahun . "/" . $nama . "/" . $jenis_paket . "/" . $nama_paket;
+			$lokasi = "./assets/data/" . $tahun . "/" . $nama . "/" . $jenis_paket . "/" . ucwords($nama_paket);
 			mkdir($lokasi, 0777, true);
 			$this->session->set_flashdata('berhasil', 'true');
 			redirect(base_url('PPK1/inputpaket'));
@@ -775,7 +848,6 @@ class PPK1 extends CI_Controller {
 			$this->session->set_flashdata('gagal', 'true');
 			redirect(base_url('PPK1/inputpaket'));
 		}
-		
 	}
 	public function viewdocutama($id_paket) {
 		$data['paket'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
@@ -1087,6 +1159,65 @@ class PPK1 extends CI_Controller {
 		$this->load->view('ppk1/gantipass', $data);
 		$this->load->view('ppk1/footer');
 	}
+	public function editpaketfungsi()
+	{
+		$id_paket = $this->input->post('id_paket');
+		$nama_baru = $this->input->post('nama_paket');
+		
+		$id_user = $this->session->userdata('id_user');
+		$nama = $this->Datauser_model->GetWhereUser($id_user);
+		$updateby = $nama['nama'];
+
+		$id_ppk = $this->session->userdata('id_ppk');
+		$nama = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+		$namappk = $nama[0]['nama'];
+		$paket = $this->Datapaket_model->GetWherepaket($id_paket);
+		$nama_tahun = $paket[0]['nama_tahun'];
+		$nama_paket = $paket[0]['nama_paket'];
+		$jenis = $paket[0]['jenis'];
+
+		$file_awal = './assets/data/'.$nama_tahun.'/'.$namappk.'/'.$jenis.'/'.$nama_paket.'/';
+		$file_baru = './assets/data/'.$nama_tahun.'/'.$namappk.'/'.$jenis.'/'.$nama_baru.'/' ;
+		$pindah = rename($file_awal, $file_baru);
+		if ($pindah>0) {
+			$data_update = array('nama_paket' => $nama_baru,'input_by' => $updateby);
+			$where = array('id_paket' => $id_paket);
+			$db = $this->Datapaket_model->updatepaket('tbl_paket',$data_update,$where);
+			if ($db>0) {
+				$this->session->set_flashdata('updateberhasil', true);
+				redirect('PPK1/daftarpaket');
+			}
+		}
+	}
+	public function hapuspaket($id_paket)
+	{
+		$id_ppk = $this->session->userdata('id_ppk');
+		$nama = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
+		$namappk = $nama[0]['nama'];
+		$paket = $this->Datapaket_model->GetWherepaket($id_paket);
+		$nama_tahun = $paket[0]['nama_tahun'];
+		$nama_paket = $paket[0]['nama_paket'];
+		$jenis = $paket[0]['jenis'];
+		
+		delete_files('./assets/data/'.$nama_tahun.'/'.$namappk.'/'.$jenis.'/'.$nama_paket.'/',TRUE);
+		rmdir('./assets/data/'.$nama_tahun.'/'.$namappk.'/'.$jenis.'/'.$nama_paket.'/');
+		$where = array(
+			'id_paket' => $id_paket
+		);
+		$paket = $this->Datapaket_model->deletepaket($where, 'tbl_paket');
+		$doc1 = $this->Datapaket_model->deletedoc1($where, 'tbl_doc1');
+		$doc2 = $this->Datapaket_model->deletedoc2($where, 'tbl_doc2'); 
+		$doc3 = $this->Datapaket_model->deletedoc3($where, 'tbl_doc3');
+		$doc4 = $this->Datapaket_model->deletedoc4($where, 'tbl_addendumii');
+		$doc5 = $this->Datapaket_model->deletedoc5($where, 'tbl_addendumiii');
+		$doc6 = $this->Datapaket_model->deletedoc6($where, 'tbl_addendumiv');
+		$doc7 = $this->Datapaket_model->deletedoc7($where, 'tbl_pascamc0');
+		$doc8 = $this->Datapaket_model->deletedoc8($where, 'tbl_pendukung');
+		// if ($paket>0) {
+			$this->session->set_flashdata('deleteberhasil', true);
+			redirect('PPK1/daftarpaket');
+		// }
+	}
 	public function test() {
 		// // $cari['show'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
 		// $data['paket'] = $this->Datapaket_model->showidpkt('tbl_pendukung', $id_paket);
@@ -1098,13 +1229,9 @@ class PPK1 extends CI_Controller {
 		// ->set_output(json_encode($data, JSON_PRETTY_PRINT))
 		// ->_display();
 		// exit;
-		$id_ppk = $this->session->userdata('id_ppk');
-		$nama = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
-			$data = array(
-				"nama" => $nama[0]['nama'],
-			);
-		$nama = $data['nama'];
-		echo "assets/data/2018/".$nama;
+		// 
+
+		//Abil data 
 
 	}
 	public function testkirim($tahun,$nama,$jenis,$nama_paket,$nama_file) {

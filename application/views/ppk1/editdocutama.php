@@ -403,21 +403,21 @@
 							<div class="form-group col-md-2">
 								<div class="check">
 									<h4 class="box-title mr-b-0">Addendum II
-										<input type="checkbox" name="topic1" />
+										<input type="checkbox" name="topic1" onchange="ad2(this)" <?php if (($doc5->addii_bal||$doc5->addii_boq||$doc5->addii_jdst||$doc5->addii_slp||$doc5->addii_kurva||$doc5->addii_shop||$doc5->addii_naii)!=NULL) {echo "checked";}?> />
 									</h4>
 								</div>
 							</div>
 							<div class="form-group col-md-2">
 								<div class="check">
 									<h4 class="box-title mr-b-0">Addendum III
-										<input type="checkbox" name="topic2" />
+										<input type="checkbox" name="topic2" onchange="ad3(this)" <?php if (($doc6->addiii_bal||$doc6->addiii_boq||$doc6->addiii_jdst||$doc6->addiii_slp||$doc6->addiii_kurva||$doc6->addiii_shop||$doc6->addii_naiii)!=NULL){echo "checked";}?> />
 									</h4>
 								</div>
 							</div>
 							<div class="form-group col-md-2">
 								<div class="check">
 									<h4 class="box-title mr-b-0">Addendum IV
-										<input type="checkbox" name="topic3" />
+										<input type="checkbox" name="topic3" onchange="ad4(this)" <?php if (($doc7->addiv_bal||$doc7->addiv_boq||$doc7->addiv_jdst||$doc7->addiv_slp||$doc7->addiv_kurva||$doc7->addiv_shop||$doc7->addiv_naiv)!=NULL){echo "checked";} ?> />
 									</h4>
 								</div>
 							</div>
@@ -1216,31 +1216,42 @@
 </main>
 <!-- /.widget-list -->
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('#interviewForm')
-        .find('input[type="checkbox"][name="topic1"]')
-        .on('change', function() {
-            $container = $('[data-topic="addendumii"]');
-            $container.toggle();
-            });
-    });
-    $(document).ready(function() {
-        $('#interviewForm')
-        .find('input[type="checkbox"][name="topic2"]')
-        .on('change', function() {
-            var topic      = $(this).val(),
-            $container = $('[data-topic="addendumiii"]');
-            $container.toggle();
-            });
-    });
-    $(document).ready(function() {
-        $('#interviewForm')
-        .find('input[type="checkbox"][name="topic3"]')
-        .on('change', function() {
-            $container = $('[data-topic="addendumiv"]');
-            $container.toggle();
-            });
-    });
+	function ad2(elm){
+		$container = $('[data-topic="addendumii"]');
+    	$container.toggle();
+	}
+	$('#interviewForm').ready(function() {
+		var n = $( "input[type='checkbox'][name='topic1']" );
+		var c = n.is(":checked");
+		if (c==true) {
+			$container = $('[data-topic="addendumii"]');
+	    	$container.toggle();
+		}
+	})
+	function ad3(elm){
+		$container = $('[data-topic="addendumiii"]');
+    	$container.toggle();
+	}
+	$('#interviewForm').ready(function() {
+		var n = $( "input[type='checkbox'][name='topic2']" );
+		var c = n.is(":checked");
+		if (c==true) {
+			$container = $('[data-topic="addendumiii"]');
+	    	$container.toggle();
+		}
+	})
+	function ad4(elm){
+		$container = $('[data-topic="addendumiv"]');
+    	$container.toggle();
+	}
+	$('#interviewForm').ready(function() {
+		var n = $( "input[type='checkbox'][name='topic3']" );
+		var c = n.is(":checked");
+		if (c==true) {
+			$container = $('[data-topic="addendumiv"]');
+	    	$container.toggle();
+		}
+	})
     $(".btn-show").click(function() {
         var value = $(this).val()
         var value2 = $(this).find("input").val()

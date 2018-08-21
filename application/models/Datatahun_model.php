@@ -11,7 +11,7 @@ class Datatahun_model extends CI_Model {
 	{
 		return $this->db->insert($table, $data);
 	}
-	// Tampil data PPK di LOV
+	
 	public function datatahun($id_ppk) 
 	{
 		$this->db->select('*');
