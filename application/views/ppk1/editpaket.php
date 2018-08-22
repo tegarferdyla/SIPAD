@@ -35,13 +35,20 @@
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="l0">Jenis Paket</label>
                                         <div class="col-md-9">
-                                            <input class="form-control" id="" placeholder="" type="text" name="" value="<?php echo $jenis ?>" readonly>
+                                            <select name="jenispaket" class="form-control">
+                                                <option value="kontraktual">Kontraktual</option>
+                                                <option value="suakelola">Suakelola</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="l0">Tahun Paket</label>
                                         <div class="col-md-9">
-                                            <input class="form-control" id="" placeholder="" type="text" name="" value="<?php echo $nama_tahun ?>" readonly>
+                                            <select name="tahun" class="form-control">
+                                                <?php foreach ($get_tahun as $r): ?>
+                                                    <option value="<?php echo $r['id_tahun'] ?>">Tahun <?php echo $r['nama_tahun']; ?></option>
+                                                <?php endforeach ?>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group row">

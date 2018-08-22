@@ -48,7 +48,6 @@ class PPK1 extends CI_Controller {
 		$ppk = $this->Datappk_model->GetWherePPK("where id_ppk ='$id_ppk'");
 		$ppk = array("nama" => $ppk[0]['nama']);
 		$this->load->view('ppk1/sidebar', $ppk);
-
 		$paket = $this->Datapaket_model->GetWherepaket($id_paket);
 		$data = array(
 			"id_paket" => $paket[0]['id_paket'],
@@ -57,6 +56,7 @@ class PPK1 extends CI_Controller {
 			"jenis" => $paket[0]['jenis'],
 			"deskripsi" =>$paket[0]['deskripsi']
 		);
+		$data['get_tahun'] = $this->Datatahun_model->datatahun($id_ppk);
 		$this->load->view('ppk1/editpaket', $data);
 		$this->load->view('ppk1/footer');
 	}
@@ -1163,6 +1163,11 @@ class PPK1 extends CI_Controller {
 	{
 		$id_paket = $this->input->post('id_paket');
 		$nama_baru = $this->input->post('nama_paket');
+		$jenis_baru = $this->input->post('jenispaket');
+		$deskripsi = $this->input->post('deskripsi');
+		$id_tahun = $this->input->post('tahun');
+		$findtahun = $this->Datatahun_model->GetWhereTahun("where id_tahun ='$id_tahun'");
+		$tahun_baru = $findtahun[0]['nama_tahun'];
 		
 		$id_user = $this->session->userdata('id_user');
 		$nama = $this->Datauser_model->GetWhereUser($id_user);
@@ -1177,10 +1182,21 @@ class PPK1 extends CI_Controller {
 		$jenis = $paket[0]['jenis'];
 
 		$file_awal = './assets/data/'.$nama_tahun.'/'.$namappk.'/'.$jenis.'/'.$nama_paket.'/';
-		$file_baru = './assets/data/'.$nama_tahun.'/'.$namappk.'/'.$jenis.'/'.$nama_baru.'/' ;
+		$file_baru = './assets/data/'.$tahun_baru.'/'.$namappk.'/'.$jenis_baru.'/'.$nama_baru.'/' ;
+		$thncheck = './assets/data/'.$tahun_baru;
+		$ppkcheck = './assets/data/'.$tahun_baru.'/'.$namappk;
+		$jenischeck = './assets/data/'.$tahun_baru.'/'.$namappk.'/'.$jenis_baru;
+		if (!file_exists($thncheck)) {
+			mkdir($thncheck, 0777, true);
+		}elseif (!file_exists($ppkcheck)) {
+			mkdir($ppkcheck,0777,true);
+		}elseif (!file_exists($jenischeck)) {
+			mkdir($jenischeck,0777,true);
+		}
 		$pindah = rename($file_awal, $file_baru);
+
 		if ($pindah>0) {
-			$data_update = array('nama_paket' => $nama_baru,'input_by' => $updateby);
+			$data_update = array('nama_paket' => $nama_baru,'jenis' => $jenis_baru,'deskripsi'=>$deskripsi,'input_by' => $updateby,'id_tahun' => $id_tahun);
 			$where = array('id_paket' => $id_paket);
 			$db = $this->Datapaket_model->updatepaket('tbl_paket',$data_update,$where);
 			if ($db>0) {
@@ -1217,22 +1233,6 @@ class PPK1 extends CI_Controller {
 			$this->session->set_flashdata('deleteberhasil', true);
 			redirect('PPK1/daftarpaket');
 		// }
-	}
-	public function test() {
-		// // $cari['show'] = $this->Datapaket_model->showidpkt('tbl_paket', $id_paket);
-		// $data['paket'] = $this->Datapaket_model->showidpkt('tbl_pendukung', $id_paket);
-		// $this->load->view('ppk1/test', $data);
-		// print_r (json_encode($data,JSON_PRETTY_PRINT));
-		// $this->output
-		// ->set_status_header(200)
-		// ->set_content_type('application/json', 'utf-8')
-		// ->set_output(json_encode($data, JSON_PRETTY_PRINT))
-		// ->_display();
-		// exit;
-		// 
-
-		//Abil data 
-
 	}
 	public function testkirim($tahun,$nama,$jenis,$nama_paket,$nama_file) {
 		$name_ppk = str_replace('%20',' ', $nama);
