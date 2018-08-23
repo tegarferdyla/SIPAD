@@ -20,7 +20,7 @@ class Datapaket_model extends CI_Model {
 	}
 
 	public function daftarpaket ($id_ppk){
-		$query = $this->db->query("SELECT b.id_paket, a.nama_tahun, b.nama_paket, b.jenis, b.input_by FROM tbl_tahun a , tbl_paket b WHERE b.id_tahun = a.id_tahun AND b.id_ppk = '$id_ppk' ORDER BY a.nama_tahun DESC");
+		$query = $this->db->query("SELECT b.id_paket, a.nama_tahun, b.nama_paket, b.jenis, b.input_by FROM tbl_tahun a , tbl_paket b WHERE b.id_tahun = a.id_tahun AND b.id_ppk = '$id_ppk' ORDER BY b.id_paket DESC");
 		 return $query->result_array();
 	}
 

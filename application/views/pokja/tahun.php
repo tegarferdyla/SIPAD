@@ -39,10 +39,6 @@
                         <div class="media-body">
                             <p class="text-muted mr-b-5"><?php echo $u['deskripsi']; ?></p><span class="counter-title color-info"><?php echo $u['nama_tahun']; ?></span>
                             <!-- /.counter-title -->
-                            <div class="progress" style="width: 70%; position: relative; top: 25px">
-                                <div class="progress-bar bg-info" style="width: 66%" role="progressbar"><span class="sr-only">20% Complete</span>
-                                </div>
-                            </div>
                         </div>
                         <!-- /.media-body -->
                         <div class="pull-right align-self-center"><i class="list-icon feather feather-file bg-info"></i>

@@ -73,9 +73,9 @@
                                             <td><?php echo $u['nama_paket']; ?></td>
                                             <td><?php echo $u['jenis']; ?></td>
                                             <td><?php echo $u['input_by']; ?></td>
-                                            <td class="text-center">
-                                                <a class="btn btn-success " href="<?php echo base_url()."PPK1/editpaket/".$u['id_paket'] ?>"><i class="list-icon feather feather-edit" title="Edit"></i></a> &nbsp;
-                                                <a class="btn btn-danger" onclick="return confirm('Apa anda yakin ingin menghapus data ini?')" href="<?php echo site_url('PPK1/hapuspaket/').$u['id_paket'] ?>"><i class="list-icon feather feather-trash-2" title="Delete"></i></a>
+                                            <td class="">
+                                                <a class="btn btn-success btn-sm" href="<?php echo base_url()."PPK1/editpaket/".$u['id_paket'] ?>"><i class="list-icon feather feather-edit" title="Edit"></i></a> &nbsp;
+                                                <a class="btn btn-danger btn-sm" onclick="return confirm('Apa anda yakin ingin menghapus data ini?')" href="<?php echo site_url('PPK1/hapuspaket/').$u['id_paket'] ?>"><i class="list-icon feather feather-trash-2" title="Delete"></i></a>
                                             </td>
                                         </tr>
                                     <?php } ?>
