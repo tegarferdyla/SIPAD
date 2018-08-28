@@ -51,6 +51,7 @@ class PPK1 extends CI_Controller {
 		$paket = $this->Datapaket_model->GetWherepaket($id_paket);
 		$data = array(
 			"id_paket" => $paket[0]['id_paket'],
+			"id_tahun" => $paket[0]['id_tahun'],
 			"nama_tahun" => $paket[0]['nama_tahun'],
 			"nama_paket" => $paket[0]['nama_paket'],
 			"jenis" => $paket[0]['jenis'],
@@ -404,6 +405,7 @@ class PPK1 extends CI_Controller {
 	}
 	public function pilihpaket($tahun, $jenis) {
 		$id_ppk = $this->session->userdata('id_ppk');
+
 		$data['jenis'] = $this->Datapaket_model->cekjenis($jenis, $tahun, $id_ppk);
 		$data['tahun'] = $this->Datatahun_model->cektahun($tahun);
 		if ($data['jenis'] == NULL) {
@@ -429,6 +431,7 @@ class PPK1 extends CI_Controller {
 			$nama_paket = $this->Datapaket_model->viewjenispaket($tahun,$jenis);
 			for($i=0;$i<count($nama_paket);$i++){
 				$nama = $nama_paket[$i]['nama_paket'];
+				$deskripsi = $nama_paket[$i]['deskripsi'];
 				$id_paket = $nama_paket[$i]['id_paket'];
 				$num_doc1 = $countdata['tbl_doc1'][$i]->hasil;
 				$num_doc2 = $countdata['tbl_doc2'][$i]->hasil;
@@ -464,7 +467,7 @@ class PPK1 extends CI_Controller {
 				$num2 = 53+$adendum2+$adendum3+$adendum4;
 				$hitungan = ($num1/$num2)*100;
 				$hasil[]['total'] = number_format($hitungan,1);
-				$json[] = array('id_paket'=>$id_paket,'nama_paket'=> $nama,'paket_terkumpul' => $num1, 'total' => $hasil[$i]['total']);
+				$json[] = array('id_paket'=>$id_paket,'deskripsi' =>$deskripsi,'nama_paket'=> $nama,'paket_terkumpul' => $num1, 'total' => $hasil[$i]['total']);
 			}
 			$cetak = json_encode($json);
 			$data['hasil'] = json_decode($cetak);
@@ -771,7 +774,7 @@ class PPK1 extends CI_Controller {
 			'id_tahun' => $tahun_paket,
 			'id_ppk' => $id_ppk,
 		);
-		$validasipaket = $this->Datapaket_model->validasipaket($nama_paket);
+		$validasipaket = $this->Datapaket_model->validasipaket($nama_paket,$jenis_paket,$tahun_paket);
 		if ($validasipaket > 0) {
 			$this->session->set_flashdata('paketsalah','true');
 			redirect('PPK1/inputpaket');

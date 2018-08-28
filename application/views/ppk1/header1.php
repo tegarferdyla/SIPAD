@@ -52,8 +52,8 @@
             <div class="navbar-header">
                 <a href="index.html" class="navbar-brand">
                     <!-- <p class="logo-expand" alt=""><span style="color:#007fff">SIPAD</span></p> -->
-                    <img class="logo-expand" style="width:150px; " src="<?php echo base_url('assets/assets1/img/sipadtulis.png') ?>" alt="">
-                    <img class="logo-collapse" alt="" src="<?php echo base_url('assets/assets1/img/sipadlog.png') ?>">
+                    <img class="logo-expand" style="width:150px; " src="<?php echo base_url('assets/assets1/img/simpandos1.png') ?>" alt="">
+                    <img class="logo-collapse" alt="" src="<?php echo base_url('assets/assets1/img/baru.png') ?>">
                     <!-- <p>BonVue</p> -->
                 </a>
             </div>

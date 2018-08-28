@@ -22,7 +22,7 @@
 		<div class="main-header container">
 			<nav class="navbar navbar-expand-lg navbar-dark">
 				<!-- <a href="#" class="navbar-brand "><img src="<?php echo base_url('assets/assets1/img/sipadlog.png') ?>" style="max-width:60px; margin-top: -6px;" alt="Logo">Satker PPLP Strategis - Kementerian PUPR</a> -->
-				<a href="#" class="navbar-brand "><img src="<?php echo base_url('assets/assets1/img/sipadlog.png') ?>" style="max-width:60px; margin-top: -6px;" alt="Logo"> &nbsp; &nbsp;Satker PPLP Strategis - Kementerian PUPR</a>
+				<a href="#" class="navbar-brand "><img src="<?php echo base_url('assets/assets1/img/baru.png') ?>" style="max-width:60px; margin-top: -6px;" alt="Logo"> &nbsp; &nbsp;Satker PPLP Strategis - Kementerian PUPR</a>
 
 				<div class="collapse navbar-collapse mr-4">
 					<ul class="navbar-nav ml-auto">

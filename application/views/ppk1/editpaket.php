@@ -36,6 +36,8 @@
                                         <label class="col-md-3 col-form-label" for="l0">Jenis Paket</label>
                                         <div class="col-md-9">
                                             <select name="jenispaket" class="form-control">
+                                                <option value="<?php echo $jenis ?>"><?php echo ucwords($jenis) ?></option>
+                                                <option value="">-- Ubah Jenis Paket --</option>
                                                 <option value="kontraktual">Kontraktual</option>
                                                 <option value="suakelola">Suakelola</option>
                                             </select>
@@ -45,6 +47,8 @@
                                         <label class="col-md-3 col-form-label" for="l0">Tahun Paket</label>
                                         <div class="col-md-9">
                                             <select name="tahun" class="form-control">
+                                                <option value="<?php echo $id_tahun; ?>">Tahun <?php echo $nama_tahun ?></option>
+                                                <option value="">-- Ubah Tahun Paket --</option>
                                                 <?php foreach ($get_tahun as $r): ?>
                                                     <option value="<?php echo $r['id_tahun'] ?>">Tahun <?php echo $r['nama_tahun']; ?></option>
                                                 <?php endforeach ?>

@@ -2,7 +2,7 @@
     <!-- Page Title Area -->
     <div class="row page-title clearfix">
         <div class="page-title-left">
-            <p class="page-title-description mr-0 d-none d-md-inline-block">Sistem Informasi Pengarsipan Dokumen Satker Pengembangan Penyehatan Lingkungan Permukiman Strategis</p>
+            <p class="page-title-description mr-0 d-none d-md-inline-block">Sistem Informasi Manajemen Pengarsipan Dokumen Satker</p>
         </div>
         <!-- /.page-title-left -->
         <div class="page-title-right d-none d-sm-inline-flex">

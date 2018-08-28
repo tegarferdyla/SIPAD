@@ -8,10 +8,10 @@
       <div class="row flex-1 align-items-center">
         <div class="col-lg-5 px-0 text-center">
           <figure>
-              <img src="<?php echo base_url('assets/assets1/img/sipadlog.png') ?>" alt="SIPAD" style="max-width:250px;" />
+              <img src="<?php echo base_url('assets/assets1/img/baru.png') ?>" alt="SIPAD" style="max-width:290px;" />
           </figure>
-          <h2 class="mb-0" style="font-size: 54px; font-weight: 700">SI<span style="color:#007fff;">PAD</span></h2>
-          <h5 class="">Sistem Informasi Pengelolaan Arsip Dokumen</h5>
+          <h2 class="mb-0" style="font-size: 54px; font-weight: 700">SIMPAN<span style="color:#007fff;">DOS</span></h2>
+          <h5 class="">Sistem Informasi Pengarsipan Dokumen Satker</h5>
           <!-- <ul class="list-unstyled list-inline fs-14">
             <li class="list-inline-item"><i class="fa fa-circle fs-12 mr-2 text-warning"></i> Bootstrap 4 ready</li>
             <li class="list-inline-item"><i class="fa fa-circle fs-12 mr-2 text-warning"></i> 5 Dashboards variants</li>
@@ -35,8 +35,8 @@
           <div class="row">
             <div class="col-xl-7 col-lg-8 mx-auto">
               <div class="section-title">
-                <h2 class="heading">Apa itu <span style="color:#ffffff;">SIPAD</span> - PPLPS ?</h2>
-                <h6 class="subheading" style ="color:white" align="justify">SIPAD adalah sistem yang digunakan untuk mempermudah pengelolaan arsip berbagai dokumen. Dengan fitur yang lengkap, akan sangat membantu mempermudah pengelolaan arsip dokumen Perusahaan Anda</h6>
+                <h2 class="heading">Apa itu <span style="color:#ffffff;">SIMPANDOS?</span></h2>
+                <h6 class="subheading" style ="color:white" align="justify">SIMPANDOS adalah sistem yang digunakan untuk mempermudah pengelolaan arsip berbagai dokumen. Dengan fitur yang lengkap, akan sangat membantu mempermudah pengelolaan arsip dokumen Perusahaan Anda</h6>
               </div><!-- /.section-title -->
             </div><!-- /.col-xl-7 -->
           </div><!-- /.row -->

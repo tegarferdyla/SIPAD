@@ -40,13 +40,24 @@
                             <?php foreach ($hasil as $u) {?>
                             <div class="card card-outline-info">
                                 <div class="card-header" role="tab" id="heading4">
-                                    <h2 class="card-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-3" href="#<?php echo $u->id_paket ?>" aria-expanded="false" aria-controls="<?php echo $u->id_paket ?>"><b><?php echo $u->nama_paket ?></b><br><br><span class="text-white">Persentase Kelengkapan Dokumen : </span><span class="<?php if($u->total<50){echo "text-danger";}else{echo "text-white";} ?>"><?php echo $u->total; ?>%</span></a></h2>
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-3" href="#<?php echo $u->id_paket ?>" aria-expanded="false" aria-controls="<?php echo $u->id_paket ?>">
+                                    <div class="row">
+                                        <div class="col-md-11">
+                                        <h5 class="card-title"><b><?php echo $u->nama_paket ?></b></h2>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <h5 class="card-title <?php if($u->total<50){echo "text-danger";}else{echo "text-white";} ?>"><b><?php echo $u->total; ?>%</b></h2>
+                                        </div>
+                                    </div>
+                                    </a>
                                 </div>
                                 <div id="<?php echo $u->id_paket ?>" class="card-collapse collapse" role="tabpanel" aria-labelledby="heading4">
                                     <div class="card-body">
                                         <ul class="list-group">
                                             <a href="<?php echo site_url('PPK1/viewdocutama/' . $u->id_paket) ?>"><li class="list-group-item">Dokumen Utama</li></a>
                                             <a href="<?php echo site_url('PPK1/viewdocpendukung/'.$u->id_paket) ?>"><li class="list-group-item">Dokumen Pendukung</li></a>
+                                            <li class="list-group-item"><p style="color: blue">- Keterangan :</p>
+                                                <p><?php echo $u->deskripsi; ?></p></li>
                                         </ul>
                                     </div>
                                 </div>

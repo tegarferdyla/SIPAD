@@ -26,7 +26,7 @@ class Datapaket_model extends CI_Model {
 
 	public function GetWherePaket($id_paket)
 	{
-		$query = $this->db->query("SELECT b.id_paket, a.nama_tahun, b.nama_paket, b.jenis, b.deskripsi FROM tbl_tahun a , tbl_paket b WHERE b.id_tahun = a.id_tahun AND b.id_paket = '$id_paket' ");
+		$query = $this->db->query("SELECT b.id_paket, a.id_tahun,a.nama_tahun, b.nama_paket, b.jenis, b.deskripsi FROM tbl_tahun a , tbl_paket b WHERE b.id_tahun = a.id_tahun AND b.id_paket = '$id_paket' ");
 		return $query->result_array();
 	}
 	public function wherepaket($id_tahun)
@@ -34,6 +34,7 @@ class Datapaket_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('tbl_paket');
 		$this->db->where('id_tahun', $id_tahun);
+		$this->db->order_by('id_paket','DESC');
 		$query = $this->db->get();
 		return $query->result_array();
 	}
@@ -43,11 +44,13 @@ class Datapaket_model extends CI_Model {
 		$this->db->where('jenis', $jenis);
 		$this->db->where('id_tahun', $tahun);
 		$this->db->where('id_ppk', $id_ppk);
+		$this->db->order_by('id_paket','DESC');
 		$query = $this->db->get();
 		return $query->result_array();
 	}
 	public function showidpkt($table, $id_paket) {
 		$this->db->where('id_paket', $id_paket);
+		$this->db->order_by('id_paket','DESC');
 		$id = $this->db->get($table);
 		return $id->result_array();
 	}
@@ -159,6 +162,7 @@ class Datapaket_model extends CI_Model {
 		$this->db->from('tbl_paket');
 		$this->db->where('jenis','kontraktual');
 		$this->db->where('id_tahun', $id_tahun);
+		$this->db->order_by('id_paket','DESC');
 		$query = $this->db->get();
 		return $query->result_array();
 	}
@@ -176,6 +180,7 @@ class Datapaket_model extends CI_Model {
 		$this->db->from('tbl_paket');
 		$this->db->where('jenis','suakelola');
 		$this->db->where('id_tahun', $id_tahun);
+		$this->db->order_by('id_paket','DESC');
 		$query = $this->db->get();
 		return $query->result_array();
 	}
@@ -184,6 +189,7 @@ class Datapaket_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('tbl_paket');
 		$this->db->where('id_tahun', $id_tahun);
+		$this->db->order_by('id_paket','DESC');
 		$query = $this->db->get();
 		return $query->result_array();
 	}
@@ -193,6 +199,7 @@ class Datapaket_model extends CI_Model {
 		$this->db->from('tbl_paket');
 		$this->db->where('id_tahun', $id_tahun);
 		$this->db->where('jenis', $jenis);
+		$this->db->order_by('id_paket','DESC');
 		$query = $this->db->get();
 		return $query->result_array();
 	}
@@ -315,7 +322,8 @@ class Datapaket_model extends CI_Model {
 			select a.id_paket, 'mc0_jdst' file, a.mc0_jdst value
 			from tbl_doc1 a, tbl_paket b where a.id_paket = b.id_paket AND b.id_tahun = '$id_tahun') m
 			)n
-			GROUP by id_paket");
+			GROUP by id_paket
+			ORDER by id_paket DESC");
     	return $query->result();
     }
     public function countdoc2($id_tahun)
@@ -373,7 +381,8 @@ class Datapaket_model extends CI_Model {
 			select a.id_paket, 'provisional_bastp' file, a.provisional_bastp value
 			from tbl_doc2 a, tbl_paket b where a.id_paket = b.id_paket AND b.id_tahun = '$id_tahun') m
 			)n
-			GROUP by id_paket");
+			GROUP by id_paket
+			ORDER by id_paket DESC");
     	return $query->result();
     }
     public function countdoc3($id_tahun)
@@ -399,7 +408,8 @@ class Datapaket_model extends CI_Model {
 			select a.id_paket, 'final_dokumentasi' file, a.final_dokumentasi value
 			from tbl_doc3 a, tbl_paket b where a.id_paket = b.id_paket AND b.id_tahun = '$id_tahun') e
 			)n
-			GROUP by id_paket");
+			GROUP by id_paket
+			ORDER by id_paket DESC");
     	return $query->result();
     }
     public function countdoc4($id_tahun)
@@ -437,7 +447,8 @@ class Datapaket_model extends CI_Model {
 			select a.id_paket, 'addii_naii' file, a.addii_naii value
 			from tbl_addendumii a, tbl_paket b where a.id_paket = b.id_paket AND b.id_tahun = '$id_tahun') h
 			)n
-			GROUP by id_paket");
+			GROUP by id_paket
+			ORDER by id_paket DESC");
     	return $query->result();
     }
     public function countdoc5($id_tahun)
@@ -475,7 +486,8 @@ class Datapaket_model extends CI_Model {
 			select a.id_paket, 'addiii_naiii' file, a.addii_naiii value
 			from tbl_addendumiii a, tbl_paket b where a.id_paket = b.id_paket AND b.id_tahun = '$id_tahun') h
 			)n
-			GROUP by id_paket");
+			GROUP by id_paket
+			ORDER by id_paket DESC");
     	return $query->result();
     }
     public function countdoc6($id_tahun)
@@ -513,7 +525,8 @@ class Datapaket_model extends CI_Model {
 			select a.id_paket, 'addiv_naiv' file, a.addiv_naiv value
 			from tbl_addendumiv a, tbl_paket b where a.id_paket = b.id_paket AND b.id_tahun = '$id_tahun') h
 			)n
-			GROUP by id_paket");
+			GROUP by id_paket
+			ORDER by id_paket DESC");
     	return $query->result();
     }
     public function countdoc7($id_tahun)
@@ -547,7 +560,8 @@ class Datapaket_model extends CI_Model {
 			select a.id_paket, 'pasca_nai' file, a.pasca_nai value
 			from tbl_pascamc0 a, tbl_paket b where a.id_paket = b.id_paket AND b.id_tahun = '$id_tahun') g
 			)n
-			GROUP by id_paket");
+			GROUP by id_paket
+			ORDER by id_paket DESC");
     	return $query->result();
     }
     public function countdoc8($id_tahun)
@@ -613,7 +627,8 @@ class Datapaket_model extends CI_Model {
 			select a.id_paket, 'bendahara_bapk' file, a.bendahara_bapk value
 			from tbl_pendukung a, tbl_paket b where a.id_paket = b.id_paket AND b.id_tahun = '$id_tahun') o
 			)n
-			GROUP by id_paket");
+			GROUP by id_paket
+			ORDER by id_paket DESC");
     	return $query->result();
     }
      public function viewjenis($id_tahun,$jenis)
@@ -671,7 +686,8 @@ class Datapaket_model extends CI_Model {
 			select a.id_paket, 'mc0_jdst' file, a.mc0_jdst value
 			from tbl_doc1 a, tbl_paket b where a.id_paket = b.id_paket AND b.id_tahun = '$id_tahun' AND b.jenis= '$jenis') m
 			)n
-			GROUP by id_paket");
+			GROUP by id_paket
+			ORDER by id_paket DESC");
     	return $query->result();
     }
     public function viewjenis2($id_tahun,$jenis)
@@ -729,7 +745,8 @@ class Datapaket_model extends CI_Model {
 			select a.id_paket, 'provisional_bastp' file, a.provisional_bastp value
 			from tbl_doc2 a, tbl_paket b where a.id_paket = b.id_paket AND b.id_tahun = '$id_tahun' AND b.jenis= '$jenis') m
 			)n
-			GROUP by id_paket");
+			GROUP by id_paket
+			ORDER by id_paket DESC");
     	return $query->result();
     }
     public function viewjenis3($id_tahun,$jenis)
@@ -755,7 +772,8 @@ class Datapaket_model extends CI_Model {
 			select a.id_paket, 'final_dokumentasi' file, a.final_dokumentasi value
 			from tbl_doc3 a, tbl_paket b where a.id_paket = b.id_paket AND b.id_tahun = '$id_tahun' AND b.jenis= '$jenis') e
 			)n
-			GROUP by id_paket");
+			GROUP by id_paket
+			ORDER by id_paket DESC");
     	return $query->result();
     }
     public function viewjenis4($id_tahun,$jenis)
@@ -793,7 +811,8 @@ class Datapaket_model extends CI_Model {
 			select a.id_paket, 'addii_naii' file, a.addii_naii value
 			from tbl_addendumii a, tbl_paket b where a.id_paket = b.id_paket AND b.id_tahun = '$id_tahun' AND b.jenis= '$jenis') h
 			)n
-			GROUP by id_paket");
+			GROUP by id_paket
+			ORDER by id_paket DESC");
     	return $query->result();
     }
     public function viewjenis5($id_tahun,$jenis)
@@ -831,7 +850,8 @@ class Datapaket_model extends CI_Model {
 			select a.id_paket, 'addiii_naiii' file, a.addii_naiii value
 			from tbl_addendumiii a, tbl_paket b where a.id_paket = b.id_paket AND b.id_tahun = '$id_tahun' AND b.jenis= '$jenis') h
 			)n
-			GROUP by id_paket");
+			GROUP by id_paket
+			ORDER by id_paket DESC");
     	return $query->result();
     }
     public function viewjenis6($id_tahun,$jenis)
@@ -869,7 +889,8 @@ class Datapaket_model extends CI_Model {
 			select a.id_paket, 'addiv_naiv' file, a.addiv_naiv value
 			from tbl_addendumiv a, tbl_paket b where a.id_paket = b.id_paket AND b.id_tahun = '$id_tahun' AND b.jenis= '$jenis') h
 			)n
-			GROUP by id_paket");
+			GROUP by id_paket
+			ORDER by id_paket DESC");
     	return $query->result();
     }
     public function viewjenis7($id_tahun,$jenis)
@@ -903,7 +924,8 @@ class Datapaket_model extends CI_Model {
 			select a.id_paket, 'pasca_nai' file, a.pasca_nai value
 			from tbl_pascamc0 a, tbl_paket b where a.id_paket = b.id_paket AND b.id_tahun = '$id_tahun' AND b.jenis= '$jenis') g
 			)n
-			GROUP by id_paket");
+			GROUP by id_paket
+			ORDER by id_paket DESC");
     	return $query->result();
     }
     public function viewjenis8($id_tahun,$jenis)
@@ -969,7 +991,8 @@ class Datapaket_model extends CI_Model {
 			select a.id_paket, 'bendahara_bapk' file, a.bendahara_bapk value
 			from tbl_pendukung a, tbl_paket b where a.id_paket = b.id_paket AND b.id_tahun = '$id_tahun' AND b.jenis= '$jenis') o
 			)n
-			GROUP by id_paket");
+			GROUP by id_paket
+			ORDER by id_paket DESC");
     	return $query->result();
     }
 }

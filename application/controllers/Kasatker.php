@@ -217,6 +217,7 @@
 			$jenis = $nama_paket[0]['jenis'];
 			for($i=0;$i<count($nama_paket);$i++){
 				$nama = $nama_paket[$i]['nama_paket'];
+				$jenis= $nama_paket[$i]['jenis'];
 				$num_doc1 = $countdata['tbl_doc1'][$i]->hasil;
 				$num_doc2 = $countdata['tbl_doc2'][$i]->hasil;
 				$num_doc3 = $countdata['tbl_doc3'][$i]->hasil;

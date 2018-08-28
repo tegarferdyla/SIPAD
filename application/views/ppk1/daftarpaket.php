@@ -25,7 +25,7 @@
                         <div class="widget-bg">
                             <div class="row">
                                 <div class="widget-heading clearfix">
-                                    <h5 class="box-title">Daftar Tahun</h5>
+                                    <h5 class="box-title">Daftar Paket</h5>
                                 </div>
                              </div>
                             
@@ -71,7 +71,7 @@
                                             <td><?php echo ($no++); ?></td>
                                             <td><?php echo $u['nama_tahun']; ?></td>
                                             <td><?php echo $u['nama_paket']; ?></td>
-                                            <td><?php echo $u['jenis']; ?></td>
+                                            <td><?php echo ucwords($u['jenis']); ?></td>
                                             <td><?php echo $u['input_by']; ?></td>
                                             <td class="">
                                                 <a class="btn btn-success btn-sm" href="<?php echo base_url()."PPK1/editpaket/".$u['id_paket'] ?>"><i class="list-icon feather feather-edit" title="Edit"></i></a> &nbsp;

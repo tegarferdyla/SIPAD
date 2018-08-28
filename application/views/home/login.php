@@ -30,7 +30,7 @@
             <div class="login-center">
                 <div class="navbar-header text-center mt-2 mb-4">
                     <a href="<?php echo site_url('home') ?>">
-                        <a href="#" class="navbar-brand "><img src="<?php echo base_url('assets/assets1/img/SIPAD-logo.png') ?>" style="max-width:400px; margin-top: -6px;" alt="Logo"><br>
+                        <a href="#" class="navbar-brand "><img src="<?php echo base_url('assets/assets1/img/simpandos1.png') ?>" style="max-width:400px; margin-top: -6px;" alt="Logo" oferflow="hidden"><br>
                          <!--<h4 class="mb-0" style="font-size: 40px; font-weight: 900"><span style="color:#FFBD4A">SIP</span>-PPLPS</h4>-->
                     </a>
                 </div>

@@ -96,7 +96,7 @@
                                     <small class="col-white"><i>PENGEMBANGAN PENYEHATAN LINGKUNGAN PERMUKIMAN STRATEGIS KEMENTRIAN PEKERJAAN UMUM</i></small>
                                 </td>
                                 <td style="padding: 20px;" colspan="1">
-                                    <img style="float: right;" src="<?php cetak(base_url('assets/assets1/img/simpandos.png')) ?>"  alt="Logo Simpandos" width="290" height="85">
+                                    <img style="float: right;" src="<?php cetak(base_url('assets/assets1/img/simpandos1.png')) ?>"  alt="Logo Simpandos" width="290" height="85">
                                 </td>
                             <tr style="font-size: 13px;">
                                 <td style="padding: 10px;" colspan="4">
