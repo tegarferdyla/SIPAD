@@ -20,9 +20,6 @@
     <!-- =================================== -->
     <!-- Different data widgets ============ -->
     <!-- =================================== -->
-    <div class="tab-content">
-    <div class="tab-pane active" id="input">
-
         <div class="row">
             <div class="col-md-12">
                 <?php if ($this->session->flashdata('updateberhasil')): ?>
@@ -50,7 +47,7 @@
                                     <ul class="dropdown-menu list-unstyled card-body">
                                         <!-- <li><a href="<?php echo site_url('PPK1/inputdokutama/' . $show[0]['id_paket']) ?>">Input Dokumen</a></li> -->
                                         <li><a href="<?php echo site_url('PPK1/editdocpend/' . $show[0]['id_paket']) ?>"><i class="feather feather-edit"></i> Edit Dokumen</a></li>
-                                    <li><a href="<?php  echo site_url('PPK1/detaillaporan/'.$show[0]['id_paket']) ?>"><i class="feather feather-printer"></i> Print Laporan</a></li>
+                                    <li><a href="<?php  echo site_url('PPK1/detaillaporan/'.$show[0]['id_paket']) ?>" target = "_blank"><i class="feather feather-printer"></i> Print Laporan</a></li>
                                     </ul>
                                 </div>
                             </div>    
@@ -108,6 +105,13 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="widget-list">
+            <div class="col-md-12 widget-holder">
+                <div class="widget-bg">    
                     <div class="widget-body clearfix">
                     <h4 class="box-title mr-b-0" >KEUANGAN</h4>
                     <br>
@@ -232,6 +236,13 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+            
+    <div class="widget-list">
+        <div class="col-md-12 widget-holder">
+            <div class="widget-bg"> 
                 <div class="widget-body clearfix">
                     <h4 class="box-title mr-b-0" >BENDAHARA</h4>
                     <br>
@@ -300,7 +311,6 @@
         </div>
     </div>
 </div>
-</div>
    <!-- Modal -->
     <div class="modal fade" id="modalCustom" role="dialog">
         <div class="modal-dialog modal-lg">
@@ -318,12 +328,6 @@
             </div>
         </div>
     </div>
-  <!-- Modal -->
-<div class="tab-pane" id="profile-tab-bordered-1">
-
-</div>
-</div>
-</div>
 <!-- /.widget-list -->
 <script type="text/javascript">
     $(document).ready(function() {

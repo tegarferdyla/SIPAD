@@ -303,16 +303,24 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 					'nama'		 => $nama,
 					'keterangan' => $keterangan
 				);
-				$input = $this->Datappk_model->Tambahppk($data,'ppk');
-					if ($input > 0) {
-						$this->session->set_flashdata('berhasil','true');
-						redirect(base_url('Admin/inputppk'));
-					}
-					else{
-						$this->session->set_flashdata('gagal','true');
-						redirect(base_url('Admin/inputppk'));
-					}			
-			}
+
+				$ceknanama = $this->Datappk_model->cekppk($nama);
+				if ($ceknanama > 0) {
+				 	$this->session->set_flashdata('namasalah','true');
+					redirect('Admin/inputppk');
+				 }
+				 else { 
+					$input = $this->Datappk_model->Tambahppk($data,'ppk');
+						if ($input > 0) {
+							$this->session->set_flashdata('berhasil','true');
+							redirect(base_url('Admin/inputppk'));
+						}
+						else{
+							$this->session->set_flashdata('gagal','true');
+							redirect(base_url('Admin/inputppk'));
+						}
+					}				
+				}
 		}
 		//Fungsi Edit PPK
 		public function editppk ($id_ppk)

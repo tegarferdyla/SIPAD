@@ -31,10 +31,10 @@
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                                             </button> <i class="material-icons list-icon">check_circle</i>  <strong>Well done!</strong> PPK baru berhasil di daftarkan.
                                         </div>
-                                        <?php elseif ($this->session->flashdata('gagal')): ?>
-                                         <div class="alert alert-icon alert-danger border-danger alert-dismissible fade show" role="alert">
+                                        <?php elseif ($this->session->flashdata('namasalah')): ?>
+                                         <div class="alert alert-icon alert-warning border-warning alert-dismissible fade show" role="alert">
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                                            </button> <i class="material-icons list-icon">not_interested</i>  <strong>Oh snap!</strong> PPK baru gagal di daftarkan
+                                            </button> <i class="material-icons list-icon">not_interested</i>  <strong>Oh snap!</strong> PPK yang di Inputkan Sudah Terdaftar
                                         </div>
                                         <?php endif ?>
                                     </div>

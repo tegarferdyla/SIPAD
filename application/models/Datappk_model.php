@@ -10,6 +10,15 @@ class Datappk_model extends CI_Model
 	{
 		parent::__construct();	
 	}
+	//Model Cek NIP User
+    public function cekppk ($nama)
+    {
+        $this->db->select('*');
+        $this->db->from('ppk');
+        $this->db->where('nama',$nama);
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
 	//Fungsi insert ppk
 	public function Tambahppk ($data , $table)
     {

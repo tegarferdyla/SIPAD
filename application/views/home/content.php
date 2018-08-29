@@ -36,7 +36,7 @@
             <div class="col-xl-7 col-lg-8 mx-auto">
               <div class="section-title">
                 <h2 class="heading">Apa itu <span style="color:#ffffff;">SIMPANDOS?</span></h2>
-                <h6 class="subheading" style ="color:white" align="justify">SIMPANDOS adalah sistem yang digunakan untuk mempermudah pengelolaan arsip berbagai dokumen. Dengan fitur yang lengkap, akan sangat membantu mempermudah pengelolaan arsip dokumen Perusahaan Anda</h6>
+                <h6 class="subheading" style ="color:white" align="justify">SIMPANDOS adalah sistem yang digunakan untuk mempermudah pengelolaan arsip berbagai dokumen. Dengan fitur yang lengkap, akan sangat membantu mempermudah pengelolaan arsip dokumen Perusahaan Anda.</h6>
               </div><!-- /.section-title -->
             </div><!-- /.col-xl-7 -->
           </div><!-- /.row -->
@@ -51,7 +51,7 @@
             <div class="col-xl-7 col-lg-8 mx-auto">
               <div class="section-title">
                 <h2 class="heading">Apa yang kami hadirkan ?</h2>
-                <h6 class="subheading">Berikut fitur yang terdapat dalam SIPAD</h6>
+                <h6 class="subheading">Berikut fitur yang terdapat dalam SIMPANDOS.</h6>
               </div><!-- /.section-title -->
             </div><!-- /.col-xl-7 -->
           </div><!-- /.row -->
@@ -64,7 +64,7 @@
                 </div><!-- /.icon -->
                 <div class="content">
                   <h5 class="title">Kemudahan</h5>
-                  <p class="description">Mudah dalam pengunggahan dokumen dan pengelolaan dokumen</p>
+                  <p class="description">Mudah dalam pengunggahan dokumen dan pengelolaan dokumen.</p>
                 </div><!-- /.content -->
               </div><!-- /.icon-box -->
             </div><!-- /.col-md-4 -->
@@ -76,7 +76,7 @@
                 </div><!-- /.icon -->
                 <div class="content">
                   <h5 class="title">Cepat</h5>
-                  <p class="description">cepat dalam memperoleh informasi yang dibutuhkan di dalam dokumen</p>
+                  <p class="description">Cepat dalam memperoleh informasi yang dibutuhkan di dalam dokumen.</p>
                 </div><!-- /.content -->
               </div><!-- /.icon-box -->
             </div><!-- /.col-md-4 -->
@@ -88,7 +88,7 @@
                 </div><!-- /.icon -->
                 <div class="content">
                   <h5 class="title">Dokumen Terintegrasi</h5>
-                  <p class="description">Dokumen terintegrasi dengan divisi-divisi terkait</p>
+                  <p class="description">Dokumen terintegrasi dengan divisi-divisi terkait.</p>
                 </div><!-- /.content -->
               </div><!-- /.icon-box -->
             </div><!-- /.col-md-4 -->
@@ -100,7 +100,7 @@
                 </div><!-- /.icon -->
                 <div class="content">
                   <h5 class="title">Mudah Dalam Pencarian</h5>
-                  <p class="description">Pencarian dokumen yang dibutuhkan mudah didapatkan</p>
+                  <p class="description">Pencarian dokumen yang dibutuhkan mudah didapatkan.</p>
                 </div><!-- /.content -->
               </div><!-- /.icon-box -->
             </div><!-- /.col-md-4 -->
@@ -112,7 +112,7 @@
                 </div><!-- /.icon -->
                 <div class="content">
                   <h5 class="title">Kemanan Terjamin</h5>
-                  <p class="description">Dokumen yang terdapat di dalam sistem dilengkapi dengan keamanan dan enkripsi</p>
+                  <p class="description">Dokumen yang terdapat di dalam sistem dilengkapi dengan keamanan dan enkripsi.</p>
                 </div><!-- /.content -->
               </div><!-- /.icon-box -->
             </div><!-- /.col-md-4 -->
@@ -124,7 +124,7 @@
                 </div><!-- /.icon -->
                 <div class="content">
                   <h5 class="title">Mudah Digunakan</h5>
-                  <p class="description">User Friendly &amp; dan responsif</p>
+                  <p class="description">User Friendly &amp; dan responsif.</p>
                 </div><!-- /.content -->
               </div><!-- /.icon-box -->
             </div><!-- /.col-md-4 -->

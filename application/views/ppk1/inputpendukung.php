@@ -30,7 +30,7 @@
                     <div class="widget-body clearfix">
                         <div class="row">
                         <div class="col-md-11">
-                           <button type="button" class="btn btn-info">BMN</button>
+                           <h4 class="box-title mr-b-0" >BMN</h4>
                         </div>
                         <div class="col-md-1">
                                             <div class="dropdown">

@@ -50,8 +50,9 @@
                                 </div>
                             </div>    
                         </div>
+                        <br>
                         <div class="row">
-                            <button type="button" class="btn btn-info">BMN</button>
+                            <h4 class="box-title mr-b-0" >BMN</h4>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
@@ -101,8 +102,16 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>            
+                    
+    <div class="widget-list">
+        <div class="col-md-12 widget-holder">
+            <div class="widget-bg"> 
                     <div class="widget-body clearfix">
-                        <button type="button" class="btn btn-info">Keuangan</button><br><br>
+                            <h4 class="box-title mr-b-0" >KEUANGAN</h4>
+                        <br>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label class="form-control-label text-blue" for="">Permohonan Pembayaran</label>
@@ -224,8 +233,16 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>     
+
+         <div class="widget-list">
+        <div class="col-md-12 widget-holder">
+            <div class="widget-bg">
                     <div class="widget-body clearfix">
-                        <button type="button" class="btn btn-info">Bendahara</button><br><br>
+                            <h4 class="box-title mr-b-0" >BENDAHARA</h4>
+                        <br>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label class="form-control-label text-blue" for="">LPJ</label>
@@ -288,8 +305,13 @@
                         </div>
                     </div>
                 </div>
-                <input type="submit" name="" value="Save Update" class="btn btn-success btn-block">
-            </form>
+                <br>
+                 <input type="submit" name="" value="Save Update" class="btn btn-success btn-block">
+                </div>
+            </div>
+        </div>     
+</form>
+               
             <!-- Modal -->
             <div class="modal fade" id="modalCustom" role="dialog">
                 <div class="modal-dialog modal-lg">
@@ -307,8 +329,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+
     <!-- /.widget-list -->
     <script type="text/javascript">
         $(".btn-show").click(function() {
